@@ -1,0 +1,16 @@
+{
+  "background_color": "#fff",
+  "description": "Personal website of Andrew Torres",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "name": "Andrew Torres",
+  "short_name": "ajtorres9",
+  "start_url": "/",
+  "theme_color": "#000"
+}
