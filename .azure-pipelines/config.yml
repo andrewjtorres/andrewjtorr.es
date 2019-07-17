@@ -18,18 +18,12 @@ stages:
             displayName: Install Node
             inputs:
               versionSpec: $(NODE_VERSION)
-          - task: CacheBeta@0
-            inputs:
-              key: reports-v1-$(System.PullRequest.SourceBranch)-
+          - template: templates/cache-reports.yml
+            parameters:
               path: $(REPORTS_DIR)
-            displayName: Cache reports
-          - task: CacheBeta@0
-            inputs:
-              key: |
-                yarn-packages-v1-$(System.PullRequest.SourceBranch)-
-                $(Build.SourcesDirectory)/yarn.lock
+          - template: templates/cache-yarn-packages.yml
+            parameters:
               path: $(YARN_CACHE_DIR)
-            displayName: Cache Yarn packages
           - script: yarn install --cache-folder $(YARN_CACHE_DIR) --frozen-lockfile
             displayName: Install Node dependencies
           - script: yarn --silent lint:scripts --format junit --output-file $(REPORTS_DIR)/lint-scripts.xml
@@ -58,18 +52,12 @@ stages:
             displayName: Install Node
             inputs:
               versionSpec: $(NODE_VERSION)
-          - task: CacheBeta@0
-            inputs:
-              key: reports-v1-$(System.PullRequest.SourceBranch)-
+          - template: templates/cache-reports.yml
+            parameters:
               path: $(REPORTS_DIR)
-            displayName: Cache reports
-          - task: CacheBeta@0
-            inputs:
-              key: |
-                yarn-packages-v1-$(System.PullRequest.SourceBranch)-
-                $(Build.SourcesDirectory)/yarn.lock
+          - template: templates/cache-yarn-packages.yml
+            parameters:
               path: $(YARN_CACHE_DIR)
-            displayName: Cache Yarn packages
           - script: yarn install --cache-folder $(YARN_CACHE_DIR) --frozen-lockfile
             displayName: Install Node dependencies
           - script: yarn --silent test:units --coverage --coverageDirectory $(COVERAGE_DIR) --runInBand --reporters default jest-junit
