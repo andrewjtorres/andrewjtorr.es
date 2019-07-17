@@ -1,6 +1,7 @@
-import React from 'react'
 import loadable from '@loadable/component'
 import { Router } from '@reach/router'
+import React from 'react'
+
 import GlobalStyle from 'styles/global'
 
 const Home = loadable(() =>

@@ -1,5 +1,6 @@
+import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
-import { fireEvent, render } from 'react-testing-library'
+
 import { renderWithRouter } from 'utilities/specification'
 import Layout from '.'
 

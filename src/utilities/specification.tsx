@@ -1,11 +1,11 @@
-import React from 'react'
 import {
   LocationProvider,
   LocationProviderRenderFn,
   createHistory,
   createMemorySource,
 } from '@reach/router'
-import { render } from 'react-testing-library'
+import { render } from '@testing-library/react'
+import React from 'react'
 
 interface RouterOptions {
   initialPath?: string

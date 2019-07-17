@@ -1,5 +1,6 @@
+import { render } from '@testing-library/react'
 import React from 'react'
-import { render } from 'react-testing-library'
+
 import Home from '.'
 
 test('The Home component should render correctly', () => {

@@ -1,8 +1,8 @@
 'use strict'
 
-const jestPlugin = require('eslint-plugin-jest')
-const prettierTypescriptConfig = require('eslint-config-prettier/@typescript-eslint')
 const typescriptPlugin = require('@typescript-eslint/eslint-plugin')
+const prettierTypescriptConfig = require('eslint-config-prettier/@typescript-eslint')
+const jestPlugin = require('eslint-plugin-jest')
 
 module.exports = {
   plugins: [
@@ -31,19 +31,23 @@ module.exports = {
   rules: {
     'no-console': ['error', { allow: ['error', 'info', 'warn'] }],
     'no-param-reassign': ['error', { props: true }],
+    'import/order': [
+      'error',
+      { groups: [['builtin', 'external']], 'newlines-between': 'always' },
+    ],
+    'react-hooks/exhaustive-deps': 'warn',
     'react-hooks/rules-of-hooks': 'error',
+    'unicorn/prevent-abbreviations': 'off',
     'prettier/prettier': 'error',
   },
   overrides: [
     {
-      files: ['**/*.ts?(x)', '.*/**/*.ts?(x)'],
-      parser: typescriptPlugin.configs.recommended.parser,
-      plugins: typescriptPlugin.configs.recommended.plugins,
+      files: ['**/*.ts?(x)', '**/.*/**/*.ts?(x)'],
+      parser: typescriptPlugin.configs.base.parser,
+      plugins: typescriptPlugin.configs.base.plugins,
       rules: {
         ...typescriptPlugin.configs.recommended.rules,
-        'no-use-before-define': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
-        '@typescript-eslint/no-explicit-any': 'off',
         ...prettierTypescriptConfig.rules,
       },
     },

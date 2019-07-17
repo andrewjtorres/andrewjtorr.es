@@ -1,5 +1,6 @@
-import { createGlobalStyle } from 'styled-components'
 import { darken, em, normalize, rem } from 'polished'
+import { createGlobalStyle } from 'styled-components'
+
 import {
   aBlue,
   black,

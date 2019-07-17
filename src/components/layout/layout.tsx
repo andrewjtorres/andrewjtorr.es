@@ -1,7 +1,8 @@
-import React from 'react'
-import styled, { css } from 'styled-components'
 import { Link as BaseLink } from '@reach/router'
 import { rem } from 'polished'
+import React from 'react'
+import styled, { css } from 'styled-components'
+
 import BaseLogo from 'assets/logo.svg'
 import { contentContainer, medium, untilMedium } from 'styles/mixins'
 

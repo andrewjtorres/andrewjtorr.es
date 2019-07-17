@@ -1,5 +1,6 @@
+import { waitForElement } from '@testing-library/react'
 import React from 'react'
-import { waitForElement } from 'react-testing-library'
+
 import { renderWithRouter } from 'utilities/specification'
 import Root from '.'
 

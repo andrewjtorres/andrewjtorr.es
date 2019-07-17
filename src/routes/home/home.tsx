@@ -1,13 +1,15 @@
-import React from 'react'
-import styled, { css } from 'styled-components'
 import { RouteComponentProps } from '@reach/router'
 import { darken, em, rem } from 'polished'
+import React from 'react'
+import styled, { css } from 'styled-components'
+
+import fixingTheMustacheUrl from 'assets/fixing-the-mustache.png'
 import BaseGitHub from 'assets/github.svg'
 import BaseGitLab from 'assets/gitlab.svg'
 import BaseLinkedIn from 'assets/linkedin.svg'
 import BaseTwitter from 'assets/twitter.svg'
 import Layout from 'components/layout'
-import fixingTheMustacheUrl from 'assets/fixing-the-mustache.png'
+import { contentContainer, isHiddenMobile, isHiddenTablet } from 'styles/mixins'
 import {
   baseBlack,
   darkGray,
@@ -17,7 +19,6 @@ import {
   twitterBlue,
   white,
 } from 'styles/variables'
-import { contentContainer, isHiddenMobile, isHiddenTablet } from 'styles/mixins'
 
 const Root = styled.div`
   ${contentContainer};
