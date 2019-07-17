@@ -21,11 +21,8 @@ stages:
               versionSpec: $(NODE_VERSION)
           - task: CacheBeta@0
             inputs:
-              key: |
-                yarn
-                $(Agent.OS)
-                $(Build.SourcesDirectory)/yarn.lock
-              path: YARN_CACHE_DIR
+              key: $(Build.SourcesDirectory)/yarn.lock
+              path: $(YARN_CACHE_DIR)
             displayName: Cache Yarn packages
           - script: yarn install --cache-folder $(YARN_CACHE_DIR) --frozen-lockfile
             displayName: Install Node dependencies
@@ -62,11 +59,8 @@ stages:
               versionSpec: $(NODE_VERSION)
           - task: CacheBeta@0
             inputs:
-              key: |
-                yarn
-                $(Agent.OS)
-                $(Build.SourcesDirectory)/yarn.lock
-              path: YARN_CACHE_DIR
+              key: $(Build.SourcesDirectory)/yarn.lock
+              path: $(YARN_CACHE_DIR)
             displayName: Cache Yarn packages
           - script: yarn install --cache-folder $(YARN_CACHE_DIR) --frozen-lockfile
             displayName: Install Node dependencies
