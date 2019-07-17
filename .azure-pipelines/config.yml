@@ -1,6 +1,11 @@
 variables:
+  - name: BRANCH
+    value: $(Build.SourceBranchName)
+  - ${{ if eq(Build.SourceBranchName, 'merge') }}:
+      - name: BRANCH
+        value: $(System.PullRequest.SourceBranch)
   - name: NODE_VERSION
-    value: '>=10.16.0'
+    value: 10.16.0
   - name: YARN_CACHE_DIR
     value: $(Pipeline.Workspace)/.yarn
 stages:
@@ -18,10 +23,9 @@ stages:
               versionSpec: $(NODE_VERSION)
           - template: templates/cache-yarn-packages.yml
             parameters:
+              branch: $(BRANCH)
               path: $(YARN_CACHE_DIR)
-          - script: |
-              echo $(Build)
-              yarn install --cache-folder $(YARN_CACHE_DIR) --frozen-lockfile
+          - script: yarn install --cache-folder $(YARN_CACHE_DIR) --frozen-lockfile
             displayName: Install Node dependencies
       - job: static_analysis
         displayName: Static Analysis
@@ -39,6 +43,7 @@ stages:
               versionSpec: $(NODE_VERSION)
           - template: templates/cache-yarn-packages.yml
             parameters:
+              branch: $(BRANCH)
               path: $(YARN_CACHE_DIR)
           - script: yarn install --cache-folder $(YARN_CACHE_DIR) --frozen-lockfile
             displayName: Install Node dependencies
@@ -72,6 +77,7 @@ stages:
               versionSpec: $(NODE_VERSION)
           - template: templates/cache-yarn-packages.yml
             parameters:
+              branch: $(BRANCH)
               path: $(YARN_CACHE_DIR)
           - script: yarn install --cache-folder $(YARN_CACHE_DIR) --frozen-lockfile
             displayName: Install Node dependencies

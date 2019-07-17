@@ -1,11 +1,12 @@
 parameters:
+  branch: 'master'
   path: ''
   version: 'v1'
 steps:
   - task: CacheBeta@0
     inputs:
       key: |
-        yarn-packages-${{ parameters.version }}-$(System.PullRequest.SourceBranch)
+        yarn-packages-${{ parameters.version }}-${{ parameters.branch }}
         $(Build.SourcesDirectory)/yarn.lock
       path: ${{ parameters.path }}
     displayName: Cache Yarn packages
