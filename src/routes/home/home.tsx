@@ -82,8 +82,8 @@ const Link = styled.a`
   -webkit-touch-callout: none;
   align-items: center;
   appearance: none;
-  border-radius: ${em(20.5)};
   border: ${rem(1)} solid ${baseBlack};
+  border-radius: ${em(20.5)};
   color: ${baseBlack};
   cursor: pointer;
   display: inline-flex;

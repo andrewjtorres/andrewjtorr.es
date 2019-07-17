@@ -17,8 +17,8 @@ module.exports = {
       'custom-properties',
       'dollar-variables',
       'declarations',
-      'at-rules',
       'rules',
+      'at-rules',
     ],
   },
 }

@@ -14,68 +14,6 @@ import {
 const GlobalStyle = createGlobalStyle`
   ${normalize()};
 
-  @import url('https://fonts.googleapis.com/css?family=Raleway:400,600,700');
-
-  @media print {
-    *,
-    *::before,
-    *::after {
-      background-color: transparent !important;
-      box-shadow: none !important;
-      color: ${black} !important;
-      text-shadow: none !important;
-    }
-
-    a,
-    a:visited {
-      text-decoration: underline;
-    }
-
-    a[href]::after {
-      content: ' (' attr(href) ')';
-    }
-
-    abbr[title]::after {
-      content: ' (' attr(title) ')';
-    }
-
-    a[href^='#']::after,
-    a[href^='javascript:']::after {
-      content: '';
-    }
-
-    h2,
-    h3,
-    p {
-      orphans: 3;
-      widows: 3;
-    }
-
-    h2,
-    h3 {
-      page-break-after: avoid;
-    }
-
-    pre {
-      white-space: pre-wrap !important;
-    }
-
-    pre,
-    blockquote {
-      border: ${rem(1)} solid ${preGray};
-      page-break-inside: avoid;
-    }
-
-    thead {
-      display: table-header-group;
-    }
-
-    tr,
-    img {
-      page-break-inside: avoid;
-    }
-  }
-
   *,
   *::before,
   *::after {
@@ -249,6 +187,68 @@ const GlobalStyle = createGlobalStyle`
   ::selection {
     background-color: ${selectionBlue};
     text-shadow: none;
+  }
+
+  @import url('https://fonts.googleapis.com/css?family=Raleway:400,600,700');
+
+  @media print {
+    *,
+    *::before,
+    *::after {
+      background-color: transparent !important;
+      box-shadow: none !important;
+      color: ${black} !important;
+      text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+      text-decoration: underline;
+    }
+
+    a[href]::after {
+      content: ' (' attr(href) ')';
+    }
+
+    abbr[title]::after {
+      content: ' (' attr(title) ')';
+    }
+
+    a[href^='#']::after,
+    a[href^='javascript:']::after {
+      content: '';
+    }
+
+    h2,
+    h3,
+    p {
+      orphans: 3;
+      widows: 3;
+    }
+
+    h2,
+    h3 {
+      page-break-after: avoid;
+    }
+
+    pre {
+      white-space: pre-wrap !important;
+    }
+
+    pre,
+    blockquote {
+      border: ${rem(1)} solid ${preGray};
+      page-break-inside: avoid;
+    }
+
+    thead {
+      display: table-header-group;
+    }
+
+    tr,
+    img {
+      page-break-inside: avoid;
+    }
   }
 `
 
