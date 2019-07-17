@@ -1,6 +1,6 @@
 {
   "exclude": ["build", "node_modules"],
-  "include": ["**/*", ".*/**/*"],
+  "include": ["**/*", "**/.*/**/*"],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
@@ -9,7 +9,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "lib": ["dom", "esnext"],
-    "module": "esnext",
+    "module": "commonjs",
     "moduleResolution": "node",
     "noErrorTruncation": true,
     "noFallthroughCasesInSwitch": true,
@@ -17,12 +17,12 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "outDir": "build",
-    "paths": {
-      "*": ["src/*"]
-    },
+    "paths": { "*": ["src/*"] },
     "removeComments": true,
+    "rootDirs": ["config", "src"],
     "sourceMap": true,
     "strict": true,
-    "target": "esnext"
+    "target": "esnext",
+    "types": ["jest"]
   }
 }
