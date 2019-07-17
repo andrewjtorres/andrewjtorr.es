@@ -19,11 +19,11 @@ stages:
               versionSpec: $(NODE_VERSION)
           - script: yarn install
             displayName: Install Node dependencies
-          - script: yarn --silent lint-scripts --format junit --output-file $(REPORTS_DIR)/lint-scripts.xml
+          - script: yarn --silent lint:scripts --format junit --output-file $(REPORTS_DIR)/lint-scripts.xml
             displayName: Lint scripts
-          - script: yarn --silent lint-styles --custom-formatter node_modules/stylelint-junit-formatter > $(REPORTS_DIR)/lint-styles.xml
+          - script: yarn --silent lint:styles --custom-formatter node_modules/stylelint-junit-formatter > $(REPORTS_DIR)/lint-styles.xml
             displayName: Lint styles
-          - script: yarn --silent lint-types
+          - script: yarn --silent lint:types
             displayName: Lint types
           - publish: $(REPORTS_DIR)
             displayName: Publish reports artifact
@@ -52,7 +52,7 @@ stages:
               versionSpec: $(NODE_VERSION)
           - script: yarn install
             displayName: Install Node dependencies
-          - script: yarn --silent test-units --coverage --coverageDirectory $(COVERAGE_DIR) --runInBand --reporters default jest-junit
+          - script: yarn --silent test:units --coverage --coverageDirectory $(COVERAGE_DIR) --runInBand --reporters default jest-junit
             displayName: Test units
             env:
               JEST_JUNIT_OUTPUT: $(REPORTS_DIR)/test-units.xml
