@@ -28,6 +28,7 @@ stages:
           - script: |
               yarn install --frozen-lockfile
               yarn cache dir
+              echo $(Pipeline.Workspace)/.yarn
             displayName: Install Node dependencies
           - script: yarn --silent lint:scripts --format junit --output-file $(REPORTS_DIR)/lint-scripts.xml
             displayName: Lint scripts
