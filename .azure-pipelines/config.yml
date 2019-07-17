@@ -1,12 +1,30 @@
 variables:
   - name: NODE_VERSION
     value: '>=10.16.0'
+  - name: YARN_CACHE_DIR
+    value: $(Pipeline.Workspace)/.yarn
 stages:
   - stage: root
     displayName: Root
     jobs:
+      - job: setup
+        displayName: Setup
+        pool:
+          vmImage: ubuntu-16.04
+        steps:
+          - task: NodeTool@0
+            displayName: Install Node
+            inputs:
+              versionSpec: $(NODE_VERSION)
+          - template: templates/cache-yarn-packages.yml
+            parameters:
+              path: $(YARN_CACHE_DIR)
+          - script: yarn install --cache-folder $(YARN_CACHE_DIR) --frozen-lockfile
+            displayName: Install Node dependencies
       - job: static_analysis
         displayName: Static Analysis
+        dependsOn:
+          - setup
         pool:
           vmImage: ubuntu-16.04
         variables:
@@ -17,7 +35,10 @@ stages:
             displayName: Install Node
             inputs:
               versionSpec: $(NODE_VERSION)
-          - script: yarn install
+          - template: templates/cache-yarn-packages.yml
+            parameters:
+              path: $(YARN_CACHE_DIR)
+          - script: yarn install --cache-folder $(YARN_CACHE_DIR) --frozen-lockfile
             displayName: Install Node dependencies
           - script: yarn --silent lint:scripts --format junit --output-file $(REPORTS_DIR)/lint-scripts.xml
             displayName: Lint scripts
@@ -25,9 +46,6 @@ stages:
             displayName: Lint styles
           - script: yarn --silent lint:types
             displayName: Lint types
-          - publish: $(REPORTS_DIR)
-            displayName: Publish reports artifact
-            artifact: static-analysis
           - task: PublishTestResults@2
             displayName: Publish tests results
             condition: succeededOrFailed()
@@ -37,7 +55,7 @@ stages:
       - job: test
         displayName: Test
         dependsOn:
-          - static_analysis
+          - setup
         pool:
           vmImage: ubuntu-16.04
         variables:
@@ -50,7 +68,10 @@ stages:
             displayName: Install Node
             inputs:
               versionSpec: $(NODE_VERSION)
-          - script: yarn install
+          - template: templates/cache-yarn-packages.yml
+            parameters:
+              path: $(YARN_CACHE_DIR)
+          - script: yarn install --cache-folder $(YARN_CACHE_DIR) --frozen-lockfile
             displayName: Install Node dependencies
           - script: yarn --silent test:units --coverage --coverageDirectory $(COVERAGE_DIR) --runInBand --reporters default jest-junit
             displayName: Test units
@@ -58,12 +79,6 @@ stages:
               JEST_JUNIT_OUTPUT: $(REPORTS_DIR)/test-units.xml
           - script: yarn codecov -t $(CODECOV_TOKEN)
             displayName: Publish code coverage results
-          - publish: $(COVERAGE_DIR)
-            displayName: Publish coverage artifact
-            artifact: coverage
-          - publish: $(REPORTS_DIR)
-            displayName: Publish reports artifact
-            artifact: test
           - task: PublishTestResults@2
             displayName: Publish tests results
             condition: succeededOrFailed()
