@@ -1,9 +1,0 @@
-parameters:
-  path: ''
-  version: 'v1'
-steps:
-  - task: CacheBeta@0
-    inputs:
-      key: coverage-${{ parameters.version }}-$(System.PullRequest.SourceBranch)
-      path: ${{ parameters.path }}
-    displayName: Cache coverage

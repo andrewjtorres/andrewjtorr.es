@@ -1,10 +1,6 @@
 variables:
-  - name: COVERAGE_DIR
-    value: coverage
   - name: NODE_VERSION
     value: '>=10.16.0'
-  - name: REPORTS_DIR
-    value: reports
   - name: YARN_CACHE_DIR
     value: $(Pipeline.Workspace)/.yarn
 stages:
@@ -20,14 +16,6 @@ stages:
             displayName: Install Node
             inputs:
               versionSpec: $(NODE_VERSION)
-          - script: mkdir --parents $(COVERAGE_DIR) $(REPORTS_DIR) $(YARN_CACHE_DIR)
-            displayName: Create cache directories
-          - template: templates/cache-coverage.yml
-            parameters:
-              path: $(COVERAGE_DIR)
-          - template: templates/cache-reports.yml
-            parameters:
-              path: $(REPORTS_DIR)
           - template: templates/cache-yarn-packages.yml
             parameters:
               path: $(YARN_CACHE_DIR)
@@ -39,14 +27,14 @@ stages:
           - setup
         pool:
           vmImage: ubuntu-16.04
+        variables:
+          - name: REPORTS_DIR
+            value: reports
         steps:
           - task: NodeTool@0
             displayName: Install Node
             inputs:
               versionSpec: $(NODE_VERSION)
-          - template: templates/cache-reports.yml
-            parameters:
-              path: $(REPORTS_DIR)
           - template: templates/cache-yarn-packages.yml
             parameters:
               path: $(YARN_CACHE_DIR)
@@ -70,17 +58,16 @@ stages:
           - setup
         pool:
           vmImage: ubuntu-16.04
+        variables:
+          - name: COVERAGE_DIR
+            value: coverage
+          - name: REPORTS_DIR
+            value: reports
         steps:
           - task: NodeTool@0
             displayName: Install Node
             inputs:
               versionSpec: $(NODE_VERSION)
-          - template: templates/cache-coverage.yml
-            parameters:
-              path: $(COVERAGE_DIR)
-          - template: templates/cache-reports.yml
-            parameters:
-              path: $(REPORTS_DIR)
           - template: templates/cache-yarn-packages.yml
             parameters:
               path: $(YARN_CACHE_DIR)
@@ -98,26 +85,6 @@ stages:
             inputs:
               testResultsFiles: '**/*.xml'
               searchFolder: $(System.DefaultWorkingDirectory)/$(REPORTS_DIR)
-      - job: publish
-        displayName: Publish
-        dependsOn:
-          - static_analysis
-          - test
-        pool:
-          vmImage: ubuntu-16.04
-        steps:
-          - template: templates/cache-coverage.yml
-            parameters:
-              path: $(COVERAGE_DIR)
-          - template: templates/cache-reports.yml
-            parameters:
-              path: $(REPORTS_DIR)
-          - publish: $(COVERAGE_DIR)
-            displayName: Publish coverage artifact
-            artifact: coverage
-          - publish: $(REPORTS_DIR)
-            displayName: Publish reports artifact
-            artifact: reports
 trigger:
   branches:
     include:
