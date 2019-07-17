@@ -2,11 +2,11 @@
 
 const path = require('path')
 const TerserPlugin = require('terser-webpack-plugin')
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const { HotModuleReplacementPlugin } = require('webpack')
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
-const ROOT_DIR = path.resolve(__dirname, '..')
-const BUILD_DIR = path.join(ROOT_DIR, 'build')
+const rootDir = path.resolve(__dirname, '..')
+const buildDir = path.join(rootDir, 'build')
 
 const isAnalyze = process.argv.includes('--analyze')
 const isRelease = process.argv.includes('--release')
@@ -16,7 +16,7 @@ const createConfig = (target, configFactory) =>
   configFactory({
     bail: isRelease,
     cache: !isRelease,
-    context: ROOT_DIR,
+    context: rootDir,
     devtool: isRelease ? 'source-map' : 'eval-source-map',
     mode: isRelease ? 'production' : 'development',
     module: {
@@ -37,10 +37,11 @@ const createConfig = (target, configFactory) =>
             {
               test: /\.svg$/,
               loader: require.resolve('@svgr/webpack'),
+              options: { ref: true },
             },
             {
               test: /\.ts(x)?$/,
-              include: path.join(ROOT_DIR, 'src'),
+              include: path.join(rootDir, 'src'),
               loader: require.resolve('babel-loader'),
               options: {
                 cacheCompression: isRelease,
@@ -63,10 +64,10 @@ const createConfig = (target, configFactory) =>
       ],
       strictExportPresence: true,
     },
-    output: { path: BUILD_DIR },
+    output: { path: buildDir },
     resolve: {
       extensions: ['.js', '.json', '.mjs', '.ts', '.tsx', '.wasm'],
-      modules: ['node_modules', path.join(ROOT_DIR, 'src')],
+      modules: ['node_modules', path.join(rootDir, 'src')],
     },
     stats: {
       cached: isVerbose,
@@ -88,12 +89,12 @@ const clientConfig = createConfig('web', baseConfig => ({
   devServer: {
     clientLogLevel: 'warning',
     compress: true,
-    contentBase: BUILD_DIR,
+    contentBase: buildDir,
     historyApiFallback: true,
     hot: true,
     watchContentBase: true,
   },
-  entry: { client: './src/client.tsx' },
+  entry: { client: path.resolve('./src/client.tsx') },
   name: 'client',
   optimization: {
     minimize: isRelease,
