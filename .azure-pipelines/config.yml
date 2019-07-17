@@ -18,7 +18,7 @@ stages:
             inputs:
               versionSpec: $(NODE_VERSION)
           - task: CacheBeta@0
-            input:
+            inputs:
               key: |
                 yarn
                 $(Agent.OS)
@@ -59,7 +59,7 @@ stages:
             inputs:
               versionSpec: $(NODE_VERSION)
           - task: CacheBeta@0
-            input:
+            inputs:
               key: |
                 yarn
                 $(Agent.OS)
