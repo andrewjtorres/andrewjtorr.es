@@ -4,6 +4,8 @@
 
 # For the following file types, normalize line endings to LF on check-in and
 # prevent conversion to CRLF when they are checked out
+*.png          binary eol=lf
+
 .*             text eol=lf
 *.html         text eol=lf
 *.js           text eol=lf
@@ -15,3 +17,4 @@
 *.tsx          text eol=lf
 *.txt          text eol=lf
 *.webmanifest  text eol=lf
+*.yml          text eol=lf

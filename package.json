@@ -1,6 +1,6 @@
 {
   "name": "andrewjtorr.es",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Personal website of Andrew Torres",
   "keywords": [
     "personal-website",
@@ -115,8 +115,8 @@
     "webpack-dev-server": "^3.7.2"
   },
   "engines": {
-    "node": ">=10.15.1",
-    "yarn": ">=1.13.0"
+    "node": ">=10.16.0",
+    "yarn": ">=1.15.2"
   },
   "private": true,
   "browserslist": [
