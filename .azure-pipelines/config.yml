@@ -1,6 +1,8 @@
 variables:
   - name: NODE_VERSION
     value: '>=10.16.0'
+  - name: REPORTS_DIR
+    value: reports
   - name: YARN_CACHE_DIR
     value: $(Pipeline.Workspace)/.yarn
 stages:
@@ -11,14 +13,16 @@ stages:
         displayName: Static Analysis
         pool:
           vmImage: ubuntu-16.04
-        variables:
-          - name: REPORTS_DIR
-            value: reports
         steps:
           - task: NodeTool@0
             displayName: Install Node
             inputs:
               versionSpec: $(NODE_VERSION)
+          - task: CacheBeta@0
+            inputs:
+              key: reports
+              path: $(REPORTS_DIR)
+            displayName: Cache reports
           - task: CacheBeta@0
             inputs:
               key: $(Build.SourcesDirectory)/yarn.lock
@@ -32,9 +36,6 @@ stages:
             displayName: Lint styles
           - script: yarn --silent lint:types
             displayName: Lint types
-          - publish: $(REPORTS_DIR)
-            displayName: Publish reports artifact
-            artifact: static-analysis
           - task: PublishTestResults@2
             displayName: Publish tests results
             condition: succeededOrFailed()
@@ -50,13 +51,16 @@ stages:
         variables:
           - name: COVERAGE_DIR
             value: coverage
-          - name: REPORTS_DIR
-            value: reports
         steps:
           - task: NodeTool@0
             displayName: Install Node
             inputs:
               versionSpec: $(NODE_VERSION)
+          - task: CacheBeta@0
+            inputs:
+              key: reports
+              path: $(REPORTS_DIR)
+            displayName: Cache reports
           - task: CacheBeta@0
             inputs:
               key: $(Build.SourcesDirectory)/yarn.lock
@@ -75,7 +79,7 @@ stages:
             artifact: coverage
           - publish: $(REPORTS_DIR)
             displayName: Publish reports artifact
-            artifact: test
+            artifact: reports
           - task: PublishTestResults@2
             displayName: Publish tests results
             condition: succeededOrFailed()
