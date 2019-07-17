@@ -19,7 +19,9 @@ stages:
           - template: templates/cache-yarn-packages.yml
             parameters:
               path: $(YARN_CACHE_DIR)
-          - script: yarn install --cache-folder $(YARN_CACHE_DIR) --frozen-lockfile
+          - script: |
+              echo $(Build)
+              yarn install --cache-folder $(YARN_CACHE_DIR) --frozen-lockfile
             displayName: Install Node dependencies
       - job: static_analysis
         displayName: Static Analysis
