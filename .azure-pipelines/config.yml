@@ -25,7 +25,9 @@ stages:
                 $(Build.SourcesDirectory)/yarn.lock
               path: $(Pipeline.Workspace)/.yarn
             displayName: Cache Yarn packages
-          - script: yarn install --frozen-lockfile
+          - script: |
+              yarn install --frozen-lockfile
+              yarn cache dir
             displayName: Install Node dependencies
           - script: yarn --silent lint:scripts --format junit --output-file $(REPORTS_DIR)/lint-scripts.xml
             displayName: Lint scripts
