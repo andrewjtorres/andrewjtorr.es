@@ -1,6 +1,8 @@
 variables:
   - name: NODE_VERSION
     value: '>=10.16.0'
+  - name: YARN_CACHE_DIR
+    value: $(Pipeline.Workspace)/.yarn
 stages:
   - stage: root
     displayName: Root
@@ -23,12 +25,9 @@ stages:
                 yarn
                 $(Agent.OS)
                 $(Build.SourcesDirectory)/yarn.lock
-              path: $(Pipeline.Workspace)/.yarn
+              path: YARN_CACHE_DIR
             displayName: Cache Yarn packages
-          - script: |
-              yarn install --frozen-lockfile
-              yarn cache dir
-              echo $(Pipeline.Workspace)/.yarn
+          - script: yarn install --cache-folder $(YARN_CACHE_DIR) --frozen-lockfile
             displayName: Install Node dependencies
           - script: yarn --silent lint:scripts --format junit --output-file $(REPORTS_DIR)/lint-scripts.xml
             displayName: Lint scripts
@@ -67,9 +66,9 @@ stages:
                 yarn
                 $(Agent.OS)
                 $(Build.SourcesDirectory)/yarn.lock
-              path: $(Pipeline.Workspace)/.yarn
+              path: YARN_CACHE_DIR
             displayName: Cache Yarn packages
-          - script: yarn install --frozen-lockfile
+          - script: yarn install --cache-folder $(YARN_CACHE_DIR) --frozen-lockfile
             displayName: Install Node dependencies
           - script: yarn --silent test:units --coverage --coverageDirectory $(COVERAGE_DIR) --runInBand --reporters default jest-junit
             displayName: Test units
