@@ -5,7 +5,7 @@ steps:
   - task: CacheBeta@0
     inputs:
       key: |
-        yarn-packages-${{ parameters.version }}-${{ coalesce($(System.PullRequest.SourceBranch), $(Build.SourceBranchName)) }}
+        yarn-packages-${{ parameters.version }}-${{ coalesce(System.PullRequest.SourceBranch, Build.SourceBranchName) }}
         $(Build.SourcesDirectory)/yarn.lock
       path: ${{ parameters.path }}
     displayName: Cache Yarn packages
