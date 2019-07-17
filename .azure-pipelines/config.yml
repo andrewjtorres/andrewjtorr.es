@@ -1,0 +1,80 @@
+variables:
+  - name: NODE_VERSION
+    value: '>=10.16.0'
+stages:
+  - stage: root
+    displayName: Root
+    jobs:
+      - job: static_analysis
+        displayName: Static Analysis
+        pool:
+          vmImage: ubuntu-16.04
+        variables:
+          - name: REPORTS_DIR
+            value: reports
+        steps:
+          - task: NodeTool@0
+            displayName: Install Node
+            inputs:
+              versionSpec: $(NODE_VERSION)
+          - script: yarn install
+            displayName: Install Node dependencies
+          - script: yarn --silent lint-scripts --format junit --output-file $(REPORTS_DIR)/lint-scripts.xml
+            displayName: Lint scripts
+          - script: yarn --silent lint-styles --custom-formatter node_modules/stylelint-junit-formatter > $(REPORTS_DIR)/lint-styles.xml
+            displayName: Lint styles
+          - script: yarn --silent lint-types
+            displayName: Lint types
+          - publish: $(REPORTS_DIR)
+            displayName: Publish reports artifact
+            artifact: static-analysis
+          - task: PublishTestResults@2
+            displayName: Publish tests results
+            condition: succeededOrFailed()
+            inputs:
+              testResultsFiles: '**/*.xml'
+              searchFolder: $(System.DefaultWorkingDirectory)/$(REPORTS_DIR)
+      - job: test
+        displayName: Test
+        dependsOn:
+          - static_analysis
+        pool:
+          vmImage: ubuntu-16.04
+        variables:
+          - name: COVERAGE_DIR
+            value: coverage
+          - name: REPORTS_DIR
+            value: reports
+        steps:
+          - task: NodeTool@0
+            displayName: Install Node
+            inputs:
+              versionSpec: $(NODE_VERSION)
+          - script: yarn install
+            displayName: Install Node dependencies
+          - script: yarn --silent test-units --coverage --coverageDirectory $(COVERAGE_DIR) --runInBand --reporters default jest-junit
+            displayName: Test units
+            env:
+              JEST_JUNIT_OUTPUT: $(REPORTS_DIR)/test-units.xml
+          - script: yarn codecov -t $(CODECOV_TOKEN)
+            displayName: Publish code coverage results
+          - publish: $(COVERAGE_DIR)
+            displayName: Publish coverage artifact
+            artifact: coverage
+          - publish: $(REPORTS_DIR)
+            displayName: Publish reports artifact
+            artifact: test
+          - task: PublishTestResults@2
+            displayName: Publish tests results
+            condition: succeededOrFailed()
+            inputs:
+              testResultsFiles: '**/*.xml'
+              searchFolder: $(System.DefaultWorkingDirectory)/$(REPORTS_DIR)
+trigger:
+  branches:
+    include:
+      - master
+pr:
+  branches:
+    include:
+      - master
