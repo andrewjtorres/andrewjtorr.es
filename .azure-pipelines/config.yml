@@ -1,4 +1,6 @@
 variables:
+  - name: COVERAGE_DIR
+    value: coverage
   - name: NODE_VERSION
     value: '>=10.16.0'
   - name: REPORTS_DIR
@@ -9,8 +11,32 @@ stages:
   - stage: root
     displayName: Root
     jobs:
+      - job: setup
+        displayName: Setup
+        pool:
+          vmImage: ubuntu-16.04
+        steps:
+          - task: NodeTool@0
+            displayName: Install Node
+            inputs:
+              versionSpec: $(NODE_VERSION)
+          - script: mkdir --parents $(COVERAGE_DIR) $(REPORTS_DIR) $(YARN_CACHE_DIR)
+            displayName: Create cache directories
+          - template: templates/cache-coverage.yml
+            parameters:
+              path: $(COVERAGE_DIR)
+          - template: templates/cache-reports.yml
+            parameters:
+              path: $(REPORTS_DIR)
+          - template: templates/cache-yarn-packages.yml
+            parameters:
+              path: $(YARN_CACHE_DIR)
+          - script: yarn install --cache-folder $(YARN_CACHE_DIR) --frozen-lockfile
+            displayName: Install Node dependencies
       - job: static_analysis
         displayName: Static Analysis
+        dependsOn:
+          - setup
         pool:
           vmImage: ubuntu-16.04
         steps:
@@ -41,17 +67,17 @@ stages:
       - job: test
         displayName: Test
         dependsOn:
-          - static_analysis
+          - setup
         pool:
           vmImage: ubuntu-16.04
-        variables:
-          - name: COVERAGE_DIR
-            value: coverage
         steps:
           - task: NodeTool@0
             displayName: Install Node
             inputs:
               versionSpec: $(NODE_VERSION)
+          - template: templates/cache-coverage.yml
+            parameters:
+              path: $(COVERAGE_DIR)
           - template: templates/cache-reports.yml
             parameters:
               path: $(REPORTS_DIR)
@@ -66,18 +92,32 @@ stages:
               JEST_JUNIT_OUTPUT: $(REPORTS_DIR)/test-units.xml
           - script: yarn codecov -t $(CODECOV_TOKEN)
             displayName: Publish code coverage results
-          - publish: $(COVERAGE_DIR)
-            displayName: Publish coverage artifact
-            artifact: coverage
-          - publish: $(REPORTS_DIR)
-            displayName: Publish reports artifact
-            artifact: reports
           - task: PublishTestResults@2
             displayName: Publish tests results
             condition: succeededOrFailed()
             inputs:
               testResultsFiles: '**/*.xml'
               searchFolder: $(System.DefaultWorkingDirectory)/$(REPORTS_DIR)
+      - job: publish
+        displayName: Publish
+        dependsOn:
+          - static_analysis
+          - test
+        pool:
+          vmImage: ubuntu-16.04
+        steps:
+          - template: templates/cache-coverage.yml
+            parameters:
+              path: $(COVERAGE_DIR)
+          - template: templates/cache-reports.yml
+            parameters:
+              path: $(REPORTS_DIR)
+          - publish: $(COVERAGE_DIR)
+            displayName: Publish coverage artifact
+            artifact: coverage
+          - publish: $(REPORTS_DIR)
+            displayName: Publish reports artifact
+            artifact: reports
 trigger:
   branches:
     include:
