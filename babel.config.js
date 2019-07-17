@@ -3,28 +3,28 @@
 const { node } = require('./package.json').engines
 
 const createConfig = ({ caller, env }) => {
-  const isEnvDev = env('development')
-  const isEnvProd = env('production')
-  const isEnvTest = env('test')
+  const isDev = env('development')
+  const isProd = env('production')
+  const isTest = env('test')
 
   return {
     plugins: [
       ['@babel/plugin-proposal-object-rest-spread', { useBuiltIns: true }],
       '@babel/plugin-syntax-dynamic-import',
-      ['@babel/plugin-transform-runtime', { helpers: false }],
+      ['@babel/plugin-transform-runtime', { corejs: 3, helpers: false }],
       'polished',
-      ['styled-components', { displayName: isEnvDev, pure: isEnvProd }],
+      ['styled-components', { displayName: isDev, pure: isProd }],
     ],
     presets: [
       [
         '@babel/preset-env',
-        caller(({ target } = { target: 'node' }) => target === 'web')
-          ? { modules: false, useBuiltIns: 'entry' }
-          : { targets: { node: node.match(/(\d+\.?)+/)[0] } },
+        caller(({ target = 'node' } = {}) => target === 'node')
+          ? { targets: { node: node.match(/(\d+\.?)+/)[0] } }
+          : { corejs: 3, modules: false, useBuiltIns: 'entry' },
       ],
       [
         '@babel/preset-react',
-        { development: isEnvDev || isEnvTest, useBuiltIns: true },
+        { development: isDev || isTest, useBuiltIns: true },
       ],
       '@babel/preset-typescript',
     ],
