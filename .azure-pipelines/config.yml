@@ -25,10 +25,17 @@ stages:
             displayName: Cache reports
           - task: CacheBeta@0
             inputs:
-              key: $(Build.SourcesDirectory)/yarn.lock
+              key: |
+                yarn-packages-v1-
+                $(Build.SourcesDirectory)/yarn.lock
               path: $(YARN_CACHE_DIR)
             displayName: Cache Yarn packages
-          - script: yarn install --cache-folder $(YARN_CACHE_DIR) --frozen-lockfile
+          - script: |
+              yarn install --cache-folder $(YARN_CACHE_DIR) --frozen-lockfile
+              echo $(Build.SourceBranch)
+              echo $(Build.SourceBranchName)
+              echo $(System.PullRequest.SourceBranch)
+              echo $(System.PullRequest.TargetBranch)
             displayName: Install Node dependencies
           - script: yarn --silent lint:scripts --format junit --output-file $(REPORTS_DIR)/lint-scripts.xml
             displayName: Lint scripts
@@ -63,7 +70,9 @@ stages:
             displayName: Cache reports
           - task: CacheBeta@0
             inputs:
-              key: $(Build.SourcesDirectory)/yarn.lock
+              key: |
+                yarn-packages-v1-
+                $(Build.SourcesDirectory)/yarn.lock
               path: $(YARN_CACHE_DIR)
             displayName: Cache Yarn packages
           - script: yarn install --cache-folder $(YARN_CACHE_DIR) --frozen-lockfile
