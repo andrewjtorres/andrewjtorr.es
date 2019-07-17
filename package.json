@@ -15,15 +15,15 @@
     "url": "git+https://github.com/ajtorres9/andrewjtorr.es.git"
   },
   "scripts": {
-    "build-stats": "yarn build --analyze --release",
     "build": "webpack --config config/webpack.config.js",
-    "lint": "yarn lint-scripts && yarn lint-styles && yarn lint-types",
-    "lint-scripts": "eslint --cache --ignore-path .gitignore --ignore-pattern '!**/.*' '**/*.{js,ts,tsx}'",
-    "lint-styles": "stylelint --cache --ignore-path .gitignore --ignore-pattern '!**/.*' '**/*.{ts,tsx}'",
-    "lint-types": "tsc --noEmit",
+    "build:stats": "yarn build --analyze --release",
+    "lint": "yarn lint:scripts && yarn lint:styles && yarn lint:types",
+    "lint:scripts": "eslint --cache --ignore-path .gitignore --ignore-pattern \"!**/.*\" \"**/*.{js,ts,tsx}\"",
+    "lint:styles": "stylelint --cache --ignore-path .gitignore --ignore-pattern \"!**/.*\" \"**/*.{ts,tsx}\"",
+    "lint:types": "tsc --noEmit",
     "start": "webpack-dev-server --config config/webpack.config.js",
-    "test": "yarn test-units",
-    "test-units": "jest"
+    "test": "yarn test:units",
+    "test:units": "jest"
   },
   "config": {
     "commitizen": {
