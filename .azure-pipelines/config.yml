@@ -17,7 +17,15 @@ stages:
             displayName: Install Node
             inputs:
               versionSpec: $(NODE_VERSION)
-          - script: yarn install
+          - task: CacheBeta@0
+            input:
+              key: |
+                yarn
+                $(Agent.OS)
+                $(Build.SourcesDirectory)/yarn.lock
+              path: $(Pipeline.Workspace)/.yarn
+            displayName: Cache Yarn packages
+          - script: yarn install --frozen-lockfile
             displayName: Install Node dependencies
           - script: yarn --silent lint:scripts --format junit --output-file $(REPORTS_DIR)/lint-scripts.xml
             displayName: Lint scripts
@@ -50,7 +58,15 @@ stages:
             displayName: Install Node
             inputs:
               versionSpec: $(NODE_VERSION)
-          - script: yarn install
+          - task: CacheBeta@0
+            input:
+              key: |
+                yarn
+                $(Agent.OS)
+                $(Build.SourcesDirectory)/yarn.lock
+              path: $(Pipeline.Workspace)/.yarn
+            displayName: Cache Yarn packages
+          - script: yarn install --frozen-lockfile
             displayName: Install Node dependencies
           - script: yarn --silent test:units --coverage --coverageDirectory $(COVERAGE_DIR) --runInBand --reporters default jest-junit
             displayName: Test units
