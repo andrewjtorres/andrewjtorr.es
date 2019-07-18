@@ -3,15 +3,10 @@ parameters:
   version: 'v1'
 steps:
   - bash: |
-      echo 1 ${{ parameters.path }}
-      echo 2 $(parameters.path)
-
-      if [[ -z "$PATH_PARAMETER" ]]; then
+      if [[ -z "${{ parameters.path }}" ]]; then
         echo '##vso[task.logissue type=error;]Missing template parameter "path"'
         echo '##vso[task.complete result=Failed;]DONE'
       fi
-    env:
-      PATH_PARAMETER: ${{ parameters.path }}
     displayName: Check for required parameters
   - bash: |
       if [[ -z "$(system.pullRequest.sourceBranch)" ]]; then
