@@ -1,11 +1,20 @@
 parameters:
+  branch: 'master'
   path: ''
   version: 'v1'
 steps:
+  - bash: |
+      if [ -z "$PATH" ]; then
+        echo "##vso[task.logissue type=error;]Missing template parameter \"path\""
+        echo "##vso[task.complete result=Failed;]"
+      fi
+    env:
+      PATH: ${{ parameters.path }}
+    displayName: Check for required parameters
   - task: CacheBeta@0
     inputs:
       key: |
-        yarn-packages-${{ parameters.version }}-${{ coalesce(variables['System.PullRequest.SourceBranch'], variables['Build.SourceBranchName'], 'master') }}
-        $(Build.SourcesDirectory)/yarn.lock
+        yarn-packages-${{ parameters.version }}-${{ parameters.branch ) }}
+        $(build.sourcesDirectory)/yarn.lock
       path: ${{ parameters.path }}
     displayName: Cache Yarn packages

@@ -1,8 +1,13 @@
 variables:
+  - name: BRANCH
+    value: $(build.sourceBranchName)
+  - ${{ if eq(variables.build.sourceBranchName, 'merge') }}:
+      - name: BRANCH
+        value: $(system.pullRequest.sourceBranch)
   - name: NODE_VERSION
     value: 10.16.0
   - name: YARN_CACHE_DIR
-    value: $(Pipeline.Workspace)/.yarn
+    value: $(pipeline.workspace)/.yarn
 stages:
   - stage: root
     displayName: Root
@@ -18,21 +23,9 @@ stages:
               versionSpec: $(NODE_VERSION)
           - template: templates/cache-yarn-packages.yml
             parameters:
+              branch: $(BRANCH)
               path: $(YARN_CACHE_DIR)
-          - script: |
-              echo 1 $(build.sourceBranch)
-              echo 2 $(build.sourceBranchName)
-              echo 3 $(system.pullRequest.sourceBranch)
-              echo 4 $(system.pullRequest.targetBranch)
-              echo 5 ${{ variables['build.sourceBranch'] }}
-              echo 6 ${{ variables['build.sourceBranchName'] }}
-              echo 7 ${{ variables['system.pullRequest.sourceBranch'] }}
-              echo 8 ${{ variables['system.pullRequest.targetBranch'] }}
-              echo 9 ${{ variables['system.definitionId'] }}
-              echo 10 ${{ variables['system.definitionId'] }}
-              echo 11 ${{ variables['System.PullRequest'] }}
-              echo 12 ${{ variables['system.pullRequest'] }}
-              yarn install --cache-folder $(YARN_CACHE_DIR) --frozen-lockfile
+          - script: yarn install --cache-folder $(YARN_CACHE_DIR) --frozen-lockfile
             displayName: Install Node dependencies
       - job: static_analysis
         displayName: Static Analysis
@@ -50,6 +43,7 @@ stages:
               versionSpec: $(NODE_VERSION)
           - template: templates/cache-yarn-packages.yml
             parameters:
+              branch: $(BRANCH)
               path: $(YARN_CACHE_DIR)
           - script: yarn install --cache-folder $(YARN_CACHE_DIR) --frozen-lockfile
             displayName: Install Node dependencies
@@ -64,7 +58,7 @@ stages:
             condition: succeededOrFailed()
             inputs:
               testResultsFiles: '**/*.xml'
-              searchFolder: $(System.DefaultWorkingDirectory)/$(REPORTS_DIR)
+              searchFolder: $(system.defaultWorkingDirectory)/$(REPORTS_DIR)
       - job: test
         displayName: Test
         dependsOn:
@@ -83,6 +77,7 @@ stages:
               versionSpec: $(NODE_VERSION)
           - template: templates/cache-yarn-packages.yml
             parameters:
+              branch: $(BRANCH)
               path: $(YARN_CACHE_DIR)
           - script: yarn install --cache-folder $(YARN_CACHE_DIR) --frozen-lockfile
             displayName: Install Node dependencies
@@ -97,7 +92,7 @@ stages:
             condition: succeededOrFailed()
             inputs:
               testResultsFiles: '**/*.xml'
-              searchFolder: $(System.DefaultWorkingDirectory)/$(REPORTS_DIR)
+              searchFolder: $(system.defaultWorkingDirectory)/$(REPORTS_DIR)
 trigger:
   branches:
     include:
