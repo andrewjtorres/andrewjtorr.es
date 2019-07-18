@@ -17,7 +17,8 @@
   "scripts": {
     "build": "webpack --config config/webpack.config.js",
     "build:stats": "yarn build --analyze --release",
-    "lint": "yarn lint:scripts && yarn lint:styles && yarn lint:types",
+    "lint": "yarn lint:files && yarn lint:scripts && yarn lint:styles && yarn lint:types",
+    "lint:files": "prettylint --ignore-path .gitignore \"**/*.{json,md,yml}\"",
     "lint:scripts": "eslint --cache --ignore-path .gitignore --ignore-pattern \"!**/.*\" \"**/*.{js,ts,tsx}\"",
     "lint:styles": "stylelint --cache --ignore-path .gitignore --ignore-pattern \"!**/.*\" \"**/*.{ts,tsx}\"",
     "lint:types": "tsc --noEmit",
@@ -98,6 +99,7 @@
     "lint-staged": "^9.2.0",
     "polished": "^3.4.1",
     "prettier": "^1.18.2",
+    "prettylint": "^1.0.0",
     "semantic-release": "^15.13.18",
     "stylelint": "^10.1.0",
     "stylelint-config-prettier": "^5.2.0",
@@ -138,7 +140,7 @@
       "git add"
     ],
     "*.{json,md,yml}": [
-      "prettier --write",
+      "prettylint --fix",
       "git add"
     ]
   }

@@ -40,6 +40,8 @@ stages:
               path: $(YARN_CACHE_DIR)
           - script: yarn install --cache-folder $(YARN_CACHE_DIR) --frozen-lockfile
             displayName: Install Node dependencies
+          - script: yarn --silent lint:files
+            displayName: Lint files
           - script: yarn --silent lint:scripts --format junit --output-file $(REPORTS_DIR)/lint-scripts.xml
             displayName: Lint scripts
           - script: yarn --silent lint:styles --custom-formatter node_modules/stylelint-junit-formatter > $(REPORTS_DIR)/lint-styles.xml
