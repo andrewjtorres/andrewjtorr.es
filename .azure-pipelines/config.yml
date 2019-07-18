@@ -20,16 +20,18 @@ stages:
             parameters:
               path: $(YARN_CACHE_DIR)
           - script: |
-              echo 1 $(Build.SourceBranch)
-              echo 2 $(Build.SourceBranchName)
-              echo 3 $(System.PullRequest.SourceBranch)
-              echo 4 $(System.PullRequest.TargetBranch)
-              echo 5 ${{ variables['Build.SourceBranch'] }}
-              echo 6 ${{ variables['Build.SourceBranchName'] }}
-              echo 7 ${{ variables['System.PullRequest.SourceBranch'] }}
-              echo 8 ${{ variables['System.PullRequest.TargetBranch'] }}
-              echo 9 ${{ variables['System.DefinitionId'] }}
+              echo 1 $(build.sourceBranch)
+              echo 2 $(build.sourceBranchName)
+              echo 3 $(system.pullRequest.sourceBranch)
+              echo 4 $(system.pullRequest.targetBranch)
+              echo 5 ${{ variables['build.sourceBranch'] }}
+              echo 6 ${{ variables['build.sourceBranchName'] }}
+              echo 7 ${{ variables['system.pullRequest.sourceBranch'] }}
+              echo 8 ${{ variables['system.pullRequest.targetBranch'] }}
+              echo 9 ${{ variables['system.definitionId'] }}
               echo 10 ${{ variables['system.definitionId'] }}
+              echo 11 ${{ variables['System.PullRequest'] }}
+              echo 12 ${{ variables['system.pullRequest'] }}
               yarn install --cache-folder $(YARN_CACHE_DIR) --frozen-lockfile
             displayName: Install Node dependencies
       - job: static_analysis
