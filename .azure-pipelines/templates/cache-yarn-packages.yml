@@ -11,7 +11,7 @@ steps:
       PATH_PARAMETER: ${{ parameters.path }}
     displayName: Check for required parameters
   - bash: |
-      echo $([[ -z system.pullRequest.sourceBranch ]] && build.sourceBranchName || system.pullRequest.sourceBranch)
+      [[ -z "$(system.pullRequest.sourceBranch)" ]] && echo $(build.sourceBranchName) || echo $(system.pullRequest.sourceBranch)
 
       [[ -z "$SOURCE_BRANCH" ]] && echo "##vso[task.setvariable variable=sourceBranch]$(build.sourceBranchName)" || echo "##vso[task.setvariable variable=sourceBranch]$(system.pullRequest.sourceBranch)"
     env:
