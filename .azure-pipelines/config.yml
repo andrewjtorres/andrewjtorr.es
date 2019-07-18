@@ -1,8 +1,8 @@
 variables:
   - name: NODE_VERSION
-    value: '>=10.16.0'
+    value: 10.16.0
   - name: YARN_CACHE_DIR
-    value: $(Pipeline.Workspace)/.yarn
+    value: $(pipeline.workspace)/.yarn
 stages:
   - stage: root
     displayName: Root
@@ -51,7 +51,7 @@ stages:
             condition: succeededOrFailed()
             inputs:
               testResultsFiles: '**/*.xml'
-              searchFolder: $(System.DefaultWorkingDirectory)/$(REPORTS_DIR)
+              searchFolder: $(system.defaultWorkingDirectory)/$(REPORTS_DIR)
       - job: test
         displayName: Test
         dependsOn:
@@ -84,7 +84,7 @@ stages:
             condition: succeededOrFailed()
             inputs:
               testResultsFiles: '**/*.xml'
-              searchFolder: $(System.DefaultWorkingDirectory)/$(REPORTS_DIR)
+              searchFolder: $(system.defaultWorkingDirectory)/$(REPORTS_DIR)
 trigger:
   branches:
     include:
