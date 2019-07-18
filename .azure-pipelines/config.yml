@@ -1,9 +1,6 @@
 variables:
   - name: BRANCH
-    value: $(build.sourceBranchName)
-  - ${{ if eq(variables.BRANCH, 'merge') }}:
-      - name: BRANCH
-        value: $(system.pullRequest.sourceBranch)
+    value: $(system.pullRequest.sourceBranch)
   - name: NODE_VERSION
     value: 10.16.0
   - name: YARN_CACHE_DIR

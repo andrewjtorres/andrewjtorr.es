@@ -1,5 +1,5 @@
 parameters:
-  branch: 'master'
+  branch: ''
   path: ''
   version: 'v1'
 steps:
@@ -14,7 +14,7 @@ steps:
   - task: CacheBeta@0
     inputs:
       key: |
-        yarn-packages-${{ parameters.version }}-${{ parameters.branch }}
+        yarn-packages-${{ parameters.version }}-${{ coalesce(parameters.branch, variables.build.sourceBranchName, 'master')  }}
         $(build.sourcesDirectory)/yarn.lock
       path: ${{ parameters.path }}
     displayName: Cache Yarn packages
