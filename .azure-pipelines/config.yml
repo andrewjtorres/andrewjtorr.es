@@ -1,7 +1,7 @@
 variables:
   - name: BRANCH
     value: $(build.sourceBranchName)
-  - ${{ if eq(variables.build.sourceBranchName, 'merge') }}:
+  - ${{ if eq(variables.BRANCH, 'merge') }}:
       - name: BRANCH
         value: $(system.pullRequest.sourceBranch)
   - name: NODE_VERSION
