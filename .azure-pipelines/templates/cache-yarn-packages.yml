@@ -4,12 +4,12 @@ parameters:
   version: 'v1'
 steps:
   - bash: |
-      if [ -z "$PATH" ]; then
+      if [ -z "$PATH_PARAMETER" ]; then
         echo "##vso[task.logissue type=error;]Missing template parameter \"path\""
         echo "##vso[task.complete result=Failed;]"
       fi
     env:
-      PATH: ${{ parameters.path }}
+      PATH_PARAMETER: ${{ parameters.path }}
     displayName: Check for required parameters
   - task: CacheBeta@0
     inputs:
