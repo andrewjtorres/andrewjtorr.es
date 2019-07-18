@@ -24,6 +24,10 @@ stages:
               echo 2 $(Build.SourceBranchName)
               echo 3 $(System.PullRequest.SourceBranch)
               echo 4 $(System.PullRequest.TargetBranch)
+              echo 5 ${{ variables['Build.SourceBranch'] }}
+              echo 6 ${{ variables['Build.SourceBranchName'] }}
+              echo 7 ${{ variables['System.PullRequest.SourceBranch'] }}
+              echo 8 ${{ variables['System.PullRequest.TargetBranch'] }}
               yarn install --cache-folder $(YARN_CACHE_DIR) --frozen-lockfile
             displayName: Install Node dependencies
       - job: static_analysis
