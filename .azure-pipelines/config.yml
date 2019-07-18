@@ -1,6 +1,4 @@
 variables:
-  - name: BRANCH
-    value: $(system.pullRequest.sourceBranch)
   - name: NODE_VERSION
     value: 10.16.0
   - name: YARN_CACHE_DIR
@@ -20,7 +18,6 @@ stages:
               versionSpec: $(NODE_VERSION)
           - template: templates/cache-yarn-packages.yml
             parameters:
-              branch: $(BRANCH)
               path: $(YARN_CACHE_DIR)
           - script: yarn install --cache-folder $(YARN_CACHE_DIR) --frozen-lockfile
             displayName: Install Node dependencies
@@ -40,7 +37,6 @@ stages:
               versionSpec: $(NODE_VERSION)
           - template: templates/cache-yarn-packages.yml
             parameters:
-              branch: $(BRANCH)
               path: $(YARN_CACHE_DIR)
           - script: yarn install --cache-folder $(YARN_CACHE_DIR) --frozen-lockfile
             displayName: Install Node dependencies
@@ -74,7 +70,6 @@ stages:
               versionSpec: $(NODE_VERSION)
           - template: templates/cache-yarn-packages.yml
             parameters:
-              branch: $(BRANCH)
               path: $(YARN_CACHE_DIR)
           - script: yarn install --cache-folder $(YARN_CACHE_DIR) --frozen-lockfile
             displayName: Install Node dependencies
