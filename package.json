@@ -74,7 +74,7 @@
     "babel-plugin-styled-components": "^1.10.6",
     "codecov": "^3.5.0",
     "cz-conventional-changelog": "^3.0.1",
-    "eslint": "^6.0.1",
+    "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-config-standard": "^13.0.1",
     "eslint-config-standard-react": "^8.0.0",
