@@ -100,7 +100,7 @@
     "polished": "^3.4.1",
     "prettier": "^1.18.2",
     "prettylint": "^1.0.0",
-    "semantic-release": "^15.13.18",
+    "semantic-release": "^15.13.19",
     "stylelint": "^10.1.0",
     "stylelint-config-prettier": "^5.2.0",
     "stylelint-config-standard": "^18.3.0",
