@@ -94,7 +94,6 @@
     "jest": "^24.8.0",
     "jest-circus": "^24.8.0",
     "jest-config": "^24.8.0",
-    "jest-junit": "^7.0.0",
     "jest-styled-components": "7.0.0-beta.1",
     "lint-staged": "^9.2.1",
     "polished": "^3.4.1",
@@ -105,7 +104,6 @@
     "stylelint-config-prettier": "^5.2.0",
     "stylelint-config-standard": "^18.3.0",
     "stylelint-config-styled-components": "^0.1.1",
-    "stylelint-junit-formatter": "^0.2.1",
     "stylelint-order": "^3.0.1",
     "stylelint-processor-styled-components": "^1.8.0",
     "terser-webpack-plugin": "^1.4.1",
@@ -117,8 +115,8 @@
     "webpack-dev-server": "^3.7.2"
   },
   "engines": {
-    "node": ">=10.16.0",
-    "yarn": ">=1.15.2"
+    "node": ">=10.16.3",
+    "yarn": ">=1.16.0"
   },
   "private": true,
   "browserslist": [
