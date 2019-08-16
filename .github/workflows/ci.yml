@@ -8,7 +8,7 @@ on:
       - master
 jobs:
   static_analysis:
-    name: Static Analysis
+    name: Static Analysis on ${{ matrix.os }} with Node ${{ matrix.node_version }}
     runs-on: ${{ matrix.host }}
     steps:
       - name: Checkout
@@ -36,6 +36,13 @@ jobs:
         node_version:
           - 10.16.3
           - 12.8.1
+        include:
+          - host: macOS-10.14
+            os: macOS
+          - host: ubuntu-18.04
+            os: Linux
+          - host: windows-2019
+            os: Windows
   test:
     name: Test on ${{ matrix.os }} with Node ${{ matrix.node_version }}
     runs-on: ${{ matrix.host }}
