@@ -6,7 +6,6 @@
 
 > Personal website of Andrew Torres
 
-[![Azure Pipelines](https://flat.badgen.net/azure-pipelines/ajtorres9/andrewjtorr.es/ajtorres9.andrewjtorr.es/master?label=build)](https://dev.azure.com/ajtorres9/andrewjtorr.es/_build/latest?definitionId=4)
 [![Codecov](https://flat.badgen.net/codecov/c/github/ajtorres9/andrewjtorr.es/master)](https://codecov.io/gh/ajtorres9/andrewjtorr.es)
 [![Code Style](https://flat.badgen.net/badge/code%20style/prettier/ff69b4)](https://github.com/prettier/prettier)
 [![All Contributors](https://flat.badgen.net/badge/all%20contributors/1/orange)](#contributors)
