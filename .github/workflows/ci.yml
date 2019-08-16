@@ -8,7 +8,7 @@ on:
       - master
 jobs:
   static_analysis:
-    name: Static Analysis on ${{ matrix.os }} with Node ${{ matrix.node_major_version }}
+    name: Static Analysis on ${{ matrix.os }} with Node ${{ matrix.node_version }}
     runs-on: ${{ matrix.host }}
     steps:
       - name: Checkout
@@ -43,12 +43,8 @@ jobs:
             os: Linux
           - host: windows-2019
             os: Windows
-          - node_version: 10.16.3
-            node_major_version: 10
-          - node_version: 12.8.1
-            node_major_version: 12
   test:
-    name: Test on ${{ matrix.os }} with Node ${{ matrix.node_major_version }}
+    name: Test on ${{ matrix.os }} with Node ${{ matrix.node_version }}
     runs-on: ${{ matrix.host }}
     steps:
       - name: Checkout
@@ -60,13 +56,13 @@ jobs:
       - name: Install Node dependencies
         run: yarn install --frozen-lockfile
       - name: Test units
-        if: matrix.node_major_version != 10 || matrix.os != 'Linux'
+        if: matrix.node_version != '10.16.3' || matrix.os != 'Linux'
         run: yarn --silent test:units --runInBand
       - name: Test units
-        if: matrix.node_major_version == 10 && matrix.os == 'Linux'
+        if: matrix.node_version == '10.16.3' && matrix.os == 'Linux'
         run: yarn --silent test:units --coverage --runInBand
       - name: Publish code coverage results
-        if: matrix.node_major_version == 10 && matrix.os == 'Linux'
+        if: matrix.node_version == '10.16.3' && matrix.os == 'Linux'
         run: yarn codecov -t ${{  secrets.CODECOV_TOKEN }}
     strategy:
       matrix:
@@ -84,7 +80,3 @@ jobs:
             os: Linux
           - host: windows-2019
             os: Windows
-          - node_version: 10.16.3
-            node_major_version: 10
-          - node_version: 12.8.1
-            node_major_version: 12
