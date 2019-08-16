@@ -49,13 +49,13 @@ jobs:
       - name: Install Node dependencies
         run: yarn install --frozen-lockfile
       - name: Test units
-        if: matrix.node_version != 10.16.3 && matrix.os != ubuntu-18.04
+        if: matrix.node_version != '10.16.3' && matrix.os != 'ubuntu-18.04'
         run: yarn --silent test:units --runInBand
       - name: Test units
-        if: matrix.node_version == 10.16.3 && matrix.os == ubuntu-18.04
+        if: matrix.node_version == '10.16.3' && matrix.os == 'ubuntu-18.04'
         run: yarn --silent test:units --coverage --runInBand
       - name: Publish code coverage results
-        if: matrix.node_version == 10.16.3 && matrix.os == ubuntu-18.04
+        if: matrix.node_version == '10.16.3' && matrix.os == 'ubuntu-18.04'
         run: yarn codecov -t ${{  secrets.CODECOV_TOKEN }}
     strategy:
       matrix:
