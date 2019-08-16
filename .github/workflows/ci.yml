@@ -1,25 +1,3 @@
-aliases:
-  - &strategy
-    matrix:
-      host:
-        - macOS-10.14
-        - ubuntu-18.04
-        - windows-2019
-      node_version:
-        - 10.16.3
-        - 12.8.1
-      include:
-        - host: macOS-10.14
-          os: macOS
-        - host: ubuntu-18.04
-          os: Linux
-        - host: windows-2019
-          os: Windows
-        - node_version: 10.16.3
-          node_major_version: 10
-        - node_version: 12.8.1
-          node_major_version: 12
-
 name: CI
 on:
   pull_request:
@@ -49,7 +27,26 @@ jobs:
         run: yarn --silent lint:styles
       - name: Lint types
         run: yarn --silent lint:types
-    strategy: *strategy
+    strategy:
+      matrix:
+        host:
+          - macOS-10.14
+          - ubuntu-18.04
+          - windows-2019
+        node_version:
+          - 10.16.3
+          - 12.8.1
+        include:
+          - host: macOS-10.14
+            os: macOS
+          - host: ubuntu-18.04
+            os: Linux
+          - host: windows-2019
+            os: Windows
+          - node_version: 10.16.3
+            node_major_version: 10
+          - node_version: 12.8.1
+            node_major_version: 12
   test:
     name: Test on ${{ matrix.os }} with Node ${{ matrix.node_major_version }}
     runs-on: ${{ matrix.host }}
@@ -71,4 +68,23 @@ jobs:
       - name: Publish code coverage results
         if: matrix.node_major_version == 10 && matrix.os == 'Linux'
         run: yarn codecov -t ${{  secrets.CODECOV_TOKEN }}
-    strategy: *strategy
+    strategy:
+      matrix:
+        host:
+          - macOS-10.14
+          - ubuntu-18.04
+          - windows-2019
+        node_version:
+          - 10.16.3
+          - 12.8.1
+        include:
+          - host: macOS-10.14
+            os: macOS
+          - host: ubuntu-18.04
+            os: Linux
+          - host: windows-2019
+            os: Windows
+          - node_version: 10.16.3
+            node_major_version: 10
+          - node_version: 12.8.1
+            node_major_version: 12
