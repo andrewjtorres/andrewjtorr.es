@@ -16,6 +16,19 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1.1.1
         with:
-          version: 10.16.0
+          version: ${{ matrix.node_version }}
       - name: Install Node dependencies
         run: yarn install --frozen-lockfile
+      - name: Lint files
+        run: yarn --silent lint:files
+      - name: Lint scripts
+        run: yarn --silent lint:scripts
+      - name: Lint styles
+        run: yarn --silent lint:styles
+      - name: Lint types
+        run: yarn --silent lint:types
+    strategy:
+      matrix:
+        node_version:
+          - 10.16.3
+          - 12.8.1
