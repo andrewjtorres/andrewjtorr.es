@@ -59,17 +59,13 @@ jobs:
         run: yarn codecov -t ${{  secrets.CODECOV_TOKEN }}
     strategy:
       matrix:
-        host:
-          - macOS-10.14
-          - ubuntu-18.04
-          - windows-2019
         node_version:
           - 10.16.3
           - 12.8.1
         include:
-          - host: macOS-*
+          - host: macOS-10.14
             os: macOS
-          - host: ubuntu-*
+          - host: ubuntu-18.04
             os: Linux
-          - host: windows-*
+          - host: windows-2019
             os: Windows
