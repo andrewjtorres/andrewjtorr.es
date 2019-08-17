@@ -3,6 +3,7 @@
 const typescriptPlugin = require('@typescript-eslint/eslint-plugin')
 const prettierTypescriptConfig = require('eslint-config-prettier/@typescript-eslint')
 const jestPlugin = require('eslint-plugin-jest')
+const { resolve } = require('path')
 
 module.exports = {
   plugins: [
@@ -44,9 +45,12 @@ module.exports = {
     {
       files: ['**/*.ts?(x)', '**/.*/**/*.ts?(x)'],
       parser: typescriptPlugin.configs.base.parser,
+      parserOptions: { project: resolve(__dirname, 'tsconfig.json') },
       plugins: typescriptPlugin.configs.base.plugins,
       rules: {
         ...typescriptPlugin.configs.recommended.rules,
+        ...typescriptPlugin.configs['recommended-requiring-type-checking']
+          .rules,
         '@typescript-eslint/explicit-function-return-type': 'off',
         ...prettierTypescriptConfig.rules,
       },

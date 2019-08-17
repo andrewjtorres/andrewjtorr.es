@@ -4,13 +4,17 @@ import React from 'react'
 import Home from '.'
 
 test('The Home component should render correctly', () => {
-  window.matchMedia = jest.fn().mockImplementation((query: string) => ({
-    addListener: jest.fn(),
-    matches: false,
-    media: query,
-    onchange: null,
-    removeListener: jest.fn(),
-  }))
+  const { matchMedia } = window
+
+  Object.defineProperty(window, 'matchMedia', {
+    value: (query: string) => ({
+      addListener: jest.fn(),
+      matches: false,
+      media: query,
+      onchange: null,
+      removeListener: jest.fn(),
+    }),
+  })
 
   const { getByTestId } = render(<Home />)
   const github = getByTestId('github')
@@ -28,16 +32,22 @@ test('The Home component should render correctly', () => {
   expect(linkContainer).toContainElement(gitlab)
   expect(linkContainer).toContainElement(linkedin)
   expect(linkContainer).toContainElement(twitter)
+
+  Object.defineProperty(window, 'matchMedia', { value: matchMedia })
 })
 
 test('The Home component should render correctly on medium to extra large screens', () => {
-  window.matchMedia = jest.fn().mockImplementation((query: string) => ({
-    addListener: jest.fn(),
-    matches: true,
-    media: query,
-    onchange: null,
-    removeListener: jest.fn(),
-  }))
+  const { matchMedia } = window
+
+  Object.defineProperty(window, 'matchMedia', {
+    value: (query: string) => ({
+      addListener: jest.fn(),
+      matches: true,
+      media: query,
+      onchange: null,
+      removeListener: jest.fn(),
+    }),
+  })
 
   const { getByTestId } = render(<Home />)
   const github = getByTestId('github')
@@ -55,6 +65,8 @@ test('The Home component should render correctly on medium to extra large screen
   expect(linkContainer).not.toContainElement(gitlab)
   expect(linkContainer).not.toContainElement(linkedin)
   expect(linkContainer).not.toContainElement(twitter)
+
+  Object.defineProperty(window, 'matchMedia', { value: matchMedia })
 })
 
 test("Clicking the LinkedIn icon should navigate to Andrew Torres' LinkedIn profile", () => {
