@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
 
-import { renderWithRouter } from 'utilities/specification'
+import { renderWithRouter } from 'utils/specification'
 import Layout from '.'
 
 test('The Layout component should render correctly', () => {

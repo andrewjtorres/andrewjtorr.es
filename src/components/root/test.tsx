@@ -1,7 +1,7 @@
 import { waitForElement } from '@testing-library/react'
 import React from 'react'
 
-import { renderWithRouter } from 'utilities/specification'
+import { renderWithRouter } from 'utils/specification'
 import Root from '.'
 
 test('The Root component should render correctly', async () => {
