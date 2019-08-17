@@ -8,15 +8,15 @@ on:
       - master
 jobs:
   static_analysis:
-    name: Static Analysis on ${{ matrix.os }} with Node ${{ matrix.node_version }}
-    runs-on: ${{ matrix.host }}
+    name: Static Analysis
+    runs-on: ubuntu-18.04
     steps:
       - name: Checkout
         uses: actions/checkout@v1.0.0
       - name: Setup Node
         uses: actions/setup-node@v1.1.1
         with:
-          version: ${{ matrix.node_version }}
+          version: 10.16
       - name: Install Node dependencies
         run: yarn install --frozen-lockfile
       - name: Lint files
@@ -27,56 +27,19 @@ jobs:
         run: yarn --silent lint:styles
       - name: Lint types
         run: yarn --silent lint:types
-    strategy:
-      matrix:
-        host:
-          - macOS-10.14
-          - ubuntu-18.04
-          - windows-2019
-        node_version:
-          - 10.16.3
-          - 12.8.1
-        include:
-          - host: macOS-10.14
-            os: macOS
-          - host: ubuntu-18.04
-            os: Linux
-          - host: windows-2019
-            os: Windows
   test:
-    name: Test on ${{ matrix.os }} with Node ${{ matrix.node_version }}
-    runs-on: ${{ matrix.host }}
+    name: Test
+    runs-on: ubuntu-18.04
     steps:
       - name: Checkout
         uses: actions/checkout@v1.0.0
       - name: Setup Node
         uses: actions/setup-node@v1.1.1
         with:
-          version: ${{ matrix.node_version }}
+          version: 10.16
       - name: Install Node dependencies
         run: yarn install --frozen-lockfile
       - name: Test units
-        if: matrix.node_version != '10.16.3' || matrix.os != 'Linux'
-        run: yarn --silent test:units --runInBand
-      - name: Test units
-        if: matrix.node_version == '10.16.3' && matrix.os == 'Linux'
         run: yarn --silent test:units --coverage --runInBand
       - name: Publish code coverage results
-        if: matrix.node_version == '10.16.3' && matrix.os == 'Linux'
         run: yarn codecov -t ${{  secrets.CODECOV_TOKEN }}
-    strategy:
-      matrix:
-        host:
-          - macOS-10.14
-          - ubuntu-18.04
-          - windows-2019
-        node_version:
-          - 10.16.3
-          - 12.8.1
-        include:
-          - host: macOS-10.14
-            os: macOS
-          - host: ubuntu-18.04
-            os: Linux
-          - host: windows-2019
-            os: Windows
