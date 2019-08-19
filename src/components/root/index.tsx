@@ -13,13 +13,13 @@ const NotFound = loadable(() =>
 )
 
 const Root: React.FunctionComponent = () => (
-  <React.Fragment>
+  <>
     <GlobalStyle />
     <Router>
       <Home data-testid="home" path="/" />
       <NotFound data-testid="not-found" default />
     </Router>
-  </React.Fragment>
+  </>
 )
 
 export default Root
