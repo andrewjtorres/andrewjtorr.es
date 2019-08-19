@@ -62,5 +62,8 @@ module.exports = {
       rules: jestPlugin.configs.recommended.rules,
     },
   ],
-  settings: { 'import/resolver': { typescript: true } },
+  settings: {
+    'import/resolver': { typescript: true },
+    react: { version: 'detect' },
+  },
 }
