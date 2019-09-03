@@ -75,7 +75,7 @@
     "codecov": "^3.5.0",
     "cz-conventional-changelog": "^3.0.2",
     "eslint": "^6.3.0",
-    "eslint-config-prettier": "^6.1.0",
+    "eslint-config-prettier": "^6.2.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-config-standard-react": "^9.1.0",
     "eslint-import-resolver-typescript": "^1.1.1",
