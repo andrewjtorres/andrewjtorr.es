@@ -106,7 +106,7 @@
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-order": "^3.1.0",
     "stylelint-processor-styled-components": "^1.8.0",
-    "terser-webpack-plugin": "^1.4.1",
+    "terser-webpack-plugin": "^2.0.0",
     "typescript": "~3.6.2",
     "url-loader": "^2.1.0",
     "webpack": "^4.39.3",
