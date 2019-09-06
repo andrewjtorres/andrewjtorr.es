@@ -100,8 +100,6 @@ const clientConfig = createConfig('web', baseConfig => ({
     minimize: isRelease,
     minimizer: [
       new TerserPlugin({
-        cache: true,
-        parallel: true,
         sourceMap: true,
         terserOptions: {
           mangle: { safari10: true },
