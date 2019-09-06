@@ -17,6 +17,8 @@ jobs:
         uses: actions/setup-node@v1.1.1
         with:
           version: 10.16
+      - name: Install Yarn
+        run: npm install --global yarn@1.17
       - name: Install Node dependencies
         run: yarn install --frozen-lockfile
       - name: Lint files
@@ -37,6 +39,8 @@ jobs:
         uses: actions/setup-node@v1.1.1
         with:
           version: 10.16
+      - name: Install Yarn
+        run: npm install --global yarn@1.17
       - name: Install Node dependencies
         run: yarn install --frozen-lockfile
       - name: Test units
