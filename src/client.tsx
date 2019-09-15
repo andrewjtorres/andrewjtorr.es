@@ -1,6 +1,58 @@
+import { loadableReady } from '@loadable/component'
+import {
+  HistoryActionType,
+  HistoryLocation,
+  HistorySource,
+  createHistory,
+} from '@reach/router'
 import React from 'react'
-import { render } from 'react-dom'
+import deepForceUpdate from 'react-deep-force-update'
+import { hydrate, render } from 'react-dom'
 
 import Root from './components/root'
+import { createPath } from './utils/history'
 
-render(<Root />, document.querySelector('#root'))
+interface HistoryMeta {
+  location: HistoryLocation
+  action?: HistoryActionType
+}
+
+const container = document.querySelector('#root')
+const history = createHistory((window as unknown) as HistorySource)
+let currentLocation = history.location
+let root: any
+
+const onLocationChange = async ({ action, location }: HistoryMeta) => {
+  const renderOrHydrate = action ? render : hydrate
+
+  currentLocation = location
+
+  try {
+    await loadableReady()
+
+    root = renderOrHydrate(<Root />, container, () => {
+      if (window.ga) {
+        window.ga('send', 'pageview', createPath(location))
+      }
+    })
+  } catch (error) {
+    if (__IS_DEV__) {
+      throw error
+    }
+
+    console.error(error)
+  }
+}
+
+history.listen(onLocationChange) // eslint-disable-line @typescript-eslint/no-misused-promises
+onLocationChange({ location: currentLocation })
+
+if (module.hot) {
+  module.hot.accept('./components/root', () => {
+    if (root && root.updater.isMounted(root)) {
+      deepForceUpdate(root)
+    }
+
+    onLocationChange({ location: currentLocation })
+  })
+}

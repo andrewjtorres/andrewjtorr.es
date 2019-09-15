@@ -1,7 +1,5 @@
 # Compiled output
-build/*.js
-build/*.js.map
-build/*.png
+build
 
 # Dependencies
 node_modules
@@ -13,5 +11,7 @@ coverage
 *.log*
 
 # Miscellaneous
+.env*
+!.env.example
 .eslintcache
 .stylelintcache

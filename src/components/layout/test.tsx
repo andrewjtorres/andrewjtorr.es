@@ -4,7 +4,7 @@ import React from 'react'
 import { renderWithRouter } from 'utils/specification'
 import Layout from '.'
 
-test('The Layout component should render correctly', () => {
+test('should render correctly', () => {
   const { getByTestId } = render(
     <Layout>
       <div data-testid="test-child" />
@@ -14,16 +14,16 @@ test('The Layout component should render correctly', () => {
   expect(getByTestId('test-child')).toBeInTheDocument()
 })
 
-test('Clicking the logo icon should navigate to the root path', () => {
+test('clicking the logo icon should navigate to the root path', () => {
   const { getByTestId, history } = renderWithRouter(<Layout>child</Layout>, {
     initialPath: '/not-root',
   })
   const icon = getByTestId('logo')
 
   expect(icon).toBeInTheDocument()
-  expect(history.location.pathname).toStrictEqual('/not-root')
+  expect(history.location.pathname).toBe('/not-root')
 
   fireEvent.click(icon)
 
-  expect(history.location.pathname).toStrictEqual('/')
+  expect(history.location.pathname).toBe('/')
 })

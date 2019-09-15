@@ -16,6 +16,8 @@ module.exports = {
     'standard',
     'unicorn',
   ],
+  env: { browser: true },
+  globals: { __IS_BROWSER__: false, __IS_DEV__: false },
   extends: [
     'standard',
     'standard-react',
@@ -52,6 +54,7 @@ module.exports = {
         ...typescriptPlugin.configs['recommended-requiring-type-checking']
           .rules,
         '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/no-explicit-any': 'off',
         ...prettierTypescriptConfig.rules,
       },
     },

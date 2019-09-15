@@ -19,10 +19,11 @@
     "outDir": "build",
     "paths": { "*": ["src/*"] },
     "removeComments": true,
-    "rootDirs": ["config", "src"],
+    "resolveJsonModule": true,
+    "rootDirs": ["config", "scripts", "src"],
     "sourceMap": true,
     "strict": true,
     "target": "esnext",
-    "types": ["jest"]
+    "types": ["express", "jest", "node", "webpack-env"]
   }
 }

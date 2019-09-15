@@ -3,7 +3,7 @@ import React from 'react'
 
 import Home from '.'
 
-test('The Home component should render correctly', () => {
+test('should render correctly', () => {
   const { matchMedia } = window
 
   Object.defineProperty(window, 'matchMedia', {
@@ -36,7 +36,7 @@ test('The Home component should render correctly', () => {
   Object.defineProperty(window, 'matchMedia', { value: matchMedia })
 })
 
-test('The Home component should render correctly on medium to extra large screens', () => {
+test('should render correctly on medium to extra large screens', () => {
   const { matchMedia } = window
 
   Object.defineProperty(window, 'matchMedia', {
@@ -69,7 +69,7 @@ test('The Home component should render correctly on medium to extra large screen
   Object.defineProperty(window, 'matchMedia', { value: matchMedia })
 })
 
-test("Clicking the LinkedIn icon should navigate to Andrew Torres' LinkedIn profile", () => {
+test("clicking the linkedin icon should navigate to andrew torres' linkedin profile", () => {
   const { getByTestId } = render(<Home />)
   const icon = getByTestId('linkedin')
 
@@ -80,7 +80,7 @@ test("Clicking the LinkedIn icon should navigate to Andrew Torres' LinkedIn prof
   )
 })
 
-test("Clicking the GitHub icon should navigate to Andrew Torres' GitHub profile", () => {
+test("clicking the github icon should navigate to andrew torres' github profile", () => {
   const { getByTestId } = render(<Home />)
   const icon = getByTestId('github')
 
@@ -88,7 +88,7 @@ test("Clicking the GitHub icon should navigate to Andrew Torres' GitHub profile"
   expect(icon).toHaveAttribute('href', 'https://github.com/ajtorres9')
 })
 
-test("Clicking the GitLab icon should navigate to Andrew Torres' GitLab profile", () => {
+test("clicking the gitlab icon should navigate to andrew torres' gitlab profile", () => {
   const { getByTestId } = render(<Home />)
   const icon = getByTestId('gitlab')
 
@@ -96,7 +96,7 @@ test("Clicking the GitLab icon should navigate to Andrew Torres' GitLab profile"
   expect(icon).toHaveAttribute('href', 'https://gitlab.com/ajtorres9')
 })
 
-test("Clicking the Twitter icon should navigate to Andrew Torres' Twitter profile", () => {
+test("clicking the twitter icon should navigate to andrew torres' twitter profile", () => {
   const { getByTestId } = render(<Home />)
   const icon = getByTestId('twitter')
 

@@ -9,9 +9,9 @@ const createConfig = ({ caller, env }) => {
 
   return {
     plugins: [
-      ['@babel/plugin-proposal-object-rest-spread', { useBuiltIns: true }],
       '@babel/plugin-syntax-dynamic-import',
       ['@babel/plugin-transform-runtime', { corejs: 3, helpers: false }],
+      '@loadable/babel-plugin',
       'polished',
       ['styled-components', { displayName: isDev, pure: isProd }],
     ],
