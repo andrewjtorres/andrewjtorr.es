@@ -245,6 +245,7 @@ const Home: React.FunctionComponent<RouteComponentProps> = ({
       'screen and (min-width: 769px), print'
     )
 
+    // eslint-disable-next-line unicorn/consistent-function-scoping
     const smallMediumTransition = ({
       matches,
     }: MediaQueryList | MediaQueryListEvent) => {
