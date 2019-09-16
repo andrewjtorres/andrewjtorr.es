@@ -153,7 +153,7 @@ const start = async () => {
   let app: Express
   let appPromise: Promise<any>
   let appPromiseIsResolved = true
-  let appPromiseResolve = () => {}
+  let appPromiseResolve = () => {} // eslint-disable-line unicorn/consistent-function-scoping
 
   serverCompiler.hooks.compile.tap('server', () => {
     if (!appPromiseIsResolved) {
