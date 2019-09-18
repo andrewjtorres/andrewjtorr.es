@@ -1,12 +1,21 @@
+import { NormalizedCacheObject } from 'apollo-cache-inmemory'
 import React from 'react'
+import serialize from 'serialize-javascript'
+
+type StateKey = keyof State
 
 interface Props extends React.HtmlHTMLAttributes<HTMLElement> {
   children: string
   description?: string
   links?: React.ReactElement[]
   scripts?: React.ReactElement[]
+  state?: State
   styles: React.ReactElement[]
   title?: string
+}
+
+interface State {
+  __APOLLO_CACHE__: NormalizedCacheObject
 }
 
 const Html: React.FunctionComponent<Props> = ({
@@ -14,6 +23,7 @@ const Html: React.FunctionComponent<Props> = ({
   description = 'Personal website of Andrew Torres',
   links = [],
   scripts = [],
+  state = { __APOLLO_CACHE__: {} },
   styles,
   title = 'Andrew Torres',
   ...props
@@ -64,6 +74,14 @@ const Html: React.FunctionComponent<Props> = ({
     <body>
       <noscript>You need to enable JavaScript to run this application</noscript>
       <div id="root" dangerouslySetInnerHTML={{ __html: children }} />
+      {Object.keys(state).map(key => (
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.${key}=${serialize(state[key as StateKey])};`,
+          }}
+          key={key}
+        />
+      ))}
       {scripts}
       <script
         dangerouslySetInnerHTML={{

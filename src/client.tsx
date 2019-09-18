@@ -1,3 +1,4 @@
+import { ApolloProvider } from '@apollo/react-hooks'
 import { loadableReady } from '@loadable/component'
 import {
   HistoryActionType,
@@ -9,6 +10,7 @@ import React from 'react'
 import deepForceUpdate from 'react-deep-force-update'
 import { hydrate, render } from 'react-dom'
 
+import { createApolloClient } from './apollo'
 import Root from './components/root'
 import { createPath } from './utils/history'
 
@@ -17,6 +19,7 @@ interface HistoryMeta {
   action?: HistoryActionType
 }
 
+const client = createApolloClient({ preloadedCache: window.__APOLLO_CACHE__ })
 const container = document.querySelector('#root')
 const history = createHistory((window as unknown) as HistorySource)
 let currentLocation = history.location
@@ -30,11 +33,17 @@ const onLocationChange = async ({ action, location }: HistoryMeta) => {
   try {
     await loadableReady()
 
-    root = renderOrHydrate(<Root />, container, () => {
-      if (window.ga) {
-        window.ga('send', 'pageview', createPath(location))
+    root = renderOrHydrate(
+      <ApolloProvider client={client}>
+        <Root />
+      </ApolloProvider>,
+      container,
+      () => {
+        if (window.ga) {
+          window.ga('send', 'pageview', createPath(location))
+        }
       }
-    })
+    )
   } catch (error) {
     if (__IS_DEV__) {
       throw error

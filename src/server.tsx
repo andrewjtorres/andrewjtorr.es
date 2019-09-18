@@ -1,17 +1,26 @@
+import { ApolloProvider } from '@apollo/react-hooks'
+import { renderToStringWithData } from '@apollo/react-ssr'
 import { ChunkExtractor, ChunkExtractorManager } from '@loadable/server'
 import { ServerLocation, isRedirect } from '@reach/router'
+import { ApolloServer } from 'apollo-server-express'
 import bodyParser from 'body-parser'
 import compression from 'compression'
 import cors from 'cors'
 import express, { Express, NextFunction, Request, Response } from 'express'
 import { resolve } from 'path'
 import React from 'react'
-import { renderToStaticMarkup, renderToString } from 'react-dom/server'
+import { renderToStaticMarkup } from 'react-dom/server'
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
 
+import { createApolloClient } from './apollo'
 import { port } from './config'
 import Html from './components/html'
 import Root from './components/root'
+import schema from './schema'
+
+export interface Context {
+  res: Response
+}
 
 process.on('unhandledRejection', (reason, promise) => {
   console.error('Unhandled Rejection at:', promise, 'reason:', reason)
@@ -20,6 +29,12 @@ process.on('unhandledRejection', (reason, promise) => {
 })
 
 const app: Express = express()
+const server = new ApolloServer({
+  context: ({ res }): Context => ({ res }),
+  debug: __IS_DEV__,
+  playground: __IS_DEV__,
+  schema,
+})
 
 app
   .use(bodyParser.json())
@@ -27,20 +42,24 @@ app
   .use(compression())
   .use(cors())
   .use(express.static(resolve(__dirname, 'public')))
+  .use(server.getMiddleware({ cors: false, path: '/api' }))
 
-app.get('*', (req: Request, res: Response, next: NextFunction) => {
+app.get('*', async (req: Request, res: Response, next: NextFunction) => {
+  const client = createApolloClient({ context: { res }, schema })
+  const extractor = new ChunkExtractor({
+    entrypoints: 'client',
+    statsFile: resolve(__dirname, 'stats.json'),
+  })
+  const sheet = new ServerStyleSheet()
+
   try {
-    const extractor = new ChunkExtractor({
-      entrypoints: 'client',
-      statsFile: resolve(__dirname, 'stats.json'),
-    })
-    const sheet = new ServerStyleSheet()
-
-    const root = renderToString(
+    const root = await renderToStringWithData(
       <ChunkExtractorManager extractor={extractor}>
         <StyleSheetManager sheet={sheet.instance}>
           <ServerLocation url={req.url}>
-            <Root />
+            <ApolloProvider client={client}>
+              <Root />
+            </ApolloProvider>
           </ServerLocation>
         </StyleSheetManager>
       </ChunkExtractorManager>
@@ -50,6 +69,7 @@ app.get('*', (req: Request, res: Response, next: NextFunction) => {
       <Html
         links={extractor.getLinkElements()}
         scripts={extractor.getScriptElements()}
+        state={{ __APOLLO_CACHE__: client.extract() }}
         styles={sheet.getStyleElement()}
       >
         {root}
