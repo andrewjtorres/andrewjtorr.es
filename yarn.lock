@@ -5394,10 +5394,10 @@ eslint-plugin-standard@^4.0.1:
   resolved "https://registry.yarnpkg.com/eslint-plugin-standard/-/eslint-plugin-standard-4.0.1.tgz#ff0519f7ffaff114f76d1bd7c3996eef0f6e20b4"
   integrity sha512-v/KBnfyaOMPmZc/dmc6ozOdWqekGp7bBGq4jLAecEfPGmfKiWS4sA8sC0LqiV9w5qmXAtXVn4M3p1jSyhY85SQ==
 
-eslint-plugin-unicorn@^11.0.0:
-  version "11.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-unicorn/-/eslint-plugin-unicorn-11.0.0.tgz#5a2d4a360fda718032017b10da3a0b7e0806628f"
-  integrity sha512-uOfRBpXVQcOENzHgMKLe57aTHa9pLpxU9WcpyK50n7WtdtC31chAPwkCueYHQfSL6LwTuqin+/RyI3Nv6Z1Udw==
+eslint-plugin-unicorn@^11.0.1:
+  version "11.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-unicorn/-/eslint-plugin-unicorn-11.0.1.tgz#1bac58a2c388bfe21d36d8e91f4bba136ac18f0a"
+  integrity sha512-uxgA+OS0f/OJGk+Z1eMotuQIPc+n9JSZe9A33X+/1UiKS8gmIE2JeMnZV/CjYh/BPA3LzvJtQexx0p0CLCBOBg==
   dependencies:
     ci-info "^2.0.0"
     clean-regexp "^1.0.0"
