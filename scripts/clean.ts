@@ -2,7 +2,9 @@ import { cleanDir } from './lib/fs'
 
 const clean = () =>
   Promise.all([
-    cleanDir('build/*', { dot: true, ignore: ['build/.git'], nosort: true }),
+    cleanDir('?(build|coverage)', { dot: true, nosort: true }),
+    cleanDir('.?(eslint|stylelint)cache', { nosort: true }),
+    cleanDir('*.log*', { dot: true, nosort: true }),
   ])
 
 export default clean
