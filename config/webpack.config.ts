@@ -23,9 +23,14 @@ type Target =
 const rootDir = resolve(__dirname, '..')
 const buildDir = join(rootDir, 'build')
 
+const env = process.env.NODE_ENV || 'development'
+const isProd = /prod(uction)?/i.test(env)
+
 const isAnalyze = process.argv.includes('--analyze')
-const isRelease = process.argv.includes('--release')
+const isRelease = isProd || process.argv.includes('--release')
 const isVerbose = process.argv.includes('--verbose')
+
+const envFile = isRelease ? '.env.prod' : '.env.dev'
 
 const createConfig = (target: Target, configFactory: ConfigFactory) =>
   configFactory({
@@ -100,11 +105,11 @@ const createConfig = (target: Target, configFactory: ConfigFactory) =>
     },
     plugins: [
       new DefinePlugin({
-        __IS_BROWSER__: target === 'web',
         __IS_DEV__: !isRelease,
+        ...(target === 'web' ? { 'process.env.BROWSER_ENV': env } : {}),
       }),
       new DotenvPlugin({
-        path: join(rootDir, '.env'),
+        path: join(rootDir, envFile),
         safe: join(rootDir, '.env.example'),
       }),
     ],

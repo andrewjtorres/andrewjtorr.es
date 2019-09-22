@@ -66,7 +66,7 @@ export const createApolloClient = ({
     cache.writeData({ data: defaults })
   }
 
-  if (__IS_BROWSER__) {
+  if (process.env.BROWSER_ENV) {
     links.push(
       ...(__IS_DEV__ ? [require('apollo-link-logger').default] : []),
       createHttpLink({ credentials: 'include', uri: process.env.API_URI })
@@ -79,8 +79,8 @@ export const createApolloClient = ({
     assumeImmutableResults: true,
     cache,
     link: ApolloLink.from(links),
-    ssrForceFetchDelay: __IS_BROWSER__ ? 100 : undefined,
-    ssrMode: !__IS_BROWSER__,
+    ssrForceFetchDelay: process.env.BROWSER_ENV ? 100 : undefined,
+    ssrMode: !process.env.BROWSER_ENV,
     ...options,
   })
 }
