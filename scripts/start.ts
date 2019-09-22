@@ -15,9 +15,13 @@ import clean from './clean'
 import run, { format } from './run'
 import webpackConfig from '../config/webpack.config'
 
-const isRelease = process.argv.includes('--release')
-const isSilent = process.argv.includes('--silent')
 const watchOptions: WatchOptions = {}
+
+const env = process.env.NODE_ENV || 'development'
+const isProd = /prod(uction)?/i.test(env)
+
+const isRelease = isProd || process.argv.includes('--release')
+const isSilent = process.argv.includes('--silent')
 let server: Express
 
 const createCompilationPromise = (

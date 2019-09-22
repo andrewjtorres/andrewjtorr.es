@@ -1,2 +1,21 @@
+# Compiled output
+build
+
+# Dependencies
+node_modules
+
+# Test and Code Coverage
+coverage
+
+# Translations
+src/translations/locales/*.json
+
+# Logs
+*.log*
+
 # Miscellaneous
 .all-contributorsrc
+.env*
+!.env.example
+.eslintcache
+.stylelintcache

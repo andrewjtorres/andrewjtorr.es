@@ -3,10 +3,12 @@ import { dirname, join, relative } from 'path'
 
 import { writeFile, copyFile, makeDir, copyDir, cleanDir } from './lib/fs'
 import { format } from './run'
-import { dependencies, engines } from '../package.json'
+import { dependencies, engines, name, version } from '../package.json'
 
 const config = JSON.stringify(
   {
+    name,
+    version,
     scripts: { start: 'node server.js' },
     dependencies,
     engines,
@@ -16,18 +18,24 @@ const config = JSON.stringify(
   2
 )
 
+const isWatch = process.argv.includes('--watch')
+
 const copy = async () => {
   await makeDir('build')
 
   await Promise.all([
     copyDir('public', 'build/public'),
+    copyDir('src/translations/locales', 'build/translations'),
     copyFile('license', 'build/license'),
     copyFile('yarn.lock', 'build/yarn.lock'),
     writeFile('build/package.json', config),
   ])
 
-  if (process.argv.includes('--watch')) {
-    const watcher = chokidar.watch(['public/**/*'], { ignoreInitial: true })
+  if (isWatch) {
+    const watcher = chokidar.watch(
+      ['public/**/*', 'src/translations/locales/**/*'],
+      { ignoreInitial: true }
+    )
 
     // eslint-disable-next-line @typescript-eslint/no-misused-promises
     watcher.on('all', async (eventName, path) => {
