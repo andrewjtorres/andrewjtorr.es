@@ -49,9 +49,9 @@ const Logo = styled(BaseLogo)`
 
 const Layout: React.FunctionComponent<Props> = ({
   children,
-  ...rest
+  ...props
 }: Props) => (
-  <Root {...rest}>
+  <Root {...props}>
     <header>
       <Navbar aria-label="main navigation">
         <Brand>

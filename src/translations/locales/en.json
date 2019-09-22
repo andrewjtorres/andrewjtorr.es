@@ -1,1 +1,47 @@
-[]
+[
+  {
+    "id": "routes.home.description",
+    "message": "",
+    "defaultMessage": "Passionate about open source and the amazing community surrounding it. {br}Lately, I have been vibing Node.js and it's creative ecosystem.",
+    "description": "The description of the Home page",
+    "files": [
+      "src/routes/home/index.tsx"
+    ]
+  },
+  {
+    "id": "routes.home.subtitle",
+    "message": "",
+    "defaultMessage": "Software Engineer",
+    "description": "The subtitle of the Home page",
+    "files": [
+      "src/routes/home/index.tsx"
+    ]
+  },
+  {
+    "id": "routes.home.title",
+    "message": "",
+    "defaultMessage": "Andrew Torres",
+    "description": "The title of the Home page",
+    "files": [
+      "src/routes/home/index.tsx"
+    ]
+  },
+  {
+    "id": "routes.notFound.description",
+    "message": "",
+    "defaultMessage": "Sorry, but the page you were trying to view does not exist.",
+    "description": "The description of the Not Found page",
+    "files": [
+      "src/routes/not-found/index.tsx"
+    ]
+  },
+  {
+    "id": "routes.notFound.title",
+    "message": "",
+    "defaultMessage": "Page Not Found",
+    "description": "The title of the Not Found page",
+    "files": [
+      "src/routes/not-found/index.tsx"
+    ]
+  }
+]

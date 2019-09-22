@@ -6,6 +6,9 @@ import {
 } from '@reach/router'
 import { render } from '@testing-library/react'
 import React from 'react'
+import { IntlConfig, IntlProvider } from 'react-intl'
+
+type IntlOptions = Partial<IntlConfig>
 
 interface RouterOptions {
   initialPath?: string
@@ -22,3 +25,10 @@ export const renderWithRouter = (
     history,
   }
 }
+
+export const renderWithIntl = (node: React.ReactNode, opts: IntlOptions = {}) =>
+  render(
+    <IntlProvider defaultLocale="en" locale="en" {...opts}>
+      {node}
+    </IntlProvider>
+  )

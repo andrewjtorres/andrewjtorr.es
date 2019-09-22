@@ -22,7 +22,7 @@
     "copy": "ts-node --files scripts/run copy",
     "extract:translations": "ts-node --files scripts/run extract-translations",
     "lint": "yarn lint:files && yarn lint:scripts && yarn lint:styles && yarn lint:types",
-    "lint:files": "prettylint --ignore-path .gitignore \"**/*.{json,md,yml}\"",
+    "lint:files": "prettylint \"**/*.{json,md,yml}\"",
     "lint:scripts": "eslint --cache --ignore-path .gitignore --ignore-pattern \"!**/.*\" \"**/*.{js,ts,tsx}\"",
     "lint:styles": "stylelint --cache --ignore-path .gitignore --ignore-pattern \"!**/.*\" \"**/*.{ts,tsx}\"",
     "lint:types": "tsc --noEmit",
@@ -60,6 +60,7 @@
     "graphql-tools": "^4.0.5",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-intl": "^3.3.0",
     "react-is": "^16.9.0",
     "serialize-javascript": "^2.1.0",
     "styled-components": "5.0.0-beta.8"

@@ -10,11 +10,11 @@ import React from 'react'
 import deepForceUpdate from 'react-deep-force-update'
 import { hydrate, render } from 'react-dom'
 
-import { createApolloClient } from './apollo'
 import Root from './components/root'
 import { createPath } from './utils/history'
+import { createApolloClient } from './apollo'
 
-interface HistoryMeta {
+interface HistoryMetadata {
   location: HistoryLocation
   action?: HistoryActionType
 }
@@ -25,7 +25,7 @@ const history = createHistory((window as unknown) as HistorySource)
 let currentLocation = history.location
 let root: any
 
-const onLocationChange = async ({ action, location }: HistoryMeta) => {
+const onLocationChange = async ({ action, location }: HistoryMetadata) => {
   const renderOrHydrate = action ? render : hydrate
 
   currentLocation = location

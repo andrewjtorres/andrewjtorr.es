@@ -1,6 +1,7 @@
 import { RouteComponentProps } from '@reach/router'
 import { darken, em, rem } from 'polished'
 import React from 'react'
+import { defineMessages, useIntl } from 'react-intl'
 import styled, { css } from 'styled-components'
 
 import fixingTheMustacheUrl from 'assets/fixing-the-mustache.png'
@@ -19,6 +20,29 @@ import {
   twitterBlue,
   white,
 } from 'styles/variables'
+
+type Props = RouteComponentProps
+
+const rootId = 'routes.home'
+
+const translations = defineMessages({
+  title: {
+    id: `${rootId}.title`,
+    defaultMessage: 'Andrew Torres',
+    description: 'The title of the Home page',
+  },
+  subtitle: {
+    id: `${rootId}.subtitle`,
+    defaultMessage: 'Software Engineer',
+    description: 'The subtitle of the Home page',
+  },
+  description: {
+    id: `${rootId}.description`,
+    defaultMessage:
+      "Passionate about open source and the amazing community surrounding it. {br}Lately, I have been vibing Node.js and it's creative ecosystem.",
+    description: 'The description of the Home page',
+  },
+})
 
 const Root = styled.div`
   ${contentContainer};
@@ -69,7 +93,7 @@ const Content = styled.p`
   text-align: center;
 `
 
-const Break = styled.br`
+const Br = styled.br`
   ${isHiddenMobile};
 `
 
@@ -233,9 +257,8 @@ const Twitter = styled(BaseTwitter)`
   ${icon}
 `
 
-const Home: React.FunctionComponent<RouteComponentProps> = ({
-  ...rest
-}: RouteComponentProps) => {
+const Home: React.FunctionComponent<Props> = (props: Props) => {
+  const { formatMessage } = useIntl()
   const links: (HTMLAnchorElement | null)[] = []
   const mediumLinkContainer = React.useRef<HTMLDivElement>(null)
   const smallLinkContainer = React.useRef<HTMLDivElement>(null)
@@ -261,17 +284,15 @@ const Home: React.FunctionComponent<RouteComponentProps> = ({
   })
 
   return (
-    <Layout {...rest}>
+    <Layout {...props}>
       <Root>
         <ImageContainer data-testid="image-container" ref={mediumLinkContainer}>
           <TitleImage alt="Fixing the Mustache" src={fixingTheMustacheUrl} />
         </ImageContainer>
-        <Title>Andrew Torres</Title>
-        <Subtitle>Software Engineer</Subtitle>
+        <Title>{formatMessage(translations.title)}</Title>
+        <Subtitle>{formatMessage(translations.subtitle)}</Subtitle>
         <Content>
-          Passionate about open source and the amazing community surrounding it.{' '}
-          <Break />
-          Lately, I have been vibing Node.js and it&apos;s creative ecosystem.
+          {formatMessage(translations.description, { br: <Br key="br" /> })}
         </Content>
         <LinkContainer data-testid="link-container" ref={smallLinkContainer}>
           <LinkedInLink
