@@ -25,7 +25,7 @@ const copy = async () => {
 
   await Promise.all([
     copyDir('public', 'build/public'),
-    copyDir('src/translations/locales', 'build/translations'),
+    copyDir('src/translations/locales', 'build/locales'),
     copyFile('license', 'build/license'),
     copyFile('yarn.lock', 'build/yarn.lock'),
     writeFile('build/package.json', config),
