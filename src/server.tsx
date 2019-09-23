@@ -5,20 +5,23 @@ import { ServerLocation, isRedirect } from '@reach/router'
 import { ApolloServer } from 'apollo-server-express'
 import bodyParser from 'body-parser'
 import compression from 'compression'
+import cookieParser from 'cookie-parser'
 import cors from 'cors'
 import express, { Express, NextFunction, Request, Response } from 'express'
+import requestLanguage from 'express-request-language'
 import { resolve } from 'path'
 import React from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
 
-import { createApolloClient } from './apollo'
-import { port } from './config'
 import Html from './components/html'
 import Root from './components/root'
+import { createApolloClient } from './apollo'
+import { locales, port } from './config'
 import schema from './schema'
 
 export interface Context {
+  locale: string
   res: Response
 }
 
@@ -30,7 +33,7 @@ process.on('unhandledRejection', (reason, promise) => {
 
 const app: Express = express()
 const server = new ApolloServer({
-  context: ({ res }): Context => ({ res }),
+  context: ({ req, res }): Context => ({ locale: req.language, res }),
   debug: __IS_DEV__,
   playground: __IS_DEV__,
   schema,
@@ -40,12 +43,24 @@ app
   .use(bodyParser.json())
   .use(bodyParser.urlencoded({ extended: true }))
   .use(compression())
+  .use(cookieParser())
   .use(cors())
   .use(express.static(resolve(__dirname, 'public')))
+  .use(
+    requestLanguage({
+      cookie: { name: 'lang', url: '/lang/{language}' },
+      languages: locales,
+      queryName: 'lang',
+    })
+  )
   .use(server.getMiddleware({ cors: false, path: '/api' }))
 
 app.get('*', async (req: Request, res: Response, next: NextFunction) => {
-  const client = createApolloClient({ context: { res }, schema })
+  const alternateLocales = locales.filter(locale => locale !== req.language)
+  const client = createApolloClient({
+    context: { locale: req.language, res },
+    schema,
+  })
   const extractor = new ChunkExtractor({
     entrypoints: 'client',
     statsFile: resolve(__dirname, 'stats.json'),
@@ -67,6 +82,8 @@ app.get('*', async (req: Request, res: Response, next: NextFunction) => {
 
     const html = renderToStaticMarkup(
       <Html
+        alternateLocales={alternateLocales}
+        lang={req.language}
         links={extractor.getLinkElements()}
         scripts={extractor.getScriptElements()}
         state={{ __APOLLO_CACHE__: client.extract() }}

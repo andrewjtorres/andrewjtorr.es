@@ -1,7 +1,7 @@
 [
   {
     "id": "routes.home.description",
-    "message": "",
+    "message": "Passionate about open source and the amazing community surrounding it. {br}Lately, I have been vibing Node.js and it's creative ecosystem.",
     "defaultMessage": "Passionate about open source and the amazing community surrounding it. {br}Lately, I have been vibing Node.js and it's creative ecosystem.",
     "description": "The description of the Home page",
     "files": [
@@ -10,7 +10,7 @@
   },
   {
     "id": "routes.home.subtitle",
-    "message": "",
+    "message": "Software Engineer",
     "defaultMessage": "Software Engineer",
     "description": "The subtitle of the Home page",
     "files": [
@@ -19,7 +19,7 @@
   },
   {
     "id": "routes.home.title",
-    "message": "",
+    "message": "Andrew Torres",
     "defaultMessage": "Andrew Torres",
     "description": "The title of the Home page",
     "files": [
@@ -28,7 +28,7 @@
   },
   {
     "id": "routes.notFound.description",
-    "message": "",
+    "message": "Sorry, but the page you were trying to view does not exist.",
     "defaultMessage": "Sorry, but the page you were trying to view does not exist.",
     "description": "The description of the Not Found page",
     "files": [
@@ -37,7 +37,7 @@
   },
   {
     "id": "routes.notFound.title",
-    "message": "",
+    "message": "Page Not Found",
     "defaultMessage": "Page Not Found",
     "description": "The title of the Not Found page",
     "files": [

@@ -2,9 +2,12 @@ import { NormalizedCacheObject } from 'apollo-cache-inmemory'
 import React from 'react'
 import serialize from 'serialize-javascript'
 
+import fixingTheMustacheUrl from 'assets/fixing-the-mustache.png'
+
 type StateKey = keyof State
 
 interface Props extends React.HtmlHTMLAttributes<HTMLElement> {
+  alternateLocales?: string[]
   children: string
   description?: string
   links?: React.ReactElement[]
@@ -19,8 +22,10 @@ interface State {
 }
 
 const Html: React.FunctionComponent<Props> = ({
+  alternateLocales = [],
   children,
   description = 'Personal website of Andrew Torres',
+  lang = 'en',
   links = [],
   scripts = [],
   state = { __APOLLO_CACHE__: {} },
@@ -28,7 +33,7 @@ const Html: React.FunctionComponent<Props> = ({
   title = 'Andrew Torres',
   ...props
 }: Props) => (
-  <html lang="en" {...props}>
+  <html lang={lang} {...props}>
     <head>
       <meta charSet="utf-8" />
       <title>{title}</title>
@@ -36,20 +41,22 @@ const Html: React.FunctionComponent<Props> = ({
       <meta name="description" content={description} />
       <meta name="theme-color" content="#000" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta name="twitter:site:id" content="@ajtorres333" />
-      <meta name="twitter:creator:id" content="@ajtorres333" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@ajtorres333" />
+      <meta name="twitter:creator" content="@ajtorres333" />
       <meta property="og:title" content="Andrew Torres" />
       <meta property="og:type" content="website" />
-      <meta property="og:description" content={description} />
-      <meta property="og:locale" content="en_US" />
-      <meta property="og:url" content="https://andrewjtorr.es" />
       <meta
-        property="og:image:url"
-        content="https://andrewjtorr.es/media/fixing-the-mustache.png"
+        property="og:image"
+        content={`https://andrewjtorr.es/${fixingTheMustacheUrl}`}
       />
-      <meta property="og:image:type" content="image/png" />
-      <meta property="og:image:height" content="600" />
-      <meta property="og:image:width" content="600" />
+      <meta property="og:image:alt" content="Fixing the mustache" />
+      <meta property="og:url" content="https://andrewjtorr.es" />
+      <meta property="og:description" content={description} />
+      <meta property="og:locale" content={lang} />
+      {alternateLocales.map(locale => (
+        <meta key={locale} property="og:locale:alternate" content={locale} />
+      ))}
       {links}
       <link
         rel="apple-touch-icon"
