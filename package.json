@@ -41,7 +41,7 @@
     "@apollo/react-ssr": "^3.1.1",
     "@babel/runtime-corejs3": "^7.6.2",
     "@loadable/component": "^5.10.2",
-    "@loadable/server": "^5.10.2",
+    "@loadable/server": "^5.10.3",
     "@reach/router": "^1.2.1",
     "apollo-cache-inmemory": "^1.6.3",
     "apollo-client": "^2.6.4",
