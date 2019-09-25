@@ -79,7 +79,9 @@ const Html: React.FunctionComponent<Props> = ({
       {styles}
     </head>
     <body>
-      <noscript>You need to enable JavaScript to run this application</noscript>
+      <noscript>
+        You need to enable JavaScript to run this application.
+      </noscript>
       <div id="root" dangerouslySetInnerHTML={{ __html: children }} />
       {Object.keys(state).map(key => (
         <script
