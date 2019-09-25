@@ -182,7 +182,7 @@ const start = async () => {
   server.use((req, res) =>
     appPromise
       // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore
+      // @ts-ignore TS2339
       .then(() => app.handle(req, res))
       .catch(error => console.error(error))
   )
@@ -201,7 +201,7 @@ const start = async () => {
     return (
       app.hot
         // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
+        // @ts-ignore TS2345
         .check(true)
         .then((outdatedModules: __WebpackModuleApi.ModuleId[]) => {
           if (!outdatedModules) {

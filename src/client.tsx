@@ -23,7 +23,7 @@ const client = createApolloClient({ preloadedCache: window.__APOLLO_CACHE__ })
 const container = document.querySelector('#root')
 const history = createHistory((window as unknown) as HistorySource)
 let currentLocation = history.location
-let root: any
+let root: React.ComponentType | void
 
 const onLocationChange = async ({ action, location }: HistoryMetadata) => {
   const renderOrHydrate = action ? render : hydrate
@@ -58,6 +58,8 @@ onLocationChange({ location: currentLocation })
 
 if (module.hot) {
   module.hot.accept('./components/root', () => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore TS2339
     if (root && root.updater.isMounted(root)) {
       deepForceUpdate(root)
     }
