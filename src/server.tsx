@@ -9,7 +9,7 @@ import cookieParser from 'cookie-parser'
 import cors from 'cors'
 import express, { Express, NextFunction, Request, Response } from 'express'
 import requestLanguage from 'express-request-language'
-import { resolve } from 'path'
+import { join } from 'path'
 import React from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
@@ -17,7 +17,7 @@ import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
 import Html from './components/html'
 import Root from './components/root'
 import { createApolloClient } from './apollo'
-import { locales, port } from './config'
+import { locales, port, publicDir, rootDir } from './config'
 import schema from './schema'
 
 export interface Context {
@@ -45,7 +45,7 @@ app
   .use(compression())
   .use(cookieParser())
   .use(cors())
-  .use(express.static(resolve(__dirname, 'public')))
+  .use(express.static(publicDir))
   .use(
     requestLanguage({
       cookie: { name: 'lang', url: '/lang/{language}' },
@@ -63,7 +63,7 @@ app.get('*', async (req: Request, res: Response, next: NextFunction) => {
   })
   const extractor = new ChunkExtractor({
     entrypoints: 'client',
-    statsFile: resolve(__dirname, 'stats.json'),
+    statsFile: join(rootDir, 'stats.json'),
   })
   const sheet = new ServerStyleSheet()
 

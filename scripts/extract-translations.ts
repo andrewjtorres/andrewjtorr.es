@@ -1,7 +1,7 @@
 import { PluginItem, loadPartialConfig, transformFileAsync } from '@babel/core'
 import { ExtractedMessageDescriptor } from 'babel-plugin-react-intl'
 import chokidar from 'chokidar'
-import { resolve } from 'path'
+import { join, resolve } from 'path'
 
 import { readDir, readFile, writeFile } from './lib/fs'
 import { locales } from '../src/config'
@@ -32,7 +32,7 @@ const mergeToFile = async (
   toBuild: boolean
 ) => {
   const originalTranslations: Record<string, Translation> = {}
-  const file = resolve(rootDir, `src/translations/locales/${locale}.json`)
+  const file = join(rootDir, `src/translations/locales/${locale}.json`)
 
   try {
     const data: Translation[] = JSON.parse(await readFile(file))
@@ -69,7 +69,7 @@ const mergeToFile = async (
   await writeFile(file, data)
 
   if (toBuild) {
-    await writeFile(resolve(rootDir, `build/translations/${locale}.json`), data)
+    await writeFile(join(rootDir, `build/translations/${locale}.json`), data)
   }
 }
 
@@ -101,14 +101,14 @@ const updateTranslations = async (toBuild = false) => {
   Object.keys(extractedTranslations).forEach(file =>
     extractedTranslations[file].forEach(
       ({ defaultMessage, description, id }) => {
-        const { files, ...translation } = newTranslations[id] || {}
+        const { files = [], ...translation } = newTranslations[id] || {}
 
         newTranslations[id] = {
           id,
           message: translation.message || '',
           defaultMessage: defaultMessage || translation.defaultMessage || '',
           description: description || translation.description || '',
-          files: files ? [...files, file].sort() : [file],
+          files: [...files, file].sort(),
         }
       }
     )

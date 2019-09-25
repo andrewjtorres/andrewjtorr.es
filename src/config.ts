@@ -8,5 +8,6 @@ export const locales = ['en']
 
 export const rootDir = resolve(__dirname)
 export const localesDir = process.env.LOCALES_DIR || join(rootDir, 'locales')
+export const publicDir = join(rootDir, 'public')
 
 export const port = Number(process.env.PORT) || 3000

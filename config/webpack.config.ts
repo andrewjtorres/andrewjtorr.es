@@ -99,7 +99,7 @@ const createConfig = (target: Target, configFactory: ConfigFactory) =>
       devtoolModuleFilenameTemplate: ({ absoluteResourcePath }) =>
         resolve(absoluteResourcePath).replace(/\\/g, '/'),
       filename: isRelease ? '[name].[chunkhash:8].js' : '[name].js',
-      path: resolve(buildDir, 'public/assets'),
+      path: join(buildDir, 'public/assets'),
       pathinfo: isVerbose,
       publicPath: '/assets/',
     },
