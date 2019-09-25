@@ -5446,14 +5446,15 @@ eslint-plugin-standard@^4.0.1:
   resolved "https://registry.yarnpkg.com/eslint-plugin-standard/-/eslint-plugin-standard-4.0.1.tgz#ff0519f7ffaff114f76d1bd7c3996eef0f6e20b4"
   integrity sha512-v/KBnfyaOMPmZc/dmc6ozOdWqekGp7bBGq4jLAecEfPGmfKiWS4sA8sC0LqiV9w5qmXAtXVn4M3p1jSyhY85SQ==
 
-eslint-plugin-unicorn@^11.0.2:
-  version "11.0.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-unicorn/-/eslint-plugin-unicorn-11.0.2.tgz#d330148d4f15a5eae5d10cb501bacd5328736264"
-  integrity sha512-tNpaQPYV4QOrTYY99/rghfjJY8pb4flBa2W9Dfyz/kOwE4Pe0JqatRI9gIIEdnZXwdZ+9Qh0csSxBjFwutow5g==
+eslint-plugin-unicorn@^12.0.0:
+  version "12.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-unicorn/-/eslint-plugin-unicorn-12.0.0.tgz#7db35bfe732175971b5d3899c1ec1426e1cb5c05"
+  integrity sha512-Ku57d5Waqx1n289tS0zDxfjkIdYMzPc1wr27IjxArC24A3fvbY05dqM6sjpxZYNXh1ThT5X6VBAE1FB3gRP6Bg==
   dependencies:
     ci-info "^2.0.0"
     clean-regexp "^1.0.0"
     eslint-ast-utils "^1.1.0"
+    eslint-template-visitor "^1.0.0"
     import-modules "^1.1.0"
     lodash.camelcase "^4.3.0"
     lodash.defaultsdeep "^4.6.1"
@@ -5461,7 +5462,7 @@ eslint-plugin-unicorn@^11.0.2:
     lodash.snakecase "^4.1.1"
     lodash.topairs "^4.3.0"
     lodash.upperfirst "^4.3.1"
-    read-pkg "^5.2.0"
+    read-pkg-up "^6.0.0"
     regexpp "^3.0.0"
     reserved-words "^0.1.2"
     safe-regex "^2.0.2"
@@ -5482,6 +5483,15 @@ eslint-scope@^5.0.0:
   dependencies:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
+
+eslint-template-visitor@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-template-visitor/-/eslint-template-visitor-1.0.0.tgz#f67daedda2916df890189df2e8532f711769950a"
+  integrity sha512-hYf2FFoe0eNGQZbUMtYgRXPFPR9nnMm9qV+H1njO094fFks6QILzJKpAXbjwSJZ+XJw8X5gt/9WS2z35ou7/kQ==
+  dependencies:
+    eslint-visitor-keys "^1.1.0"
+    espree "^6.1.1"
+    multimap "^1.0.2"
 
 eslint-utils@^1.4.2:
   version "1.4.2"
@@ -9293,6 +9303,11 @@ ms@^2.0.0, ms@^2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
+multimap@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/multimap/-/multimap-1.0.2.tgz#6aa76fc3233905ba948bbe4c74dc2c3a0356eb36"
+  integrity sha1-aqdvwyM5BbqUi75MdNwsOgNW6zY=
+
 mute-stream@0.0.7:
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.7.tgz#3075ce93bc21b8fab43e1bc4da7e8115ed1e7bab"
@@ -11168,7 +11183,7 @@ read-pkg@^3.0.0:
     normalize-package-data "^2.3.2"
     path-type "^3.0.0"
 
-read-pkg@^5.0.0, read-pkg@^5.1.1, read-pkg@^5.2.0:
+read-pkg@^5.0.0, read-pkg@^5.1.1:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/read-pkg/-/read-pkg-5.2.0.tgz#7bf295438ca5a33e56cd30e053b34ee7250c93cc"
   integrity sha512-Ug69mNOpfvKDAc2Q8DRpMjjzdtrnv9HcSMX+4VsZxD1aZ6ZzrIE7rlzXBtWTyhULSMKg076AW6WR5iZpD0JiOg==
