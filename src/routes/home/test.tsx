@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { renderWithIntl } from 'utils/specification'
+import { renderWithContext } from 'utils/specification'
 import Home from '.'
 
 test('should render correctly', () => {
@@ -16,7 +16,7 @@ test('should render correctly', () => {
     }),
   })
 
-  const { getByTestId } = renderWithIntl(<Home />)
+  const { getByTestId } = renderWithContext(<Home />)
   const github = getByTestId('github')
   const gitlab = getByTestId('gitlab')
   const imageContainer = getByTestId('image-container')
@@ -49,7 +49,7 @@ test('should render correctly on medium to extra large screens', () => {
     }),
   })
 
-  const { getByTestId } = renderWithIntl(<Home />)
+  const { getByTestId } = renderWithContext(<Home />)
   const github = getByTestId('github')
   const gitlab = getByTestId('gitlab')
   const imageContainer = getByTestId('image-container')
@@ -70,7 +70,7 @@ test('should render correctly on medium to extra large screens', () => {
 })
 
 test("clicking the linkedin icon should navigate to andrew torres' linkedin profile", () => {
-  const { getByTestId } = renderWithIntl(<Home />)
+  const { getByTestId } = renderWithContext(<Home />)
   const icon = getByTestId('linkedin')
 
   expect(icon).toBeInTheDocument()
@@ -81,7 +81,7 @@ test("clicking the linkedin icon should navigate to andrew torres' linkedin prof
 })
 
 test("clicking the github icon should navigate to andrew torres' github profile", () => {
-  const { getByTestId } = renderWithIntl(<Home />)
+  const { getByTestId } = renderWithContext(<Home />)
   const icon = getByTestId('github')
 
   expect(icon).toBeInTheDocument()
@@ -89,7 +89,7 @@ test("clicking the github icon should navigate to andrew torres' github profile"
 })
 
 test("clicking the gitlab icon should navigate to andrew torres' gitlab profile", () => {
-  const { getByTestId } = renderWithIntl(<Home />)
+  const { getByTestId } = renderWithContext(<Home />)
   const icon = getByTestId('gitlab')
 
   expect(icon).toBeInTheDocument()
@@ -97,7 +97,7 @@ test("clicking the gitlab icon should navigate to andrew torres' gitlab profile"
 })
 
 test("clicking the twitter icon should navigate to andrew torres' twitter profile", () => {
-  const { getByTestId } = renderWithIntl(<Home />)
+  const { getByTestId } = renderWithContext(<Home />)
   const icon = getByTestId('twitter')
 
   expect(icon).toBeInTheDocument()

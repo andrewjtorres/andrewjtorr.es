@@ -1,9 +1,9 @@
-import { renderWithRouter } from './specification'
+import { renderWithContext } from './specification'
 
-describe('renderWithRouter', () => {
+describe('renderWithContext', () => {
   test('should return render metadata containing a history object', () => {
     const node = jest.fn()
-    const { history } = renderWithRouter(node)
+    const { history } = renderWithContext(node)
 
     expect(node).toHaveBeenCalledTimes(1)
     expect(node).toHaveBeenCalledWith({
@@ -15,7 +15,7 @@ describe('renderWithRouter', () => {
 
   test('should return render metadata containing a modified history object', () => {
     const node = jest.fn()
-    const { history } = renderWithRouter(node, { initialPath: '/not-root' })
+    const { history } = renderWithContext(node, { initialPath: '/not-root' })
 
     expect(node).toHaveBeenCalledTimes(1)
     expect(node).toHaveBeenCalledWith({

@@ -9,10 +9,16 @@ const createConfig = ({ caller, env }) => {
 
   return {
     plugins: [
-      '@babel/plugin-syntax-dynamic-import',
-      ['@babel/plugin-transform-runtime', { corejs: 3, helpers: false }],
+      '@babel/syntax-dynamic-import',
+      ...(isProd
+        ? [
+            '@babel/transform-react-constant-elements',
+            '@babel/transform-react-inline-elements',
+          ]
+        : []),
+      ['@babel/transform-runtime', { corejs: 3, helpers: false }],
       '@loadable/babel-plugin',
-      'polished',
+      ...(isTest ? ['dynamic-import-node'] : ['polished']),
       ['styled-components', { displayName: isDev, pure: isProd }],
     ],
     presets: [
@@ -28,15 +34,6 @@ const createConfig = ({ caller, env }) => {
       ],
       '@babel/preset-typescript',
     ],
-    env: {
-      production: {
-        plugins: [
-          '@babel/transform-react-constant-elements',
-          '@babel/transform-react-inline-elements',
-        ],
-      },
-      test: { plugins: ['dynamic-import-node'] },
-    },
     ignore: ['build', 'node_modules'],
   }
 }

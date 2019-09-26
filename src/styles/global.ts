@@ -1,18 +1,10 @@
-import { darken, em, normalize, rem } from 'polished'
+import { em, hsl, normalize, rem } from 'polished'
 import { createGlobalStyle } from 'styled-components'
 
-import {
-  aBlue,
-  black,
-  codeRed,
-  darkGray,
-  preGray,
-  selectionBlue,
-  white,
-} from './variables'
+import { overflowTouch } from './mixins'
 
 const GlobalStyle = createGlobalStyle`
-  ${normalize()};
+  ${normalize()}
 
   *,
   *::before,
@@ -23,31 +15,26 @@ const GlobalStyle = createGlobalStyle`
   html {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    background-color: ${white};
+    background-color: ${({ theme }) => theme.white};
     box-sizing: border-box;
     font-size: 16px;
+    margin: 0;
     min-width: 300px;
     overflow-x: hidden;
     overflow-y: scroll;
+    padding: 0;
     text-rendering: optimizeLegibility;
     text-size-adjust: 100%;
   }
 
   body {
-    color: ${darkGray};
-    font-family: 'Raleway', sans-serif;
-    font-weight: 400;
-    line-height: 1.4;
-  }
-
-  a {
-    color: ${aBlue};
-    cursor: pointer;
-    text-decoration: none;
-
-    &:hover {
-      color: ${darken(0.08, darkGray)};
-    }
+    color: ${({ theme }) => theme.textColor};
+    font-family: ${({ theme }) => theme.fontFamilyPrimary};
+    font-size: ${em(16)};
+    font-weight: ${({ theme }) => theme.fontWeightNormal};
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
   }
 
   article,
@@ -60,6 +47,20 @@ const GlobalStyle = createGlobalStyle`
     display: block;
   }
 
+  a {
+    color: ${({ theme }) => theme.linkColor};
+    cursor: pointer;
+    text-decoration: none;
+
+    strong & {
+      color: currentColor;
+    }
+
+    &:hover {
+      color: ${({ theme }) => theme.linkHoverColor};
+    }
+  }
+
   audio,
   canvas,
   iframe,
@@ -69,67 +70,79 @@ const GlobalStyle = createGlobalStyle`
     vertical-align: middle;
   }
 
-  audio,
-  img,
-  video {
-    height: auto;
-    max-width: 100%;
+  blockquote,
+  dd,
+  dl,
+  dt,
+  figure,
+  legend,
+  li,
+  ol,
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font-family: ${({ theme }) => theme.fontFamilyPrimary};
+    margin: 0;
   }
 
   code,
   pre {
     -moz-osx-font-smoothing: auto;
     -webkit-font-smoothing: auto;
-    font-family: monospace;
+    font-family: ${({ theme }) => theme.fontFamilyCode};
   }
 
   code {
-    background-color: ${darken(0.04, white)};
-    color: ${codeRed};
+    background-color: ${({ theme }) => theme.codeBackgroundColor};
+    color: ${({ theme }) => theme.codeColor};
     font-size: ${em(14)};
     font-weight: 400;
     padding: ${em(4)} ${em(8)};
-
-    pre & {
-      background-color: transparent;
-      color: currentColor;
-      font-size: ${em(16)};
-      padding: 0;
-    }
   }
 
-  fieldset {
-    border: 0;
+  fieldset,
+  iframe {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 100%;
+    font-weight: 400;
     margin: 0;
     padding: 0;
   }
 
   hr {
-    background-color: ${darken(0.04, white)};
-    border: 0;
+    background-color: ${({ theme }) => theme.backgroundColor};
+    border: none;
     display: block;
-    height: ${rem(2)};
+    height: 2px;
     margin: ${rem(24)} 0;
+    padding: 0;
   }
 
-  iframe {
-    border: 0;
+  img,
+  video {
+    height: auto;
+    max-width: 100%;
   }
 
   input[type='checkbox'],
   input[type='radio'] {
     vertical-align: baseline;
-  }
-
-  pre {
-    -webkit-overflow-scrolling: touch;
-    background-color: ${darken(0.04, white)};
-    color: ${darkGray};
-    font-size: ${em(14)};
-    overflow-x: auto;
-    padding: ${rem(20)} ${rem(24)};
-    white-space: pre;
-    word-wrap: normal;
   }
 
   small {
@@ -142,50 +155,66 @@ const GlobalStyle = createGlobalStyle`
   }
 
   strong {
-    color: ${darken(0.08, darkGray)};
-    font-weight: 700;
+    color: ${({ theme }) => theme.textStrongColor};
+    font-weight: ${({ theme }) => theme.fontWeightBold};
+  }
 
-    a & {
+  pre {
+    ${overflowTouch}
+    background-color: ${({ theme }) => theme.preBackgroundColor};
+    color: ${({ theme }) => theme.preColor};
+    font-size: ${em(14)};
+    margin: 0;
+    overflow-x: auto;
+    padding: ${rem(20)} ${rem(24)};
+    white-space: pre;
+    word-wrap: normal;
+
+    code {
+      background-color: transparent;
       color: currentColor;
+      font-size: ${em(16)};
+      padding: 0;
     }
+  }
+
+  td,
+  th {
+    padding: 0;
   }
 
   table {
     border-collapse: collapse;
     border-spacing: 0;
-  }
 
-  td {
-    padding: 0;
-    text-align: left;
-
-    table & {
-      text-align: left;
+    td,
+    th {
       vertical-align: top;
+    }
+
+    th {
+      color: ${({ theme }) => theme.textStrongColor};
     }
   }
 
-  th {
-    padding: 0;
+  td:not([align]),
+  th:not([align]) {
     text-align: left;
-
-    table & {
-      color: ${darken(0.08, darkGray)};
-      text-align: left;
-      vertical-align: top;
-    }
   }
 
   textarea {
+    padding: 0;
     resize: vertical;
   }
 
   ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
   ::selection {
-    background-color: ${selectionBlue};
+    background-color: ${({ theme }) => theme.textSelectionBackgroundColor};
     text-shadow: none;
   }
 
@@ -197,7 +226,7 @@ const GlobalStyle = createGlobalStyle`
     *::after {
       background-color: transparent !important;
       box-shadow: none !important;
-      color: ${black} !important;
+      color: ${({ theme }) => theme.black} !important;
       text-shadow: none !important;
     }
 
@@ -207,16 +236,21 @@ const GlobalStyle = createGlobalStyle`
     }
 
     a[href]::after {
-      content: ' (' attr(href) ')';
+      content: " (" attr(href) ")";
     }
 
     abbr[title]::after {
-      content: ' (' attr(title) ')';
+      content: " (" attr(title) ")";
     }
 
-    a[href^='#']::after,
-    a[href^='javascript:']::after {
-      content: '';
+    a[href^="#"]::after,
+    a[href^="javascript:"]::after {
+      content: "";
+    }
+
+    h2,
+    h3 {
+      page-break-after: avoid;
     }
 
     h2,
@@ -226,19 +260,14 @@ const GlobalStyle = createGlobalStyle`
       widows: 3;
     }
 
-    h2,
-    h3 {
-      page-break-after: avoid;
+    pre,
+    blockquote {
+      border: 1px solid ${hsl(0, 0, 0.6)};
+      page-break-inside: avoid;
     }
 
     pre {
       white-space: pre-wrap !important;
-    }
-
-    pre,
-    blockquote {
-      border: ${rem(1)} solid ${preGray};
-      page-break-inside: avoid;
     }
 
     thead {

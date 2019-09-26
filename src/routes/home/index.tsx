@@ -1,5 +1,5 @@
 import { RouteComponentProps } from '@reach/router'
-import { darken, em, rem } from 'polished'
+import { darken, em, hsl, rem } from 'polished'
 import React from 'react'
 import { defineMessages, useIntl } from 'react-intl'
 import styled, { css } from 'styled-components'
@@ -10,18 +10,14 @@ import BaseGitLab from 'assets/gitlab.svg'
 import BaseLinkedIn from 'assets/linkedin.svg'
 import BaseTwitter from 'assets/twitter.svg'
 import Layout from 'components/layout'
-import { contentContainer, isHiddenMobile, isHiddenTablet } from 'styles/mixins'
-import {
-  baseBlack,
-  darkGray,
-  githubBlack,
-  gitlabOrange,
-  linkedinBlue,
-  twitterBlue,
-  white,
-} from 'styles/variables'
+import { container, isHiddenSmall, isHiddenUntilSmall } from 'styles/mixins'
 
 type Props = RouteComponentProps
+
+const github = hsl(0, 0.05, 0.09)
+const gitlab = hsl(8, 0.76, 0.52)
+const linkedin = hsl(215, 0.69, 0.45)
+const twitter = hsl(206, 0.89, 0.58)
 
 const rootId = 'routes.home'
 
@@ -45,7 +41,7 @@ const translations = defineMessages({
 })
 
 const Root = styled.div`
-  ${contentContainer};
+  ${container()}
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -68,7 +64,7 @@ const TitleImage = styled.img`
 `
 
 const Title = styled.h1`
-  color: ${baseBlack};
+  color: ${({ theme }) => theme.grayDarker};
   font-size: ${rem(32)};
   font-weight: 600;
   line-height: 1.125;
@@ -78,7 +74,7 @@ const Title = styled.h1`
 `
 
 const Subtitle = styled.h2`
-  color: ${darkGray};
+  color: ${({ theme }) => theme.grayDark};
   font-size: ${rem(20)};
   font-weight: 400;
   line-height: 1.25;
@@ -94,11 +90,11 @@ const Content = styled.p`
 `
 
 const Br = styled.br`
-  ${isHiddenMobile};
+  ${isHiddenUntilSmall}
 `
 
 const LinkContainer = styled.div`
-  ${isHiddenTablet};
+  ${isHiddenSmall}
   margin-top: ${rem(12)};
 `
 
@@ -106,9 +102,9 @@ const Link = styled.a`
   -webkit-touch-callout: none;
   align-items: center;
   appearance: none;
-  border: ${rem(1)} solid ${baseBlack};
+  border: ${rem(1)} solid ${({ theme }) => theme.grayDarker};
   border-radius: ${em(20.5)};
-  color: ${baseBlack};
+  color: ${({ theme }) => theme.grayDarker};
   cursor: pointer;
   display: inline-flex;
   font-size: ${rem(16)};
@@ -124,16 +120,16 @@ const Link = styled.a`
 
   &:hover,
   &:focus {
-    background-color: ${baseBlack};
-    border-color: ${baseBlack};
-    color: ${white};
+    background-color: ${({ theme }) => theme.grayDarker};
+    border-color: ${({ theme }) => theme.grayDarker};
+    color: ${({ theme }) => theme.white};
     outline: none;
   }
 
   &:active {
-    background-color: ${darken(0.1, baseBlack)};
-    border-color: ${darken(0.1, baseBlack)};
-    color: ${white};
+    background-color: ${({ theme }) => darken(0.1, theme.grayDarker)};
+    border-color: ${({ theme }) => darken(0.1, theme.grayDarker)};
+    color: ${({ theme }) => theme.white};
     outline: none;
   }
 
@@ -151,13 +147,13 @@ const LinkedInLink = styled(Link)`
 
   &:hover,
   &:focus {
-    background-color: ${linkedinBlue};
-    border-color: ${linkedinBlue};
+    background-color: ${linkedin};
+    border-color: ${linkedin};
   }
 
   &:active {
-    background-color: ${darken(0.1, linkedinBlue)};
-    border-color: ${darken(0.1, linkedinBlue)};
+    background-color: ${darken(0.1, linkedin)};
+    border-color: ${darken(0.1, linkedin)};
   }
 `
 
@@ -170,13 +166,13 @@ const GitHubLink = styled(Link)`
 
   &:hover,
   &:focus {
-    background-color: ${githubBlack};
-    border-color: ${githubBlack};
+    background-color: ${github};
+    border-color: ${github};
   }
 
   &:active {
-    background-color: ${darken(0.1, githubBlack)};
-    border-color: ${darken(0.1, githubBlack)};
+    background-color: ${darken(0.1, github)};
+    border-color: ${darken(0.1, github)};
   }
 `
 
@@ -189,13 +185,13 @@ const GitLabLink = styled(Link)`
 
   &:hover,
   &:focus {
-    background-color: ${gitlabOrange};
-    border-color: ${gitlabOrange};
+    background-color: ${gitlab};
+    border-color: ${gitlab};
   }
 
   &:active {
-    background-color: ${darken(0.1, gitlabOrange)};
-    border-color: ${darken(0.1, gitlabOrange)};
+    background-color: ${darken(0.1, gitlab)};
+    border-color: ${darken(0.1, gitlab)};
   }
 `
 
@@ -208,13 +204,13 @@ const TwitterLink = styled(Link)`
 
   &:hover,
   &:focus {
-    background-color: ${twitterBlue};
-    border-color: ${twitterBlue};
+    background-color: ${twitter};
+    border-color: ${twitter};
   }
 
   &:active {
-    background-color: ${darken(0.1, twitterBlue)};
-    border-color: ${darken(0.1, twitterBlue)};
+    background-color: ${darken(0.1, twitter)};
+    border-color: ${darken(0.1, twitter)};
   }
 `
 
@@ -226,7 +222,7 @@ const icon = css`
   max-height: ${rem(21)};
 
   a > & {
-    fill: ${baseBlack};
+    fill: ${({ theme }) => theme.grayDarker};
 
     &:only-child {
       margin-left: calc(${em(-6)} - 1px);
@@ -237,7 +233,7 @@ const icon = css`
   a:hover > &,
   a:focus > &,
   a:active > & {
-    fill: ${white};
+    fill: ${({ theme }) => theme.white};
   }
 `
 

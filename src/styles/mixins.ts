@@ -1,54 +1,112 @@
-import { FlattenInterpolation, ThemedStyledProps, css } from 'styled-components' // eslint-disable-line import/named
+import {
+  DefaultTheme, // eslint-disable-line import/named
+  FlattenInterpolation, // eslint-disable-line import/named
+  ThemedStyledProps, // eslint-disable-line import/named
+  ViewportBreakpoint, // eslint-disable-line import/named
+  css,
+} from 'styled-components'
 
-import { viewportLg, viewportMd, viewportSm, viewportXl } from './variables'
+type Styles = FlattenInterpolation<ThemedStyledProps<{}, DefaultTheme>>
 
-const media = (queries: string) => (
-  content: FlattenInterpolation<ThemedStyledProps<{}, {}>>
-) => css`
-  @media ${queries} {
-    ${content};
+type ViewportBreakpointLower = Exclude<ViewportBreakpoint, 'extraLarge'>
+
+type ViewportBreakpointUpper = Exclude<ViewportBreakpoint, 'small'>
+
+const viewportBreakpointScale: Record<
+  ViewportBreakpointLower,
+  ViewportBreakpointUpper
+> = { large: 'extraLarge', medium: 'large', small: 'medium' }
+
+const from = (breakpoint: ViewportBreakpoint) => (styles: Styles) => css`
+  @media screen and (min-width: ${({ theme }) => theme[breakpoint]}px) {
+    ${styles}
   }
 `
 
-export const untilSmall = media(`screen and (max-width: ${viewportSm - 1}px)`)
+const only = (breakpoint: ViewportBreakpointLower) => (styles: Styles) => css`
+  @media screen and (min-width: ${({ theme }) =>
+      theme[breakpoint]}px) and (max-width: ${({ theme }) =>
+      theme[viewportBreakpointScale[breakpoint]] - 1}px) {
+    ${styles}
+  }
+`
 
-export const small = media(`screen and (min-width: ${viewportSm}px), print`)
+const until = (breakpoint: ViewportBreakpoint) => (styles: Styles) => css`
+  @media screen and (max-width: ${({ theme }) => theme[breakpoint] - 1}px) {
+    ${styles}
+  }
+`
 
-export const untilMedium = media(`screen and (max-width: ${viewportMd - 1}px)`)
+export const overflowTouch = css`
+  -webkit-overflow-scrolling: touch;
+`
 
-export const medium = media(`screen and (min-width: ${viewportMd}px)`)
+export const untilSmall = until('small')
 
-export const large = media(`screen and (min-width: ${viewportLg}px)`)
+export const small = (styles: Styles) => css`
+  @media screen and (min-width: ${({ theme }) => theme.small}px), print {
+    ${styles}
+  }
+`
 
-export const extraLarge = media(`screen and (min-width: ${viewportXl}px)`)
+export const smallOnly = only('small')
 
-export const isHiddenMobile = css`
+export const untilMedium = until('medium')
+
+export const medium = from('medium')
+
+export const mediumOnly = only('medium')
+
+export const untilLarge = until('large')
+
+export const large = from('large')
+
+export const largeOnly = only('large')
+
+export const untilExtraLarge = until('extraLarge')
+
+export const extraLarge = from('extraLarge')
+
+export const isHiddenUntilSmall = css`
   ${untilSmall(css`
     display: none !important;
-  `)};
+  `)}
 `
 
-export const isHiddenTablet = css`
+export const isHiddenSmall = css`
   ${small(css`
     display: none !important;
-  `)};
+  `)}
 `
 
-export const contentContainer = css`
-  margin: 0 auto;
+export const container = (isFluid = false) => {
+  const fluid = css`
+    padding-left: ${({ theme }) => theme.gap}px;
+    padding-right: ${({ theme }) => theme.gap}px;
+  `
 
-  ${medium(css`
-    max-width: 960px;
-    width: 960px;
-  `)};
+  const centered = (breakpoint: ViewportBreakpoint) => css`
+    max-width: ${({ theme }) => theme[breakpoint] - 2 * theme.gap}px;
+  `
 
-  ${large(css`
-    max-width: 1152px;
-    width: 1152px;
-  `)};
+  return css`
+    flex-grow: 1;
+    margin: 0 auto;
+    position: relative;
+    width: ${isFluid ? '100%' : 'auto'};
 
-  ${extraLarge(css`
-    max-width: 1344px;
-    width: 1344px;
-  `)};
-`
+    ${isFluid
+      ? fluid
+      : css`
+          ${medium(centered('medium'))}
+
+          ${untilLarge(centered('large'))}
+
+          ${untilExtraLarge(centered('extraLarge'))}
+
+          ${large(centered('large'))}
+
+          ${extraLarge(centered('extraLarge'))}
+        `}
+  `
+}

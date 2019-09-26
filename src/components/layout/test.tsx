@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
 
-import { renderWithRouter } from 'utils/specification'
+import { renderWithContext } from 'utils/specification'
 import Layout from '.'
 
 test('should render correctly', () => {
@@ -15,7 +15,7 @@ test('should render correctly', () => {
 })
 
 test('clicking the logo icon should navigate to the root path', () => {
-  const { getByTestId, history } = renderWithRouter(<Layout>child</Layout>, {
+  const { getByTestId, history } = renderWithContext(<Layout>child</Layout>, {
     initialPath: '/not-root',
   })
   const icon = getByTestId('logo')

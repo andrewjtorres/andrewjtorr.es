@@ -4,8 +4,6 @@ import React from 'react'
 import { defineMessages, useIntl } from 'react-intl'
 import styled from 'styled-components'
 
-import { gray } from 'styles/variables'
-
 type Props = RouteComponentProps
 
 const rootId = 'routes.notFound'
@@ -33,7 +31,7 @@ const Root = styled.div`
 `
 
 const Title = styled.h1`
-  color: ${gray};
+  color: ${({ theme }) => theme.grayDark};
   font-size: ${rem(32)};
   font-weight: 400;
   line-height: 1.2;

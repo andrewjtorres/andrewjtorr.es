@@ -4,7 +4,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 
 import BaseLogo from 'assets/logo.svg'
-import { contentContainer, medium, untilMedium } from 'styles/mixins'
+import { container, medium, untilMedium } from 'styles/mixins'
 
 interface Props {
   children?: React.ReactNode
@@ -17,14 +17,14 @@ const Root = styled.div`
 `
 
 const Navbar = styled.nav`
-  ${contentContainer};
+  ${container()}
   display: flex;
   min-height: ${rem(52)};
   width: 100%;
 
   ${untilMedium(css`
     display: block;
-  `)};
+  `)}
 `
 
 const Brand = styled.div`
@@ -33,7 +33,7 @@ const Brand = styled.div`
 
   ${medium(css`
     margin-left: ${rem(-12)};
-  `)};
+  `)}
 `
 
 const LogoLink = styled(BaseLink)`
