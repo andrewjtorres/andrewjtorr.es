@@ -8,7 +8,7 @@ node_modules
 coverage
 
 # Translations
-src/translations/locales/*.json
+src/i18n/translations/*.json
 
 # Logs
 *.log*

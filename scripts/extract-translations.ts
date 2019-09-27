@@ -32,7 +32,7 @@ const mergeToFile = async (
   toBuild: boolean
 ) => {
   const originalTranslations: Record<string, Translation> = {}
-  const file = join(rootDir, `src/translations/locales/${locale}.json`)
+  const file = join(rootDir, `src/i18n/translations/${locale}.json`)
 
   try {
     const data: Translation[] = JSON.parse(await readFile(file))

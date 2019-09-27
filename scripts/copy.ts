@@ -25,7 +25,7 @@ const copy = async () => {
 
   await Promise.all([
     copyDir('public', 'build/public'),
-    copyDir('src/translations/locales', 'build/locales'),
+    copyDir('src/i18n/translations', 'build/translations'),
     copyFile('license', 'build/license'),
     copyFile('yarn.lock', 'build/yarn.lock'),
     writeFile('build/package.json', config),
@@ -33,7 +33,7 @@ const copy = async () => {
 
   if (isWatch) {
     const watcher = chokidar.watch(
-      ['public/**/*', 'src/translations/locales/**/*'],
+      ['public/**/*', 'src/i18n/translations/**/*'],
       { ignoreInitial: true }
     )
 

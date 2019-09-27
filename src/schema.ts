@@ -3,7 +3,7 @@ import { IResolvers, makeExecutableSchema } from 'graphql-tools'
 import { join } from 'path'
 import { promisify } from 'util'
 
-import { locales, localesDir } from './config'
+import { locales, translationsDir } from './config'
 import { Context } from './server'
 
 interface Translation {
@@ -26,7 +26,7 @@ const resolvers: IResolvers<undefined, Context> = {
       let data = '[]'
 
       try {
-        data = await readFile(join(localesDir, `${locale}.json`))
+        data = await readFile(join(translationsDir, `${locale}.json`))
       } catch (error) {
         if (error.code === 'ENOENT') {
           throw new Error(`Locale '${locale}' not found`)
