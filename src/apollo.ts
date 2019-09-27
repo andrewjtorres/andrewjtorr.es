@@ -1,10 +1,10 @@
-import { ApolloClient, ApolloClientOptions } from 'apollo-client'
 import {
   InMemoryCache,
   InMemoryCacheConfig as InMemoryCacheOptions,
   NormalizedCacheObject,
   defaultDataIdFromObject,
 } from 'apollo-cache-inmemory'
+import { ApolloClient, ApolloClientOptions } from 'apollo-client'
 import { ApolloLink } from 'apollo-link'
 import { ErrorLink } from 'apollo-link-error'
 import { createHttpLink } from 'apollo-link-http'

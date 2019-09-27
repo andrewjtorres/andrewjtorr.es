@@ -16,18 +16,20 @@ const NotFound = loadable(() =>
 )
 
 const Root: React.FunctionComponent = () => (
-  <IntlProvider defaultLocale="en" locale="en">
-    {/*
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore TS2322 */}
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Router>
-        <Home data-testid="home" path="/" />
-        <NotFound data-testid="not-found" default />
-      </Router>
-    </ThemeProvider>
-  </IntlProvider>
+  <React.StrictMode>
+    <IntlProvider defaultLocale="en" locale="en">
+      {/*
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore TS2322 */}
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Router>
+          <Home data-testid="home" path="/" />
+          <NotFound data-testid="not-found" default />
+        </Router>
+      </ThemeProvider>
+    </IntlProvider>
+  </React.StrictMode>
 )
 
 export default Root
