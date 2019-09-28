@@ -14,11 +14,11 @@ import React from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
 
+import schema from './api/schema'
 import Html from './components/html'
 import Root from './components/root'
 import { createApolloClient } from './apollo'
 import { locales, port, publicDir, rootDir } from './config'
-import schema from './schema'
 
 export interface Context {
   locale: string

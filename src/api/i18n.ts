@@ -1,22 +1,26 @@
 import fs from 'fs'
-import { IResolvers, makeExecutableSchema } from 'graphql-tools'
+import { IResolvers } from 'graphql-tools'
 import { join } from 'path'
 import { promisify } from 'util'
 
-import { locales, translationsDir } from './config'
-import { Context } from './server'
+import { locales, translationsDir } from '../config'
+import { Context } from '../server'
 
 interface Translation {
   id: string
   defaultMessage: string
   description: string
-  files: string[]
+  files?: string[]
   message: string
 }
 
 const readFile = (path: string) => promisify(fs.readFile)(path, 'utf-8')
 
-const resolvers: IResolvers<undefined, Context> = {
+export const queries = `
+  translations: [Translation]!
+`
+
+export const resolvers: IResolvers<undefined, Context> = {
   Query: {
     translations: async (_a, _b, { locale }) => {
       if (!locales.includes(locale)) {
@@ -38,26 +42,12 @@ const resolvers: IResolvers<undefined, Context> = {
   },
 }
 
-const typeDefs = `
-  schema {
-    query: Query
-  }
-
-  type Query {
-    translations: [Translation]!
-  }
-
+export const typeDefs = `
   type Translation {
     id: String!
     defaultMessage: String!
     description: String!
-    files: [String]!
+    files: [String]
     message: String!
   }
 `
-
-export default makeExecutableSchema({
-  logger: __IS_DEV__ ? { log: error => console.error(error) } : undefined,
-  resolvers,
-  typeDefs,
-})
