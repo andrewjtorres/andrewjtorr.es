@@ -146,7 +146,7 @@
     "eslint-plugin-unicorn": "^12.0.1",
     "file-loader": "^4.2.0",
     "glob": "^7.1.4",
-    "husky": "^3.0.5",
+    "husky": "^3.0.7",
     "jest": "^24.9.0",
     "jest-circus": "^24.9.0",
     "jest-config": "^24.9.0",
