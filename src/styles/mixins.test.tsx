@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-import { renderWithContext } from 'utils/specification'
+import { renderWithContext } from 'utils/spec'
 import {
   container,
   extraLarge,

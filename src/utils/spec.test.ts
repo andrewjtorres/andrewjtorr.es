@@ -1,4 +1,4 @@
-import { renderWithContext } from './specification'
+import { renderWithContext } from './spec'
 
 describe('renderWithContext', () => {
   test('should return render metadata containing a history object', () => {

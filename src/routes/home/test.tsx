@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { renderWithContext } from 'utils/specification'
+import { renderWithContext } from 'utils/spec'
 import Home from '.'
 
 test('should render correctly', () => {
