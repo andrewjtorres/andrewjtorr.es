@@ -20,7 +20,7 @@ setEditorHandler(({ fileName, lineNumber }) => {
 client.setOptionsAndConnect({ name: 'client', reload: true })
 client.useCustomOverlay({
   clear: () => dismissBuildError(),
-  showProblems: (_, errors) => {
+  showProblems: (_type, errors) => {
     const messages = formatWebpackMessages({
       _showErrors: true,
       _showWarnings: true,
