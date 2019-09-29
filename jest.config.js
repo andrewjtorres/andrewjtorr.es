@@ -5,6 +5,7 @@ const { defaults } = require('jest-config')
 module.exports = {
   collectCoverageFrom: [
     'src/**/*.ts?(x)',
+    '!src/api/schema.ts',
     '!src/components/html/*.ts?(x)',
     '!src/*.ts?(x)',
   ],
@@ -14,6 +15,7 @@ module.exports = {
     'src/routes/home': { branches: 75 },
   },
   errorOnDeprecated: true,
+  globals: { __IS_DEV__: false },
   moduleDirectories: [...defaults.moduleDirectories, '<rootDir>/src'],
   restoreMocks: true,
   setupFilesAfterEnv: ['<rootDir>/config/jest/setup.ts'],

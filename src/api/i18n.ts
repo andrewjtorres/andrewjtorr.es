@@ -1,12 +1,12 @@
 import fs from 'fs'
-import { IResolvers } from 'graphql-tools'
+import { IResolvers as Resolvers } from 'graphql-tools'
 import { join } from 'path'
 import { promisify } from 'util'
 
 import { locales, translationsDir } from '../config'
 import { Context } from '../server'
 
-interface Translation {
+export interface Translation {
   id: string
   defaultMessage: string
   description: string
@@ -14,15 +14,25 @@ interface Translation {
   message: string
 }
 
-const readFile = (path: string) => promisify(fs.readFile)(path, 'utf-8')
-
-export const queries = `
+export const queryTypeDefs = `
   translations: [Translation]!
 `
 
-export const resolvers: IResolvers<undefined, Context> = {
+export const typeDefs = `
+  type Translation {
+    id: String!
+    defaultMessage: String!
+    description: String!
+    files: [String]
+    message: String!
+  }
+`
+
+const readFile = (path: string) => promisify(fs.readFile)(path, 'utf-8')
+
+export const resolvers: Resolvers<undefined, Context> = {
   Query: {
-    translations: async (_a, _b, { locale }) => {
+    translations: async (_source, _args, { locale }) => {
       if (!locales.includes(locale)) {
         throw new Error(`Locale '${locale}' not supported`)
       }
@@ -37,17 +47,7 @@ export const resolvers: IResolvers<undefined, Context> = {
         }
       }
 
-      return JSON.parse(data) as Translation[]
+      return JSON.parse(data)
     },
   },
 }
-
-export const typeDefs = `
-  type Translation {
-    id: String!
-    defaultMessage: String!
-    description: String!
-    files: [String]
-    message: String!
-  }
-`

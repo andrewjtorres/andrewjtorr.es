@@ -59,7 +59,11 @@ module.exports = {
       },
     },
     {
-      files: ['config/jest/**/*.?(js|ts)', 'src/**/?(*.)test.ts?(x)'],
+      files: [
+        'config/jest/**/*.?(js|ts)',
+        'src/**/__mocks__/**/*.ts',
+        'src/**/?(*.)test.ts?(x)',
+      ],
       globals: jestPlugin.environments.globals.globals,
       plugins: jestPlugin.configs.recommended.plugins,
       rules: jestPlugin.configs.recommended.rules,

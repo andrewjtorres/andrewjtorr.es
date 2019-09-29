@@ -3,8 +3,12 @@ import { makeExecutableSchema } from 'graphql-tools'
 import * as i18n from './i18n'
 
 const typeDefs = `
+  schema {
+    query: Query
+  }
+
   type Query {
-    ${i18n.queries}
+    ${i18n.queryTypeDefs}
   }
 `
 
