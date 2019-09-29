@@ -14,11 +14,11 @@ export interface Translation {
   message: string
 }
 
-export const queryTypeDefs = `
-  translations: [Translation]!
-`
-
 export const typeDefs = `
+  type Query {
+    translations: [Translation]!
+  }
+
   type Translation {
     id: String!
     defaultMessage: String!
