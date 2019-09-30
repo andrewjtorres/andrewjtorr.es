@@ -116,7 +116,7 @@
     "@types/webpack-hot-middleware": "^2.16.5",
     "@types/webpack-node-externals": "^1.6.3",
     "@typescript-eslint/eslint-plugin": "^2.3.1",
-    "@typescript-eslint/parser": "^2.3.1",
+    "@typescript-eslint/parser": "^2.3.2",
     "apollo-link-logger": "^1.2.3",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
