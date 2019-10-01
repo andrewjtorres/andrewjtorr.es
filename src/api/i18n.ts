@@ -1,10 +1,9 @@
 import fs from 'fs'
-import { IResolvers as Resolvers } from 'graphql-tools'
 import { join } from 'path'
 import { promisify } from 'util'
 
+import { Context, Resolvers } from 'utils/apollo'
 import { locales, translationsDir } from '../config'
-import { Context } from '../server'
 
 export interface Translation {
   id: string

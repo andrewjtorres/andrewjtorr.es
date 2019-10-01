@@ -2,6 +2,7 @@ import { ApolloProvider } from '@apollo/react-hooks'
 import { renderToStringWithData } from '@apollo/react-ssr'
 import { ChunkExtractor, ChunkExtractorManager } from '@loadable/server'
 import { ServerLocation, isRedirect } from '@reach/router'
+import { SchemaLink } from 'apollo-link-schema'
 import { ApolloServer } from 'apollo-server-express'
 import bodyParser from 'body-parser'
 import compression from 'compression'
@@ -17,13 +18,8 @@ import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
 import schema from './api/schema'
 import Html from './components/html'
 import Root from './components/root'
-import { createApolloClient } from './apollo'
+import { Context, createApolloClient, createErrorLink } from './utils/apollo'
 import { locales, port, publicDir, rootDir } from './config'
-
-export interface Context {
-  locale: string
-  res: Response
-}
 
 process.on('unhandledRejection', (reason, promise) => {
   console.error('Unhandled Rejection at:', promise, 'reason:', reason)
@@ -58,8 +54,10 @@ app
 app.get('*', async (req: Request, res: Response, next: NextFunction) => {
   const alternateLocales = locales.filter(locale => locale !== req.language)
   const client = createApolloClient({
-    context: { locale: req.language, res },
-    schema,
+    links: [
+      createErrorLink(),
+      new SchemaLink({ context: { locale: req.language, res }, schema }),
+    ],
   })
   const extractor = new ChunkExtractor({
     entrypoints: 'client',

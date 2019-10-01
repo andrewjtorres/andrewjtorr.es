@@ -7,6 +7,7 @@ module.exports = {
     'src/**/*.ts?(x)',
     '!src/api/schema.ts',
     '!src/components/html/*.ts?(x)',
+    '!src/utils/apollo.ts',
     '!src/*.ts?(x)',
   ],
   coverageDirectory: 'coverage',
