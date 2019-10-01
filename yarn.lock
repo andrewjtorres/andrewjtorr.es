@@ -3123,16 +3123,16 @@ babel-plugin-polished@^1.1.0:
   dependencies:
     polished "^1.0.0"
 
-babel-plugin-react-intl@^4.1.19:
-  version "4.1.19"
-  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-4.1.19.tgz#d5301ba280f2f43ac0b29ac37e0f4917de440d24"
-  integrity sha512-mcJkLyZLE2FdoD//rRHZXDNh1ZWOhp+9K9bXasnspWtM3VWR3J05UVEhtiJfSP0vrQG+VpqMlLi4QQ5k++xBbw==
+babel-plugin-react-intl@^4.1.20:
+  version "4.1.20"
+  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-4.1.20.tgz#8790659d0ea216cc48d76004b1713da383bc266a"
+  integrity sha512-IsHp08rkQ0VX3t/Px/tvOm1izuxf9v+kFwjPSdVKZbo/uJ/vXGNJ2ebEXxYyX0dNYeyDkSFUjvBgJxmvKASjow==
   dependencies:
-    "@babel/core" "^7.4.5"
+    "@babel/core" "^7.6.2"
     "@babel/helper-plugin-utils" "^7.0.0"
     "@types/babel__core" "^7.1.2"
     fs-extra "^8.0.1"
-    intl-messageformat-parser "^3.2.0"
+    intl-messageformat-parser "^3.2.1"
 
 "babel-plugin-styled-components@>= 1", babel-plugin-styled-components@^1.10.6:
   version "1.10.6"
@@ -7159,10 +7159,10 @@ intl-locales-supported@^1.5.0:
   resolved "https://registry.yarnpkg.com/intl-locales-supported/-/intl-locales-supported-1.5.0.tgz#5025fb6bed369b30aa83e559cb892cf6881baacf"
   integrity sha512-VYLdcF3Z4b8UZ7tj3hxz9auSjIxpm18NLoUlgvt4I78vrskxstKqfKQlsuFpGE+n2RNkqrwlYo3D9QcYSjx4NA==
 
-intl-messageformat-parser@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-3.2.0.tgz#de7ba62cdc8edc80d2b21eb5ada1728b0fdff198"
-  integrity sha512-07G+OTgIEsYIPpy793/EU14Slz03nqouODE+CGXlojw1gOF1IaUXk99EOlVdKsPwl95hUJon4dsp9D7/XPBDCw==
+intl-messageformat-parser@^3.2.0, intl-messageformat-parser@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-3.2.1.tgz#598795221267cbbd206f1497c42ffced9b5565b6"
+  integrity sha512-ajCL1k1ha0mUrutlBTo5vcTzyfdH2OoghUu8SmR7tJ1D0uifZh9Hqd3ZC2SYVv/GTfTdW//rgKonMgAhZWmwZg==
 
 intl-messageformat@^7.3.1:
   version "7.3.1"
