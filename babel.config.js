@@ -19,6 +19,7 @@ const createConfig = ({ caller, env }) => {
       ['@babel/transform-runtime', { corejs: 3, helpers: false }],
       '@loadable/babel-plugin',
       ...(isTest ? ['dynamic-import-node'] : ['polished']),
+      'graphql-tag',
       ['styled-components', { displayName: isDev, pure: isProd }],
     ],
     presets: [
