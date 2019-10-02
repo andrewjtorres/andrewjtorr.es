@@ -2,7 +2,7 @@ import { ApolloProvider } from '@apollo/react-hooks'
 import { renderToStringWithData } from '@apollo/react-ssr'
 import { ChunkExtractor, ChunkExtractorManager } from '@loadable/server'
 import { ServerLocation, isRedirect } from '@reach/router'
-import { SchemaLink } from 'apollo-link-schema'
+import SchemaLink from 'apollo-link-schema'
 import { ApolloServer } from 'apollo-server-express'
 import bodyParser from 'body-parser'
 import compression from 'compression'
@@ -58,6 +58,7 @@ app.get('*', async (req: Request, res: Response, next: NextFunction) => {
       createErrorLink(),
       new SchemaLink({ context: { locale: req.language, res }, schema }),
     ],
+    ssrMode: true,
   })
   const extractor = new ChunkExtractor({
     entrypoints: 'client',

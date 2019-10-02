@@ -4,7 +4,7 @@ import {
   NormalizedCacheObject,
   defaultDataIdFromObject,
 } from 'apollo-cache-inmemory'
-import { ApolloClient, ApolloClientOptions } from 'apollo-client'
+import ApolloClient, { ApolloClientOptions } from 'apollo-client'
 import { ApolloLink } from 'apollo-link'
 import { ErrorLink } from 'apollo-link-error'
 import { Response } from 'express'
@@ -29,26 +29,30 @@ export interface Context {
 
 interface Options extends Partial<ApolloClientOptions<NormalizedCacheObject>> {
   defaults?: Record<string, any>
-  links: ApolloLink[]
+  links?: ApolloLink[]
   preloadedCache?: NormalizedCacheObject
 }
 
 export const createErrorLink = () =>
-  new ErrorLink(({ graphQLErrors, networkError }) => {
-    if (graphQLErrors) {
-      graphQLErrors.map(({ locations, message, path }) =>
-        console.warn(
-          `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
-        )
+  new ErrorLink(({ graphQLErrors = [], networkError }) => {
+    graphQLErrors.forEach(({ locations = [], message, path = [] }) =>
+      console.warn(
+        `[GraphQL Error]: ${message}${
+          locations.length > 0
+            ? ` Location: ${locations
+                .map(({ column, line }) => `${line}:${column}`)
+                .join(', ')}`
+            : ''
+        }${path.length > 0 ? ` Path: ${path.join(', ')}` : ''}`
       )
-    }
+    )
 
     if (networkError) {
-      console.warn(`[Network error]: ${networkError}`)
+      console.warn(`[Network Error]: ${networkError.message}`)
     }
   })
 
-const createInMemoryCache = (options: InMemoryCacheOptions = {}) =>
+export const createInMemoryCache = (options: InMemoryCacheOptions = {}) =>
   new InMemoryCache({
     dataIdFromObject: value => {
       switch (value.__typename) {
@@ -63,10 +67,10 @@ const createInMemoryCache = (options: InMemoryCacheOptions = {}) =>
 export const createApolloClient = ({
   cache: providedCache,
   defaults,
-  links,
+  links = [],
   preloadedCache,
   ...options
-}: Options) => {
+}: Options = {}) => {
   let cache = providedCache || createInMemoryCache()
 
   if (preloadedCache) {
@@ -81,8 +85,6 @@ export const createApolloClient = ({
     assumeImmutableResults: true,
     cache,
     link: ApolloLink.from(links),
-    ssrForceFetchDelay: process.env.BROWSER_ENV ? 100 : undefined,
-    ssrMode: !process.env.BROWSER_ENV,
     ...options,
   })
 

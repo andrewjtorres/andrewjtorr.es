@@ -6,7 +6,7 @@ import {
   HistorySource,
   createHistory,
 } from '@reach/router'
-import { createHttpLink } from 'apollo-link-http'
+import { HttpLink } from 'apollo-link-http'
 import React from 'react'
 import deepForceUpdate from 'react-deep-force-update'
 import { hydrate, render } from 'react-dom'
@@ -24,9 +24,10 @@ const client = createApolloClient({
   links: [
     createErrorLink(),
     ...(__IS_DEV__ ? [require('apollo-link-logger').default] : []),
-    createHttpLink({ credentials: 'include', uri: process.env.API_URI }),
+    new HttpLink({ credentials: 'include', uri: process.env.API_URI }),
   ],
   preloadedCache: window.__APOLLO_CACHE__,
+  ssrForceFetchDelay: 100,
 })
 const container = document.querySelector('#root')
 const history = createHistory((window as unknown) as HistorySource)
