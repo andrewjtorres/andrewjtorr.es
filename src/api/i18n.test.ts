@@ -1,5 +1,5 @@
 import fs from 'fs'
-import { GraphQLError, graphql } from 'graphql'
+import { graphql } from 'graphql'
 
 import { Translation } from './i18n'
 import schema from './schema'
@@ -29,7 +29,7 @@ const readFile = (path: string, _options: any, callback: Callback) => {
 describe('i18n', () => {
   describe('translations', () => {
     const source = `
-      query Translations {
+      query TranslationsQuery {
         translations {
           id
           defaultMessage
@@ -49,7 +49,10 @@ describe('i18n', () => {
 
       expect(data).toBeNull()
       expect(errors).toHaveLength(1)
-      expect(errors).toContainEqual(expect.any(GraphQLError))
+
+      const { 0: { message = '' } = {} } = errors || []
+
+      expect(message).toMatch("Locale 'es' not supported")
     })
 
     test('should return query metadata containing an array of locale translations', async () => {
@@ -90,7 +93,10 @@ describe('i18n', () => {
 
       expect(data).toBeNull()
       expect(errors).toHaveLength(1)
-      expect(errors).toContainEqual(expect.any(GraphQLError))
+
+      const { 0: { message = '' } = {} } = errors || []
+
+      expect(message).toMatch("Locale 'en' not found")
     })
 
     test('should return query metadata containing an empty array of locale translations', async () => {
