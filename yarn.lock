@@ -10,7 +10,7 @@
     ts-invariant "^0.4.4"
     tslib "^1.10.0"
 
-"@apollo/react-hooks@^3.1.1", "@apollo/react-hooks@^3.1.2":
+"@apollo/react-hooks@^3.1.2":
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/@apollo/react-hooks/-/react-hooks-3.1.2.tgz#3f889f9448ebb32faf164117f1f63d9ffa18f5d9"
   integrity sha512-PV5u40E9iwfwM7u61r2P9PTjcGaM3zRwiwrJGDKOKaOn1Y9wTHhKOVEQa7YOsCWciSaMVK1slpKMvQbD2Ypqtw==
@@ -20,13 +20,13 @@
     ts-invariant "^0.4.4"
     tslib "^1.10.0"
 
-"@apollo/react-ssr@^3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@apollo/react-ssr/-/react-ssr-3.1.1.tgz#4952c02c4131334edaaa4af1c2668801ac656471"
-  integrity sha512-Jbh3bpkqmp5k5KGZNcKgpGiChlUB3kVkFxzuqC4Tzx5u1gg47dPuS950j3LeMLD6ZRFhwryMnMtBsLu8iceE/Q==
+"@apollo/react-ssr@^3.1.2":
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/@apollo/react-ssr/-/react-ssr-3.1.2.tgz#ebb79bf94a5ab760e5152ab5f0371e64ec4041ad"
+  integrity sha512-kBuinaib6+QBoDfc5n/bvRxu+6QnuvQl1mZ5ThBSO+6aL5aJtQYZsblJyC5R/Zx6koJilq6+oZfL510wOlFeEw==
   dependencies:
-    "@apollo/react-common" "^3.1.1"
-    "@apollo/react-hooks" "^3.1.1"
+    "@apollo/react-common" "^3.1.2"
+    "@apollo/react-hooks" "^3.1.2"
     tslib "^1.10.0"
 
 "@apollographql/apollo-tools@^0.4.0":
