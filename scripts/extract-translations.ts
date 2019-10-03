@@ -12,7 +12,7 @@ interface Translation {
   id: string
   defaultMessage: string
   description: string
-  files: string[]
+  files?: string[]
   message: string
 }
 
