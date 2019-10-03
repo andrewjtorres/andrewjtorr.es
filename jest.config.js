@@ -13,12 +13,6 @@ module.exports = {
   coverageThreshold: {
     global: { branches: 100, functions: 100, lines: 100, statements: 100 },
     'src/routes/home': { branches: 75 },
-    'src/utils/apollo': {
-      branches: 45,
-      functions: 35,
-      lines: 60,
-      statements: 60,
-    },
   },
   errorOnDeprecated: true,
   globals: { __IS_DEV__: false },

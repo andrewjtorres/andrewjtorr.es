@@ -2,7 +2,6 @@ import {
   InMemoryCache,
   InMemoryCacheConfig as InMemoryCacheOptions,
   NormalizedCacheObject,
-  defaultDataIdFromObject,
 } from 'apollo-cache-inmemory'
 import ApolloClient, { ApolloClientOptions } from 'apollo-client'
 import { ApolloLink } from 'apollo-link'
@@ -41,9 +40,9 @@ export const createErrorLink = () =>
           locations.length > 0
             ? ` Location: ${locations
                 .map(({ column, line }) => `${line}:${column}`)
-                .join(', ')}`
+                .join(' > ')}`
             : ''
-        }${path.length > 0 ? ` Path: ${path.join(', ')}` : ''}`
+        }${path.length > 0 ? ` Path: ${path.join(' > ')}` : ''}`
       )
     )
 
@@ -52,17 +51,8 @@ export const createErrorLink = () =>
     }
   })
 
-export const createInMemoryCache = (options: InMemoryCacheOptions = {}) =>
-  new InMemoryCache({
-    dataIdFromObject: value => {
-      switch (value.__typename) {
-        default:
-          return defaultDataIdFromObject(value)
-      }
-    },
-    freezeResults: true,
-    ...options,
-  })
+const createInMemoryCache = (options: InMemoryCacheOptions = {}) =>
+  new InMemoryCache({ freezeResults: true, ...options })
 
 export const createApolloClient = ({
   cache: providedCache,

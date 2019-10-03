@@ -11,14 +11,14 @@ let mockFiles: MockFiles = Object.freeze(Object.create(null))
 
 const readFile = (path: string, _options: any, callback: Callback) => {
   const directory: Record<string, string> | undefined = mockFiles[dirname(path)]
-  const error: NodeJS.ErrnoException = new Error(
-    `ENOENT: no such file or directory, open '${path}'`
-  )
+  const error = new Error(`ENOENT: no such file or directory, open '${path}'`)
 
-  error.code = 'ENOENT'
-  error.errno = -4058
-  error.path = path
-  error.syscall = 'open'
+  Object.defineProperties(error, {
+    code: { value: 'ENOENT' },
+    errno: { value: -4058 },
+    path: { value: path },
+    syscall: { value: 'open' },
+  })
 
   if (directory) {
     const data = directory[basename(path)]
