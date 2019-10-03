@@ -29,6 +29,15 @@
     "@apollo/react-hooks" "^3.1.2"
     tslib "^1.10.0"
 
+"@apollo/react-testing@^3.1.2":
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/@apollo/react-testing/-/react-testing-3.1.2.tgz#82bac9ce3033470e4ff145642cd271d33b32296b"
+  integrity sha512-nADLe8ju6K7LinKy5bJnN8cXMeje/s7zNIfKESviQz09+AOORFHtDPlgQPwkaogNor4yTKFwrrwtvokhRu8tnQ==
+  dependencies:
+    "@apollo/react-common" "^3.1.2"
+    fast-json-stable-stringify "^2.0.0"
+    tslib "^1.10.0"
+
 "@apollographql/apollo-tools@^0.4.0":
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/@apollographql/apollo-tools/-/apollo-tools-0.4.0.tgz#8a1a0ab7a0bb12ccc03b72e4a104cfa5d969fd5f"
