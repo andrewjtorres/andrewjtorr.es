@@ -255,9 +255,9 @@ const Twitter = styled(BaseTwitter)`
 
 const Home: React.FunctionComponent<Props> = (props: Props) => {
   const { formatMessage } = useIntl()
-  const links: (HTMLAnchorElement | null)[] = []
-  const mediumLinkContainer = React.useRef<HTMLDivElement>(null)
-  const smallLinkContainer = React.useRef<HTMLDivElement>(null)
+  const links: HTMLAnchorElement[] = []
+  const mediumLinkContainer = React.useRef<HTMLDivElement>()
+  const smallLinkContainer = React.useRef<HTMLDivElement>()
 
   React.useEffect(() => {
     const mediaQueryList = window.matchMedia(
@@ -270,9 +270,7 @@ const Home: React.FunctionComponent<Props> = (props: Props) => {
     }: MediaQueryList | MediaQueryListEvent) => {
       const { current } = matches ? mediumLinkContainer : smallLinkContainer
 
-      return current
-        ? current.append(...(links as HTMLAnchorElement[]))
-        : undefined
+      return current && current.append(...links)
     }
 
     mediaQueryList.addListener(smallMediumTransition)
@@ -282,7 +280,12 @@ const Home: React.FunctionComponent<Props> = (props: Props) => {
   return (
     <Layout {...props}>
       <Root>
-        <ImageContainer data-testid="image-container" ref={mediumLinkContainer}>
+        <ImageContainer
+          data-testid="image-container"
+          ref={element =>
+            element !== null && (mediumLinkContainer.current = element)
+          }
+        >
           <TitleImage alt="Fixing the Mustache" src={fixingTheMustacheUrl} />
         </ImageContainer>
         <Title>{formatMessage(translations.title)}</Title>
@@ -290,13 +293,20 @@ const Home: React.FunctionComponent<Props> = (props: Props) => {
         <Content>
           {formatMessage(translations.description, { br: <Br key="br" /> })}
         </Content>
-        <LinkContainer data-testid="link-container" ref={smallLinkContainer}>
+        <LinkContainer
+          data-testid="link-container"
+          ref={element =>
+            element !== null && (smallLinkContainer.current = element)
+          }
+        >
           <LinkedInLink
             aria-label="linkedin"
             data-testid="linkedin"
             href="https://www.linkedin.com/in/andrew-torres-305a7913a"
             ref={element => {
-              links.push(element)
+              if (element !== null) {
+                links.push(element)
+              }
             }}
             rel="noopener noreferrer"
             target="_blank"
@@ -308,7 +318,9 @@ const Home: React.FunctionComponent<Props> = (props: Props) => {
             data-testid="github"
             href="https://github.com/ajtorres9"
             ref={element => {
-              links.push(element)
+              if (element !== null) {
+                links.push(element)
+              }
             }}
             rel="noopener noreferrer"
             target="_blank"
@@ -320,7 +332,9 @@ const Home: React.FunctionComponent<Props> = (props: Props) => {
             data-testid="gitlab"
             href="https://gitlab.com/ajtorres9"
             ref={element => {
-              links.push(element)
+              if (element !== null) {
+                links.push(element)
+              }
             }}
             rel="noopener noreferrer"
             target="_blank"
@@ -332,7 +346,9 @@ const Home: React.FunctionComponent<Props> = (props: Props) => {
             data-testid="twitter"
             href="https://twitter.com/ajtorres333"
             ref={element => {
-              links.push(element)
+              if (element !== null) {
+                links.push(element)
+              }
             }}
             rel="noopener noreferrer"
             target="_blank"
