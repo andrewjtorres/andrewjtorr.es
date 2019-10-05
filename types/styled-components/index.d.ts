@@ -106,10 +106,6 @@ declare module 'styled-components' {
     fontWeightBold: number
     blockSpacing: string
     gap: number
-    small: number
-    medium: number
-    large: number
-    extraLarge: number
     timingFunction: string
     borderRadiusSmall: string
     borderRadius: string

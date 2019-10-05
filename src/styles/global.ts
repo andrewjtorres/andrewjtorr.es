@@ -145,20 +145,6 @@ const GlobalStyle = createGlobalStyle`
     vertical-align: baseline;
   }
 
-  small {
-    font-size: ${em(14)};
-  }
-
-  span {
-    font-style: inherit;
-    font-weight: inherit;
-  }
-
-  strong {
-    color: ${({ theme }) => theme.textStrongColor};
-    font-weight: ${({ theme }) => theme.fontWeightBold};
-  }
-
   pre {
     ${overflowTouch}
     background-color: ${({ theme }) => theme.preBackgroundColor};
@@ -176,6 +162,20 @@ const GlobalStyle = createGlobalStyle`
       font-size: ${em(16)};
       padding: 0;
     }
+  }
+
+  small {
+    font-size: ${em(14)};
+  }
+
+  span {
+    font-style: inherit;
+    font-weight: inherit;
+  }
+
+  strong {
+    color: ${({ theme }) => theme.textStrongColor};
+    font-weight: ${({ theme }) => theme.fontWeightBold};
   }
 
   td,
@@ -226,7 +226,7 @@ const GlobalStyle = createGlobalStyle`
     *::after {
       background-color: transparent !important;
       box-shadow: none !important;
-      color: ${({ theme }) => theme.black} !important;
+      color: ${hsl(0, 0, 0)} !important;
       text-shadow: none !important;
     }
 
