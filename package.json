@@ -132,7 +132,7 @@
     "cz-conventional-changelog": "^3.0.2",
     "dotenv-webpack": "^1.7.0",
     "eslint": "^6.5.1",
-    "eslint-config-prettier": "^6.3.0",
+    "eslint-config-prettier": "^6.4.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-config-standard-react": "^9.2.0",
     "eslint-import-resolver-typescript": "^1.1.1",
