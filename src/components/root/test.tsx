@@ -3,16 +3,16 @@ import { waitForElement } from '@testing-library/react'
 import React from 'react'
 
 import { renderWithContext } from 'utils/spec'
-import { Translation, translationsQuery } from './graphql'
+import { QueriedTranslation, translationsQuery } from './graphql'
 import Root from '.'
 
-const translations: Translation[] = [
+const translations: QueriedTranslation[] = [
   {
+    __typename: 'Translation',
     id: 'path.to.file.a',
     message: 'message a',
     defaultMessage: 'default message a',
     description: 'description a',
-    files: ['path/to/file.ts'],
   },
 ]
 
@@ -22,7 +22,7 @@ const mocks: MockedResponse[] = [
 
 test('should render correctly', async () => {
   const { getByTestId } = renderWithContext(
-    <MockedProvider addTypename={false} mocks={mocks}>
+    <MockedProvider mocks={mocks}>
       <Root />
     </MockedProvider>
   )
@@ -33,7 +33,7 @@ test('should render correctly', async () => {
 
 test('should render the default route correctly', async () => {
   const { getByTestId } = renderWithContext(
-    <MockedProvider addTypename={false} mocks={mocks}>
+    <MockedProvider mocks={mocks}>
       <Root />
     </MockedProvider>,
     { initialPath: '/not-found' }

@@ -6,8 +6,11 @@ module.exports = {
   collectCoverageFrom: [
     'src/**/*.ts?(x)',
     '!src/api/schema.ts',
-    '!src/components/html/*.ts?(x)',
-    '!src/*.ts?(x)',
+    '!src/components/**/graphql.ts',
+    '!src/components/html/index.tsx',
+    '!src/client.tsx',
+    '!src/config.ts',
+    '!src/server.tsx',
   ],
   coverageDirectory: 'coverage',
   coverageThreshold: {

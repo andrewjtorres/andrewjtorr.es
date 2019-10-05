@@ -2,16 +2,8 @@ import fs from 'fs'
 import { join } from 'path'
 import { promisify } from 'util'
 
-import { Context, Resolvers } from 'utils/apollo'
-import { locales, translationsDir } from '../config'
-
-export interface Translation {
-  id: string
-  defaultMessage: string
-  description: string
-  files?: string[]
-  message: string
-}
+import { Context, Resolvers } from 'common'
+import { locales, translationsDir } from 'config'
 
 export const typeDefs = `
   type Query {

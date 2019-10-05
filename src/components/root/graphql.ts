@@ -1,25 +1,23 @@
 import gql from 'graphql-tag'
 
-export interface Translation {
-  id: string
-  defaultMessage: string
-  description: string
-  files?: string[]
-  message: string
-}
+import {
+  Queried,
+  Translation,
+  primitiveTranslationFieldsFragment,
+} from 'common'
+
+export type QueriedTranslation = Queried<Translation>
 
 export interface TranslationsQueryData {
-  translations: Translation[]
+  translations: QueriedTranslation[]
 }
 
 export const translationsQuery = gql`
   query TranslationsQuery {
     translations {
-      id
-      defaultMessage
-      description
-      files
-      message
+      ...PrimitiveTranslationFields
     }
   }
+
+  ${primitiveTranslationFieldsFragment}
 `

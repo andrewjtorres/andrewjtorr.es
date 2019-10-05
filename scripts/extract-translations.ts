@@ -4,17 +4,10 @@ import chokidar from 'chokidar'
 import { join, resolve } from 'path'
 
 import { readDir, readFile, writeFile } from './lib/fs'
+import { Translation } from '../src/common'
 import { locales } from '../src/config'
 
 type Translations = Record<string, Translation>
-
-interface Translation {
-  id: string
-  defaultMessage: string
-  description: string
-  files?: string[]
-  message: string
-}
 
 const extractedTranslations: Record<string, ExtractedMessageDescriptor[]> = {}
 

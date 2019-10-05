@@ -6,25 +6,6 @@ import {
 import ApolloClient, { ApolloClientOptions } from 'apollo-client'
 import { ApolloLink } from 'apollo-link'
 import { ErrorLink } from 'apollo-link-error'
-import { Response } from 'express'
-import { GraphQLResolveInfo } from 'graphql'
-
-type FieldResolver<S = any, C = any, A = Record<string, any>> = (
-  source: S,
-  args: A,
-  context: C,
-  info: GraphQLResolveInfo
-) => any
-
-export type Resolvers<S = any, C = any> = Record<
-  string,
-  Record<string, FieldResolver<S, C>>
->
-
-export interface Context {
-  locale: string
-  res: Response
-}
 
 interface Options extends Partial<ApolloClientOptions<NormalizedCacheObject>> {
   defaults?: Record<string, any>

@@ -1,7 +1,7 @@
 import fs from 'fs'
 import { graphql } from 'graphql'
 
-import { Translation } from './i18n'
+import { Translation } from 'common'
 import schema from './schema'
 
 type Callback = (error: NodeJS.ErrnoException | null, data: string) => void
@@ -11,22 +11,22 @@ interface TranslationsQueryData {
 }
 
 jest.mock('fs')
-jest.mock('../config', () => ({ locales: ['en'], translationsDir: 'dir' }))
+jest.mock('config', () => ({ locales: ['en'], translationsDir: 'dir' }))
 
 const readFile = (path: string, _options: any, callback: Callback) => {
-  const error: NodeJS.ErrnoException = new Error(
-    `EACCES: permission denied, open '${path}'`
-  )
+  const error = new Error(`EACCES: permission denied, open '${path}'`)
 
-  error.code = 'EACCES'
-  error.errno = -4092
-  error.path = path
-  error.syscall = 'open'
+  Object.defineProperties(error, {
+    code: { value: 'EACCES' },
+    errno: { value: -4092 },
+    path: { value: path },
+    syscall: { value: 'open' },
+  })
 
   return callback(error, '')
 }
 
-describe('i18n', () => {
+describe('translation', () => {
   describe('translations', () => {
     const source = `
       query TranslationsQuery {

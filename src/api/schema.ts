@@ -1,9 +1,9 @@
 import { makeExecutableSchema } from 'graphql-tools'
 
-import * as i18n from './i18n'
+import * as translation from './translation'
 
 export default makeExecutableSchema({
   logger: __IS_DEV__ ? { log: error => console.error(error) } : undefined,
-  resolvers: [i18n.resolvers],
-  typeDefs: [i18n.typeDefs],
+  resolvers: [translation.resolvers],
+  typeDefs: [translation.typeDefs],
 })

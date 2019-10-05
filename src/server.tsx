@@ -16,9 +16,10 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
 
 import schema from './api/schema'
+import { Context } from './common'
 import Html from './components/html'
 import Root from './components/root'
-import { Context, createApolloClient, createErrorLink } from './utils/apollo'
+import { createApolloClient, createErrorLink } from './utils/apollo'
 import { locales, port, publicDir, rootDir } from './config'
 
 process.on('unhandledRejection', (reason, promise) => {
