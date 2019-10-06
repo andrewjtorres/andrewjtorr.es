@@ -12,6 +12,7 @@ import deepForceUpdate from 'react-deep-force-update'
 import { hydrate, render } from 'react-dom'
 
 import Root from './components/root'
+import { resolvers, typeDefs } from './store'
 import { createApolloClient, createErrorLink } from './utils/apollo'
 import { createPath } from './utils/history'
 
@@ -21,13 +22,16 @@ interface HistoryMetadata {
 }
 
 const client = createApolloClient({
+  defaults: window.__APOLLO_STATE__,
   links: [
     createErrorLink(),
     ...(__IS_DEV__ ? [require('apollo-link-logger').default] : []),
     new HttpLink({ credentials: 'include', uri: process.env.API_URI }),
   ],
   preloadedCache: window.__APOLLO_CACHE__,
+  resolvers,
   ssrForceFetchDelay: 100,
+  typeDefs,
 })
 const container = document.querySelector('#root')
 const history = createHistory((window as unknown) as HistorySource)

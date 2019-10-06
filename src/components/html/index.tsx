@@ -13,12 +13,13 @@ interface Props extends React.HtmlHTMLAttributes<HTMLElement> {
   links?: React.ReactElement[]
   scripts?: React.ReactElement[]
   state?: State
-  styles: React.ReactElement[]
+  styles?: React.ReactElement[]
   title?: string
 }
 
 interface State {
   __APOLLO_CACHE__: NormalizedCacheObject
+  __APOLLO_STATE__: Record<string, any>
 }
 
 const Html: React.FunctionComponent<Props> = ({
@@ -28,7 +29,7 @@ const Html: React.FunctionComponent<Props> = ({
   lang = 'en',
   links = [],
   scripts = [],
-  state = { __APOLLO_CACHE__: {} },
+  state = { __APOLLO_CACHE__: {}, __APOLLO_STATE__: {} },
   styles,
   title = 'Andrew Torres',
   ...props

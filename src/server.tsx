@@ -19,6 +19,7 @@ import schema from './api/schema'
 import { Context } from './common'
 import Html from './components/html'
 import Root from './components/root'
+import { defaults, resolvers } from './store'
 import { createApolloClient, createErrorLink } from './utils/apollo'
 import { locales, port, publicDir, rootDir } from './config'
 
@@ -55,10 +56,12 @@ app
 app.get('*', async (req: Request, res: Response, next: NextFunction) => {
   const alternateLocales = locales.filter(locale => locale !== req.language)
   const client = createApolloClient({
+    defaults,
     links: [
       createErrorLink(),
       new SchemaLink({ context: { locale: req.language, res }, schema }),
     ],
+    resolvers,
     ssrMode: true,
   })
   const extractor = new ChunkExtractor({
@@ -86,7 +89,10 @@ app.get('*', async (req: Request, res: Response, next: NextFunction) => {
         lang={req.language}
         links={extractor.getLinkElements()}
         scripts={extractor.getScriptElements()}
-        state={{ __APOLLO_CACHE__: client.extract() }}
+        state={{
+          __APOLLO_CACHE__: client.extract(),
+          __APOLLO_STATE__: defaults,
+        }}
         styles={sheet.getStyleElement()}
       >
         {root}
