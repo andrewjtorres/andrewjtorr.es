@@ -99,6 +99,9 @@ describe('createErrorLink', () => {
       expect(warn).toHaveBeenCalledWith(
         "[GraphQL Error]: Locale 'es' not supported"
       )
+
+      warn.mockRestore()
+
       done()
     })
   })
@@ -138,6 +141,9 @@ describe('createErrorLink', () => {
       expect(warn).toHaveBeenCalledWith(
         "[GraphQL Error]: Locale 'es' not supported Location: 1:1 Path: translations"
       )
+
+      warn.mockRestore()
+
       done()
     })
   })
@@ -169,6 +175,9 @@ describe('createErrorLink', () => {
         expect(warn).toHaveBeenCalledWith(
           '[Network Error]: Internal Server Error'
         )
+
+        warn.mockRestore()
+
         done()
       },
     })
