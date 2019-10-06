@@ -5,7 +5,6 @@ const { defaults } = require('jest-config')
 module.exports = {
   collectCoverageFrom: [
     'src/**/*.ts?(x)',
-    '!src/api/schema.ts',
     '!src/components/**/graphql.ts',
     '!src/components/html/index.tsx',
     '!src/client.tsx',
