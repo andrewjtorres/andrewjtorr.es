@@ -8,12 +8,14 @@ import {
 
 export type QueriedTranslation = Queried<Translation>
 
-export interface TranslationsQueryData {
+export interface InitializationQueryData {
+  currentLocale: string
   translations: QueriedTranslation[]
 }
 
-export const translationsQuery = gql`
-  query TranslationsQuery {
+export const initializationQuery = gql`
+  query InitializationQuery {
+    currentLocale @client
     translations {
       ...PrimitiveTranslationFields
     }

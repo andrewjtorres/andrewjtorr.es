@@ -2,8 +2,9 @@ import { MockedProvider, MockedResponse } from '@apollo/react-testing'
 import { waitForElement } from '@testing-library/react'
 import React from 'react'
 
+import { resolvers } from 'store'
 import { renderWithContext } from 'utils/spec'
-import { QueriedTranslation, translationsQuery } from './graphql'
+import { QueriedTranslation, initializationQuery } from './graphql'
 import Root from '.'
 
 const translations: QueriedTranslation[] = [
@@ -17,12 +18,17 @@ const translations: QueriedTranslation[] = [
 ]
 
 const mocks: MockedResponse[] = [
-  { request: { query: translationsQuery }, result: { data: { translations } } },
+  {
+    request: { query: initializationQuery },
+    result: { data: { currentLocale: 'en', translations } },
+  },
 ]
 
 test('should render correctly', async () => {
   const { getByTestId } = renderWithContext(
-    <MockedProvider mocks={mocks}>
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore TS2322
+    <MockedProvider mocks={mocks} resolvers={resolvers}>
       <Root />
     </MockedProvider>
   )
@@ -33,7 +39,9 @@ test('should render correctly', async () => {
 
 test('should render the default route correctly', async () => {
   const { getByTestId } = renderWithContext(
-    <MockedProvider mocks={mocks}>
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore TS2322
+    <MockedProvider mocks={mocks} resolvers={resolvers}>
       <Root />
     </MockedProvider>,
     { initialPath: '/not-found' }

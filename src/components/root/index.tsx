@@ -7,7 +7,7 @@ import { ThemeProvider } from 'styled-components'
 
 import GlobalStyle from 'styles/global'
 import theme from 'styles/theme'
-import { TranslationsQueryData, translationsQuery } from './graphql'
+import { InitializationQueryData, initializationQuery } from './graphql'
 
 const Home = loadable(() =>
   import(/* webpackChunkName: 'home' */ 'routes/home')
@@ -18,9 +18,9 @@ const NotFound = loadable(() =>
 )
 
 const Root: React.FunctionComponent = () => {
-  const { data: { translations = [] } = {} } = useQuery<TranslationsQueryData>(
-    translationsQuery
-  )
+  const { data: { currentLocale = 'en', translations = [] } = {} } = useQuery<
+    InitializationQueryData
+  >(initializationQuery)
 
   const messages = translations.reduce(
     (acc, { id, message }) => ({ ...acc, [id]: message }),
@@ -29,7 +29,11 @@ const Root: React.FunctionComponent = () => {
 
   return (
     <React.StrictMode>
-      <IntlProvider defaultLocale="en" locale="en" messages={messages}>
+      <IntlProvider
+        defaultLocale="en"
+        locale={currentLocale}
+        messages={messages}
+      >
         {/*
         // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
         // @ts-ignore TS2322 */}

@@ -1,5 +1,9 @@
-export const defaults = {}
+import * as locale from './locale'
 
-export const resolvers = []
+export type Defaults = locale.Defaults
 
-export const typeDefs = []
+export const defaults: Defaults = { ...locale.defaults }
+
+export const resolvers = [locale.resolvers]
+
+export const typeDefs = [locale.typeDefs]

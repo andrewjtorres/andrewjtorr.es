@@ -19,7 +19,7 @@ import schema from './api/schema'
 import { Context } from './common'
 import Html from './components/html'
 import Root from './components/root'
-import { defaults, resolvers } from './store'
+import { Defaults, defaults as baseDefaults, resolvers } from './store'
 import { createApolloClient, createErrorLink } from './utils/apollo'
 import { locales, port, publicDir, rootDir } from './config'
 
@@ -54,6 +54,12 @@ app
   .use(server.getMiddleware({ cors: false, path: '/api' }))
 
 app.get('*', async (req: Request, res: Response, next: NextFunction) => {
+  const defaults: Defaults = {
+    ...baseDefaults,
+    currentLocale: locales.includes(req.language) ? req.language : 'en',
+    locales,
+  }
+
   const alternateLocales = locales.filter(locale => locale !== req.language)
   const client = createApolloClient({
     defaults,

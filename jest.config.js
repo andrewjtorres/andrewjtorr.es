@@ -8,6 +8,7 @@ module.exports = {
     '!src/components/**/graphql.ts',
     '!src/components/html/index.tsx',
     '!src/store/index.ts',
+    '!src/store/locale.ts',
     '!src/client.tsx',
     '!src/config.ts',
     '!src/server.tsx',
