@@ -78,7 +78,7 @@
     "@babel/preset-env": "^7.6.2",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.6.0",
-    "@babel/types": "^7.6.1",
+    "@babel/types": "^7.6.3",
     "@loadable/babel-plugin": "^5.10.3",
     "@loadable/webpack-plugin": "^5.7.1",
     "@semantic-release/commit-analyzer": "^6.3.0",
