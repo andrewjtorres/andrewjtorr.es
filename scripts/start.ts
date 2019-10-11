@@ -87,6 +87,10 @@ const start = async () => {
     throw new TypeError("Unable to set 'client' entry point")
   }
 
+  if (typeof filename === 'function') {
+    throw new TypeError('Unable to properly update output filename')
+  }
+
   if (Array.isArray(entry) || typeof entry === 'string') {
     entry = clientConfig.entry = { client: entry }
   }
