@@ -87,10 +87,6 @@ const start = async () => {
     throw new TypeError("Unable to set 'client' entry point")
   }
 
-  if (typeof filename === 'function') {
-    throw new TypeError('Unable to properly update output filename')
-  }
-
   if (Array.isArray(entry) || typeof entry === 'string') {
     entry = clientConfig.entry = { client: entry }
   }
@@ -104,6 +100,10 @@ const start = async () => {
   clientConfig.module = {
     ...clientConfig.module,
     rules: rules.filter(({ loader }) => loader !== 'null-loader'),
+  }
+
+  if (typeof filename === 'function') {
+    throw new TypeError('Unable to properly update output filename')
   }
 
   clientConfig.output = {
@@ -268,9 +268,9 @@ const start = async () => {
     browserSync.create().init(
       {
         middleware: [server],
-        open: !isSilent,
-        server: 'src/server.tsx',
-        ...(isRelease ? { notify: false, ui: false } : {}),
+        open: !isSilent && 'local',
+        server: { baseDir: '../public' },
+        ...(isRelease ? { notify: false, ui: {} } : {}),
       },
       (error, bs) => (error ? reject(error) : resolve(bs))
     )
