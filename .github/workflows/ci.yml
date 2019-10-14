@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 10.16
       - name: Install Yarn
-        run: npm install --global yarn@1.17
+        run: npm install --global yarn@1.19
       - name: Install Node dependencies
         run: yarn install --frozen-lockfile
       - name: Lint files
@@ -40,7 +40,7 @@ jobs:
         with:
           node-version: 10.16
       - name: Install Yarn
-        run: npm install --global yarn@1.17
+        run: npm install --global yarn@1.19
       - name: Install Node dependencies
         run: yarn install --frozen-lockfile
       - name: Test units
