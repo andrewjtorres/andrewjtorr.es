@@ -11926,10 +11926,10 @@ schema-utils@^2.0.0, schema-utils@^2.4.1:
     ajv "^6.10.2"
     ajv-keywords "^3.4.1"
 
-semantic-release@^15.13.24:
-  version "15.13.24"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-15.13.24.tgz#f0b9544427d059ba5e3c89ac1545234130796be7"
-  integrity sha512-OPshm6HSp+KmZP9dUv1o3MRILDgOeHYWPI+XSpQRERMri7QkaEiIPkZzoNm2d6KDeFDnp03GphQQS4+Zfo+x/Q==
+semantic-release@^15.13.27:
+  version "15.13.27"
+  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-15.13.27.tgz#214be952fdff5b9ba8490e49c5be13e4d0108ead"
+  integrity sha512-Os9tGsOMCrWqW8cEo0zczoJnZcZzwHAWODmziff+8zU1gwPmLplAicJ5a3L43ubWtAsp2hVPf9WhWj2lMXoIGQ==
   dependencies:
     "@semantic-release/commit-analyzer" "^6.1.0"
     "@semantic-release/error" "^2.2.0"
@@ -11952,7 +11952,7 @@ semantic-release@^15.13.24:
     marked-terminal "^3.2.0"
     p-locate "^4.0.0"
     p-reduce "^2.0.0"
-    read-pkg-up "^6.0.0"
+    read-pkg-up "^7.0.0"
     resolve-from "^5.0.0"
     semver "^6.0.0"
     signale "^1.2.1"
