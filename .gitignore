@@ -4,6 +4,10 @@ build
 # Dependencies
 node_modules
 
+# Infrastructure
+.terraform
+*.tfstate*
+
 # Test and Code Coverage
 coverage
 
