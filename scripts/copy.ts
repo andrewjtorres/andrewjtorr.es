@@ -2,7 +2,13 @@ import { dirname, join, relative } from 'path'
 import chokidar from 'chokidar'
 
 import { dependencies, engines, name, version } from '../package.json'
-import { cleanDir, copyDir, copyFile, makeDir, writeFile } from './lib/fs'
+import {
+  cleanDir,
+  copyDir,
+  copyFile,
+  makeDir,
+  writeFile,
+} from './utils/file-system'
 import { format } from './run'
 
 const config = JSON.stringify(

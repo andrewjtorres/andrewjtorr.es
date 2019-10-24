@@ -5,7 +5,7 @@ import chokidar from 'chokidar'
 
 import { Translation } from '../src/common'
 import { locales } from '../src/config'
-import { readDir, readFile, writeFile } from './lib/fs'
+import { readDir, readFile, writeFile } from './utils/file-system'
 
 type Translations = Record<string, Translation>
 

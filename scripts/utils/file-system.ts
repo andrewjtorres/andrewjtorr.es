@@ -10,6 +10,8 @@ export const cleanDir = (path: string, options: IOptions) =>
 
 export const copyFile = (source: string, target: string) =>
   new Promise((resolve, reject) => {
+    const read = fs.createReadStream(source)
+    const write = fs.createWriteStream(target)
     let callbackCalled = false
 
     const done = (error: any) => {
@@ -19,9 +21,6 @@ export const copyFile = (source: string, target: string) =>
         return error ? reject(error) : resolve()
       }
     }
-
-    const read = fs.createReadStream(source)
-    const write = fs.createWriteStream(target)
 
     read.on('error', done)
     write.on('close', done)

@@ -1,4 +1,4 @@
-import { cleanDir } from './lib/fs'
+import { cleanDir } from './utils/file-system'
 
 const clean = () =>
   Promise.all([
