@@ -1,6 +1,6 @@
+import { join, resolve } from 'path'
 import LoadablePlugin from '@loadable/webpack-plugin'
 import DotenvPlugin from 'dotenv-webpack'
-import { join, resolve } from 'path'
 import TerserPlugin from 'terser-webpack-plugin'
 import { Configuration, BannerPlugin, DefinePlugin } from 'webpack'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'

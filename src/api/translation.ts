@@ -1,7 +1,7 @@
 import fs from 'fs'
-import gql from 'graphql-tag'
 import { join } from 'path'
 import { promisify } from 'util'
+import gql from 'graphql-tag'
 
 import { Context, Resolvers } from 'common'
 import { locales, translationsDir } from 'config'

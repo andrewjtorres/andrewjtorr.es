@@ -1,9 +1,9 @@
 'use strict'
 
+const { join } = require('path')
 const typescriptPlugin = require('@typescript-eslint/eslint-plugin')
 const prettierTypescriptConfig = require('eslint-config-prettier/@typescript-eslint')
 const jestPlugin = require('eslint-plugin-jest')
-const { join } = require('path')
 
 module.exports = {
   plugins: [
@@ -36,7 +36,13 @@ module.exports = {
     'no-param-reassign': ['error', { props: true }],
     'import/order': [
       'error',
-      { groups: [['builtin', 'external']], 'newlines-between': 'always' },
+      {
+        groups: [
+          ['builtin', 'external'],
+          ['internal', 'parent', 'sibling', 'index', 'unknown'],
+        ],
+        'newlines-between': 'always',
+      },
     ],
     'react-hooks/exhaustive-deps': 'warn',
     'react-hooks/rules-of-hooks': 'error',

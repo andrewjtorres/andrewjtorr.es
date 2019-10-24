@@ -1,11 +1,11 @@
+import { join, resolve } from 'path'
 import { PluginItem, loadPartialConfig, transformFileAsync } from '@babel/core'
 import { ExtractedMessageDescriptor } from 'babel-plugin-react-intl'
 import chokidar from 'chokidar'
-import { join, resolve } from 'path'
 
-import { readDir, readFile, writeFile } from './lib/fs'
 import { Translation } from '../src/common'
 import { locales } from '../src/config'
+import { readDir, readFile, writeFile } from './lib/fs'
 
 type Translations = Record<string, Translation>
 

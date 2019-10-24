@@ -1,6 +1,6 @@
+import { join, resolve } from 'path'
 import browserSync from 'browser-sync'
 import express, { Express } from 'express'
-import { join, resolve } from 'path'
 import errorOverlayMiddleware from 'react-dev-utils/errorOverlayMiddleware'
 import webpack, {
   Compiler,
@@ -12,9 +12,9 @@ import webpack, {
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 
+import webpackConfig from '../config/webpack.config'
 import clean from './clean'
 import run, { format } from './run'
-import webpackConfig from '../config/webpack.config'
 
 const watchOptions: WatchOptions = {}
 

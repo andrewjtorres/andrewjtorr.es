@@ -1,9 +1,9 @@
 import fs from 'fs'
+import { dirname, resolve } from 'path'
+import { promisify } from 'util'
 import glob, { IOptions } from 'glob'
 import mkdirp from 'mkdirp'
-import { dirname, resolve } from 'path'
 import rimraf from 'rimraf'
-import { promisify } from 'util'
 
 export const cleanDir = (path: string, options: IOptions) =>
   promisify(rimraf)(path, { glob: options })
