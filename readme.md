@@ -6,6 +6,7 @@
 
 > Personal website of Andrew Torres
 
+[![GitHub Actions](https://flat.badgen.net/github/checks/ajtorres9/andrewjtorr.es?label=build)](https://github.com/ajtorres9/andrewjtorr.es/actions?workflow=CI)
 [![LGTM](https://flat.badgen.net/lgtm/grade/g/ajtorres9/andrewjtorr.es?label=code%20quality)](https://lgtm.com/projects/g/ajtorres9/andrewjtorr.es)
 [![Codecov](https://flat.badgen.net/codecov/c/github/ajtorres9/andrewjtorr.es/master)](https://codecov.io/gh/ajtorres9/andrewjtorr.es)
 [![All Contributors](https://flat.badgen.net/badge/all%20contributors/1/orange)](#contributors)
