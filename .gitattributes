@@ -7,12 +7,12 @@
 *.png          binary eol=lf
 
 .*             text eol=lf
-*.html         text eol=lf
 *.js           text eol=lf
 *.json         text eol=lf
 *.lock         text eol=lf
 *.md           text eol=lf
 *.svg          text eol=lf
+*.tf           text eol=lf
 *.ts           text eol=lf
 *.tsx          text eol=lf
 *.txt          text eol=lf
