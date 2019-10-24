@@ -60,7 +60,7 @@
     "express": "^4.17.1",
     "express-request-language": "^1.1.15",
     "graphql": "^14.5.8",
-    "graphql-tools": "^4.0.5",
+    "graphql-tools": "^4.0.6",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-intl": "^3.4.0",
