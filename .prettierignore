@@ -8,11 +8,11 @@ node_modules
 .terraform
 *.tfstate*
 
+# Internationalization
+src/i18n/translations/*.json
+
 # Test and Code Coverage
 coverage
-
-# Translations
-src/i18n/translations/*.json
 
 # Logs
 *.log*

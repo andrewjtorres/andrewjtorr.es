@@ -4,7 +4,7 @@ import { promisify } from 'util'
 import gql from 'graphql-tag'
 
 import { Context, Resolvers } from 'common'
-import { locales, translationsDir } from 'config'
+import { locales } from 'config'
 
 export const typeDefs = gql`
   type Query {
@@ -32,7 +32,9 @@ export const resolvers: Resolvers<undefined, Context> = {
       let data = '[]'
 
       try {
-        data = await readFile(join(translationsDir, `${locale}.json`))
+        data = await readFile(
+          join(process.env.TRANSLATIONS_DIR, `${locale}.json`)
+        )
       } catch (error) {
         if (error.code === 'ENOENT') {
           throw new Error(`Locale '${locale}' not found`)

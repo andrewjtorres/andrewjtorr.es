@@ -1,7 +1,7 @@
 import { NormalizedCacheObject } from 'apollo-cache-inmemory'
 
 declare global {
-  export interface Window {
+  interface Window {
     __APOLLO_CACHE__: NormalizedCacheObject
   }
 }

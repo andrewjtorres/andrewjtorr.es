@@ -21,7 +21,7 @@ import Html from './components/html'
 import Root from './components/root'
 import { Defaults, defaults as baseDefaults, resolvers } from './store'
 import { createApolloClient, createErrorLink } from './utils/apollo'
-import { locales, port, publicDir, rootDir } from './config'
+import { locales, port } from './config'
 
 process.on('unhandledRejection', (reason, promise) => {
   console.error('Unhandled Rejection at:', promise, 'reason:', reason)
@@ -43,7 +43,7 @@ app
   .use(compression())
   .use(cookieParser())
   .use(cors())
-  .use(express.static(publicDir))
+  .use(express.static(join(__dirname, 'public')))
   .use(
     requestLanguage({
       cookie: { name: 'lang', url: '/lang/{language}' },
@@ -72,7 +72,7 @@ app.get('*', async (req: Request, res: Response, next: NextFunction) => {
   })
   const extractor = new ChunkExtractor({
     entrypoints: 'client',
-    statsFile: join(rootDir, 'stats.json'),
+    statsFile: join(__dirname, 'stats.json'),
   })
   const sheet = new ServerStyleSheet()
 

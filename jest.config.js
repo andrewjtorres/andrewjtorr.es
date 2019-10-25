@@ -20,6 +20,7 @@ module.exports = {
   errorOnDeprecated: true,
   globals: { __IS_DEV__: false },
   moduleDirectories: [...defaults.moduleDirectories, '<rootDir>/src'],
+  modulePathIgnorePatterns: ['<rootDir>/build'],
   restoreMocks: true,
   setupFilesAfterEnv: ['<rootDir>/config/jest/setup.ts'],
   snapshotResolver: '<rootDir>/config/jest/snapshot-resolver.js',

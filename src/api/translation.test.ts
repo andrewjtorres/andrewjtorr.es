@@ -11,7 +11,7 @@ interface TranslationsQueryData {
 }
 
 jest.mock('fs')
-jest.mock('config', () => ({ locales: ['en'], translationsDir: 'dir' }))
+jest.mock('config', () => ({ locales: ['en'] }))
 
 const readFile = (path: string, _options: any, callback: Callback) => {
   const error = new Error(`EACCES: permission denied, open '${path}'`)
@@ -66,6 +66,10 @@ describe('translation', () => {
         },
       ]
 
+      const originalTranslationsDir = process.env.TRANSLATIONS_DIR
+
+      process.env.TRANSLATIONS_DIR = 'dir'
+
       // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
       // @ts-ignore TS2339
       fs.setMockFiles({ 'dir/en.json': JSON.stringify(translations) })
@@ -78,6 +82,8 @@ describe('translation', () => {
 
       expect(data).toMatchObject({ translations })
       expect(errors).toBeUndefined()
+
+      process.env.TRANSLATIONS_DIR = originalTranslationsDir
 
       // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
       // @ts-ignore TS2339
