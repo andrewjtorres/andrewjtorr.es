@@ -1,4 +1,5 @@
-# Compiled Output
+# Artifacts and Compiled Output
+.artifact
 build
 
 # Dependencies

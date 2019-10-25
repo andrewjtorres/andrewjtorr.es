@@ -111,6 +111,7 @@ const createConfig = (target: Target, configFactory: ConfigFactory) =>
       new DotenvPlugin({
         path: join(rootDir, envFile),
         safe: join(rootDir, '.env.example'),
+        systemvars: true,
       }),
     ],
     resolve: {

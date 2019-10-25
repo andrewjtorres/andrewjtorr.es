@@ -49,3 +49,30 @@ jobs:
         uses: codecov/codecov-action@v1.0.3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+  deploy:
+    name: Deploy
+    needs:
+      - static_analysis
+      - test
+    runs-on: ubuntu-18.04
+    # if: github.event_name == 'push' && github.ref == 'master'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1.0.0
+      - name: Setup Node
+        uses: actions/setup-node@v1.2.0
+        with:
+          node-version: 10.16
+      - name: Install Yarn
+        run: npm install --global yarn@1.19
+      # - name: Deploy application
+      #   run: yarn --silent deploy --release
+      #   env:
+      #     API_URI: https://andrewjtorr.es/api
+      #     AWS_REGION: us-east-1
+      #     NODE_ENV: production
+      #     TRANSLATIONS_DIR: translations
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"

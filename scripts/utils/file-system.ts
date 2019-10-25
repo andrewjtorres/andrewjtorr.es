@@ -1,6 +1,7 @@
 import fs from 'fs'
 import { dirname, resolve } from 'path'
 import { promisify } from 'util'
+import archiver, { ArchiverOptions } from 'archiver'
 import glob, { IOptions } from 'glob'
 import mkdirp from 'mkdirp'
 import rimraf from 'rimraf'
@@ -51,3 +52,19 @@ export const readFile = (path: string) => promisify(fs.readFile)(path, 'utf-8')
 
 export const writeFile = (path: string, data: any) =>
   promisify(fs.writeFile)(path, data, 'utf-8')
+
+export const zipDir = async (
+  source: string,
+  target: string,
+  { zlib = {}, ...options }: ArchiverOptions = {}
+) => {
+  const archive = archiver('zip', { ...options, zlib: { level: 9, ...zlib } })
+
+  await makeDir(dirname(target))
+
+  archive.pipe(fs.createWriteStream(target))
+
+  await archive
+    .glob('**/*.*', { cwd: source, dot: true, nosort: true })
+    .finalize()
+}

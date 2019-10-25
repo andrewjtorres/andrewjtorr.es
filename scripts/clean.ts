@@ -2,7 +2,7 @@ import { cleanDir } from './utils/file-system'
 
 const clean = () =>
   Promise.all([
-    cleanDir('?(build|coverage)', { dot: true, nosort: true }),
+    cleanDir('?(.artifact|build|coverage)', { dot: true, nosort: true }),
     cleanDir('.?(eslint|stylelint)cache', { nosort: true }),
     cleanDir('*.log*', { dot: true, nosort: true }),
   ])
