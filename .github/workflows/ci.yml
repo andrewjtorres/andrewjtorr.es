@@ -65,6 +65,8 @@ jobs:
           node-version: 10.16
       - name: Install Yarn
         run: npm install --global yarn@1.19
+      - name: Install Node dependencies
+        run: yarn install --frozen-lockfile
       - name: Deploy application
         run: yarn --silent deploy --release
         env:
