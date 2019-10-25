@@ -11,7 +11,6 @@ const rootDir = resolve(__dirname, '..')
 const buildDir = join(rootDir, 'build')
 
 const artifact = join(rootDir, `.artifact/${name}.zip`)
-const bucket = 'andrewjtorr.es'
 
 const deploy = async () => {
   const s3 = new S3()
@@ -28,7 +27,7 @@ const deploy = async () => {
   await s3
     .upload({
       Body: fs.createReadStream(artifact),
-      Bucket: bucket,
+      Bucket: name,
       Key: basename(artifact),
     })
     .promise()
