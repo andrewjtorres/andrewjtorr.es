@@ -85,101 +85,104 @@ describe('createErrorLink', () => {
     expect(createErrorLink()).toBeInstanceOf(ErrorLink)
   })
 
-  test('should output the message of the graphql error to the web console', done => {
-    const warn = jest.spyOn(console, 'warn').mockImplementation()
-    const error = new GraphQLError("Locale 'es' not supported")
+  test('should output the message of the graphql error to the web console', () =>
+    new Promise(resolve => {
+      const warn = jest.spyOn(console, 'warn').mockImplementation()
+      const error = new GraphQLError("Locale 'es' not supported")
 
-    const link = ApolloLink.from([
-      createErrorLink(),
-      new ApolloLink(() => Observable.of({ errors: [error] })),
-    ])
+      const link = ApolloLink.from([
+        createErrorLink(),
+        new ApolloLink(() => Observable.of({ errors: [error] })),
+      ])
 
-    execute(link, { query }).subscribe(() => {
-      expect(warn).toHaveBeenCalledTimes(1)
-      expect(warn).toHaveBeenCalledWith(
-        "[GraphQL Error]: Locale 'es' not supported"
-      )
-
-      warn.mockRestore()
-
-      done()
-    })
-  })
-
-  test('should output the locations, message, and path of the graphql error to the web console', done => {
-    const warn = jest.spyOn(console, 'warn').mockImplementation()
-
-    const node = gql`
-      type Query {
-        translations: [Translation]!
-      }
-
-      type Translation {
-        id: String!
-        defaultMessage: String!
-        description: String!
-        files: [String]
-        message: String!
-      }
-    `
-
-    const error = new GraphQLError(
-      "Locale 'es' not supported",
-      node,
-      undefined,
-      undefined,
-      ['translations']
-    )
-
-    const link = ApolloLink.from([
-      createErrorLink(),
-      new ApolloLink(() => Observable.of({ errors: [error] })),
-    ])
-
-    execute(link, { query }).subscribe(() => {
-      expect(warn).toHaveBeenCalledTimes(1)
-      expect(warn).toHaveBeenCalledWith(
-        "[GraphQL Error]: Locale 'es' not supported Location: 1:1 Path: translations"
-      )
-
-      warn.mockRestore()
-
-      done()
-    })
-  })
-
-  test('should output the message of the network error to the web console', done => {
-    const warn = jest.spyOn(console, 'warn').mockImplementation()
-    const error = new Error('Internal Server Error')
-
-    Object.defineProperties(error, {
-      name: { value: 'ServerError' },
-      response: { value: { status: 500, ok: false } },
-      result: { value: 'ServerError' },
-      statusCode: { value: 500 },
-    })
-
-    const link = ApolloLink.from([
-      createErrorLink(),
-      new ApolloLink(
-        () =>
-          new Observable(() => {
-            throw error
-          })
-      ),
-    ])
-
-    execute(link, { query }).subscribe({
-      error: () => {
+      execute(link, { query }).subscribe(() => {
         expect(warn).toHaveBeenCalledTimes(1)
         expect(warn).toHaveBeenCalledWith(
-          '[Network Error]: Internal Server Error'
+          "[GraphQL Error]: Locale 'es' not supported"
         )
 
         warn.mockRestore()
 
-        done()
-      },
-    })
-  })
+        resolve()
+      })
+    }))
+
+  test('should output the locations, message, and path of the graphql error to the web console', () =>
+    new Promise(resolve => {
+      const warn = jest.spyOn(console, 'warn').mockImplementation()
+
+      const node = gql`
+        type Query {
+          translations: [Translation]!
+        }
+
+        type Translation {
+          id: String!
+          defaultMessage: String!
+          description: String!
+          files: [String]
+          message: String!
+        }
+      `
+
+      const error = new GraphQLError(
+        "Locale 'es' not supported",
+        node,
+        undefined,
+        undefined,
+        ['translations']
+      )
+
+      const link = ApolloLink.from([
+        createErrorLink(),
+        new ApolloLink(() => Observable.of({ errors: [error] })),
+      ])
+
+      execute(link, { query }).subscribe(() => {
+        expect(warn).toHaveBeenCalledTimes(1)
+        expect(warn).toHaveBeenCalledWith(
+          "[GraphQL Error]: Locale 'es' not supported Location: 1:1 Path: translations"
+        )
+
+        warn.mockRestore()
+
+        resolve()
+      })
+    }))
+
+  test('should output the message of the network error to the web console', () =>
+    new Promise(resolve => {
+      const warn = jest.spyOn(console, 'warn').mockImplementation()
+      const error = new Error('Internal Server Error')
+
+      Object.defineProperties(error, {
+        name: { value: 'ServerError' },
+        response: { value: { status: 500, ok: false } },
+        result: { value: 'ServerError' },
+        statusCode: { value: 500 },
+      })
+
+      const link = ApolloLink.from([
+        createErrorLink(),
+        new ApolloLink(
+          () =>
+            new Observable(() => {
+              throw error
+            })
+        ),
+      ])
+
+      execute(link, { query }).subscribe({
+        error: () => {
+          expect(warn).toHaveBeenCalledTimes(1)
+          expect(warn).toHaveBeenCalledWith(
+            '[Network Error]: Internal Server Error'
+          )
+
+          warn.mockRestore()
+
+          resolve()
+        },
+      })
+    }))
 })
