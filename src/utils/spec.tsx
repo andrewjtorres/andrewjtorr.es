@@ -12,7 +12,7 @@ import { DefaultTheme, ThemeProvider } from 'styled-components' // eslint-disabl
 
 import defaultTheme from 'styles/theme'
 
-type AnyIfEmpty<T extends {}> = keyof T extends never ? any : T
+type AnyIfEmpty<TBase extends {}> = keyof TBase extends never ? any : TBase
 
 type Theme =
   | AnyIfEmpty<DefaultTheme>

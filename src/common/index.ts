@@ -35,7 +35,10 @@ export type Resolvers<TSource = any, TContext = any> = Record<
   Record<string, FieldResolver<TSource, TContext>>
 >
 
-export type SubType<Base, Condition> = Pick<Base, AllowedNames<Base, Condition>>
+export type SubType<TBase, TCondition> = Pick<
+  TBase,
+  AllowedNames<TBase, TCondition>
+>
 
 export interface Context {
   locale: string
