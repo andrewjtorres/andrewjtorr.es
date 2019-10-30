@@ -89,7 +89,7 @@
     "@semantic-release/release-notes-generator": "^7.3.2",
     "@svgr/webpack": "^4.3.3",
     "@testing-library/jest-dom": "^4.2.0",
-    "@testing-library/react": "^9.3.0",
+    "@testing-library/react": "^9.3.1",
     "@types/archiver": "^3.0.0",
     "@types/body-parser": "^1.17.1",
     "@types/browser-sync": "^2.26.1",
