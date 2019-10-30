@@ -1,6 +1,5 @@
 'use strict'
 
-const { join } = require('path')
 const typescriptPlugin = require('@typescript-eslint/eslint-plugin')
 const prettierTypescriptConfig = require('eslint-config-prettier/@typescript-eslint')
 const jestPlugin = require('eslint-plugin-jest')
@@ -53,7 +52,7 @@ module.exports = {
     {
       files: ['**/*.ts?(x)', '**/.*/**/*.ts?(x)'],
       parser: typescriptPlugin.configs.base.parser,
-      parserOptions: { project: join(__dirname, 'tsconfig.json') },
+      parserOptions: { project: 'tsconfig.json' },
       plugins: typescriptPlugin.configs.base.plugins,
       rules: {
         ...typescriptPlugin.configs.recommended.rules,
@@ -79,10 +78,7 @@ module.exports = {
     'import/extensions': ['.d.ts', '.js', '.ts', '.tsx'],
     'import/parsers': { '@typescript-eslint/parser': ['.d.ts', '.ts', '.tsx'] },
     'import/resolver': {
-      typescript: {
-        alwaysTryTypes: true,
-        directory: join(__dirname, 'tsconfig.json'),
-      },
+      typescript: { alwaysTryTypes: true, directory: 'tsconfig.json' },
     },
   },
 }
