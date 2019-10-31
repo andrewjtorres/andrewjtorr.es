@@ -3197,10 +3197,10 @@ babel-plugin-polished@^1.1.0:
   dependencies:
     polished "^1.0.0"
 
-babel-plugin-react-intl@^4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-4.3.0.tgz#bcff1936dbad4a1bb2e7d955032f92aba6fdc063"
-  integrity sha512-X4R9ZrQ6LR6EaNqk7DCA39GamD8Deo1XOeQGEbsswV741AgQ8HfuXtQ7FKCiDnfWp2nhVVio+BAIrhwS5JxHdQ==
+babel-plugin-react-intl@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-5.0.0.tgz#41f827a98db01baed5d9f8221261cc080c4b3b20"
+  integrity sha512-yIqt3xoBr/GvsCaTCIWk3HDYbxBwiE9kyj5r3B4T61VQPwHutAVwf525a619mfQ/vyshTFfBlCHHfffu1StKzA==
   dependencies:
     "@babel/core" "^7.6.2"
     "@babel/helper-plugin-utils" "^7.0.0"
