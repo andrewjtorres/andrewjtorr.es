@@ -70,10 +70,7 @@ const processFile = async (file: string, presets: PluginItem[]) => {
   const posixFile = file.replace(/\\/g, '/')
 
   const { metadata: { 'react-intl': { messages = [] } = {} } = {} } =
-    (await transformFileAsync(file, {
-      plugins: [['react-intl', { enforceDescriptions: true }]],
-      presets,
-    })) || {}
+    (await transformFileAsync(file, { plugins: ['react-intl'], presets })) || {}
 
   if (messages.length > 0) {
     extractedTranslations[posixFile] = messages.sort((a, b) => {

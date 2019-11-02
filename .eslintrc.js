@@ -6,6 +6,7 @@ const jestPlugin = require('eslint-plugin-jest')
 
 module.exports = {
   plugins: [
+    'formatjs',
     'import',
     'jsx-a11y',
     'prettier',
@@ -33,6 +34,7 @@ module.exports = {
   rules: {
     'no-console': ['error', { allow: ['error', 'info', 'warn'] }],
     'no-param-reassign': ['error', { props: true }],
+    'formatjs/enforce-description': 'error',
     'import/order': [
       'error',
       {
