@@ -171,6 +171,29 @@ const clientConfig = createConfig('web', baseConfig => ({
   ],
 }))
 
+const handlerConfig = createConfig('node', (baseConfig: Configuration) => ({
+  ...baseConfig,
+  entry: { handler: resolve('./src/handler.ts') },
+  externals: [nodeExternals({ whitelist: [/\.(bmp|gif|jp(e)?g|png|webp)$/] })],
+  name: 'handler',
+  node: false,
+  output: {
+    ...baseConfig.output,
+    chunkFilename: 'chunks/[name].js',
+    filename: '[name].js',
+    libraryTarget: 'commonjs2',
+    path: buildDir,
+  },
+  plugins: [
+    ...(baseConfig.plugins || []),
+    new BannerPlugin({
+      banner: 'require("source-map-support").install();',
+      entryOnly: false,
+      raw: true,
+    }),
+  ],
+}))
+
 const serverConfig = createConfig('node', (baseConfig: Configuration) => ({
   ...baseConfig,
   entry: { server: resolve('./src/server.tsx') },
@@ -194,4 +217,4 @@ const serverConfig = createConfig('node', (baseConfig: Configuration) => ({
   ],
 }))
 
-export default [clientConfig, serverConfig]
+export default [clientConfig, handlerConfig, serverConfig]

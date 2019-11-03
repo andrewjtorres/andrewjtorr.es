@@ -22,7 +22,7 @@ const deploy = async () => {
     env: process.env,
   })
 
-  await zipDir(buildDir, artifact)
+  await zipDir(buildDir, artifact, { ignore: 'server.js?(.*)' })
 
   await s3
     .upload({

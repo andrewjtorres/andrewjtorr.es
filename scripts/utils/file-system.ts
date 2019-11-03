@@ -1,12 +1,17 @@
 import fs from 'fs'
 import { dirname, resolve } from 'path'
 import { promisify } from 'util'
-import archiver, { ArchiverOptions } from 'archiver'
-import glob, { IOptions } from 'glob'
+import { ZlibOptions } from 'zlib'
+import archiver from 'archiver'
+import glob, { IOptions as GlobOptions } from 'glob'
 import mkdirp from 'mkdirp'
 import rimraf from 'rimraf'
 
-export const cleanDir = (path: string, options: IOptions) =>
+type CopyDirOptions = Omit<GlobOptions, 'cwd'>
+
+type ZipDirOptions = Omit<GlobOptions, 'cwd'> & ZlibOptions
+
+export const cleanDir = (path: string, options: GlobOptions) =>
   promisify(rimraf)(path, { glob: options })
 
 export const copyFile = (source: string, target: string) =>
@@ -31,11 +36,15 @@ export const copyFile = (source: string, target: string) =>
 
 export const makeDir = (path: string) => promisify(mkdirp)(path)
 
-export const readDir = (path: string, options: IOptions) =>
+export const readDir = (path: string, options: GlobOptions) =>
   promisify(glob)(path, options)
 
-export const copyDir = async (source: string, target: string) => {
-  const dirs = await readDir('**/*.*', { cwd: source, dot: true, nosort: true })
+export const copyDir = async (
+  source: string,
+  target: string,
+  { dot = true, nosort = true, ...options }: CopyDirOptions = {}
+) => {
+  const dirs = await readDir('**/*.*', { cwd: source, dot, nosort, ...options })
 
   await Promise.all(
     dirs.map(async dir => {
@@ -56,15 +65,38 @@ export const writeFile = (path: string, data: any) =>
 export const zipDir = async (
   source: string,
   target: string,
-  { zlib = {}, ...options }: ArchiverOptions = {}
+  {
+    chunkSize,
+    dictionary,
+    dot = true,
+    finishFlush,
+    flush,
+    level = 9,
+    memLevel,
+    nosort = true,
+    strategy,
+    windowBits,
+    ...options
+  }: ZipDirOptions = {}
 ) => {
-  const archive = archiver('zip', { ...options, zlib: { level: 9, ...zlib } })
+  const archive = archiver('zip', {
+    zlib: {
+      chunkSize,
+      dictionary,
+      finishFlush,
+      flush,
+      level,
+      memLevel,
+      strategy,
+      windowBits,
+    },
+  })
 
   await makeDir(dirname(target))
 
   archive.pipe(fs.createWriteStream(target))
 
   await archive
-    .glob('**/*.*', { cwd: source, dot: true, nosort: true })
+    .glob('**/*.*', { cwd: source, dot, nosort, ...options })
     .finalize()
 }
