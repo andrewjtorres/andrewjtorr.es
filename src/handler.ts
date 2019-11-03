@@ -4,5 +4,6 @@ import app from './server'
 
 const server = createServer(app)
 
-export const handler = (event: any, context: Context) =>
-  proxy(server, event, context)
+const handler = (event: any, context: Context) => proxy(server, event, context)
+
+export default handler

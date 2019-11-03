@@ -15,46 +15,84 @@ terraform {
   }
 }
 
+locals {
+  alternate_domain_names = ["andrewjtorr.es"]
+  application_name       = "andrewjtorr.es"
+  domain_name            = "*.andrewjtorr.es"
+}
+
 provider "aws" {
   version = ">=2.33"
   region  = "us-east-1"
 }
 
-data "aws_iam_policy_document" "application_bucket_policy_document" {
-  statement {
-    effect    = "Allow"
-    actions   = ["s3:GetObject"]
-    resources = ["${aws_s3_bucket.application_bucket.arn}/*"]
+/* =========================================================================
+   API Gateway
+   ========================================================================= */
 
-    principals {
-      type        = "AWS"
-      identifiers = ["${aws_cloudfront_origin_access_identity.application_origin_access_identity.iam_arn}"]
-    }
-  }
-
-  statement {
-    effect    = "Allow"
-    actions   = ["s3:ListBucket"]
-    resources = ["${aws_s3_bucket.application_bucket.arn}"]
-
-    principals {
-      type        = "AWS"
-      identifiers = ["${aws_cloudfront_origin_access_identity.application_origin_access_identity.iam_arn}"]
-    }
-  }
+resource "aws_api_gateway_rest_api" "application_rest_api" {
+  name        = local.application_name
+  description = "Rest API for the personal website of Andrew Torres"
 }
 
-data "aws_iam_policy_document" "continuous_integration_user_policy_document" {
-  statement {
-    effect    = "Allow"
-    actions   = ["s3:PutObject"]
-    resources = ["${aws_s3_bucket.application_bucket.arn}/*"]
-  }
+resource "aws_api_gateway_deployment" "application_deployment" {
+  depends_on  = ["aws_api_gateway_integration.root_integration", "aws_api_gateway_integration.proxy_integration"]
+  rest_api_id = "${aws_api_gateway_rest_api.application_rest_api.id}"
 }
+
+/*
+  Root Resource
+  -------------------------------------------------------------------------- */
+
+resource "aws_api_gateway_integration" "root_integration" {
+  rest_api_id             = "${aws_api_gateway_rest_api.application_rest_api.id}"
+  resource_id             = "${aws_api_gateway_method.root_method.resource_id}"
+  http_method             = "${aws_api_gateway_method.root_method.http_method}"
+  integration_http_method = "POST"
+  type                    = "AWS_PROXY"
+  uri                     = "${aws_lambda_function.application_function.invoke_arn}"
+}
+
+resource "aws_api_gateway_method" "root_method" {
+  rest_api_id   = "${aws_api_gateway_rest_api.application_rest_api.id}"
+  resource_id   = "${aws_api_gateway_rest_api.application_rest_api.root_resource_id}"
+  http_method   = "ANY"
+  authorization = "NONE"
+}
+
+/*
+  Proxy Resource
+  -------------------------------------------------------------------------- */
+
+resource "aws_api_gateway_integration" "proxy_integration" {
+  rest_api_id             = "${aws_api_gateway_rest_api.application_rest_api.id}"
+  resource_id             = "${aws_api_gateway_method.proxy_method.resource_id}"
+  http_method             = "${aws_api_gateway_method.proxy_method.http_method}"
+  integration_http_method = "POST"
+  type                    = "AWS_PROXY"
+  uri                     = "${aws_lambda_function.application_function.invoke_arn}"
+}
+
+resource "aws_api_gateway_method" "proxy_method" {
+  rest_api_id   = "${aws_api_gateway_rest_api.application_rest_api.id}"
+  resource_id   = "${aws_api_gateway_resource.proxy_resource.id}"
+  http_method   = "ANY"
+  authorization = "NONE"
+}
+
+resource "aws_api_gateway_resource" "proxy_resource" {
+  rest_api_id = "${aws_api_gateway_rest_api.application_rest_api.id}"
+  parent_id   = "${aws_api_gateway_rest_api.application_rest_api.root_resource_id}"
+  path_part   = "{proxy+}"
+}
+
+/* =========================================================================
+   Certificate Manager
+   ========================================================================= */
 
 resource "aws_acm_certificate" "certificate" {
-  domain_name               = "*.andrewjtorr.es"
-  subject_alternative_names = ["andrewjtorr.es"]
+  domain_name               = local.domain_name
+  subject_alternative_names = local.alternate_domain_names
   validation_method         = "DNS"
 
   options {
@@ -63,96 +101,20 @@ resource "aws_acm_certificate" "certificate" {
 
   tags = {
     Name        = "Personal Domain Certificate"
-    Application = "andrewjtorr.es"
+    Application = local.application_name
   }
 }
 
-resource "aws_s3_bucket" "application_bucket" {
-  bucket = "andrewjtorr.es"
-  acl    = "private"
-
-  logging {
-    target_bucket = "${aws_s3_bucket.log_bucket.id}"
-    target_prefix = "access-logs/"
-  }
-
-  server_side_encryption_configuration {
-    rule {
-      apply_server_side_encryption_by_default {
-        sse_algorithm = "AES256"
-      }
-    }
-  }
-
-  tags = {
-    Name        = "Personal Application Bucket"
-    Application = "andrewjtorr.es"
-  }
-}
-
-resource "aws_s3_bucket_policy" "application_bucket_policy" {
-  bucket = "${aws_s3_bucket.application_bucket.id}"
-  policy = "${data.aws_iam_policy_document.application_bucket_policy_document.json}"
-}
-
-resource "aws_s3_bucket_public_access_block" "application_bucket_public_access_block" {
-  bucket                  = "${aws_s3_bucket.application_bucket.id}"
-  block_public_acls       = true
-  block_public_policy     = true
-  ignore_public_acls      = true
-  restrict_public_buckets = true
-}
-
-resource "aws_s3_bucket" "log_bucket" {
-  bucket = "andrewjtorr.es-log"
-  acl    = "log-delivery-write"
-
-  lifecycle_rule {
-    id      = "log-rotation"
-    enabled = true
-
-    expiration {
-      days = 90
-    }
-
-    noncurrent_version_expiration {
-      days = 1
-    }
-
-    tags = {
-      Rule      = "Log Rotation"
-      Autoclean = "True"
-    }
-  }
-
-  server_side_encryption_configuration {
-    rule {
-      apply_server_side_encryption_by_default {
-        sse_algorithm = "AES256"
-      }
-    }
-  }
-
-  tags = {
-    Name        = "Personal Log Bucket"
-    Application = "andrewjtorr.es"
-  }
-}
-
-resource "aws_s3_bucket_public_access_block" "log_bucket_public_access_block" {
-  bucket                  = "${aws_s3_bucket.log_bucket.id}"
-  block_public_acls       = true
-  block_public_policy     = true
-  ignore_public_acls      = true
-  restrict_public_buckets = true
-}
+/* =========================================================================
+   CloudFront
+   ========================================================================= */
 
 resource "aws_cloudfront_distribution" "application_distribution" {
   enabled             = true
   is_ipv6_enabled     = true
   comment             = "Content delivery network for the personal website of Andrew Torres"
   default_root_object = "index.html"
-  aliases             = ["andrewjtorr.es"]
+  aliases             = local.alternate_domain_names
   price_class         = "PriceClass_All"
 
   origin {
@@ -227,11 +189,48 @@ resource "aws_cloudfront_distribution" "application_distribution" {
 
   tags = {
     Name        = "Personal Application Distribution"
-    Application = "andrewjtorr.es"
+    Application = local.application_name
   }
 }
 
 resource "aws_cloudfront_origin_access_identity" "application_origin_access_identity" {}
+
+/* =========================================================================
+   Identity and Access Management (IAM)
+   ========================================================================= */
+
+/*
+  Lambda Execution Role for Service Principals
+  -------------------------------------------------------------------------- */
+
+data "aws_iam_policy_document" "lambda_execution_policy_document" {
+  statement {
+    effect  = "Allow"
+    actions = ["sts:AssumeRole"]
+
+    principals {
+      type        = "Service"
+      identifiers = ["edgelambda.amazonaws.com", "lambda.amazonaws.com"]
+    }
+  }
+}
+
+resource "aws_iam_role" "lambda_execution_role" {
+  name               = "LambdaExecutionRoleForServicePrincipals"
+  assume_role_policy = "${data.aws_iam_policy_document.lambda_execution_policy_document.json}"
+}
+
+/*
+  Continuous Integration User
+  -------------------------------------------------------------------------- */
+
+data "aws_iam_policy_document" "continuous_integration_user_policy_document" {
+  statement {
+    effect    = "Allow"
+    actions   = ["s3:PutObject"]
+    resources = ["${aws_s3_bucket.application_bucket.arn}/*"]
+  }
+}
 
 resource "aws_iam_access_key" "continuous_integration_access_key" {
   user    = "${aws_iam_user.continuous_integration_user.name}"
@@ -240,11 +239,11 @@ resource "aws_iam_access_key" "continuous_integration_access_key" {
 }
 
 resource "aws_iam_user" "continuous_integration_user" {
-  name = "andrewjtorr.es-ci"
+  name = "${local.application_name}-ci"
 
   tags = {
     Name        = "Personal Continuous Integration User"
-    Application = "andrewjtorr.es"
+    Application = local.application_name
   }
 }
 
@@ -254,6 +253,138 @@ resource "aws_iam_user_policy" "continuous_integration_user_policy" {
   policy = "${data.aws_iam_policy_document.continuous_integration_user_policy_document.json}"
 }
 
-output "continuous_integration_access_key_encrypted_secret" {
-  value = "${aws_iam_access_key.continuous_integration_access_key.encrypted_secret}"
+/* =========================================================================
+   Lambda
+   ========================================================================= */
+
+resource "aws_lambda_function" "application_function" {
+  s3_bucket     = "${aws_s3_bucket.application_bucket.id}"
+  s3_key        = "${local.application_name}.zip"
+  function_name = replace(local.application_name, ".", "_")
+  handler       = "handler.default"
+  role          = "${aws_iam_role.lambda_execution_role.arn}"
+  description   = "Serverless backend for the personal website of Andrew Torres"
+  memory_size   = 512
+  runtime       = "nodejs10.x"
+
+  tags = {
+    Name        = "Personal Application Function"
+    Application = local.application_name
+  }
+}
+
+/* =========================================================================
+   Simple Storage Service (S3)
+   ========================================================================= */
+
+/*
+  Application Bucket
+  -------------------------------------------------------------------------- */
+
+data "aws_iam_policy_document" "application_bucket_policy_document" {
+  statement {
+    effect    = "Allow"
+    actions   = ["s3:GetObject"]
+    resources = ["${aws_s3_bucket.application_bucket.arn}/*"]
+
+    principals {
+      type        = "AWS"
+      identifiers = ["${aws_cloudfront_origin_access_identity.application_origin_access_identity.iam_arn}"]
+    }
+  }
+
+  statement {
+    effect    = "Allow"
+    actions   = ["s3:ListBucket"]
+    resources = ["${aws_s3_bucket.application_bucket.arn}"]
+
+    principals {
+      type        = "AWS"
+      identifiers = ["${aws_cloudfront_origin_access_identity.application_origin_access_identity.iam_arn}"]
+    }
+  }
+}
+
+resource "aws_s3_bucket" "application_bucket" {
+  bucket = local.application_name
+  acl    = "private"
+
+  logging {
+    target_bucket = "${aws_s3_bucket.log_bucket.id}"
+    target_prefix = "access-logs/"
+  }
+
+  server_side_encryption_configuration {
+    rule {
+      apply_server_side_encryption_by_default {
+        sse_algorithm = "AES256"
+      }
+    }
+  }
+
+  tags = {
+    Name        = "Personal Application Bucket"
+    Application = local.application_name
+  }
+}
+
+resource "aws_s3_bucket_policy" "application_bucket_policy" {
+  bucket = "${aws_s3_bucket.application_bucket.id}"
+  policy = "${data.aws_iam_policy_document.application_bucket_policy_document.json}"
+}
+
+resource "aws_s3_bucket_public_access_block" "application_bucket_public_access_block" {
+  bucket                  = "${aws_s3_bucket.application_bucket.id}"
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
+}
+
+/*
+  Log Bucket
+  -------------------------------------------------------------------------- */
+
+resource "aws_s3_bucket" "log_bucket" {
+  bucket = "${local.application_name}-log"
+  acl    = "log-delivery-write"
+
+  lifecycle_rule {
+    id      = "log-rotation"
+    enabled = true
+
+    expiration {
+      days = 90
+    }
+
+    noncurrent_version_expiration {
+      days = 1
+    }
+
+    tags = {
+      Rule      = "Log Rotation"
+      Autoclean = "True"
+    }
+  }
+
+  server_side_encryption_configuration {
+    rule {
+      apply_server_side_encryption_by_default {
+        sse_algorithm = "AES256"
+      }
+    }
+  }
+
+  tags = {
+    Name        = "Personal Log Bucket"
+    Application = local.application_name
+  }
+}
+
+resource "aws_s3_bucket_public_access_block" "log_bucket_public_access_block" {
+  bucket                  = "${aws_s3_bucket.log_bucket.id}"
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
 }
