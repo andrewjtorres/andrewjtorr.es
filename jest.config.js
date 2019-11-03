@@ -11,6 +11,7 @@ module.exports = {
     '!src/store/locale.ts',
     '!src/client.tsx',
     '!src/config.ts',
+    '!src/handler.ts',
     '!src/server.tsx',
   ],
   coverageDirectory: 'coverage',
