@@ -116,7 +116,7 @@ const extractTranslations = async () => {
       filename: '',
     }) || {}
   const files = await readDir('src/**/*.ts?(x)', {
-    ignore: ['src/**/*(*.)test.ts?(x)'],
+    ignore: 'src/**/?(*.)test.ts?(x)',
     nosort: true,
   })
 
@@ -126,7 +126,7 @@ const extractTranslations = async () => {
   if (isWatch) {
     const watcher = chokidar.watch('src/**/*.ts?(x)', {
       ignoreInitial: true,
-      ignored: ['src/**/*(*.)test.ts?(x)'],
+      ignored: 'src/**/?(*.)test.ts?(x)',
     })
 
     // eslint-disable-next-line @typescript-eslint/no-misused-promises
