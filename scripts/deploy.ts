@@ -4,13 +4,15 @@ import { S3 } from 'aws-sdk'
 
 import { name } from '../package.json'
 import { execFile } from './utils/child-process'
-import { zipDir } from './utils/file-system'
+import { checksumFile, zipDir } from './utils/file-system'
 import build from './build'
 
 const rootDir = resolve(__dirname, '..')
+const artifactDir = join(rootDir, '.artifact')
 const buildDir = join(rootDir, 'build')
 
-const artifact = join(rootDir, `.artifact/${name}.zip`)
+const shasum256 = join(artifactDir, 'shasum256.txt')
+const sourceCode = join(artifactDir, `${name}.zip`)
 
 const deploy = async () => {
   const s3 = new S3()
@@ -22,15 +24,25 @@ const deploy = async () => {
     env: process.env,
   })
 
-  await zipDir(buildDir, artifact, { ignore: 'server.js?(.*)' })
+  await zipDir(buildDir, sourceCode, { ignore: 'server.js?(.*)' })
+  await checksumFile(sourceCode, shasum256, { digestEncoding: 'base64' })
 
-  await s3
-    .upload({
-      Body: fs.createReadStream(artifact),
-      Bucket: name,
-      Key: basename(artifact),
-    })
-    .promise()
+  await Promise.all([
+    s3
+      .upload({
+        Body: fs.createReadStream(shasum256),
+        Bucket: name,
+        Key: basename(shasum256),
+      })
+      .promise(),
+    s3
+      .upload({
+        Body: fs.createReadStream(sourceCode),
+        Bucket: name,
+        Key: basename(sourceCode),
+      })
+      .promise(),
+  ])
 }
 
 export default deploy

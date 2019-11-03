@@ -1,3 +1,4 @@
+import crypto, { HashOptions, HexBase64Latin1Encoding } from 'crypto'
 import fs from 'fs'
 import { dirname, resolve } from 'path'
 import { promisify } from 'util'
@@ -11,13 +12,20 @@ type CopyDirOptions = Omit<GlobOptions, 'cwd'>
 
 type ZipDirOptions = Omit<GlobOptions, 'cwd'> & ZlibOptions
 
-export const cleanDir = (path: string, options: GlobOptions) =>
-  promisify(rimraf)(path, { glob: options })
+interface HashFileOptions extends HashOptions {
+  algorithm?: string
+  digestEncoding?: HexBase64Latin1Encoding
+}
 
-export const copyFile = (source: string, target: string) =>
+export const checksumFile = (
+  source: string,
+  target: string,
+  { algorithm = 'sha256', digestEncoding, ...options }: HashFileOptions = {}
+) =>
   new Promise((resolve, reject) => {
-    const read = fs.createReadStream(source)
-    const write = fs.createWriteStream(target)
+    const hash = crypto.createHash(algorithm, { ...options })
+    const readStream = fs.createReadStream(source)
+    const writeStream = fs.createWriteStream(target)
     let callbackCalled = false
 
     const done = (error: any) => {
@@ -28,10 +36,40 @@ export const copyFile = (source: string, target: string) =>
       }
     }
 
-    read.on('error', done)
-    write.on('close', done)
-    write.on('error', done)
-    read.pipe(write)
+    readStream.on('end', () => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore TS2345
+      writeStream.write(hash.digest(digestEncoding))
+
+      return writeStream.close()
+    })
+    readStream.on('error', done)
+    writeStream.on('close', done)
+    writeStream.on('error', done)
+    readStream.pipe(hash)
+  })
+
+export const cleanDir = (path: string, options: GlobOptions) =>
+  promisify(rimraf)(path, { glob: options })
+
+export const copyFile = (source: string, target: string) =>
+  new Promise((resolve, reject) => {
+    const readStream = fs.createReadStream(source)
+    const writeStream = fs.createWriteStream(target)
+    let callbackCalled = false
+
+    const done = (error: any) => {
+      if (!callbackCalled) {
+        callbackCalled = true
+
+        return error ? reject(error) : resolve()
+      }
+    }
+
+    readStream.on('error', done)
+    writeStream.on('close', done)
+    writeStream.on('error', done)
+    readStream.pipe(writeStream)
   })
 
 export const makeDir = (path: string) => promisify(mkdirp)(path)

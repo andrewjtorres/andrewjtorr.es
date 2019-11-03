@@ -258,14 +258,15 @@ resource "aws_iam_user_policy" "continuous_integration_user_policy" {
    ========================================================================= */
 
 resource "aws_lambda_function" "application_function" {
-  s3_bucket     = "${aws_s3_bucket.application_bucket.id}"
-  s3_key        = "${local.application_name}.zip"
-  function_name = replace(local.application_name, ".", "_")
-  handler       = "handler.default"
-  role          = "${aws_iam_role.lambda_execution_role.arn}"
-  description   = "Serverless backend for the personal website of Andrew Torres"
-  memory_size   = 512
-  runtime       = "nodejs10.x"
+  s3_bucket        = "${aws_s3_bucket.application_bucket.id}"
+  s3_key           = "${local.application_name}.zip"
+  function_name    = replace(local.application_name, ".", "_")
+  handler          = "handler.default"
+  role             = "${aws_iam_role.lambda_execution_role.arn}"
+  description      = "Serverless backend for the personal website of Andrew Torres"
+  memory_size      = 256
+  runtime          = "nodejs10.x"
+  source_code_hash = "${data.aws_s3_bucket_object.shasum256_bucket_object.body}"
 
   tags = {
     Name        = "Personal Application Function"
@@ -303,6 +304,11 @@ data "aws_iam_policy_document" "application_bucket_policy_document" {
       identifiers = ["${aws_cloudfront_origin_access_identity.application_origin_access_identity.iam_arn}"]
     }
   }
+}
+
+data "aws_s3_bucket_object" "shasum256_bucket_object" {
+  bucket = local.application_name
+  key    = "shasum256.txt"
 }
 
 resource "aws_s3_bucket" "application_bucket" {
