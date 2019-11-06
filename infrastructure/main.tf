@@ -2,7 +2,7 @@ terraform {
   required_version = ">=0.12"
 
   required_providers {
-    aws = ">=2.33"
+    aws = ">=2.34"
   }
 
   backend "remote" {
@@ -22,7 +22,7 @@ locals {
 }
 
 provider "aws" {
-  version = ">=2.33"
+  version = ">=2.34"
   region  = "us-east-1"
 }
 
@@ -203,32 +203,43 @@ resource "aws_cloudfront_origin_access_identity" "application_origin_access_iden
   Lambda Execution Role for Service Principals
   -------------------------------------------------------------------------- */
 
-data "aws_iam_policy_document" "lambda_execution_policy_document" {
+data "aws_iam_policy_document" "execute_function_permissions_policy_document" {
   statement {
+    sid     = "ExecuteFunctionPermissions"
     effect  = "Allow"
     actions = ["sts:AssumeRole"]
 
     principals {
       type        = "Service"
-      identifiers = ["edgelambda.amazonaws.com", "lambda.amazonaws.com"]
+      identifiers = ["lambda.amazonaws.com"]
     }
   }
 }
 
-resource "aws_iam_role" "lambda_execution_role" {
+resource "aws_iam_role" "lambda_execution_role_for_service_principals_role" {
   name               = "LambdaExecutionRoleForServicePrincipals"
-  assume_role_policy = "${data.aws_iam_policy_document.lambda_execution_policy_document.json}"
+  assume_role_policy = "${data.aws_iam_policy_document.execute_function_permissions_policy_document.json}"
 }
 
 /*
   Continuous Integration User
   -------------------------------------------------------------------------- */
 
-data "aws_iam_policy_document" "continuous_integration_user_policy_document" {
+data "aws_iam_policy_document" "read_write_bucket_permissions_policy_document" {
   statement {
+    sid       = "ReadWriteBucketPermissions"
     effect    = "Allow"
-    actions   = ["s3:PutObject"]
+    actions   = ["s3:GetObject", "s3:PutObject"]
     resources = ["${aws_s3_bucket.application_bucket.arn}/*"]
+  }
+}
+
+data "aws_iam_policy_document" "update_function_permissions_policy_document" {
+  statement {
+    sid       = "UpdateFunctionPermissions"
+    effect    = "Allow"
+    actions   = ["lambda:UpdateFunctionCode"]
+    resources = ["${aws_lambda_function.application_function.arn}"]
   }
 }
 
@@ -247,10 +258,16 @@ resource "aws_iam_user" "continuous_integration_user" {
   }
 }
 
-resource "aws_iam_user_policy" "continuous_integration_user_policy" {
-  name   = "PersonalApplicationBucketWriteOnlyAccess"
+resource "aws_iam_user_policy" "personal_application_bucket_read_write_access_user_policy" {
+  name   = "PersonalApplicationBucketReadWriteAccess"
   user   = "${aws_iam_user.continuous_integration_user.name}"
-  policy = "${data.aws_iam_policy_document.continuous_integration_user_policy_document.json}"
+  policy = "${data.aws_iam_policy_document.read_write_bucket_permissions_policy_document.json}"
+}
+
+resource "aws_iam_user_policy" "personal_application_function_update_access_user_policy" {
+  name   = "PersonalApplicationFunctionUpdateAccess"
+  user   = "${aws_iam_user.continuous_integration_user.name}"
+  policy = "${data.aws_iam_policy_document.update_function_permissions_policy_document.json}"
 }
 
 /* =========================================================================
@@ -262,7 +279,7 @@ resource "aws_lambda_function" "application_function" {
   s3_key           = "${local.application_name}.zip"
   function_name    = replace(local.application_name, ".", "_")
   handler          = "handler.default"
-  role             = "${aws_iam_role.lambda_execution_role.arn}"
+  role             = "${aws_iam_role.lambda_execution_role_for_service_principals_role.arn}"
   description      = "Serverless backend for the personal website of Andrew Torres"
   memory_size      = 256
   runtime          = "nodejs10.x"
@@ -282,11 +299,12 @@ resource "aws_lambda_function" "application_function" {
   Application Bucket
   -------------------------------------------------------------------------- */
 
-data "aws_iam_policy_document" "application_bucket_policy_document" {
+data "aws_iam_policy_document" "list_and_read_only_bucket_permissions_policy_document" {
   statement {
+    sid       = "ListBucketPermissions"
     effect    = "Allow"
-    actions   = ["s3:GetObject"]
-    resources = ["${aws_s3_bucket.application_bucket.arn}/*"]
+    actions   = ["s3:ListBucket"]
+    resources = ["${aws_s3_bucket.application_bucket.arn}"]
 
     principals {
       type        = "AWS"
@@ -295,9 +313,10 @@ data "aws_iam_policy_document" "application_bucket_policy_document" {
   }
 
   statement {
+    sid       = "ReadOnlyBucketPermissions"
     effect    = "Allow"
-    actions   = ["s3:ListBucket"]
-    resources = ["${aws_s3_bucket.application_bucket.arn}"]
+    actions   = ["s3:GetObject"]
+    resources = ["${aws_s3_bucket.application_bucket.arn}/*"]
 
     principals {
       type        = "AWS"
@@ -336,7 +355,7 @@ resource "aws_s3_bucket" "application_bucket" {
 
 resource "aws_s3_bucket_policy" "application_bucket_policy" {
   bucket = "${aws_s3_bucket.application_bucket.id}"
-  policy = "${data.aws_iam_policy_document.application_bucket_policy_document.json}"
+  policy = "${data.aws_iam_policy_document.list_and_read_only_bucket_permissions_policy_document.json}"
 }
 
 resource "aws_s3_bucket_public_access_block" "application_bucket_public_access_block" {

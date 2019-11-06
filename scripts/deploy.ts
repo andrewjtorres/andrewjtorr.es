@@ -1,6 +1,6 @@
 import fs from 'fs'
 import { basename, join, resolve } from 'path'
-import { S3 } from 'aws-sdk'
+import { Lambda, S3 } from 'aws-sdk'
 
 import { name } from '../package.json'
 import { execFile } from './utils/child-process'
@@ -15,6 +15,7 @@ const shasum256 = join(artifactDir, 'shasum256.txt')
 const sourceCode = join(artifactDir, `${name}.zip`)
 
 const deploy = async () => {
+  const lambda = new Lambda()
   const s3 = new S3()
 
   await build()
@@ -43,6 +44,14 @@ const deploy = async () => {
       })
       .promise(),
   ])
+
+  await lambda
+    .updateFunctionCode({
+      FunctionName: name.replace('.', '_'),
+      S3Bucket: name,
+      S3Key: basename(sourceCode),
+    })
+    .promise()
 }
 
 export default deploy
