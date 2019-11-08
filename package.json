@@ -127,7 +127,7 @@
     "@typescript-eslint/parser": "^2.6.1",
     "apollo-link-logger": "^1.2.3",
     "archiver": "^3.1.1",
-    "aws-sdk": "^2.567.0",
+    "aws-sdk": "^2.568.0",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-dynamic-import-node": "^2.3.0",
