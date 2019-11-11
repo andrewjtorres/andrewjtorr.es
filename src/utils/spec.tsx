@@ -55,9 +55,6 @@ export const renderWithContext = (
         textComponent={textComponent}
         timeZone={timeZone}
       >
-        {/*
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore TS2322 */}
         <ThemeProvider theme={theme}>
           <LocationProvider history={history}>{node}</LocationProvider>
         </ThemeProvider>
