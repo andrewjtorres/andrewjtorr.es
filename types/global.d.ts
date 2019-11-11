@@ -14,9 +14,10 @@ declare module '*.svg' {
     SVGAttributes,
   } from 'react'
 
-  const src: ForwardRefExoticComponent<
-    PropsWithoutRef<SVGAttributes<SVGSVGElement>> & RefAttributes<SVGSVGElement>
-  >
+  const src: ForwardRefExoticComponent<PropsWithoutRef<
+    SVGAttributes<SVGSVGElement>
+  > &
+    RefAttributes<SVGSVGElement>>
 
   export default src
 }
