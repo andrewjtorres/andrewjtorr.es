@@ -11408,10 +11408,10 @@ react-error-overlay@^6.0.3:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.3.tgz#c378c4b0a21e88b2e159a3e62b2f531fd63bf60d"
   integrity sha512-bOUvMWFQVk5oz8Ded9Xb7WVdEi3QGLC8tH7HmYP0Fdp4Bn3qw0tRFmr5TW6mvahzvmrK4a6bqWGfCevBflP+Xw==
 
-react-intl@^3.5.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/react-intl/-/react-intl-3.5.0.tgz#452ce2bc75044c4fc914b25f8b0bc2252cc36e82"
-  integrity sha512-bz5PuK1ZK7K4liRdl48Jbp9AUiWQBuEOqnCnOVZXgGKbJ/1TgeYiU0IyGu8yGMPD7b5A5RMCOdOjYI0/H5XSUw==
+react-intl@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/react-intl/-/react-intl-3.6.0.tgz#100185ee58620ecf1cf229de9afcb91ae9dd4e60"
+  integrity sha512-oXzHXRPHz2IaG8jmS/G8v2KXIZwOQPzjqb3MUIIjPY+usWKy7lXXSbuuAfU4co9erSuJj1zA5nMeEANfNI1PEg==
   dependencies:
     "@formatjs/intl-listformat" "^1.2.2"
     "@formatjs/intl-relativetimeformat" "^4.4.1"
