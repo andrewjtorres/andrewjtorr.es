@@ -163,7 +163,7 @@
     "jest-circus": "^24.9.0",
     "jest-config": "^24.9.0",
     "jest-styled-components": "7.0.0-beta.2",
-    "lint-staged": "^9.4.2",
+    "lint-staged": "^9.4.3",
     "mkdirp": "^0.5.1",
     "null-loader": "^3.0.0",
     "prettier": "^1.19.1",
