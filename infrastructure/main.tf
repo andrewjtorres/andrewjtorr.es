@@ -299,7 +299,7 @@ resource "aws_lambda_function" "application_function" {
   Application Bucket
   -------------------------------------------------------------------------- */
 
-data "aws_iam_policy_document" "list_and_read_only_bucket_permissions_policy_document" {
+data "aws_iam_policy_document" "list_and_read_bucket_permissions_policy_document" {
   statement {
     sid       = "ListBucketPermissions"
     effect    = "Allow"
@@ -313,7 +313,7 @@ data "aws_iam_policy_document" "list_and_read_only_bucket_permissions_policy_doc
   }
 
   statement {
-    sid       = "ReadOnlyBucketPermissions"
+    sid       = "ReadBucketPermissions"
     effect    = "Allow"
     actions   = ["s3:GetObject"]
     resources = ["${aws_s3_bucket.application_bucket.arn}/*"]
@@ -355,7 +355,7 @@ resource "aws_s3_bucket" "application_bucket" {
 
 resource "aws_s3_bucket_policy" "application_bucket_policy" {
   bucket = aws_s3_bucket.application_bucket.id
-  policy = data.aws_iam_policy_document.list_and_read_only_bucket_permissions_policy_document.json
+  policy = data.aws_iam_policy_document.list_and_read_bucket_permissions_policy_document.json
 }
 
 resource "aws_s3_bucket_public_access_block" "application_bucket_public_access_block" {
