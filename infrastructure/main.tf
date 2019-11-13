@@ -37,7 +37,7 @@ resource "aws_api_gateway_rest_api" "application_rest_api" {
 
 resource "aws_api_gateway_deployment" "application_deployment" {
   depends_on  = ["aws_api_gateway_integration.root_integration", "aws_api_gateway_integration.proxy_integration"]
-  rest_api_id = "${aws_api_gateway_rest_api.application_rest_api.id}"
+  rest_api_id = aws_api_gateway_rest_api.application_rest_api.id
 }
 
 /*
@@ -45,17 +45,17 @@ resource "aws_api_gateway_deployment" "application_deployment" {
   -------------------------------------------------------------------------- */
 
 resource "aws_api_gateway_integration" "root_integration" {
-  rest_api_id             = "${aws_api_gateway_rest_api.application_rest_api.id}"
-  resource_id             = "${aws_api_gateway_method.root_method.resource_id}"
-  http_method             = "${aws_api_gateway_method.root_method.http_method}"
+  rest_api_id             = aws_api_gateway_rest_api.application_rest_api.id
+  resource_id             = aws_api_gateway_method.root_method.resource_id
+  http_method             = aws_api_gateway_method.root_method.http_method
   integration_http_method = "POST"
   type                    = "AWS_PROXY"
-  uri                     = "${aws_lambda_function.application_function.invoke_arn}"
+  uri                     = aws_lambda_function.application_function.invoke_arn
 }
 
 resource "aws_api_gateway_method" "root_method" {
-  rest_api_id   = "${aws_api_gateway_rest_api.application_rest_api.id}"
-  resource_id   = "${aws_api_gateway_rest_api.application_rest_api.root_resource_id}"
+  rest_api_id   = aws_api_gateway_rest_api.application_rest_api.id
+  resource_id   = aws_api_gateway_rest_api.application_rest_api.root_resource_id
   http_method   = "ANY"
   authorization = "NONE"
 }
@@ -65,24 +65,24 @@ resource "aws_api_gateway_method" "root_method" {
   -------------------------------------------------------------------------- */
 
 resource "aws_api_gateway_integration" "proxy_integration" {
-  rest_api_id             = "${aws_api_gateway_rest_api.application_rest_api.id}"
-  resource_id             = "${aws_api_gateway_method.proxy_method.resource_id}"
-  http_method             = "${aws_api_gateway_method.proxy_method.http_method}"
+  rest_api_id             = aws_api_gateway_rest_api.application_rest_api.id
+  resource_id             = aws_api_gateway_method.proxy_method.resource_id
+  http_method             = aws_api_gateway_method.proxy_method.http_method
   integration_http_method = "POST"
   type                    = "AWS_PROXY"
-  uri                     = "${aws_lambda_function.application_function.invoke_arn}"
+  uri                     = aws_lambda_function.application_function.invoke_arn
 }
 
 resource "aws_api_gateway_method" "proxy_method" {
-  rest_api_id   = "${aws_api_gateway_rest_api.application_rest_api.id}"
-  resource_id   = "${aws_api_gateway_resource.proxy_resource.id}"
+  rest_api_id   = aws_api_gateway_rest_api.application_rest_api.id
+  resource_id   = aws_api_gateway_resource.proxy_resource.id
   http_method   = "ANY"
   authorization = "NONE"
 }
 
 resource "aws_api_gateway_resource" "proxy_resource" {
-  rest_api_id = "${aws_api_gateway_rest_api.application_rest_api.id}"
-  parent_id   = "${aws_api_gateway_rest_api.application_rest_api.root_resource_id}"
+  rest_api_id = aws_api_gateway_rest_api.application_rest_api.id
+  parent_id   = aws_api_gateway_rest_api.application_rest_api.root_resource_id
   path_part   = "{proxy+}"
 }
 
@@ -118,23 +118,23 @@ resource "aws_cloudfront_distribution" "application_distribution" {
   price_class         = "PriceClass_All"
 
   origin {
-    domain_name = "${aws_s3_bucket.application_bucket.bucket_domain_name}"
-    origin_id   = "${aws_s3_bucket.application_bucket.id}"
+    domain_name = aws_s3_bucket.application_bucket.bucket_domain_name
+    origin_id   = aws_s3_bucket.application_bucket.id
 
     s3_origin_config {
-      origin_access_identity = "${aws_cloudfront_origin_access_identity.application_origin_access_identity.cloudfront_access_identity_path}"
+      origin_access_identity = aws_cloudfront_origin_access_identity.application_origin_access_identity.cloudfront_access_identity_path
     }
   }
 
   logging_config {
-    bucket = "${aws_s3_bucket.log_bucket.bucket_domain_name}"
+    bucket = aws_s3_bucket.log_bucket.bucket_domain_name
     prefix = "access-logs/"
   }
 
   default_cache_behavior {
     allowed_methods        = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
     cached_methods         = ["GET", "HEAD"]
-    target_origin_id       = "${aws_s3_bucket.application_bucket.id}"
+    target_origin_id       = aws_s3_bucket.application_bucket.id
     min_ttl                = 0
     default_ttl            = 3600
     max_ttl                = 86400
@@ -153,7 +153,7 @@ resource "aws_cloudfront_distribution" "application_distribution" {
     path_pattern           = "*"
     allowed_methods        = ["GET", "HEAD", "OPTIONS"]
     cached_methods         = ["GET", "HEAD"]
-    target_origin_id       = "${aws_s3_bucket.application_bucket.id}"
+    target_origin_id       = aws_s3_bucket.application_bucket.id
     min_ttl                = 0
     default_ttl            = 3600
     max_ttl                = 86400
@@ -182,7 +182,7 @@ resource "aws_cloudfront_distribution" "application_distribution" {
   }
 
   viewer_certificate {
-    acm_certificate_arn      = "${aws_acm_certificate.certificate.arn}"
+    acm_certificate_arn      = aws_acm_certificate.certificate.arn
     minimum_protocol_version = "TLSv1.1_2016"
     ssl_support_method       = "sni-only"
   }
@@ -218,7 +218,7 @@ data "aws_iam_policy_document" "execute_function_permissions_policy_document" {
 
 resource "aws_iam_role" "lambda_execution_role_for_service_principals_role" {
   name               = "LambdaExecutionRoleForServicePrincipals"
-  assume_role_policy = "${data.aws_iam_policy_document.execute_function_permissions_policy_document.json}"
+  assume_role_policy = data.aws_iam_policy_document.execute_function_permissions_policy_document.json
 }
 
 /*
@@ -239,12 +239,12 @@ data "aws_iam_policy_document" "update_function_permissions_policy_document" {
     sid       = "UpdateFunctionPermissions"
     effect    = "Allow"
     actions   = ["lambda:UpdateFunctionCode"]
-    resources = ["${aws_lambda_function.application_function.arn}"]
+    resources = [aws_lambda_function.application_function.arn]
   }
 }
 
 resource "aws_iam_access_key" "continuous_integration_access_key" {
-  user    = "${aws_iam_user.continuous_integration_user.name}"
+  user    = aws_iam_user.continuous_integration_user.name
   pgp_key = "keybase:ajtorres9"
   status  = "Active"
 }
@@ -260,14 +260,14 @@ resource "aws_iam_user" "continuous_integration_user" {
 
 resource "aws_iam_user_policy" "personal_application_bucket_read_write_access_user_policy" {
   name   = "PersonalApplicationBucketReadWriteAccess"
-  user   = "${aws_iam_user.continuous_integration_user.name}"
-  policy = "${data.aws_iam_policy_document.read_write_bucket_permissions_policy_document.json}"
+  user   = aws_iam_user.continuous_integration_user.name
+  policy = data.aws_iam_policy_document.read_write_bucket_permissions_policy_document.json
 }
 
 resource "aws_iam_user_policy" "personal_application_function_update_access_user_policy" {
   name   = "PersonalApplicationFunctionUpdateAccess"
-  user   = "${aws_iam_user.continuous_integration_user.name}"
-  policy = "${data.aws_iam_policy_document.update_function_permissions_policy_document.json}"
+  user   = aws_iam_user.continuous_integration_user.name
+  policy = data.aws_iam_policy_document.update_function_permissions_policy_document.json
 }
 
 /* =========================================================================
@@ -275,15 +275,15 @@ resource "aws_iam_user_policy" "personal_application_function_update_access_user
    ========================================================================= */
 
 resource "aws_lambda_function" "application_function" {
-  s3_bucket        = "${aws_s3_bucket.application_bucket.id}"
+  s3_bucket        = aws_s3_bucket.application_bucket.id
   s3_key           = "${local.application_name}.zip"
   function_name    = replace(local.application_name, ".", "_")
   handler          = "handler.default"
-  role             = "${aws_iam_role.lambda_execution_role_for_service_principals_role.arn}"
+  role             = aws_iam_role.lambda_execution_role_for_service_principals_role.arn
   description      = "Serverless backend for the personal website of Andrew Torres"
   memory_size      = 256
   runtime          = "nodejs10.x"
-  source_code_hash = "${data.aws_s3_bucket_object.shasum256_bucket_object.body}"
+  source_code_hash = data.aws_s3_bucket_object.shasum256_bucket_object.body
 
   tags = {
     Name        = "Personal Application Function"
@@ -304,11 +304,11 @@ data "aws_iam_policy_document" "list_and_read_only_bucket_permissions_policy_doc
     sid       = "ListBucketPermissions"
     effect    = "Allow"
     actions   = ["s3:ListBucket"]
-    resources = ["${aws_s3_bucket.application_bucket.arn}"]
+    resources = [aws_s3_bucket.application_bucket.arn]
 
     principals {
       type        = "AWS"
-      identifiers = ["${aws_cloudfront_origin_access_identity.application_origin_access_identity.iam_arn}"]
+      identifiers = [aws_cloudfront_origin_access_identity.application_origin_access_identity.iam_arn]
     }
   }
 
@@ -320,7 +320,7 @@ data "aws_iam_policy_document" "list_and_read_only_bucket_permissions_policy_doc
 
     principals {
       type        = "AWS"
-      identifiers = ["${aws_cloudfront_origin_access_identity.application_origin_access_identity.iam_arn}"]
+      identifiers = [aws_cloudfront_origin_access_identity.application_origin_access_identity.iam_arn]
     }
   }
 }
@@ -335,7 +335,7 @@ resource "aws_s3_bucket" "application_bucket" {
   acl    = "private"
 
   logging {
-    target_bucket = "${aws_s3_bucket.log_bucket.id}"
+    target_bucket = aws_s3_bucket.log_bucket.id
     target_prefix = "access-logs/"
   }
 
@@ -354,12 +354,12 @@ resource "aws_s3_bucket" "application_bucket" {
 }
 
 resource "aws_s3_bucket_policy" "application_bucket_policy" {
-  bucket = "${aws_s3_bucket.application_bucket.id}"
-  policy = "${data.aws_iam_policy_document.list_and_read_only_bucket_permissions_policy_document.json}"
+  bucket = aws_s3_bucket.application_bucket.id
+  policy = data.aws_iam_policy_document.list_and_read_only_bucket_permissions_policy_document.json
 }
 
 resource "aws_s3_bucket_public_access_block" "application_bucket_public_access_block" {
-  bucket                  = "${aws_s3_bucket.application_bucket.id}"
+  bucket                  = aws_s3_bucket.application_bucket.id
   block_public_acls       = true
   block_public_policy     = true
   ignore_public_acls      = true
@@ -407,7 +407,7 @@ resource "aws_s3_bucket" "log_bucket" {
 }
 
 resource "aws_s3_bucket_public_access_block" "log_bucket_public_access_block" {
-  bucket                  = "${aws_s3_bucket.log_bucket.id}"
+  bucket                  = aws_s3_bucket.log_bucket.id
   block_public_acls       = true
   block_public_policy     = true
   ignore_public_acls      = true
