@@ -225,9 +225,9 @@ resource "aws_iam_role" "lambda_execution_role_for_service_principals_role" {
   Continuous Integration User
   -------------------------------------------------------------------------- */
 
-data "aws_iam_policy_document" "read_write_bucket_permissions_policy_document" {
+data "aws_iam_policy_document" "read_and_write_bucket_permissions_policy_document" {
   statement {
-    sid       = "ReadWriteBucketPermissions"
+    sid       = "ReadAndWriteBucketPermissions"
     effect    = "Allow"
     actions   = ["s3:GetObject", "s3:PutObject"]
     resources = ["${aws_s3_bucket.application_bucket.arn}/*"]
@@ -258,10 +258,10 @@ resource "aws_iam_user" "continuous_integration_user" {
   }
 }
 
-resource "aws_iam_user_policy" "personal_application_bucket_read_write_access_user_policy" {
-  name   = "PersonalApplicationBucketReadWriteAccess"
+resource "aws_iam_user_policy" "personal_application_bucket_read_and_write_access_user_policy" {
+  name   = "PersonalApplicationBucketReadAndWriteAccess"
   user   = aws_iam_user.continuous_integration_user.name
-  policy = data.aws_iam_policy_document.read_write_bucket_permissions_policy_document.json
+  policy = data.aws_iam_policy_document.read_and_write_bucket_permissions_policy_document.json
 }
 
 resource "aws_iam_user_policy" "personal_application_function_update_access_user_policy" {
