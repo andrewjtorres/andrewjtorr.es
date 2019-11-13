@@ -30,14 +30,32 @@ provider "aws" {
    API Gateway
    ========================================================================= */
 
-resource "aws_api_gateway_rest_api" "application_rest_api" {
-  name        = local.application_name
-  description = "Rest API for the personal website of Andrew Torres"
+resource "aws_api_gateway_deployment" "application_deployment" {
+  depends_on  = ["aws_api_gateway_integration.proxy_integration", "aws_api_gateway_integration.root_integration"]
+  rest_api_id = aws_api_gateway_rest_api.application_rest_api.id
+  description = "Rest API deployment for the personal website of Andrew Torres"
 }
 
-resource "aws_api_gateway_deployment" "application_deployment" {
-  depends_on  = ["aws_api_gateway_integration.root_integration", "aws_api_gateway_integration.proxy_integration"]
-  rest_api_id = aws_api_gateway_rest_api.application_rest_api.id
+resource "aws_api_gateway_rest_api" "application_rest_api" {
+  name               = local.application_name
+  description        = "Rest API for the personal website of Andrew Torres"
+  binary_media_types = ["text/html"]
+
+  endpoint_configuration {
+    types = ["REGIONAL"]
+  }
+}
+
+resource "aws_api_gateway_stage" "production_stage" {
+  rest_api_id   = aws_api_gateway_rest_api.application_rest_api.id
+  stage_name    = "prod"
+  deployment_id = aws_api_gateway_deployment.application_deployment.id
+  description   = "Rest API stage for the personal website of Andrew Torres"
+
+  tags = {
+    Name        = "Personal Application Rest API Production Stage"
+    Application = local.application_name
+  }
 }
 
 /*
