@@ -39,7 +39,7 @@ resource "aws_api_gateway_deployment" "application_deployment" {
 resource "aws_api_gateway_rest_api" "application_rest_api" {
   name               = local.application_name
   description        = "Rest API for the personal website of Andrew Torres"
-  binary_media_types = ["text/html"]
+  binary_media_types = ["application/javascript", "application/json", "application/manifest+json", "image/bmp", "image/gif", "image/jpeg", "image/png", "image/webp", "text/html", "text/javascript"]
 
   endpoint_configuration {
     types = ["REGIONAL"]
