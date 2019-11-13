@@ -214,12 +214,42 @@ resource "aws_cloudfront_distribution" "application_distribution" {
 resource "aws_cloudfront_origin_access_identity" "application_origin_access_identity" {}
 
 /* =========================================================================
+   CloudWatch
+   ========================================================================= */
+
+resource "aws_cloudwatch_log_group" "application_function_log_group" {
+  name              = "/aws/lambda/${aws_lambda_function.application_function.function_name}"
+  retention_in_days = 90
+
+  tags = {
+    Name        = "Personal Application Function Log Group"
+    Application = local.application_name
+  }
+}
+
+/* =========================================================================
    Identity and Access Management (IAM)
    ========================================================================= */
 
 /*
   Lambda Execution Role for Service Principals
   -------------------------------------------------------------------------- */
+
+data "aws_iam_policy_document" "create_and_write_log_permissions_policy_document" {
+  statement {
+    sid       = "CreateLogPermissions"
+    effect    = "Allow"
+    actions   = ["logs:CreateLogStream"]
+    resources = [aws_cloudwatch_log_group.application_function_log_group.arn]
+  }
+
+  statement {
+    sid       = "WriteLogPermissions"
+    effect    = "Allow"
+    actions   = ["logs:PutLogEvents"]
+    resources = ["${aws_cloudwatch_log_group.application_function_log_group.arn}:*"]
+  }
+}
 
 data "aws_iam_policy_document" "execute_function_permissions_policy_document" {
   statement {
@@ -234,9 +264,26 @@ data "aws_iam_policy_document" "execute_function_permissions_policy_document" {
   }
 }
 
-resource "aws_iam_role" "lambda_execution_role_for_service_principals_role" {
-  name               = "LambdaExecutionRoleForServicePrincipals"
+resource "aws_iam_policy" "personal_application_function_logs_create_and_write_access_policy" {
+  name        = "PersonalApplicationFunctionLogsCreateAndWriteAccess"
+  description = "Provides create and write access to Personal Application Function Logs"
+  policy      = data.aws_iam_policy_document.create_and_write_log_permissions_policy_document.json
+}
+
+resource "aws_iam_role" "personal_application_function_execution_role_for_service_principals_role" {
+  name               = "PersonalApplicationFunctionExecutionRoleForServicePrincipals"
   assume_role_policy = data.aws_iam_policy_document.execute_function_permissions_policy_document.json
+  description        = "Enables resource access for AWS to perform create and write actions to Personal Application Logs"
+
+  tags = {
+    Name        = "Personal Application Function Execution Role for Service Principals"
+    Application = local.application_name
+  }
+}
+
+resource "aws_iam_role_policy_attachment" "personal_application_function_execution_role_for_service_principals_role_policy_attachment" {
+  role       = aws_iam_role.personal_application_function_execution_role_for_service_principals_role.name
+  policy_arn = aws_iam_policy.personal_application_function_logs_create_and_write_access_policy.arn
 }
 
 /*
@@ -297,7 +344,7 @@ resource "aws_lambda_function" "application_function" {
   s3_key           = "${local.application_name}.zip"
   function_name    = replace(local.application_name, ".", "_")
   handler          = "handler.default"
-  role             = aws_iam_role.lambda_execution_role_for_service_principals_role.arn
+  role             = aws_iam_role.personal_application_function_execution_role_for_service_principals_role.arn
   description      = "Serverless backend for the personal website of Andrew Torres"
   memory_size      = 256
   runtime          = "nodejs10.x"
