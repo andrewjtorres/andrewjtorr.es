@@ -356,6 +356,14 @@ resource "aws_lambda_function" "application_function" {
   }
 }
 
+resource "aws_lambda_permission" "allow_personal_application_rest_api_invoke_permission" {
+  statement_id  = "AllowPersonalApplicationRestApiInvoke"
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.application_function.function_name
+  principal     = "apigateway.amazonaws.com"
+  source_arn    = "${aws_api_gateway_rest_api.application_rest_api.execution_arn}/*/*"
+}
+
 /* =========================================================================
    Simple Storage Service (S3)
    ========================================================================= */
