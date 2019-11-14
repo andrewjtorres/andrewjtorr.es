@@ -18,11 +18,8 @@ const darkColor = (color: string) =>
     color
   )
 
-const lightColor = (color: string) => {
-  const { lightness } = parseToHsl(color)
-
-  return setLightness(lightness > 0.96 ? lightness : 0.96, color)
-}
+const lightColor = (color: string) =>
+  setLightness(Math.max(parseToHsl(color).lightness, 0.96), color)
 
 const black = hsl(0, 0, 0.04)
 const blackBis = hsl(0, 0, 0.07)
