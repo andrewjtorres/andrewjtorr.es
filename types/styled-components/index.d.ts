@@ -21,6 +21,20 @@ declare module 'styled-components' {
     | 'warningContrast'
     | 'dangerContrast'
 
+  export type ColorLight =
+    | 'primaryLight'
+    | 'infoLight'
+    | 'successLight'
+    | 'warningLight'
+    | 'dangerLight'
+
+  export type ColorDark =
+    | 'primaryDark'
+    | 'infoDark'
+    | 'successDark'
+    | 'warningDark'
+    | 'dangerDark'
+
   export type FontSize =
     | 'fontSize1'
     | 'fontSize2'
@@ -47,6 +61,8 @@ declare module 'styled-components' {
   export interface DefaultTheme
     extends Record<Color, string>,
       Record<ColorContrast, string>,
+      Record<ColorLight, string>,
+      Record<ColorDark, string>,
       Record<FontSize, string>,
       Record<Shade, string>,
       Record<ViewportBreakpoint, number> {
@@ -66,6 +82,12 @@ declare module 'styled-components' {
     blueContrast: string
     purpleContrast: string
     redContrast: string
+    schemeMain: string
+    schemeMainBis: string
+    schemeMainTer: string
+    schemeContrast: string
+    schemeContrastBis: string
+    schemeContrastTer: string
     backgroundColor: string
     borderColor: string
     borderHoverColor: string
@@ -82,6 +104,8 @@ declare module 'styled-components' {
     preBackgroundColor: string
     linkColor: string
     linkColorContrast: string
+    linkColorLight: string
+    linkColorDark: string
     linkVisitedColor: string
     linkHoverColor: string
     linkHoverBorderColor: string

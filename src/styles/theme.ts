@@ -1,8 +1,32 @@
-import { hsl, hsla, readableColor, rem } from 'polished'
+import {
+  hsl,
+  hsla,
+  parseToHsl,
+  readableColor,
+  rem,
+  getLuminance,
+  setLightness,
+} from 'polished'
 import { DefaultTheme } from 'styled-components' // eslint-disable-line import/named
 
 const contrastColor = (color: string) =>
   readableColor(color, hsla(0, 0, 0, 0.7), hsl(0, 0, 1))
+
+const darkColor = (color: string) =>
+  setLightness(
+    Math.max(0.29, Math.round(0.29 + (0.53 - getLuminance(color)) * 53)),
+    color
+  )
+
+const lightColor = (color: string) => {
+  const { lightness } = parseToHsl(color)
+
+  return setLightness(lightness > 0.96 ? lightness : 0.96, color)
+}
+
+const black = hsl(0, 0, 0.04)
+const blackBis = hsl(0, 0, 0.07)
+const blackTer = hsl(0, 0, 0.14)
 
 const grayDarker = hsl(0, 0, 0.21)
 const grayDark = hsl(0, 0, 0.29)
@@ -12,18 +36,20 @@ const grayLighter = hsl(0, 0, 0.86)
 const grayLightest = hsl(0, 0, 0.93)
 
 const whiteTer = hsl(0, 0, 0.96)
+const whiteBis = hsl(0, 0, 0.98)
+const white = hsl(0, 0, 1)
 
 const light = whiteTer
 const dark = grayDarker
 
 const orange = hsl(14, 1, 0.53)
 const yellow = hsl(48, 1, 0.67)
-const green = hsl(141, 0.71, 0.48)
+const green = hsl(141, 0.53, 0.53)
 const turquoise = hsl(171, 1, 0.41)
-const cyan = hsl(204, 0.86, 0.53)
+const cyan = hsl(204, 0.71, 0.53)
 const blue = hsl(217, 0.71, 0.53)
 const purple = hsl(271, 1, 0.71)
-const red = hsl(348, 1, 0.61)
+const red = hsl(348, 0.86, 0.61)
 
 const blueContrast = contrastColor(blue)
 
@@ -49,9 +75,9 @@ const fontSize7 = rem(12)
 const gap = 32
 
 const theme: DefaultTheme = {
-  black: hsl(0, 0, 0.04),
-  blackBis: hsl(0, 0, 0.07),
-  blackTer: hsl(0, 0, 0.14),
+  black,
+  blackBis,
+  blackTer,
 
   grayDarker,
   grayDark,
@@ -61,8 +87,8 @@ const theme: DefaultTheme = {
   grayLightest,
 
   whiteTer,
-  whiteBis: hsl(0, 0, 0.98),
-  white: hsl(0, 0, 1),
+  whiteBis,
+  white,
 
   light,
   dark,
@@ -95,10 +121,27 @@ const theme: DefaultTheme = {
   danger,
 
   primaryContrast: contrastColor(primary),
+  primaryLight: lightColor(primary),
+  primaryDark: darkColor(primary),
   infoContrast: contrastColor(info),
+  infoLight: lightColor(info),
+  infoDark: darkColor(info),
   successContrast: contrastColor(success),
+  successLight: lightColor(success),
+  successDark: darkColor(success),
   warningContrast: contrastColor(warning),
+  warningLight: lightColor(warning),
+  warningDark: darkColor(warning),
   dangerContrast: contrastColor(danger),
+  dangerLight: lightColor(danger),
+  dangerDark: darkColor(danger),
+
+  schemeMain: white,
+  schemeMainBis: whiteBis,
+  schemeMainTer: whiteTer,
+  schemeContrast: black,
+  schemeContrastBis: blackBis,
+  schemeContrastTer: blackTer,
 
   backgroundColor,
 
@@ -121,6 +164,8 @@ const theme: DefaultTheme = {
 
   linkColor: blue,
   linkColorContrast: blueContrast,
+  linkColorLight: lightColor(blue),
+  linkColorDark: darkColor(blue),
   linkVisitedColor: purple,
 
   linkHoverColor: grayDarker,
