@@ -88,7 +88,7 @@
     "@semantic-release/exec": "^3.3.8",
     "@semantic-release/git": "^7.0.18",
     "@semantic-release/github": "^5.5.5",
-    "@semantic-release/release-notes-generator": "^7.3.2",
+    "@semantic-release/release-notes-generator": "^7.3.3",
     "@svgr/webpack": "^4.3.3",
     "@testing-library/jest-dom": "4.2.0",
     "@testing-library/react": "^9.3.2",
