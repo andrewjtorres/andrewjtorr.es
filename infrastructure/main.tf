@@ -2,7 +2,7 @@ terraform {
   required_version = ">=0.12"
 
   required_providers {
-    aws = ">=2.34"
+    aws = ">=2.35"
   }
 
   backend "remote" {
@@ -22,9 +22,15 @@ locals {
 }
 
 provider "aws" {
-  version = ">=2.34"
+  version = ">=2.35"
   region  = "us-east-1"
 }
+
+/* =========================================================================
+   Data Sources
+   ========================================================================= */
+
+data "aws_region" "current" {}
 
 /* =========================================================================
    API Gateway
@@ -128,19 +134,22 @@ resource "aws_acm_certificate" "certificate" {
    ========================================================================= */
 
 resource "aws_cloudfront_distribution" "application_distribution" {
-  enabled             = true
-  is_ipv6_enabled     = true
-  comment             = "Content delivery network for the personal website of Andrew Torres"
-  default_root_object = "index.html"
-  aliases             = local.alternate_domain_names
-  price_class         = "PriceClass_All"
+  enabled         = true
+  is_ipv6_enabled = true
+  comment         = "Content delivery network for the personal website of Andrew Torres"
+  aliases         = local.alternate_domain_names
+  price_class     = "PriceClass_All"
 
   origin {
-    domain_name = aws_s3_bucket.application_bucket.bucket_domain_name
-    origin_id   = aws_s3_bucket.application_bucket.id
+    domain_name = "${aws_api_gateway_rest_api.application_rest_api.id}.execute-api.${data.aws_region.current.name}.amazonaws.com"
+    origin_id   = "${local.application_name}-rest-api-prod"
+    origin_path = "/prod"
 
-    s3_origin_config {
-      origin_access_identity = aws_cloudfront_origin_access_identity.application_origin_access_identity.cloudfront_access_identity_path
+    custom_origin_config {
+      http_port              = 80
+      https_port             = 443
+      origin_protocol_policy = "https-only"
+      origin_ssl_protocols   = ["TLSv1.2"]
     }
   }
 
@@ -152,17 +161,17 @@ resource "aws_cloudfront_distribution" "application_distribution" {
   default_cache_behavior {
     allowed_methods        = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
     cached_methods         = ["GET", "HEAD"]
-    target_origin_id       = aws_s3_bucket.application_bucket.id
+    target_origin_id       = "${local.application_name}-rest-api-prod"
     min_ttl                = 0
     default_ttl            = 3600
     max_ttl                = 86400
     viewer_protocol_policy = "allow-all"
 
     forwarded_values {
-      query_string = false
+      query_string = true
 
       cookies {
-        forward = "none"
+        forward = "all"
       }
     }
   }
@@ -171,7 +180,7 @@ resource "aws_cloudfront_distribution" "application_distribution" {
     path_pattern           = "*"
     allowed_methods        = ["GET", "HEAD", "OPTIONS"]
     cached_methods         = ["GET", "HEAD"]
-    target_origin_id       = aws_s3_bucket.application_bucket.id
+    target_origin_id       = "${local.application_name}-rest-api-prod"
     min_ttl                = 0
     default_ttl            = 3600
     max_ttl                = 86400
@@ -179,18 +188,12 @@ resource "aws_cloudfront_distribution" "application_distribution" {
     viewer_protocol_policy = "redirect-to-https"
 
     forwarded_values {
-      query_string = false
+      query_string = true
 
       cookies {
-        forward = "none"
+        forward = "all"
       }
     }
-  }
-
-  custom_error_response {
-    error_code         = 404
-    response_code      = 404
-    response_page_path = "/index.html"
   }
 
   restrictions {
@@ -210,8 +213,6 @@ resource "aws_cloudfront_distribution" "application_distribution" {
     Application = local.application_name
   }
 }
-
-resource "aws_cloudfront_origin_access_identity" "application_origin_access_identity" {}
 
 /* =========================================================================
    CloudWatch
@@ -372,32 +373,6 @@ resource "aws_lambda_permission" "allow_personal_application_rest_api_invoke_per
   Application Bucket
   -------------------------------------------------------------------------- */
 
-data "aws_iam_policy_document" "list_and_read_bucket_permissions_policy_document" {
-  statement {
-    sid       = "ListBucketPermissions"
-    effect    = "Allow"
-    actions   = ["s3:ListBucket"]
-    resources = [aws_s3_bucket.application_bucket.arn]
-
-    principals {
-      type        = "AWS"
-      identifiers = [aws_cloudfront_origin_access_identity.application_origin_access_identity.iam_arn]
-    }
-  }
-
-  statement {
-    sid       = "ReadBucketPermissions"
-    effect    = "Allow"
-    actions   = ["s3:GetObject"]
-    resources = ["${aws_s3_bucket.application_bucket.arn}/*"]
-
-    principals {
-      type        = "AWS"
-      identifiers = [aws_cloudfront_origin_access_identity.application_origin_access_identity.iam_arn]
-    }
-  }
-}
-
 data "aws_s3_bucket_object" "shasum256_bucket_object" {
   bucket = local.application_name
   key    = "shasum256.txt"
@@ -424,11 +399,6 @@ resource "aws_s3_bucket" "application_bucket" {
     Name        = "Personal Application Bucket"
     Application = local.application_name
   }
-}
-
-resource "aws_s3_bucket_policy" "application_bucket_policy" {
-  bucket = aws_s3_bucket.application_bucket.id
-  policy = data.aws_iam_policy_document.list_and_read_bucket_permissions_policy_document.json
 }
 
 resource "aws_s3_bucket_public_access_block" "application_bucket_public_access_block" {
