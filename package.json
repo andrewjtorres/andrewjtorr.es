@@ -137,7 +137,7 @@
     "browser-sync": "^2.26.7",
     "chokidar": "^3.3.0",
     "cz-conventional-changelog": "^3.0.2",
-    "dotenv-safe": "^8.1.0",
+    "dotenv-safe": "^8.2.0",
     "dotenv-webpack": "^1.7.0",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.5.0",
