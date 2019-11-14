@@ -3,12 +3,10 @@ import { rem } from 'polished'
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-import BaseLogo from 'assets/logo.svg'
+import BaseLogoIcon from 'assets/logo.svg'
 import { container, medium, untilMedium } from 'styles/mixins'
 
-interface Props {
-  children?: React.ReactNode
-}
+type LayoutProps = React.HTMLAttributes<HTMLDivElement>
 
 const Root = styled.div`
   display: flex;
@@ -17,18 +15,32 @@ const Root = styled.div`
 `
 
 const Navbar = styled.nav`
-  ${container()}
+  background-color: ${({ theme }) => theme.schemeMain};
+  min-height: ${rem(52)};
+  position: relative;
+
+  ${medium(css`
+    align-items: stretch;
+    display: flex;
+  `)};
+`
+
+const Container = styled.div`
+  ${container()};
+  align-items: stretch;
   display: flex;
   min-height: ${rem(52)};
   width: 100%;
 
   ${untilMedium(css`
     display: block;
-  `)}
+  `)};
 `
 
 const Brand = styled.div`
+  align-items: stretch;
   display: flex;
+  flex-shrink: 0;
   min-height: ${rem(52)};
 
   ${medium(css`
@@ -36,33 +48,42 @@ const Brand = styled.div`
   `)}
 `
 
-const LogoLink = styled(BaseLink)`
+const Link = styled(BaseLink)`
   align-items: center;
+  color: ${({ theme }) => theme.textColor};
+  cursor: pointer;
   display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  line-height: 1.5;
   padding: ${rem(8)} ${rem(12)};
+  position: relative;
 `
 
-const Logo = styled(BaseLogo)`
+const LogoIcon = styled(BaseLogoIcon)`
   height: ${rem(32)};
-  max-height: ${rem(32)};
 `
 
-const Layout: React.FunctionComponent<Props> = ({
-  children,
-  ...props
-}: Props) => (
-  <Root {...props}>
-    <header>
-      <Navbar aria-label="main navigation">
-        <Brand>
-          <LogoLink aria-label="home" data-testid="logo" to="/">
-            <Logo />
-          </LogoLink>
-        </Brand>
-      </Navbar>
-    </header>
-    {children}
-  </Root>
-)
+const Layout = React.forwardRef<HTMLDivElement, LayoutProps>(function Layout(
+  { children, ...props }: LayoutProps,
+  ref?: React.Ref<HTMLDivElement>
+) {
+  return (
+    <Root ref={ref} {...props}>
+      <header>
+        <Navbar aria-label="main navigation">
+          <Container>
+            <Brand>
+              <Link aria-label="home" data-testid="logo" to="/">
+                <LogoIcon />
+              </Link>
+            </Brand>
+          </Container>
+        </Navbar>
+      </header>
+      {children}
+    </Root>
+  )
+})
 
 export default Layout
