@@ -19,7 +19,7 @@ const viewportBreakpointScale: Record<
 
 const from = (breakpoint: ViewportBreakpoint) => (styles: Styles) => css`
   @media screen and (min-width: ${({ theme }) => theme[breakpoint]}px) {
-    ${styles}
+    ${styles};
   }
 `
 
@@ -27,13 +27,13 @@ const only = (breakpoint: ViewportBreakpointLower) => (styles: Styles) => css`
   @media screen and (min-width: ${({ theme }) =>
       theme[breakpoint]}px) and (max-width: ${({ theme }) =>
       theme[viewportBreakpointScale[breakpoint]] - 1}px) {
-    ${styles}
+    ${styles};
   }
 `
 
 const until = (breakpoint: ViewportBreakpoint) => (styles: Styles) => css`
   @media screen and (max-width: ${({ theme }) => theme[breakpoint] - 1}px) {
-    ${styles}
+    ${styles};
   }
 `
 
@@ -45,7 +45,7 @@ export const untilSmall = until('small')
 
 export const small = (styles: Styles) => css`
   @media screen and (min-width: ${({ theme }) => theme.small}px), print {
-    ${styles}
+    ${styles};
   }
 `
 
@@ -70,13 +70,13 @@ export const extraLarge = from('extraLarge')
 export const isHiddenUntilSmall = css`
   ${untilSmall(css`
     display: none !important;
-  `)}
+  `)};
 `
 
 export const isHiddenSmall = css`
   ${small(css`
     display: none !important;
-  `)}
+  `)};
 `
 
 export const container = (isFluid = false) => {
@@ -98,15 +98,15 @@ export const container = (isFluid = false) => {
     ${isFluid
       ? fluid
       : css`
-          ${medium(centered('medium'))}
+          ${extraLarge(centered('extraLarge'))};
 
-          ${untilLarge(centered('large'))}
+          ${untilExtraLarge(centered('extraLarge'))};
 
-          ${untilExtraLarge(centered('extraLarge'))}
+          ${large(centered('large'))};
 
-          ${large(centered('large'))}
+          ${untilLarge(centered('large'))};
 
-          ${extraLarge(centered('extraLarge'))}
-        `}
+          ${medium(centered('medium'))};
+        `};
   `
 }

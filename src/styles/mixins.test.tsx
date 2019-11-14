@@ -24,7 +24,7 @@ const styles = css`
 describe('untilSmall', () => {
   test("should return the provided styles nested in an 'untilSmall' media query", () => {
     const Div = styled.div`
-      ${untilSmall(styles)}
+      ${untilSmall(styles)};
     `
     const { container } = renderWithContext(<Div />)
 
@@ -45,7 +45,7 @@ describe('untilSmall', () => {
 describe('small', () => {
   test("should return the provided styles nested in a 'small' media query", () => {
     const Div = styled.div`
-      ${small(styles)}
+      ${small(styles)};
     `
     const { container } = renderWithContext(<Div />)
 
@@ -66,7 +66,7 @@ describe('small', () => {
 describe('smallOnly', () => {
   test("should return the provided styles nested in a 'smallOnly' media query", () => {
     const Div = styled.div`
-      ${smallOnly(styles)}
+      ${smallOnly(styles)};
     `
     const { container } = renderWithContext(<Div />)
 
@@ -87,7 +87,7 @@ describe('smallOnly', () => {
 describe('untilMedium', () => {
   test("should return the provided styles nested in an 'untilMedium' media query", () => {
     const Div = styled.div`
-      ${untilMedium(styles)}
+      ${untilMedium(styles)};
     `
     const { container } = renderWithContext(<Div />)
 
@@ -108,7 +108,7 @@ describe('untilMedium', () => {
 describe('medium', () => {
   test("should return the provided styles nested in a 'medium' media query", () => {
     const Div = styled.div`
-      ${medium(styles)}
+      ${medium(styles)};
     `
     const { container } = renderWithContext(<Div />)
 
@@ -129,7 +129,7 @@ describe('medium', () => {
 describe('mediumOnly', () => {
   test("should return the provided styles nested in a 'mediumOnly' media query", () => {
     const Div = styled.div`
-      ${mediumOnly(styles)}
+      ${mediumOnly(styles)};
     `
     const { container } = renderWithContext(<Div />)
 
@@ -150,7 +150,7 @@ describe('mediumOnly', () => {
 describe('untilLarge', () => {
   test("should return the provided styles nested in an 'untilLarge' media query", () => {
     const Div = styled.div`
-      ${untilLarge(styles)}
+      ${untilLarge(styles)};
     `
     const { container } = renderWithContext(<Div />)
 
@@ -171,7 +171,7 @@ describe('untilLarge', () => {
 describe('large', () => {
   test("should return the provided styles nested in a 'large' media query", () => {
     const Div = styled.div`
-      ${large(styles)}
+      ${large(styles)};
     `
     const { container } = renderWithContext(<Div />)
 
@@ -192,7 +192,7 @@ describe('large', () => {
 describe('largeOnly', () => {
   test("should return the provided styles nested in a 'largeOnly' media query", () => {
     const Div = styled.div`
-      ${largeOnly(styles)}
+      ${largeOnly(styles)};
     `
     const { container } = renderWithContext(<Div />)
 
@@ -213,7 +213,7 @@ describe('largeOnly', () => {
 describe('untilExtraLarge', () => {
   test("should return the provided styles nested in an 'untilExtraLarge' media query", () => {
     const Div = styled.div`
-      ${untilExtraLarge(styles)}
+      ${untilExtraLarge(styles)};
     `
     const { container } = renderWithContext(<Div />)
 
@@ -234,7 +234,7 @@ describe('untilExtraLarge', () => {
 describe('extraLarge', () => {
   test("should return the provided styles nested in a 'extraLarge' media query", () => {
     const Div = styled.div`
-      ${extraLarge(styles)}
+      ${extraLarge(styles)};
     `
     const { container } = renderWithContext(<Div />)
 
@@ -255,7 +255,7 @@ describe('extraLarge', () => {
 describe('container', () => {
   test('should return centered container styles', () => {
     const Div = styled.div`
-      ${container()}
+      ${container()};
     `
     const result = renderWithContext(<Div />)
 
@@ -270,15 +270,9 @@ describe('container', () => {
         width: auto;
       }
 
-      @media screen and (min-width:1024px) {
+      @media screen and (min-width:1408px) {
         .c0 {
-          max-width: 960px;
-        }
-      }
-
-      @media screen and (max-width:1215px) {
-        .c0 {
-          max-width: 1152px;
+          max-width: 1344px;
         }
       }
 
@@ -294,9 +288,15 @@ describe('container', () => {
         }
       }
 
-      @media screen and (min-width:1408px) {
+      @media screen and (max-width:1215px) {
         .c0 {
-          max-width: 1344px;
+          max-width: 1152px;
+        }
+      }
+
+      @media screen and (min-width:1024px) {
+        .c0 {
+          max-width: 960px;
         }
       }
 
@@ -308,7 +308,7 @@ describe('container', () => {
 
   test('should return fluid container styles', () => {
     const Div = styled.div`
-      ${container(true)}
+      ${container(true)};
     `
     const result = renderWithContext(<Div />)
 
