@@ -1531,10 +1531,10 @@
   resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-8.10.35.tgz#f3e1f62fa865858728e706dcc8415dfd6d12894c"
   integrity sha512-2z7tI/cRpwQwx9eFFhnBgyJppQEkL3YZ+4PadhNcDuB5y+BmMY25h1N16WufdtMzOVK2WQYrLUGt6ajTzVBJUQ==
 
-"@types/aws-serverless-express@^3.3.1":
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/@types/aws-serverless-express/-/aws-serverless-express-3.3.1.tgz#ead2a72589e39e1d4e7a06b766117fa5772d30ed"
-  integrity sha512-jxDCw/DW/p7Mebn0QP2/f4lUlLWRqizpribrOGdUdAfWY04pdmNesEWNXHZm8Ch4ljXS12tjbnnqVn+szlI+Pw==
+"@types/aws-serverless-express@^3.3.2":
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/@types/aws-serverless-express/-/aws-serverless-express-3.3.2.tgz#a4e7bff8ec53eb970acb0d87806654c80285e6f9"
+  integrity sha512-2vBt5YCjDFAkFC53O8/TEJpjsDnF8Gz0ntxwESWotgXurWrFGdmVkt0Z6t9buVO2bO833+SMsWd8PL+2io4A9Q==
   dependencies:
     "@types/aws-lambda" "*"
     "@types/express" "*"
