@@ -116,7 +116,7 @@
     "@types/styled-components": "^4.4.0",
     "@types/terser-webpack-plugin": "^2.2.0",
     "@types/testing-library__react": "^9.1.2",
-    "@types/webpack": "^4.39.9",
+    "@types/webpack": "^4.41.0",
     "@types/webpack-bundle-analyzer": "^2.13.3",
     "@types/webpack-dev-middleware": "^2.0.3",
     "@types/webpack-env": "^1.14.1",
