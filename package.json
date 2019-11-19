@@ -106,7 +106,7 @@
     "@types/loadable__component": "^5.10.0",
     "@types/loadable__server": "^5.9.1",
     "@types/mkdirp": "^0.5.2",
-    "@types/node": "^12.12.9",
+    "@types/node": "^12.12.10",
     "@types/reach__router": "^1.2.6",
     "@types/react": "^16.9.11",
     "@types/react-dev-utils": "^9.0.1",
