@@ -54,10 +54,11 @@ const mergeToFile = async (
     }
   })
 
-  const filteredOriginalTranslations = Object.keys(originalTranslations)
+  const updatedTranslations = Object.keys(originalTranslations)
     .map(id => originalTranslations[id])
     .filter(({ files, message }) => files || message)
-  const data = `${JSON.stringify(filteredOriginalTranslations, null, 2)}\n`
+    .sort((a, b) => a.id.localeCompare(b.id))
+  const data = `${JSON.stringify(updatedTranslations, null, 2)}\n`
 
   await writeFile(file, data)
 
