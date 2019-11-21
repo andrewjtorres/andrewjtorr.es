@@ -8,7 +8,7 @@ import {
 import { render } from '@testing-library/react'
 import React from 'react'
 import { IntlConfig, IntlProvider } from 'react-intl'
-import { DefaultTheme, ThemeProvider } from 'styled-components' // eslint-disable-line import/named
+import { DefaultTheme, ThemeProvider } from 'styled-components'
 
 import defaultTheme from 'styles/theme'
 

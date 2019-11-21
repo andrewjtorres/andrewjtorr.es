@@ -7,7 +7,7 @@ import {
   getLuminance,
   setLightness,
 } from 'polished'
-import { DefaultTheme } from 'styled-components' // eslint-disable-line import/named
+import { DefaultTheme } from 'styled-components'
 
 const contrastColor = (color: string) =>
   readableColor(color, hsla(0, 0, 0, 0.7), hsl(0, 0, 1))
