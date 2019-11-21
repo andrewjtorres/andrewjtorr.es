@@ -1,5 +1,5 @@
-const { join, resolve } = require('path')
-const { config } = require('dotenv-safe')
+import { join, resolve } from 'path'
+import { config } from 'dotenv-safe'
 
 const rootDir = resolve(__dirname, '..')
 
