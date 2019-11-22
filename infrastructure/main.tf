@@ -2,7 +2,7 @@ terraform {
   required_version = ">=0.12"
 
   required_providers {
-    aws = ">=2.35"
+    aws = ">=2.39"
   }
 
   backend "remote" {
@@ -22,7 +22,7 @@ locals {
 }
 
 provider "aws" {
-  version = ">=2.35"
+  version = ">=2.39"
   region  = "us-east-1"
 }
 
@@ -37,7 +37,7 @@ data "aws_region" "current" {}
    ========================================================================= */
 
 resource "aws_api_gateway_deployment" "application_deployment" {
-  depends_on  = ["aws_api_gateway_integration.proxy_integration", "aws_api_gateway_integration.root_integration"]
+  depends_on  = [aws_api_gateway_integration.proxy_integration, aws_api_gateway_integration.root_integration]
   rest_api_id = aws_api_gateway_rest_api.application_rest_api.id
   description = "Rest API deployment for the personal website of Andrew Torres"
 }
