@@ -270,7 +270,7 @@ const Home: React.FunctionComponent<Props> = (props: Props) => {
     }: MediaQueryList | MediaQueryListEvent) => {
       const { current } = matches ? mediumLinkContainer : smallLinkContainer
 
-      return current && current.append(...links)
+      return current?.append(...links)
     }
 
     mediaQueryList.addListener(smallMediumTransition)

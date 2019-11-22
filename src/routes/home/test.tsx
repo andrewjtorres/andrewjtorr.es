@@ -4,7 +4,7 @@ import { renderWithContext } from 'utils/spec'
 import Home from '.'
 
 test('should render correctly', () => {
-  const { matchMedia } = window
+  const { matchMedia: originalMatchMedia } = window
 
   Object.defineProperty(window, 'matchMedia', {
     value: (query: string) => ({
@@ -33,11 +33,11 @@ test('should render correctly', () => {
   expect(linkContainer).toContainElement(linkedin)
   expect(linkContainer).toContainElement(twitter)
 
-  Object.defineProperty(window, 'matchMedia', { value: matchMedia })
+  Object.defineProperty(window, 'matchMedia', { value: originalMatchMedia })
 })
 
 test('should render correctly on medium to extra large screens', () => {
-  const { matchMedia } = window
+  const { matchMedia: originalMatchMedia } = window
 
   Object.defineProperty(window, 'matchMedia', {
     value: (query: string) => ({
@@ -66,7 +66,7 @@ test('should render correctly on medium to extra large screens', () => {
   expect(linkContainer).not.toContainElement(linkedin)
   expect(linkContainer).not.toContainElement(twitter)
 
-  Object.defineProperty(window, 'matchMedia', { value: matchMedia })
+  Object.defineProperty(window, 'matchMedia', { value: originalMatchMedia })
 })
 
 test("clicking the linkedin icon should navigate to andrew torres' linkedin profile", () => {

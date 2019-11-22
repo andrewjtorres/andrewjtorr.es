@@ -9,6 +9,7 @@ const createConfig = ({ caller, env }) => {
 
   return {
     plugins: [
+      '@babel/plugin-proposal-optional-chaining',
       '@babel/syntax-dynamic-import',
       ...(isProd
         ? [

@@ -225,7 +225,7 @@ const start = async () => {
           }
         })
         .catch((error: any) => {
-          if (app.hot && ['abort', 'fail'].includes(app.hot.status())) {
+          if (['abort', 'fail'].includes(app.hot?.status() || '')) {
             console.warn(`${hmrPrefix}Cannot apply update`)
 
             delete require.cache[require.resolve('../build/server')]

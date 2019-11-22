@@ -70,8 +70,9 @@ const mergeToFile = async (
 const processFile = async (file: string, presets: PluginItem[]) => {
   const posixFile = file.replace(/\\/g, '/')
 
-  const { metadata: { 'react-intl': { messages = [] } = {} } = {} } =
-    (await transformFileAsync(file, { plugins: ['react-intl'], presets })) || {}
+  const { messages = [] } =
+    (await transformFileAsync(file, { plugins: ['react-intl'], presets }))
+      ?.metadata?.['react-intl'] || {}
 
   if (messages.length > 0) {
     extractedTranslations[posixFile] = messages.sort((a, b) => {
@@ -111,11 +112,11 @@ const updateTranslations = async (toBuild = false) => {
 }
 
 const extractTranslations = async () => {
-  const { options: { presets = [] } = {} } =
+  const { presets = [] } =
     loadPartialConfig({
       envName: isRelease ? 'production' : 'development',
       filename: '',
-    }) || {}
+    })?.options || {}
   const files = await readDir('src/**/*.ts?(x)', {
     ignore: 'src/**/?(*.)test.ts?(x)',
     nosort: true,
