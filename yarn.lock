@@ -128,14 +128,6 @@
     "@babel/helper-explode-assignable-expression" "^7.7.4"
     "@babel/types" "^7.7.4"
 
-"@babel/helper-builder-react-jsx@^7.0.0":
-  version "7.7.0"
-  resolved "https://registry.yarnpkg.com/@babel/helper-builder-react-jsx/-/helper-builder-react-jsx-7.7.0.tgz#c6b8254d305bacd62beb648e4dea7d3ed79f352d"
-  integrity sha512-LSln3cexwInTMYYoFeVLKnYPPMfWNJ8PubTBs3hkh7wCu9iBaqq1OOyW+xGmEdLxT1nhsl+9SJ+h2oUDYz0l2A==
-  dependencies:
-    "@babel/types" "^7.7.0"
-    esutils "^2.0.0"
-
 "@babel/helper-builder-react-jsx@^7.7.4":
   version "7.7.4"
   resolved "https://registry.yarnpkg.com/@babel/helper-builder-react-jsx/-/helper-builder-react-jsx-7.7.4.tgz#da188d247508b65375b2c30cf59de187be6b0c66"
@@ -647,12 +639,12 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
-"@babel/plugin-transform-react-inline-elements@^7.2.0":
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-react-inline-elements/-/plugin-transform-react-inline-elements-7.2.0.tgz#3e36e7c47f1c21f52b2b0090d5cd83ceb19a4770"
-  integrity sha512-OAflI+josEl8xoAzZYpFnN+C4e9wvxDecExTtvDsteAcChIZtsH/D2kMNcJnrrzbFzCroGajCTr9tAB7K0KsiQ==
+"@babel/plugin-transform-react-inline-elements@^7.7.4":
+  version "7.7.4"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-react-inline-elements/-/plugin-transform-react-inline-elements-7.7.4.tgz#356c48c44b22bb9db7ed205800c04d65976f59cd"
+  integrity sha512-x6Gao9Ef3TCItoh1MsotH25mBAz/CjS3uECoprrgJX5poXTqKsH3Od3M8DlRotSNTp48nuniztkE8thWY/MKIA==
   dependencies:
-    "@babel/helper-builder-react-jsx" "^7.0.0"
+    "@babel/helper-builder-react-jsx" "^7.7.4"
     "@babel/helper-plugin-utils" "^7.0.0"
 
 "@babel/plugin-transform-react-jsx-self@^7.7.4":
