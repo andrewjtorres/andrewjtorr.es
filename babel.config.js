@@ -9,7 +9,8 @@ const createConfig = ({ caller, env }) => {
 
   return {
     plugins: [
-      '@babel/plugin-proposal-optional-chaining',
+      '@babel/proposal-nullish-coalescing-operator',
+      '@babel/proposal-optional-chaining',
       '@babel/syntax-dynamic-import',
       ...(isProd
         ? [

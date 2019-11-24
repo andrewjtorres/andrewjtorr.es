@@ -73,15 +73,15 @@ const start = async () => {
   }
 
   const clientConfig: Configuration =
-    webpackConfig.find(({ name }) => name === 'client') || {}
+    webpackConfig.find(({ name }) => name === 'client') ?? {}
   const serverConfig: Configuration =
-    webpackConfig.find(({ name }) => name === 'server') || {}
+    webpackConfig.find(({ name }) => name === 'server') ?? {}
 
   const { chunkFilename = '', filename = '', publicPath = '' } =
-    clientConfig.output || {}
-  let entry = clientConfig.entry || {}
-  let plugins = clientConfig.plugins || []
-  let rules = (clientConfig.module || { rules: [] }).rules
+    clientConfig.output ?? {}
+  let entry = clientConfig.entry ?? {}
+  let plugins = clientConfig.plugins ?? []
+  let rules = clientConfig.module?.rules ?? []
 
   if (typeof entry === 'function') {
     throw new TypeError("Unable to set 'client' entry point")
@@ -117,8 +117,8 @@ const start = async () => {
   )
   plugins.push(new HotModuleReplacementPlugin())
 
-  plugins = serverConfig.plugins || []
-  rules = (serverConfig.module || { rules: [] }).rules
+  plugins = serverConfig.plugins ?? []
+  rules = serverConfig.module?.rules ?? []
 
   serverConfig.module = {
     ...serverConfig.module,
@@ -144,9 +144,9 @@ const start = async () => {
 
   const multiCompiler = webpack(webpackConfig)
   const clientCompiler: Compiler =
-    multiCompiler.compilers.find(({ name }) => name === 'client') || webpack()
+    multiCompiler.compilers.find(({ name }) => name === 'client') ?? webpack()
   const serverCompiler: Compiler =
-    multiCompiler.compilers.find(({ name }) => name === 'server') || webpack()
+    multiCompiler.compilers.find(({ name }) => name === 'server') ?? webpack()
 
   const clientPromise = createCompilationPromise(
     'client',
@@ -225,7 +225,7 @@ const start = async () => {
           }
         })
         .catch((error: any) => {
-          if (['abort', 'fail'].includes(app.hot?.status() || '')) {
+          if (['abort', 'fail'].includes(app.hot?.status() ?? '')) {
             console.warn(`${hmrPrefix}Cannot apply update`)
 
             delete require.cache[require.resolve('../build/server')]
@@ -236,7 +236,7 @@ const start = async () => {
           }
 
           return console.warn(
-            `${hmrPrefix}Update failed: ${error.stack || error.message}`
+            `${hmrPrefix}Update failed: ${error.stack ?? error.message}`
           )
         })
     )

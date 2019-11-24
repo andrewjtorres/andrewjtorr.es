@@ -7,7 +7,27 @@ module.exports = {
     'stylelint-config-styled-components',
     'stylelint-config-prettier',
   ],
-  processors: ['stylelint-processor-styled-components'],
+  processors: [
+    [
+      'stylelint-processor-styled-components',
+      {
+        parserPlugins: [
+          'asyncGenerators',
+          'classProperties',
+          ['decorators', { decoratorsBeforeExport: true }],
+          'dynamicImport',
+          'exportExtensions',
+          'functionBind',
+          'functionSent',
+          'jsx',
+          'nullishCoalescingOperator',
+          'objectRestSpread',
+          'optionalCatchBinding',
+          'optionalChaining',
+        ],
+      },
+    ],
+  ],
   rules: {
     'declaration-empty-line-before': [
       'never',

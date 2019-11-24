@@ -19,7 +19,7 @@ const NotFound = loadable(() =>
 
 const Root: React.FunctionComponent = () => {
   const { currentLocale = 'en', translations = [] } =
-    useQuery<InitializationQueryData>(initializationQuery)?.data || {}
+    useQuery<InitializationQueryData>(initializationQuery)?.data ?? {}
 
   const messages = translations.reduce(
     (acc, { id, message }) => ({ ...acc, [id]: message }),

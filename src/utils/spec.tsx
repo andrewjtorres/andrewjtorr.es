@@ -41,7 +41,7 @@ export const renderWithContext = (
   }: Options = {}
 ) => {
   const history =
-    providedHistory || createHistory(createMemorySource(initialPath))
+    providedHistory ?? createHistory(createMemorySource(initialPath))
 
   return {
     ...render(

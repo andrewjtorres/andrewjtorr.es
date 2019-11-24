@@ -52,10 +52,10 @@ const copy = async () => {
         src.startsWith('src') ? relative('src', src) : src
       )
 
-      if (eventName === 'add' || eventName === 'change') {
+      if (/^(add|change)$/.test(eventName)) {
         await makeDir(dirname(dist))
         await copyFile(path, dist)
-      } else if (eventName === 'unlink' || eventName === 'unlinkDir') {
+      } else if (/^unlink(Dir)?$/.test(eventName)) {
         cleanDir(dist, { dot: true, nosort: true })
       } else {
         return

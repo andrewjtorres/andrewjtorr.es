@@ -42,7 +42,7 @@ export const createApolloClient = ({
   preloadedCache,
   ...options
 }: Options = {}) => {
-  let cache = providedCache || createInMemoryCache()
+  let cache = providedCache ?? createInMemoryCache()
 
   if (preloadedCache) {
     cache = cache.restore(preloadedCache)

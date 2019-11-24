@@ -133,7 +133,7 @@ const createConfig = (target: Target, configFactory: ConfigFactory) =>
     target,
   })
 
-const clientConfig = createConfig('web', baseConfig => ({
+const clientConfig = createConfig('web', ({ plugins = [], ...baseConfig }) => ({
   ...baseConfig,
   entry: { client: resolve('./src/client.tsx') },
   name: 'client',
@@ -162,7 +162,7 @@ const clientConfig = createConfig('web', baseConfig => ({
     },
   },
   plugins: [
-    ...(baseConfig.plugins || []),
+    ...plugins,
     new LoadablePlugin({
       filename: 'stats.json',
       writeToDisk: { filename: 'build' },
@@ -171,50 +171,60 @@ const clientConfig = createConfig('web', baseConfig => ({
   ],
 }))
 
-const handlerConfig = createConfig('node', (baseConfig: Configuration) => ({
-  ...baseConfig,
-  entry: { handler: resolve('./src/handler.ts') },
-  externals: [nodeExternals({ whitelist: [/\.(bmp|gif|jp(e)?g|png|webp)$/] })],
-  name: 'handler',
-  node: false,
-  output: {
-    ...baseConfig.output,
-    chunkFilename: 'chunks/[name].js',
-    filename: '[name].js',
-    libraryTarget: 'commonjs2',
-    path: buildDir,
-  },
-  plugins: [
-    ...(baseConfig.plugins || []),
-    new BannerPlugin({
-      banner: 'require("source-map-support").install();',
-      entryOnly: false,
-      raw: true,
-    }),
-  ],
-}))
+const handlerConfig = createConfig(
+  'node',
+  ({ output = {}, plugins = [], ...baseConfig }) => ({
+    ...baseConfig,
+    entry: { handler: resolve('./src/handler.ts') },
+    externals: [
+      nodeExternals({ whitelist: [/\.(bmp|gif|jp(e)?g|png|webp)$/] }),
+    ],
+    name: 'handler',
+    node: false,
+    output: {
+      ...output,
+      chunkFilename: 'chunks/[name].js',
+      filename: '[name].js',
+      libraryTarget: 'commonjs2',
+      path: buildDir,
+    },
+    plugins: [
+      ...plugins,
+      new BannerPlugin({
+        banner: 'require("source-map-support").install();',
+        entryOnly: false,
+        raw: true,
+      }),
+    ],
+  })
+)
 
-const serverConfig = createConfig('node', (baseConfig: Configuration) => ({
-  ...baseConfig,
-  entry: { server: resolve('./src/server.tsx') },
-  externals: [nodeExternals({ whitelist: [/\.(bmp|gif|jp(e)?g|png|webp)$/] })],
-  name: 'server',
-  node: false,
-  output: {
-    ...baseConfig.output,
-    chunkFilename: 'chunks/[name].js',
-    filename: '[name].js',
-    libraryTarget: 'commonjs2',
-    path: buildDir,
-  },
-  plugins: [
-    ...(baseConfig.plugins || []),
-    new BannerPlugin({
-      banner: 'require("source-map-support").install();',
-      entryOnly: false,
-      raw: true,
-    }),
-  ],
-}))
+const serverConfig = createConfig(
+  'node',
+  ({ output = {}, plugins = [], ...baseConfig }) => ({
+    ...baseConfig,
+    entry: { server: resolve('./src/server.tsx') },
+    externals: [
+      nodeExternals({ whitelist: [/\.(bmp|gif|jp(e)?g|png|webp)$/] }),
+    ],
+    name: 'server',
+    node: false,
+    output: {
+      ...output,
+      chunkFilename: 'chunks/[name].js',
+      filename: '[name].js',
+      libraryTarget: 'commonjs2',
+      path: buildDir,
+    },
+    plugins: [
+      ...plugins,
+      new BannerPlugin({
+        banner: 'require("source-map-support").install();',
+        entryOnly: false,
+        raw: true,
+      }),
+    ],
+  })
+)
 
 export default [clientConfig, handlerConfig, serverConfig]

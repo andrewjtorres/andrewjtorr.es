@@ -50,7 +50,7 @@ describe('translation', () => {
       expect(data).toBeNull()
       expect(errors).toHaveLength(1)
 
-      const { message = '' } = errors?.[0] || {}
+      const { message = '' } = errors?.[0] ?? {}
 
       expect(message).toMatch("Locale 'es' not supported")
     })
@@ -100,7 +100,7 @@ describe('translation', () => {
       expect(data).toBeNull()
       expect(errors).toHaveLength(1)
 
-      const { message = '' } = errors?.[0] || {}
+      const { message = '' } = errors?.[0] ?? {}
 
       expect(message).toMatch("Locale 'en' not found")
     })

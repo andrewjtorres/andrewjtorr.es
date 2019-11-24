@@ -4,4 +4,4 @@ if (process.env.BROWSER_ENV) {
 
 export const locales = ['en']
 
-export const port = Number(process.env.PORT) || 3000
+export const port = Number(process.env.PORT) ?? 3000

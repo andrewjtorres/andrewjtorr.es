@@ -9,6 +9,14 @@ import { readDir, readFile, writeFile } from './utils/file-system'
 
 type Translations = Record<string, Translation>
 
+const defaultTranslation: Translation = {
+  id: '',
+  defaultMessage: '',
+  description: '',
+  files: [],
+  message: '',
+}
+
 const extractedTranslations: Record<string, ExtractedMessageDescriptor[]> = {}
 
 const rootDir = resolve(__dirname, '..')
@@ -24,7 +32,7 @@ const mergeToFile = async (
   newTranslations: Translations,
   toBuild: boolean
 ) => {
-  const originalTranslations: Record<string, Translation> = {}
+  const originalTranslations: Translations = {}
   const file = join(rootDir, `src/i18n/translations/${locale}.json`)
 
   try {
@@ -42,8 +50,8 @@ const mergeToFile = async (
   }
 
   Object.keys(newTranslations).forEach(id => {
-    const { defaultMessage = '', description = '', message = '' } =
-      originalTranslations[id] || {}
+    const { defaultMessage, description, message } =
+      originalTranslations[id] ?? defaultTranslation
 
     originalTranslations[id] = {
       id,
@@ -68,20 +76,15 @@ const mergeToFile = async (
 }
 
 const processFile = async (file: string, presets: PluginItem[]) => {
-  const posixFile = file.replace(/\\/g, '/')
-
   const { messages = [] } =
     (await transformFileAsync(file, { plugins: ['react-intl'], presets }))
-      ?.metadata?.['react-intl'] || {}
+      ?.metadata?.['react-intl'] ?? {}
+  const posixFile = file.replace(/\\/g, '/')
 
   if (messages.length > 0) {
-    extractedTranslations[posixFile] = messages.sort((a, b) => {
-      if (a.id === b.id) {
-        return 0
-      }
-
-      return a.id < b.id ? -1 : 1
-    })
+    extractedTranslations[posixFile] = messages.sort((a, b) =>
+      a.id.localeCompare(b.id)
+    )
   } else {
     delete extractedTranslations[posixFile]
   }
@@ -93,14 +96,15 @@ const updateTranslations = async (toBuild = false) => {
   Object.keys(extractedTranslations).forEach(file =>
     extractedTranslations[file].forEach(
       ({ defaultMessage, description, id }) => {
-        const { files = [], ...translation } = newTranslations[id] || {}
+        const { files = [], ...translation } =
+          newTranslations[id] ?? defaultTranslation
 
         newTranslations[id] = {
           id,
-          message: translation.message || '',
-          defaultMessage: defaultMessage || translation.defaultMessage || '',
-          description: description || translation.description || '',
-          files: [...files, file].sort(),
+          message: translation.message,
+          defaultMessage: defaultMessage || translation.defaultMessage,
+          description: description || translation.description,
+          files: [...files, file].sort((a, b) => a.localeCompare(b)),
         }
       }
     )
@@ -116,13 +120,13 @@ const extractTranslations = async () => {
     loadPartialConfig({
       envName: isRelease ? 'production' : 'development',
       filename: '',
-    })?.options || {}
+    })?.options ?? {}
   const files = await readDir('src/**/*.ts?(x)', {
     ignore: 'src/**/?(*.)test.ts?(x)',
     nosort: true,
   })
 
-  await Promise.all(files.map(file => processFile(file, presets || [])))
+  await Promise.all(files.map(file => processFile(file, presets ?? [])))
   await updateTranslations()
 
   if (isWatch) {
@@ -133,7 +137,7 @@ const extractTranslations = async () => {
 
     // eslint-disable-next-line @typescript-eslint/no-misused-promises
     watcher.on('changed', async (file: string) => {
-      await processFile(file, presets || [])
+      await processFile(file, presets ?? [])
       await updateTranslations(true)
     })
   }
