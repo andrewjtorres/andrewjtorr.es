@@ -137,7 +137,7 @@
     "babel-plugin-dynamic-import-node": "^2.3.0",
     "babel-plugin-graphql-tag": "^2.5.0",
     "babel-plugin-polished": "^1.1.0",
-    "babel-plugin-react-intl": "^5.1.6",
+    "babel-plugin-react-intl": "^5.1.7",
     "babel-plugin-styled-components": "^1.10.6",
     "browser-sync": "^2.26.7",
     "chokidar": "^3.3.0",
