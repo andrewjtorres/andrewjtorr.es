@@ -15,19 +15,19 @@
     "url": "git+https://github.com/ajtorres9/andrewjtorr.es.git"
   },
   "scripts": {
-    "build": "ts-node --files scripts/run build",
+    "build": "ts-node --files --require ./config/dotenv-safe scripts/run build",
     "build:stats": "yarn build --analyze --release",
-    "bundle": "ts-node scripts/run bundle",
+    "bundle": "ts-node --require ./config/dotenv-safe scripts/run bundle",
     "clean": "ts-node scripts/run clean",
     "copy": "ts-node scripts/run copy",
     "deploy": "ts-node --files --require ./config/dotenv-safe scripts/run deploy",
-    "extract:translations": "ts-node --files scripts/run extract-translations",
+    "extract:translations": "ts-node --files --require ./config/dotenv-safe scripts/run extract-translations",
     "lint": "yarn lint:files && yarn lint:scripts && yarn lint:styles && yarn lint:types",
     "lint:files": "prettylint \"**/*.{json,md,yml}\"",
     "lint:scripts": "eslint --cache --ignore-path .gitignore --ignore-pattern \"!**/.*\" \"**/*.{js,ts,tsx}\"",
     "lint:styles": "stylelint --cache --ignore-path .gitignore --ignore-pattern \"!**/.*\" \"**/*.{ts,tsx}\"",
     "lint:types": "tsc --noEmit",
-    "start": "ts-node --files scripts/run start",
+    "start": "ts-node --files --require ./config/dotenv-safe scripts/run start",
     "test": "yarn test:units",
     "test:units": "jest"
   },

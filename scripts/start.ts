@@ -22,8 +22,8 @@ const rootDir = resolve(__dirname, '..')
 const publicDir = join(rootDir, 'public')
 const translationsDir = join(rootDir, 'src/i18n/translations')
 
-const env = process.env.NODE_ENV || 'development'
-const isProd = /prod(uction)?/i.test(env)
+const env = process.env.NODE_ENV ?? 'development'
+const isProd = /^prod(uction)?$/i.test(env)
 
 const isRelease = isProd || process.argv.includes('--release')
 const isSilent = process.argv.includes('--silent')

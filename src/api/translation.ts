@@ -33,7 +33,7 @@ export const resolvers: Resolvers<undefined, Context> = {
 
       try {
         data = await readFile(
-          join(process.env.TRANSLATIONS_DIR, `${locale}.json`)
+          join(process.env.TRANSLATIONS_DIR ?? '', `${locale}.json`)
         )
       } catch (error) {
         if (error.code === 'ENOENT') {

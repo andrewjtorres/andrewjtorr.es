@@ -21,8 +21,8 @@ const extractedTranslations: Record<string, ExtractedMessageDescriptor[]> = {}
 
 const rootDir = resolve(__dirname, '..')
 
-const env = process.env.NODE_ENV || 'development'
-const isProd = /prod(uction)?/i.test(env)
+const env = process.env.NODE_ENV ?? 'development'
+const isProd = /^prod(uction)?$/i.test(env)
 
 const isRelease = isProd || process.argv.includes('--release')
 const isWatch = process.argv.includes('--watch')
