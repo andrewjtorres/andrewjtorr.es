@@ -23,8 +23,8 @@ type Target =
 const rootDir = resolve(__dirname, '..')
 const buildDir = join(rootDir, 'build')
 
-const env = process.env.NODE_ENV || 'development'
-const isProd = /prod(uction)?/i.test(env)
+const env = process.env.NODE_ENV ?? 'development'
+const isProd = /^prod(uction)?$/i.test(env)
 
 const isAnalyze = process.argv.includes('--analyze')
 const isRelease = isProd || process.argv.includes('--release')

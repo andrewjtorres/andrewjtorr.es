@@ -3,8 +3,8 @@ import { config } from 'dotenv-safe'
 
 const rootDir = resolve(__dirname, '..')
 
-const env = process.env.NODE_ENV || 'development'
-const isProd = /prod(uction)?/i.test(env)
+const env = process.env.NODE_ENV ?? 'development'
+const isProd = /^prod(uction)?$/i.test(env)
 
 const isRelease = isProd || process.argv.includes('--release')
 
