@@ -178,7 +178,7 @@
     "rimraf": "^3.0.0",
     "semantic-release": "^15.13.31",
     "stylelint": "^12.0.0",
-    "stylelint-config-prettier": "^6.0.0",
+    "stylelint-config-prettier": "^7.0.0",
     "stylelint-config-standard": "^19.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-order": "^3.1.1",
