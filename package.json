@@ -144,7 +144,7 @@
     "cz-conventional-changelog": "^3.0.2",
     "dotenv-safe": "^8.2.0",
     "dotenv-webpack": "^1.7.0",
-    "eslint": "^6.7.1",
+    "eslint": "^6.7.2",
     "eslint-config-prettier": "^6.7.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-config-standard-react": "^9.2.0",
