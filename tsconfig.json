@@ -20,7 +20,7 @@
     "paths": { "*": ["src/*"] },
     "removeComments": true,
     "resolveJsonModule": true,
-    "rootDirs": ["config", "scripts", "src"],
+    "rootDirs": [".storybook", "config", "scripts", "src"],
     "sourceMap": true,
     "strict": true,
     "target": "es2020",
