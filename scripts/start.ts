@@ -65,7 +65,7 @@ const createCompilationPromise = (
     })
   })
 
-const noop = () => {}
+const noop = () => {} // eslint-disable-line @typescript-eslint/no-empty-function
 
 const start = async () => {
   if (server) {
