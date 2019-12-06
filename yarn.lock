@@ -1662,10 +1662,10 @@
     ts-dedent "^1.1.0"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-docs@5.3.0-beta.16":
-  version "5.3.0-beta.16"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-docs/-/addon-docs-5.3.0-beta.16.tgz#7941a00865f9e9aeaafff1f5f3c3629b06cbfe87"
-  integrity sha512-+eEkOvGV+j+8U+uHbSiNCx337IuMCIHWSv8CfIx9cMAa+XvLNASr+Ik/F00ChvAweYsAvLR/w9ubhRXfnzscWQ==
+"@storybook/addon-docs@5.3.0-beta.18":
+  version "5.3.0-beta.18"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-docs/-/addon-docs-5.3.0-beta.18.tgz#054811cddcafdb6a4a9e864c7b8f8e1d99e4a901"
+  integrity sha512-sk5uTJcxnm+hGOufUHk7SqbVhqsjKPTBJPtlZj/t8ilndRA7JhyUA/JEcJLIfypYxjBz3vbxW1BpaJQ+kZd4zg==
   dependencies:
     "@babel/generator" "^7.4.0"
     "@babel/parser" "^7.4.2"
@@ -1675,13 +1675,13 @@
     "@mdx-js/loader" "^1.5.1"
     "@mdx-js/mdx" "^1.5.1"
     "@mdx-js/react" "^1.5.1"
-    "@storybook/addons" "5.3.0-beta.16"
-    "@storybook/api" "5.3.0-beta.16"
-    "@storybook/components" "5.3.0-beta.16"
-    "@storybook/postinstall" "5.3.0-beta.16"
-    "@storybook/router" "5.3.0-beta.16"
-    "@storybook/source-loader" "5.3.0-beta.16"
-    "@storybook/theming" "5.3.0-beta.16"
+    "@storybook/addons" "5.3.0-beta.18"
+    "@storybook/api" "5.3.0-beta.18"
+    "@storybook/components" "5.3.0-beta.18"
+    "@storybook/postinstall" "5.3.0-beta.18"
+    "@storybook/router" "5.3.0-beta.18"
+    "@storybook/source-loader" "5.3.0-beta.18"
+    "@storybook/theming" "5.3.0-beta.18"
     acorn "^7.1.0"
     acorn-jsx "^5.1.0"
     acorn-walk "^7.0.0"
@@ -1699,7 +1699,7 @@
     ts-dedent "^1.1.0"
     util-deprecate "^1.0.2"
     vue-docgen-api "^4.1.0"
-    vue-docgen-loader "^1.0.1"
+    vue-docgen-loader "^1.2.0"
 
 "@storybook/addon-knobs@5.3.0-beta.16":
   version "5.3.0-beta.16"
@@ -2015,10 +2015,10 @@
     pretty-hrtime "^1.0.3"
     regenerator-runtime "^0.13.3"
 
-"@storybook/postinstall@5.3.0-beta.16":
-  version "5.3.0-beta.16"
-  resolved "https://registry.yarnpkg.com/@storybook/postinstall/-/postinstall-5.3.0-beta.16.tgz#e679e22147b87f43ee6343a2bd51ea7538410eab"
-  integrity sha512-H1sM3W4vckI/Ak/LMdKp84NJzGY4YBZE3to5PF7kNAWIzSadY2zIKnkvyEG+IF93ECFXLMj9fouqOPzNE8S2RQ==
+"@storybook/postinstall@5.3.0-beta.18":
+  version "5.3.0-beta.18"
+  resolved "https://registry.yarnpkg.com/@storybook/postinstall/-/postinstall-5.3.0-beta.18.tgz#8f6974fe54d3d08fa960e29112a71b9879ff0c24"
+  integrity sha512-181pWSouw8LskKmKCWNlgD9fSkEZjgAj2F0fXT5w8QrsDIrVYccSnFwP7OV3prRO/rXre3nyaOMB/3JP5FRv5g==
   dependencies:
     core-js "^3.0.1"
 
@@ -2075,14 +2075,14 @@
     memoizerific "^1.11.3"
     qs "^6.6.0"
 
-"@storybook/source-loader@5.3.0-beta.16":
-  version "5.3.0-beta.16"
-  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-5.3.0-beta.16.tgz#09aca05c0efdbaa927c39149c1afdc0271842a55"
-  integrity sha512-TjrovP22S2Enm40G+ObfrGGqY3UjRVFfmT1lmrkGykIfHA4UJfYG/iz3OikCKaiogF0JtjIcPMp8fDla4EuW1g==
+"@storybook/source-loader@5.3.0-beta.18":
+  version "5.3.0-beta.18"
+  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-5.3.0-beta.18.tgz#4dda2f7eb50a6bba3f6fc7a154f80f50686236a1"
+  integrity sha512-5ziweg72tOzmyLuHxWljPLkmoZVElCCQIroNX6sZ9GhYu5pjO1cs4hnTwQ57QiMsaPdTxYe5Q1VcbNgUDiz2BA==
   dependencies:
-    "@storybook/addons" "5.3.0-beta.16"
-    "@storybook/client-logger" "5.3.0-beta.16"
-    "@storybook/router" "5.3.0-beta.16"
+    "@storybook/addons" "5.3.0-beta.18"
+    "@storybook/client-logger" "5.3.0-beta.18"
+    "@storybook/router" "5.3.0-beta.18"
     core-js "^3.0.1"
     estraverse "^4.2.0"
     global "^4.3.2"
@@ -17150,10 +17150,10 @@ vue-docgen-api@^4.1.0:
     ts-map "^1.0.3"
     vue-template-compiler "^2.0.0"
 
-vue-docgen-loader@^1.0.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/vue-docgen-loader/-/vue-docgen-loader-1.1.1.tgz#209dd9eda337743a9dc70602ca1617eb8ca86848"
-  integrity sha512-CBfjAMQ0E4vouUCeT8N8bwZX3k8wHrSS/nKLksAiFY20sH8kc5PWQpmPuhzX4H44QIB8GvR1jr0r3x+I/gh2gw==
+vue-docgen-loader@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/vue-docgen-loader/-/vue-docgen-loader-1.2.0.tgz#135df08ae17b8e16fcac410f9c3568d4fe97629d"
+  integrity sha512-/Bt9tc4dvdIsM0cD5Bg6AuEB8oeXwe/CygFRSQPPP8SB3s0HIdgsF4bMxNLxogcsvmcfoREyg06bwBggP5NMXw==
   dependencies:
     clone "^2.1.2"
     loader-utils "^1.2.3"
