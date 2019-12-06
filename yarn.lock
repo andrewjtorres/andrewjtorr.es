@@ -1640,17 +1640,17 @@
   resolved "https://registry.yarnpkg.com/@sheerun/mutationobserver-shim/-/mutationobserver-shim-0.3.2.tgz#8013f2af54a2b7d735f71560ff360d3a8176a87b"
   integrity sha512-vTCdPp/T/Q3oSqwHmZ5Kpa9oI7iLtGl3RQaA/NyLHikvcrPxACkkKVr/XzkSPJWXHRhKGzVvb0urJsbMlRxi1Q==
 
-"@storybook/addon-a11y@5.3.0-beta.16":
-  version "5.3.0-beta.16"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-5.3.0-beta.16.tgz#d5e6c635b57bb7cd15cbe58b348511bd65abe0c8"
-  integrity sha512-i3nmlHH67mR8XDccDk240kBLzRg/MZhZIa8lfUOB5t+K92tP3vyDoImhgX7hOWNhAF0YxtbIoGwy4pSEvTYBBw==
+"@storybook/addon-a11y@5.3.0-beta.18":
+  version "5.3.0-beta.18"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-5.3.0-beta.18.tgz#972a40b823c6d7569fb887d2fd87a680b15e098a"
+  integrity sha512-AROW7DQpZHpRLJZaqDV38sEa2RPJhHPmQT5n71SUp/Foq889ooCv++TeZGbVgAL205CY72oq7k0ABQq0pkIqoA==
   dependencies:
-    "@storybook/addons" "5.3.0-beta.16"
-    "@storybook/api" "5.3.0-beta.16"
-    "@storybook/client-logger" "5.3.0-beta.16"
-    "@storybook/components" "5.3.0-beta.16"
-    "@storybook/core-events" "5.3.0-beta.16"
-    "@storybook/theming" "5.3.0-beta.16"
+    "@storybook/addons" "5.3.0-beta.18"
+    "@storybook/api" "5.3.0-beta.18"
+    "@storybook/client-logger" "5.3.0-beta.18"
+    "@storybook/components" "5.3.0-beta.18"
+    "@storybook/core-events" "5.3.0-beta.18"
+    "@storybook/theming" "5.3.0-beta.18"
     axe-core "^3.3.2"
     core-js "^3.0.1"
     global "^4.3.2"
@@ -1865,6 +1865,33 @@
   dependencies:
     "@storybook/client-logger" "5.3.0-beta.16"
     "@storybook/theming" "5.3.0-beta.16"
+    "@types/react-syntax-highlighter" "11.0.2"
+    "@types/react-textarea-autosize" "^4.3.3"
+    core-js "^3.0.1"
+    global "^4.3.2"
+    lodash "^4.17.15"
+    markdown-to-jsx "^6.9.1"
+    memoizerific "^1.11.3"
+    polished "^3.3.1"
+    popper.js "^1.14.7"
+    prop-types "^15.7.2"
+    react "^16.8.3"
+    react-dom "^16.8.3"
+    react-focus-lock "^2.1.0"
+    react-helmet-async "^1.0.2"
+    react-popper-tooltip "^2.8.3"
+    react-syntax-highlighter "^11.0.2"
+    react-textarea-autosize "^7.1.0"
+    simplebar-react "^1.0.0-alpha.6"
+    ts-dedent "^1.1.0"
+
+"@storybook/components@5.3.0-beta.18":
+  version "5.3.0-beta.18"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-5.3.0-beta.18.tgz#d7396f28073bf757ec74fff3d90d998d065c5b5a"
+  integrity sha512-ycwQ9074tnWoOhaoONdYAcqmn9TFVidEYVMfcOgSP0uc3nVAXxSiE74czGqpMBI1VNDych3UkOgUKj5rxtzssw==
+  dependencies:
+    "@storybook/client-logger" "5.3.0-beta.18"
+    "@storybook/theming" "5.3.0-beta.18"
     "@types/react-syntax-highlighter" "11.0.2"
     "@types/react-textarea-autosize" "^4.3.3"
     core-js "^3.0.1"
