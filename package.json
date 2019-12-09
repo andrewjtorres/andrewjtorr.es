@@ -42,7 +42,7 @@
     "@apollo/react-common": "^3.1.3",
     "@apollo/react-hooks": "^3.1.3",
     "@apollo/react-ssr": "^3.1.3",
-    "@babel/runtime-corejs3": "^7.7.5",
+    "@babel/runtime-corejs3": "^7.7.6",
     "@loadable/component": "^5.11.0",
     "@loadable/server": "^5.11.0",
     "@reach/router": "^1.2.1",
