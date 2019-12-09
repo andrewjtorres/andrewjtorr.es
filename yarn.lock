@@ -919,10 +919,10 @@
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-transform-typescript" "^7.7.4"
 
-"@babel/runtime-corejs3@^7.7.5":
-  version "7.7.5"
-  resolved "https://registry.yarnpkg.com/@babel/runtime-corejs3/-/runtime-corejs3-7.7.5.tgz#4cb164670cfc964e65e3e19678a6354c0daf9fe4"
-  integrity sha512-f1HxrduFO4bvRCWG0C/zqpVmu9wi/LvHAa56klM6uyEHGPUyqh7rYw+yxmuRcm5vlNiZRvVaUazjKKFR3zS1tg==
+"@babel/runtime-corejs3@^7.7.6":
+  version "7.7.6"
+  resolved "https://registry.yarnpkg.com/@babel/runtime-corejs3/-/runtime-corejs3-7.7.6.tgz#5b1044ea11b659d288f77190e19c62da959ed9a3"
+  integrity sha512-NrRUehqG0sMSCaP+0XV/vOvvjNl4BQOWq3Qys1Q2KTEm5tGMo9h0dHnIzeKerj0a7SIB8LP5kYg/T1raE3FoKQ==
   dependencies:
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.2"
