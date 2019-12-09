@@ -119,7 +119,7 @@
     "@types/loadable__server": "^5.9.1",
     "@types/loadable__webpack-plugin": "^5.7.0",
     "@types/mkdirp": "^0.5.2",
-    "@types/node": "^12.12.14",
+    "@types/node": "^12.12.15",
     "@types/node-fetch": "^2.5.4",
     "@types/reach__router": "^1.2.6",
     "@types/react": "^16.9.16",
