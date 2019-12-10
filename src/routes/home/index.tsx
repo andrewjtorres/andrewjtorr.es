@@ -35,7 +35,7 @@ const translations = defineMessages({
   description: {
     id: `${rootId}.description`,
     defaultMessage:
-      "Passionate about open source and the amazing community surrounding it. {br}Lately, I have been vibing Node.js and it's creative ecosystem.",
+      'Passionate about open source and the amazing community surrounding it. {br}Lately, I have been vibing Node.js and its creative ecosystem.',
     description: 'The description of the Home page',
   },
 })
