@@ -1,11 +1,11 @@
-import { fireEvent, render } from '@testing-library/react'
+import { fireEvent } from '@testing-library/react'
 import React from 'react'
 
 import { renderWithContext } from 'utils/spec'
 import Layout from '.'
 
 test('should render correctly', () => {
-  const { getByTestId } = render(
+  const { getByTestId } = renderWithContext(
     <Layout>
       <div data-testid="test-child" />
     </Layout>

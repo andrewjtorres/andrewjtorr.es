@@ -15,7 +15,7 @@ type ViewportBreakpointUpper = Exclude<ViewportBreakpoint, 'small'>
 const viewportBreakpointScale: Record<
   ViewportBreakpointLower,
   ViewportBreakpointUpper
-> = { large: 'extraLarge', medium: 'large', small: 'medium' }
+> = { small: 'medium', medium: 'large', large: 'extraLarge' }
 
 const from = (breakpoint: ViewportBreakpoint) => (styles: Styles) => css`
   @media screen and (min-width: ${({ theme }) => theme[breakpoint]}px) {

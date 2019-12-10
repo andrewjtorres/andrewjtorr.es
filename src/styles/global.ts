@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    background-color: ${({ theme }) => theme.white};
+    background-color: ${({ theme }) => theme.colors.white};
     box-sizing: border-box;
     font-size: 16px;
     margin: 0;
@@ -28,10 +28,10 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    color: ${({ theme }) => theme.textColor};
-    font-family: ${({ theme }) => theme.fontFamilyPrimary};
+    color: ${({ theme }) => theme.colors.text};
+    font-family: ${({ theme }) => theme.fonts.primary};
     font-size: ${em(16)};
-    font-weight: ${({ theme }) => theme.fontWeightNormal};
+    font-weight: ${({ theme }) => theme.fontWeights.normal};
     line-height: 1.5;
     margin: 0;
     padding: 0;
@@ -48,7 +48,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: ${({ theme }) => theme.linkColor};
+    color: ${({ theme }) => theme.colors.link};
     cursor: pointer;
     text-decoration: none;
 
@@ -87,7 +87,7 @@ const GlobalStyle = createGlobalStyle`
   input,
   select,
   textarea {
-    font-family: ${({ theme }) => theme.fontFamilyPrimary};
+    font-family: ${({ theme }) => theme.fonts.primary};
     margin: 0;
   }
 
@@ -95,12 +95,12 @@ const GlobalStyle = createGlobalStyle`
   pre {
     -moz-osx-font-smoothing: auto;
     -webkit-font-smoothing: auto;
-    font-family: ${({ theme }) => theme.fontFamilyCode};
+    font-family: ${({ theme }) => theme.fonts.code};
   }
 
   code {
-    background-color: ${({ theme }) => theme.codeBackgroundColor};
-    color: ${({ theme }) => theme.codeColor};
+    background-color: ${({ theme }) => theme.colors.codeContrast};
+    color: ${({ theme }) => theme.colors.code};
     font-size: ${em(14)};
     font-weight: 400;
     padding: ${em(4)} ${em(8)};
@@ -126,7 +126,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   hr {
-    background-color: ${({ theme }) => theme.backgroundColor};
+    background-color: ${({ theme }) => theme.colors.background};
     border: none;
     display: block;
     height: 2px;
@@ -147,8 +147,8 @@ const GlobalStyle = createGlobalStyle`
 
   pre {
     ${overflowTouch}
-    background-color: ${({ theme }) => theme.preBackgroundColor};
-    color: ${({ theme }) => theme.preColor};
+    background-color: ${({ theme }) => theme.colors.preContrast};
+    color: ${({ theme }) => theme.colors.pre};
     font-size: ${em(14)};
     margin: 0;
     overflow-x: auto;
@@ -174,8 +174,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   strong {
-    color: ${({ theme }) => theme.textStrongColor};
-    font-weight: ${({ theme }) => theme.fontWeightBold};
+    color: ${({ theme }) => theme.colors.textStrong};
+    font-weight: ${({ theme }) => theme.fontWeights.bold};
   }
 
   td,
@@ -193,7 +193,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     th {
-      color: ${({ theme }) => theme.textStrongColor};
+      color: ${({ theme }) => theme.colors.textStrong};
     }
   }
 
@@ -214,11 +214,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::selection {
-    background-color: ${({ theme }) => theme.textSelectionBackgroundColor};
+    background-color: ${({ theme }) => theme.colors.textSelection};
     text-shadow: none;
   }
 
-  @import url('https://fonts.googleapis.com/css?family=Raleway:400,600,700');
+  @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700&display=swap');
 
   @media print {
     *,

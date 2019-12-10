@@ -31,7 +31,7 @@ const Root = styled.div`
 `
 
 const Title = styled.h1`
-  color: ${({ theme }) => theme.grayDark};
+  color: ${({ theme }) => theme.colors.grayDark};
   font-size: ${rem(32)};
   font-weight: 400;
   line-height: 1.2;

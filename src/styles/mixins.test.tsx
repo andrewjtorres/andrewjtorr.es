@@ -26,9 +26,9 @@ describe('untilSmall', () => {
     const Div = styled.div`
       ${untilSmall(styles)};
     `
-    const { container } = renderWithContext(<Div />)
+    const { firstChild } = renderWithContext(<Div />).container
 
-    expect(container.firstChild).toMatchInlineSnapshot(`
+    expect(firstChild).toMatchInlineSnapshot(`
       @media screen and (max-width:768px) {
         .c0 {
           display: block;
@@ -47,9 +47,9 @@ describe('small', () => {
     const Div = styled.div`
       ${small(styles)};
     `
-    const { container } = renderWithContext(<Div />)
+    const { firstChild } = renderWithContext(<Div />).container
 
-    expect(container.firstChild).toMatchInlineSnapshot(`
+    expect(firstChild).toMatchInlineSnapshot(`
       @media screen and (min-width:769px),print {
         .c0 {
           display: block;
@@ -68,9 +68,9 @@ describe('smallOnly', () => {
     const Div = styled.div`
       ${smallOnly(styles)};
     `
-    const { container } = renderWithContext(<Div />)
+    const { firstChild } = renderWithContext(<Div />).container
 
-    expect(container.firstChild).toMatchInlineSnapshot(`
+    expect(firstChild).toMatchInlineSnapshot(`
       @media screen and (min-width:769px) and (max-width:1023px) {
         .c0 {
           display: block;
@@ -89,9 +89,9 @@ describe('untilMedium', () => {
     const Div = styled.div`
       ${untilMedium(styles)};
     `
-    const { container } = renderWithContext(<Div />)
+    const { firstChild } = renderWithContext(<Div />).container
 
-    expect(container.firstChild).toMatchInlineSnapshot(`
+    expect(firstChild).toMatchInlineSnapshot(`
       @media screen and (max-width:1023px) {
         .c0 {
           display: block;
@@ -110,9 +110,9 @@ describe('medium', () => {
     const Div = styled.div`
       ${medium(styles)};
     `
-    const { container } = renderWithContext(<Div />)
+    const { firstChild } = renderWithContext(<Div />).container
 
-    expect(container.firstChild).toMatchInlineSnapshot(`
+    expect(firstChild).toMatchInlineSnapshot(`
       @media screen and (min-width:1024px) {
         .c0 {
           display: block;
@@ -131,9 +131,9 @@ describe('mediumOnly', () => {
     const Div = styled.div`
       ${mediumOnly(styles)};
     `
-    const { container } = renderWithContext(<Div />)
+    const { firstChild } = renderWithContext(<Div />).container
 
-    expect(container.firstChild).toMatchInlineSnapshot(`
+    expect(firstChild).toMatchInlineSnapshot(`
       @media screen and (min-width:1024px) and (max-width:1215px) {
         .c0 {
           display: block;
@@ -152,9 +152,9 @@ describe('untilLarge', () => {
     const Div = styled.div`
       ${untilLarge(styles)};
     `
-    const { container } = renderWithContext(<Div />)
+    const { firstChild } = renderWithContext(<Div />).container
 
-    expect(container.firstChild).toMatchInlineSnapshot(`
+    expect(firstChild).toMatchInlineSnapshot(`
       @media screen and (max-width:1215px) {
         .c0 {
           display: block;
@@ -173,9 +173,9 @@ describe('large', () => {
     const Div = styled.div`
       ${large(styles)};
     `
-    const { container } = renderWithContext(<Div />)
+    const { firstChild } = renderWithContext(<Div />).container
 
-    expect(container.firstChild).toMatchInlineSnapshot(`
+    expect(firstChild).toMatchInlineSnapshot(`
       @media screen and (min-width:1216px) {
         .c0 {
           display: block;
@@ -194,9 +194,9 @@ describe('largeOnly', () => {
     const Div = styled.div`
       ${largeOnly(styles)};
     `
-    const { container } = renderWithContext(<Div />)
+    const { firstChild } = renderWithContext(<Div />).container
 
-    expect(container.firstChild).toMatchInlineSnapshot(`
+    expect(firstChild).toMatchInlineSnapshot(`
       @media screen and (min-width:1216px) and (max-width:1407px) {
         .c0 {
           display: block;
@@ -215,9 +215,9 @@ describe('untilExtraLarge', () => {
     const Div = styled.div`
       ${untilExtraLarge(styles)};
     `
-    const { container } = renderWithContext(<Div />)
+    const { firstChild } = renderWithContext(<Div />).container
 
-    expect(container.firstChild).toMatchInlineSnapshot(`
+    expect(firstChild).toMatchInlineSnapshot(`
       @media screen and (max-width:1407px) {
         .c0 {
           display: block;
@@ -236,9 +236,9 @@ describe('extraLarge', () => {
     const Div = styled.div`
       ${extraLarge(styles)};
     `
-    const { container } = renderWithContext(<Div />)
+    const { firstChild } = renderWithContext(<Div />).container
 
-    expect(container.firstChild).toMatchInlineSnapshot(`
+    expect(firstChild).toMatchInlineSnapshot(`
       @media screen and (min-width:1408px) {
         .c0 {
           display: block;
@@ -257,9 +257,9 @@ describe('container', () => {
     const Div = styled.div`
       ${container()};
     `
-    const result = renderWithContext(<Div />)
+    const { firstChild } = renderWithContext(<Div />).container
 
-    expect(result.container.firstChild).toMatchInlineSnapshot(`
+    expect(firstChild).toMatchInlineSnapshot(`
       .c0 {
         -webkit-box-flex: 1;
         -webkit-flex-grow: 1;
@@ -310,9 +310,9 @@ describe('container', () => {
     const Div = styled.div`
       ${container(true)};
     `
-    const result = renderWithContext(<Div />)
+    const { firstChild } = renderWithContext(<Div />).container
 
-    expect(result.container.firstChild).toMatchInlineSnapshot(`
+    expect(firstChild).toMatchInlineSnapshot(`
       .c0 {
         -webkit-box-flex: 1;
         -webkit-flex-grow: 1;

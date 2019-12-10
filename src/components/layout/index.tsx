@@ -15,7 +15,7 @@ const Root = styled.div`
 `
 
 const Navbar = styled.nav`
-  background-color: ${({ theme }) => theme.schemeMain};
+  background-color: ${({ theme }) => theme.colors.schemeMain};
   min-height: ${rem(52)};
   position: relative;
 
@@ -50,7 +50,7 @@ const Brand = styled.div`
 
 const Link = styled(BaseLink)`
   align-items: center;
-  color: ${({ theme }) => theme.textColor};
+  color: ${({ theme }) => theme.colors.text};
   cursor: pointer;
   display: flex;
   flex-grow: 0;

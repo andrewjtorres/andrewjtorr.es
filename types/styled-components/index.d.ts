@@ -1,50 +1,34 @@
 import 'styled-components'
 
 declare module 'styled-components' {
-  export type Color =
-    | 'white'
-    | 'black'
-    | 'light'
-    | 'dark'
-    | 'primary'
-    | 'info'
-    | 'success'
-    | 'warning'
-    | 'danger'
+  type Font = 'primary' | 'secondary' | 'code'
 
-  export type ColorContrast =
-    | 'lightContrast'
-    | 'darkContrast'
-    | 'primaryContrast'
-    | 'infoContrast'
-    | 'successContrast'
-    | 'warningContrast'
-    | 'dangerContrast'
+  type Fonts = Record<Font, string>
 
-  export type ColorLight =
-    | 'primaryLight'
-    | 'infoLight'
-    | 'successLight'
-    | 'warningLight'
-    | 'dangerLight'
+  type FontSize =
+    | 1
+    | 2
+    | 3
+    | 4
+    | 5
+    | 6
+    | 7
+    | 'small'
+    | 'normal'
+    | 'medium'
+    | 'large'
 
-  export type ColorDark =
-    | 'primaryDark'
-    | 'infoDark'
-    | 'successDark'
-    | 'warningDark'
-    | 'dangerDark'
+  type FontSizes = Record<FontSize, string>
 
-  export type FontSize =
-    | 'fontSize1'
-    | 'fontSize2'
-    | 'fontSize3'
-    | 'fontSize4'
-    | 'fontSize5'
-    | 'fontSize6'
-    | 'fontSize7'
+  type FontWeight = 'light' | 'normal' | 'medium' | 'semiBold' | 'bold'
 
-  export type Shade =
+  type FontWeights = Record<FontWeight, number>
+
+  type Radius = 'small' | 'medium' | 'large' | 'round'
+
+  type Radii = Record<Radius, string>
+
+  type Shade =
     | 'blackBis'
     | 'blackTer'
     | 'grayDarker'
@@ -56,16 +40,33 @@ declare module 'styled-components' {
     | 'whiteTer'
     | 'whiteBis'
 
+  type Shades = Record<Shade, string>
+
+  type Space = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 'block'
+
+  type Spaces = Record<Space, string>
+
+  type Tone = 'info' | 'neutral' | 'positive' | 'promote' | 'critical'
+
+  type Tones = Record<Tone, string>
+
+  type ToneContrast =
+    | 'infoContrast'
+    | 'neutralContrast'
+    | 'positiveContrast'
+    | 'promoteContrast'
+    | 'criticalContrast'
+
+  type ToneContrasts = Record<ToneContrast, string>
+
   export type ViewportBreakpoint = 'small' | 'medium' | 'large' | 'extraLarge'
 
-  export interface DefaultTheme
-    extends Record<Color, string>,
-      Record<ColorContrast, string>,
-      Record<ColorLight, string>,
-      Record<ColorDark, string>,
-      Record<FontSize, string>,
-      Record<Shade, string>,
-      Record<ViewportBreakpoint, number> {
+  type ViewportBreakpoints = Record<ViewportBreakpoint, number>
+
+  interface Colors extends Shades, Tones, ToneContrasts {
+    black: string
+    white: string
+
     orange: string
     yellow: string
     green: string
@@ -74,6 +75,7 @@ declare module 'styled-components' {
     blue: string
     purple: string
     red: string
+
     orangeContrast: string
     yellowContrast: string
     greenContrast: string
@@ -82,59 +84,77 @@ declare module 'styled-components' {
     blueContrast: string
     purpleContrast: string
     redContrast: string
+
+    primary: string
+
+    primaryContrast: string
+
     schemeMain: string
     schemeMainBis: string
     schemeMainTer: string
+
     schemeContrast: string
     schemeContrastBis: string
     schemeContrastTer: string
-    backgroundColor: string
-    borderColor: string
+
+    background: string
+
+    border: string
+    borderLight: string
+
+    text: string
+    textContrast: string
+    textLight: string
+    textStrong: string
+    textSelection: string
+
+    code: string
+    codeContrast: string
+
+    pre: string
+    preContrast: string
+
+    link: string
+    linkContrast: string
+  }
+
+  export interface DefaultTheme extends ViewportBreakpoints {
+    colors: Colors
+
     borderHoverColor: string
-    borderLightColor: string
     borderLightHoverColor: string
-    textColor: string
-    textColorContrast: string
-    textLightColor: string
-    textStrongColor: string
-    textSelectionBackgroundColor: string
-    codeColor: string
-    codeBackgroundColor: string
-    preColor: string
-    preBackgroundColor: string
-    linkColor: string
-    linkColorContrast: string
-    linkColorLight: string
-    linkColorDark: string
+
     linkVisitedColor: string
+
     linkHoverColor: string
     linkHoverBorderColor: string
+
     linkFocusColor: string
     linkFocusBorderColor: string
+
     linkActiveColor: string
     linkActiveBorderColor: string
+
     fontFamilySansSerif: string
     fontFamilyMonospace: string
     textRendering: string
-    fontFamilyPrimary: string
-    fontFamilySecondary: string
-    fontFamilyCode: string
-    fontSizeSmall: string
-    fontSizeNormal: string
-    fontSizeMedium: string
-    fontSizeLarge: string
-    fontWeightLight: number
-    fontWeightNormal: number
-    fontWeightMedium: number
-    fontWeightSemiBold: number
-    fontWeightBold: number
-    blockSpacing: string
+
+    fonts: Fonts
+
+    fontSizes: FontSizes
+
+    fontWeights: FontWeights
+
+    space: Spaces
+
+    breakpoints: string[]
+
     gap: number
+
     timingFunction: string
-    borderRadiusSmall: string
-    borderRadius: string
-    borderRadiusLarge: string
-    borderRadiusRounded: string
+
+    radii: Radii
+
     duration: string
   }
 }

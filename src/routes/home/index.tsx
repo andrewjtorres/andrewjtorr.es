@@ -64,7 +64,7 @@ const TitleImage = styled.img`
 `
 
 const Title = styled.h1`
-  color: ${({ theme }) => theme.grayDarker};
+  color: ${({ theme }) => theme.colors.grayDarker};
   font-size: ${rem(32)};
   font-weight: 600;
   line-height: 1.125;
@@ -74,7 +74,7 @@ const Title = styled.h1`
 `
 
 const Subtitle = styled.h2`
-  color: ${({ theme }) => theme.grayDark};
+  color: ${({ theme }) => theme.colors.grayDark};
   font-size: ${rem(20)};
   font-weight: 400;
   line-height: 1.25;
@@ -102,9 +102,9 @@ const Link = styled.a`
   -webkit-touch-callout: none;
   align-items: center;
   appearance: none;
-  border: ${rem(1)} solid ${({ theme }) => theme.grayDarker};
+  border: ${rem(1)} solid ${({ theme }) => theme.colors.grayDarker};
   border-radius: ${em(20.5)};
-  color: ${({ theme }) => theme.grayDarker};
+  color: ${({ theme }) => theme.colors.grayDarker};
   cursor: pointer;
   display: inline-flex;
   font-size: ${rem(16)};
@@ -120,16 +120,16 @@ const Link = styled.a`
 
   &:hover,
   &:focus {
-    background-color: ${({ theme }) => theme.grayDarker};
-    border-color: ${({ theme }) => theme.grayDarker};
-    color: ${({ theme }) => theme.white};
+    background-color: ${({ theme }) => theme.colors.grayDarker};
+    border-color: ${({ theme }) => theme.colors.grayDarker};
+    color: ${({ theme }) => theme.colors.white};
     outline: none;
   }
 
   &:active {
-    background-color: ${({ theme }) => darken(0.1, theme.grayDarker)};
-    border-color: ${({ theme }) => darken(0.1, theme.grayDarker)};
-    color: ${({ theme }) => theme.white};
+    background-color: ${({ theme }) => darken(0.1, theme.colors.grayDarker)};
+    border-color: ${({ theme }) => darken(0.1, theme.colors.grayDarker)};
+    color: ${({ theme }) => theme.colors.white};
     outline: none;
   }
 
@@ -222,7 +222,7 @@ const icon = css`
   max-height: ${rem(21)};
 
   a > & {
-    fill: ${({ theme }) => theme.grayDarker};
+    fill: ${({ theme }) => theme.colors.grayDarker};
 
     &:only-child {
       margin-left: calc(${em(-6)} - 1px);
@@ -233,7 +233,7 @@ const icon = css`
   a:hover > &,
   a:focus > &,
   a:active > & {
-    fill: ${({ theme }) => theme.white};
+    fill: ${({ theme }) => theme.colors.white};
   }
 `
 
