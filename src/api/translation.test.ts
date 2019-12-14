@@ -105,13 +105,12 @@ describe('translation', () => {
       expect(message).toMatch("Locale 'en' not found")
     })
 
-    test('should return query metadata containing an empty array of locale translations', async () => {
+    test('should return query metadata containing an empty array of default locale translations', async () => {
       const { readFile: originalReadFile } = fs
 
       Object.defineProperty(fs, 'readFile', { value: readFile })
 
       const { data, errors } = await graphql<TranslationsQueryData>({
-        contextValue: { locale: 'en' },
         schema,
         source,
       })

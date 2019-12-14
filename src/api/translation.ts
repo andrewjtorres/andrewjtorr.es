@@ -24,7 +24,9 @@ const readFile = (path: string) => promisify(fs.readFile)(path, 'utf-8')
 
 export const resolvers: Resolvers<undefined, Context> = {
   Query: {
-    translations: async (_source, _args, { locale }) => {
+    translations: async (_source, _args, context) => {
+      const { locale = 'en' } = context ?? {}
+
       if (!locales.includes(locale)) {
         throw new Error(`Locale '${locale}' not supported`)
       }

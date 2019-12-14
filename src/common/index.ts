@@ -1,8 +1,9 @@
 import { ApolloCache } from 'apollo-cache'
 import { IdGetter, NormalizedCacheObject } from 'apollo-cache-inmemory'
 import ApolloClient from 'apollo-client'
+import { FragmentMap } from 'apollo-utilities'
 import { Response } from 'express'
-import { GraphQLResolveInfo } from 'graphql'
+import { FieldNode } from 'graphql'
 
 export type AllowedNames<TBase, TCondition> = FilterFlags<
   TBase,
@@ -13,12 +14,7 @@ type FieldResolver<
   TSource = any,
   TContext = any,
   TArgs = Record<string, any>
-> = (
-  source: TSource,
-  args: TArgs,
-  context: TContext,
-  info: GraphQLResolveInfo
-) => any
+> = (source?: TSource, args?: TArgs, context?: TContext, info?: Info) => any
 
 export type FilterFlags<TBase, TCondition> = {
   [TKey in keyof TBase]: TCondition extends Extract<TBase[TKey], TCondition>
@@ -43,6 +39,11 @@ export type SubType<TBase, TCondition> = Pick<
 export interface Context {
   locale: string
   res: Response
+}
+
+interface Info {
+  field: FieldNode
+  fragmentMap: FragmentMap
 }
 
 export interface LocalContext {
