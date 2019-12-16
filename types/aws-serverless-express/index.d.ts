@@ -41,7 +41,7 @@ declare module 'aws-serverless-express' {
     invokedFunctionArn: string
     logGroupName: string
     logStreamName: string
-    memoryLimitInMB: number
+    memoryLimitInMB: string
     succeed(message: string, object: any): void
     succeed(messageOrObject: any): void
   }
