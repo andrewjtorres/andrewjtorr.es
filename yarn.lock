@@ -1689,17 +1689,17 @@
     vue-docgen-api "^4.1.0"
     vue-docgen-loader "^1.2.0"
 
-"@storybook/addon-knobs@5.3.0-beta.23":
-  version "5.3.0-beta.23"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-5.3.0-beta.23.tgz#4c9d8493b79932967e5dc4ee27ce05afbc6990f7"
-  integrity sha512-MKVffuPvRSEzvvnu1aTuWSbxqAjO9+xphBh2+Ss7pZ8IdptV66O/Yl4TelYHrtvwuzwtozpD6hMBbu5hEt8hZQ==
+"@storybook/addon-knobs@5.3.0-beta.25":
+  version "5.3.0-beta.25"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-5.3.0-beta.25.tgz#b38af3ef28934948052a5d6a35dbb7934baa9750"
+  integrity sha512-dhMjDOCujbS6b+Z2hSLDlrYKSvHUmqKzRUgIt3zgSk9GRZ81KVlhYIuO7BArIv2VLBrycpXkRGVx4zUplQn0TQ==
   dependencies:
-    "@storybook/addons" "5.3.0-beta.23"
-    "@storybook/api" "5.3.0-beta.23"
-    "@storybook/client-api" "5.3.0-beta.23"
-    "@storybook/components" "5.3.0-beta.23"
-    "@storybook/core-events" "5.3.0-beta.23"
-    "@storybook/theming" "5.3.0-beta.23"
+    "@storybook/addons" "5.3.0-beta.25"
+    "@storybook/api" "5.3.0-beta.25"
+    "@storybook/client-api" "5.3.0-beta.25"
+    "@storybook/components" "5.3.0-beta.25"
+    "@storybook/core-events" "5.3.0-beta.25"
+    "@storybook/theming" "5.3.0-beta.25"
     "@types/react-color" "^3.0.1"
     copy-to-clipboard "^3.0.8"
     core-js "^3.0.1"
@@ -1798,6 +1798,17 @@
     global "^4.3.2"
     telejson "^3.2.0"
 
+"@storybook/channel-postmessage@5.3.0-beta.25":
+  version "5.3.0-beta.25"
+  resolved "https://registry.yarnpkg.com/@storybook/channel-postmessage/-/channel-postmessage-5.3.0-beta.25.tgz#962440e9951e7724ad1e9cafc495fb52957130b7"
+  integrity sha512-uJ7FErGVrOXkAuG3BzyYXaUsMCY0EFPgQmxFH+GyotHUHfiiPPe+28INZMzuTCun26QGc4kUlsfQmBrRePlBMg==
+  dependencies:
+    "@storybook/channels" "5.3.0-beta.25"
+    "@storybook/client-logger" "5.3.0-beta.25"
+    core-js "^3.0.1"
+    global "^4.3.2"
+    telejson "^3.2.0"
+
 "@storybook/channels@5.3.0-beta.23":
   version "5.3.0-beta.23"
   resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-5.3.0-beta.23.tgz#07cad1b1a9a25e72b7adc2c7cf3114e23e4b3e4e"
@@ -1834,6 +1845,28 @@
     ts-dedent "^1.1.0"
     util-deprecate "^1.0.2"
 
+"@storybook/client-api@5.3.0-beta.25":
+  version "5.3.0-beta.25"
+  resolved "https://registry.yarnpkg.com/@storybook/client-api/-/client-api-5.3.0-beta.25.tgz#be9742251658515f4d140fd325c42c8aeb606e3a"
+  integrity sha512-2XcslfMnEH83JeyVF4D8aNA8nml24H7VJtfYxKwHVCXNerDbD0yKa/a4IQ5BqtUkRO6+pB4nG+t2PFyuk9IguQ==
+  dependencies:
+    "@storybook/addons" "5.3.0-beta.25"
+    "@storybook/channel-postmessage" "5.3.0-beta.25"
+    "@storybook/channels" "5.3.0-beta.25"
+    "@storybook/client-logger" "5.3.0-beta.25"
+    "@storybook/core-events" "5.3.0-beta.25"
+    "@storybook/csf" "0.0.1"
+    core-js "^3.0.1"
+    eventemitter3 "^4.0.0"
+    global "^4.3.2"
+    is-plain-object "^3.0.0"
+    lodash "^4.17.15"
+    memoizerific "^1.11.3"
+    qs "^6.6.0"
+    stable "^0.1.8"
+    ts-dedent "^1.1.0"
+    util-deprecate "^1.0.2"
+
 "@storybook/client-logger@5.3.0-beta.23":
   version "5.3.0-beta.23"
   resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-5.3.0-beta.23.tgz#91743b4ae5a9b187af9aa6f3cc3bed30fdcdce65"
@@ -1855,6 +1888,33 @@
   dependencies:
     "@storybook/client-logger" "5.3.0-beta.23"
     "@storybook/theming" "5.3.0-beta.23"
+    "@types/react-syntax-highlighter" "11.0.2"
+    "@types/react-textarea-autosize" "^4.3.3"
+    core-js "^3.0.1"
+    global "^4.3.2"
+    lodash "^4.17.15"
+    markdown-to-jsx "^6.9.1"
+    memoizerific "^1.11.3"
+    polished "^3.3.1"
+    popper.js "^1.14.7"
+    prop-types "^15.7.2"
+    react "^16.8.3"
+    react-dom "^16.8.3"
+    react-focus-lock "^2.1.0"
+    react-helmet-async "^1.0.2"
+    react-popper-tooltip "^2.8.3"
+    react-syntax-highlighter "^11.0.2"
+    react-textarea-autosize "^7.1.0"
+    simplebar-react "^1.0.0-alpha.6"
+    ts-dedent "^1.1.0"
+
+"@storybook/components@5.3.0-beta.25":
+  version "5.3.0-beta.25"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-5.3.0-beta.25.tgz#d25de81b35a374766c4a6a0cd3ad70ac84a47737"
+  integrity sha512-XrS3A0nCTIyRclUNzH7Pr87njf2zk94iTQyFl/WL+DYL6IXoAACHcBykzkfyxdKioPQmE90hz1hSBhVxkIwVSw==
+  dependencies:
+    "@storybook/client-logger" "5.3.0-beta.25"
+    "@storybook/theming" "5.3.0-beta.25"
     "@types/react-syntax-highlighter" "11.0.2"
     "@types/react-textarea-autosize" "^4.3.3"
     core-js "^3.0.1"
