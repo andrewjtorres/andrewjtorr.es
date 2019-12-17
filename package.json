@@ -140,7 +140,7 @@
     "@typescript-eslint/parser": "^2.12.0",
     "apollo-link-logger": "^1.2.3",
     "archiver": "^3.1.1",
-    "aws-sdk": "^2.591.0",
+    "aws-sdk": "^2.592.0",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-dynamic-import-node": "^2.3.0",
