@@ -1787,13 +1787,6 @@
     ts-dedent "^1.1.0"
     util-deprecate "^1.0.2"
 
-"@storybook/client-logger@5.3.0-rc.0":
-  version "5.3.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-5.3.0-rc.0.tgz#2caa0159661ac0c837442537e26718e354f9d287"
-  integrity sha512-mevkUL42ZthzVzjaGBy7SaFnXbUolNZbCD/fO/mm/hu3QCQyYLlVNS+R5Fl2D8Lai06s0SENJJ8A99UOomn1HQ==
-  dependencies:
-    core-js "^3.0.1"
-
 "@storybook/client-logger@5.3.0-rc.1":
   version "5.3.0-rc.1"
   resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-5.3.0-rc.1.tgz#30ef3fa8a565212f6b7a2360f09302ab645af10f"
@@ -1995,24 +1988,6 @@
     prettier "^1.16.4"
     prop-types "^15.7.2"
     regenerator-runtime "^0.13.3"
-
-"@storybook/theming@5.3.0-rc.0":
-  version "5.3.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-5.3.0-rc.0.tgz#07c2bccdad4e5d183b94777dccaac94ed06e72c2"
-  integrity sha512-+2x6aY2WQde025JxYG8/ojJhri9c8NQFjw90h26vOsjWJnB+Kyk/FJlf+lUVuW2AkhuVmCpcp1PZk5UTwPuafA==
-  dependencies:
-    "@emotion/core" "^10.0.20"
-    "@emotion/styled" "^10.0.17"
-    "@storybook/client-logger" "5.3.0-rc.0"
-    core-js "^3.0.1"
-    deep-object-diff "^1.1.0"
-    emotion-theming "^10.0.19"
-    global "^4.3.2"
-    memoizerific "^1.11.3"
-    polished "^3.3.1"
-    prop-types "^15.7.2"
-    resolve-from "^5.0.0"
-    ts-dedent "^1.1.0"
 
 "@storybook/theming@5.3.0-rc.1":
   version "5.3.0-rc.1"
