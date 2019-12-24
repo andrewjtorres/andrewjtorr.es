@@ -1,16 +1,22 @@
 {
-  "background_color": "#fff",
+  "name": "Andrew Torres",
+  "short_name": "ajtorres9",
   "description": "Personal website of Andrew Torres",
-  "display": "standalone",
   "icons": [
     {
-      "src": "/apple-touch-icon.png",
-      "sizes": "180x180",
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ],
-  "name": "Andrew Torres",
-  "short_name": "ajtorres9",
+  "lang": "en",
   "start_url": "/?utm_source=homescreen",
-  "theme_color": "#000"
+  "display": "standalone",
+  "theme_color": "#fff",
+  "background_color": "#fff"
 }

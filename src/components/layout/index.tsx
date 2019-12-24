@@ -61,6 +61,7 @@ const Link = styled(BaseLink)`
 `
 
 const LogoIcon = styled(BaseLogoIcon)`
+  fill: ${({ theme }) => theme.colors.primary};
   height: ${rem(32)};
 `
 

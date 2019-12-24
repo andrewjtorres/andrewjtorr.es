@@ -30,7 +30,7 @@ const red = hsl(348, 0.86, 0.61)
 
 const blueContrast = contrastColor(blue)
 
-const primary = turquoise
+const primary = hsl(0, 0.843, 0.651)
 
 const info = cyan
 const neutral = gray
