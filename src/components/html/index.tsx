@@ -40,7 +40,7 @@ const Html: React.FunctionComponent<Props> = ({
       <title>{title}</title>
       <meta name="author" content="Andrew Torres" />
       <meta name="description" content={description} />
-      <meta name="theme-color" content="#000" />
+      <meta name="theme-color" content="#fff" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@ajtorres333" />
@@ -77,6 +77,7 @@ const Html: React.FunctionComponent<Props> = ({
         href="/favicon-16x16.png"
       />
       <link rel="manifest" href="/site.webmanifest" />
+      <link rel="mask-icon" href="/mask-icon.svg" color="#f15b5b" />
       {styles}
     </head>
     <body>
