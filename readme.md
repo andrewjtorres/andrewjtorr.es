@@ -1,18 +1,34 @@
-# andrewjtorr.es
-
-<a href="https://andrewjtorr.es" rel="noopener noreferrer" target="_blank">
-  <img align="right" alt="Andrew Torres" height="80" src="src/assets/logo.svg" width="100">
-</a>
-
-> Personal website of Andrew Torres
-
-[![GitHub Actions](https://flat.badgen.net/github/checks/ajtorres9/andrewjtorr.es?label=build)](https://github.com/ajtorres9/andrewjtorr.es/actions?workflow=CI)
-[![LGTM](https://flat.badgen.net/lgtm/grade/g/ajtorres9/andrewjtorr.es?label=code%20quality)](https://lgtm.com/projects/g/ajtorres9/andrewjtorr.es)
-[![Codecov](https://flat.badgen.net/codecov/c/github/ajtorres9/andrewjtorr.es/master)](https://codecov.io/gh/ajtorres9/andrewjtorr.es)<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://flat.badgen.net/badge/all%20contributors/1/orange)](#contributors)<!-- ALL-CONTRIBUTORS-BADGE:END -->
-[![Code Style](https://flat.badgen.net/badge/code%20style/prettier/ff69b4)](https://github.com/prettier/prettier)
-[![Commitizen](https://flat.badgen.net/badge/commitizen/friendly/green)](https://github.com/commitizen/cz-cli)
-[![License](https://flat.badgen.net/github/license/ajtorres9/andrewjtorr.es)](license)
+<p align="center">
+  <img alt="Andrew Torres" height="256" src="public/android-chrome-512x512.png" width="256">
+</p>
+<p align="center">
+  Personal website of Andrew Torres
+</p>
+<p align="center">
+  <a href="https://github.com/ajtorres9/andrewjtorr.es/actions?workflow=CI">
+    <img alt="GitHub Actions" src="https://flat.badgen.net/github/checks/ajtorres9/andrewjtorr.es?label=build">
+  </a>
+  <a href="https://lgtm.com/projects/g/ajtorres9/andrewjtorr.es">
+    <img alt="LGTM" src="https://flat.badgen.net/lgtm/grade/g/ajtorres9/andrewjtorr.es?label=code%20quality">
+  </a>
+  <a href="https://codecov.io/gh/ajtorres9/andrewjtorr.es">
+    <img alt="Codecov" src="https://flat.badgen.net/codecov/c/github/ajtorres9/andrewjtorr.es/master">
+  </a>
+  <a href="#contributors">
+    <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+    <img alt="All Contributors" src="https://flat.badgen.net/badge/all%20contributors/1/orange">
+    <!-- ALL-CONTRIBUTORS-BADGE:END -->
+  </a>
+  <a href="https://github.com/prettier/prettier">
+    <img alt="Code Style" src="https://flat.badgen.net/badge/code%20style/prettier/ff69b4">
+  </a>
+  <a href="https://github.com/commitizen/cz-cli">
+    <img alt="Commitizen" src="https://flat.badgen.net/badge/commitizen/friendly/green">
+  </a>
+  <a href="license">
+    <img alt="License" src="https://flat.badgen.net/github/license/ajtorres9/andrewjtorr.es">
+  </a>
+</p>
 
 ## Contributors
 

@@ -10,7 +10,7 @@
   "commit": false,
   "commitConvention": "angular",
   "contributorsPerLine": 7,
-  "badgeTemplate": "\n[![All Contributors](https://flat.badgen.net/badge/all%20contributors/<%= contributors.length %>/orange)](#contributors)",
+  "badgeTemplate": "\n    <img alt=\"All Contributors\" src=\"https://flat.badgen.net/badge/all%20contributors/<%= contributors.length %>/orange\">\n    ",
   "contributors": [
     {
       "login": "ajtorres9",
