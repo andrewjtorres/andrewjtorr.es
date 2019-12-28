@@ -70,8 +70,6 @@ describe('translation', () => {
 
       process.env.TRANSLATIONS_DIR = 'dir'
 
-      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore TS2339
       fs.setMockFiles({ 'dir/en.json': JSON.stringify(translations) })
 
       const { data, errors } = await graphql<TranslationsQueryData>({
@@ -85,8 +83,6 @@ describe('translation', () => {
 
       process.env.TRANSLATIONS_DIR = originalTranslationsDir
 
-      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore TS2339
       fs.resetMockFiles()
     })
 

@@ -1,6 +1,15 @@
 {
-  "exclude": ["build", "node_modules"],
-  "include": ["**/*", "**/.*/**/*"],
+  "include": [
+    ".storybook/**/*.ts",
+    ".storybook/**/*.tsx",
+    "config/**/*.ts",
+    "config/**/*.tsx",
+    "scripts/**/*.ts",
+    "scripts/**/*.tsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "types/**/*.d.ts"
+  ],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
@@ -8,7 +17,6 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "lib": ["dom", "es2020"],
     "module": "commonjs",
     "moduleResolution": "node",
     "noErrorTruncation": true,
@@ -16,14 +24,12 @@
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": "build",
     "paths": { "*": ["src/*"] },
     "removeComments": true,
     "resolveJsonModule": true,
-    "rootDirs": [".storybook", "config", "scripts", "src"],
+    "rootDirs": ["src"],
     "sourceMap": true,
     "strict": true,
-    "target": "es2020",
-    "types": ["express", "jest", "node", "webpack-env"]
+    "target": "es2020"
   }
 }

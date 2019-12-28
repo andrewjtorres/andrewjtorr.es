@@ -1,0 +1,20 @@
+{
+  "include": [
+    "config/jest/**/*.ts",
+    "config/jest/**/*.tsx",
+    "src/**/__mocks__/**/*.ts",
+    "src/**/__mocks__/**/*.tsx",
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx",
+    "src/**/test.ts",
+    "src/**/test.tsx",
+    "types/node/fs.d.ts",
+    "types/node/global.d.ts",
+    "types/styled-components/index.d.ts",
+    "types/global.d.ts"
+  ],
+  "extends": "./tsconfig",
+  "compilerOptions": {
+    "types": ["jest"]
+  }
+}
