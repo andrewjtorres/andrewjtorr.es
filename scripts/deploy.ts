@@ -2,7 +2,7 @@ import fs from 'fs'
 import { basename, join, resolve } from 'path'
 import { Lambda, S3 } from 'aws-sdk'
 
-import { name } from '../package.json'
+import packageConfig from '../package.json'
 import { execFile } from './utils/child-process'
 import { checksumFile, zipDir } from './utils/file-system'
 import build from './build'
@@ -12,7 +12,7 @@ const artifactDir = join(rootDir, '.artifact')
 const buildDir = join(rootDir, 'build')
 
 const shasum256 = join(artifactDir, 'shasum256.txt')
-const sourceCode = join(artifactDir, `${name}.zip`)
+const sourceCode = join(artifactDir, `${packageConfig.name}.zip`)
 
 const deploy = async () => {
   const lambda = new Lambda()
@@ -32,14 +32,14 @@ const deploy = async () => {
     s3
       .upload({
         Body: fs.createReadStream(shasum256),
-        Bucket: name,
+        Bucket: packageConfig.name,
         Key: basename(shasum256),
       })
       .promise(),
     s3
       .upload({
         Body: fs.createReadStream(sourceCode),
-        Bucket: name,
+        Bucket: packageConfig.name,
         Key: basename(sourceCode),
       })
       .promise(),
@@ -47,8 +47,8 @@ const deploy = async () => {
 
   await lambda
     .updateFunctionCode({
-      FunctionName: name.replace('.', '_'),
-      S3Bucket: name,
+      FunctionName: packageConfig.name.replace('.', '_'),
+      S3Bucket: packageConfig.name,
       S3Key: basename(sourceCode),
     })
     .promise()

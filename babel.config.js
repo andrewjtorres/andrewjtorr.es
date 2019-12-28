@@ -1,8 +1,10 @@
 'use strict'
 
-const { node } = require('./package.json').engines
+const packageConfig = require('./package.json')
 
 const createConfig = ({ caller, env }) => {
+  const { 0: node = '12.14' } =
+    /(\d+\.?)+/.exec(packageConfig.engines.node) || []
   const isDev = env('development')
   const isProd = env('production')
   const isTest = env('test')
@@ -28,7 +30,7 @@ const createConfig = ({ caller, env }) => {
       [
         '@babel/preset-env',
         caller(({ target = 'node' } = {}) => target === 'node')
-          ? { targets: { node: node.match(/(\d+\.?)+/)[0] } }
+          ? { targets: { node } }
           : { corejs: 3, modules: false, useBuiltIns: 'entry' },
       ],
       [
