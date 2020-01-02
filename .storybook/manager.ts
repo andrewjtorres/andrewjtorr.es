@@ -8,6 +8,6 @@ addons.setConfig({
   theme: create({
     base: 'light',
     brandTitle: 'andrewjtorr.es',
-    brandUrl: 'https://github.com/ajtorres9/andrewjtorr.es',
+    brandUrl: 'https://andrewjtorr.es',
   }),
 })
