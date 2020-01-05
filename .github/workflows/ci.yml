@@ -30,14 +30,8 @@ jobs:
           restore-keys: ${{ runner.os }}-yarn-cache-
       - name: Install Node dependencies
         run: yarn install --frozen-lockfile
-      - name: Lint files
-        run: yarn --silent lint:files
-      - name: Lint scripts
-        run: yarn --silent lint:scripts
-      - name: Lint styles
-        run: yarn --silent lint:styles
-      - name: Lint types
-        run: yarn --silent lint:types
+      - name: Lint files, scripts, styles, and types
+        run: yarn --silent lint
   test:
     name: Test
     runs-on: ubuntu-18.04
