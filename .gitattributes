@@ -4,6 +4,7 @@
 
 # For the following file types, normalize line endings to LF on check-in and
 # prevent conversion to CRLF when they are checked out
+*.ico          binary eol=lf
 *.png          binary eol=lf
 
 .*             text eol=lf
