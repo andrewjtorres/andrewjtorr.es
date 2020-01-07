@@ -128,7 +128,7 @@
     "@types/react-dom": "^16.9.4",
     "@types/rimraf": "^2.0.3",
     "@types/serialize-javascript": "^1.5.0",
-    "@types/styled-components": "^4.4.1",
+    "@types/styled-components": "^4.4.2",
     "@types/styled-system": "^5.1.4",
     "@types/terser-webpack-plugin": "^2.2.0",
     "@types/testing-library__react": "^9.1.2",
