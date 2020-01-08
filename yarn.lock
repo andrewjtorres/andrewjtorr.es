@@ -1647,17 +1647,17 @@
   resolved "https://registry.yarnpkg.com/@sheerun/mutationobserver-shim/-/mutationobserver-shim-0.3.2.tgz#8013f2af54a2b7d735f71560ff360d3a8176a87b"
   integrity sha512-vTCdPp/T/Q3oSqwHmZ5Kpa9oI7iLtGl3RQaA/NyLHikvcrPxACkkKVr/XzkSPJWXHRhKGzVvb0urJsbMlRxi1Q==
 
-"@storybook/addon-a11y@5.3.0-rc.11":
-  version "5.3.0-rc.11"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-5.3.0-rc.11.tgz#35f79e82afab581e317d65d2af85f0137e2cd1eb"
-  integrity sha512-+ISasqd8qkAJuHqMshDO/siFcmXIKwvJRIGa/N/0ruPnYy8Gg3KaS99rUSBH7iu/p/RHP17QtqVRmjj9Pxh4oA==
+"@storybook/addon-a11y@5.3.0-rc.12":
+  version "5.3.0-rc.12"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-5.3.0-rc.12.tgz#968077ec83c30236cf8296ba06a8f2e9cce8de91"
+  integrity sha512-0x65bCPbPKUJ3Zisuny5pVXlpY2TiquyTfBtG72V/91Fo1eQ6FaafmthPEv26yR5/rcp5ByB6z/YtYO+gk5yXg==
   dependencies:
-    "@storybook/addons" "5.3.0-rc.11"
-    "@storybook/api" "5.3.0-rc.11"
-    "@storybook/client-logger" "5.3.0-rc.11"
-    "@storybook/components" "5.3.0-rc.11"
-    "@storybook/core-events" "5.3.0-rc.11"
-    "@storybook/theming" "5.3.0-rc.11"
+    "@storybook/addons" "5.3.0-rc.12"
+    "@storybook/api" "5.3.0-rc.12"
+    "@storybook/client-logger" "5.3.0-rc.12"
+    "@storybook/components" "5.3.0-rc.12"
+    "@storybook/core-events" "5.3.0-rc.12"
+    "@storybook/theming" "5.3.0-rc.12"
     axe-core "^3.3.2"
     core-js "^3.0.1"
     global "^4.3.2"
