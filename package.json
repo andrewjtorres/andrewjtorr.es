@@ -132,7 +132,7 @@
     "@types/styled-system": "^5.1.4",
     "@types/terser-webpack-plugin": "^2.2.0",
     "@types/testing-library__react": "^9.1.2",
-    "@types/webpack": "^4.41.1",
+    "@types/webpack": "^4.41.2",
     "@types/webpack-bundle-analyzer": "^2.13.3",
     "@types/webpack-dev-middleware": "^2.0.3",
     "@types/webpack-env": "^1.15.0",
