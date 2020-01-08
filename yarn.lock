@@ -1708,17 +1708,17 @@
     vue-docgen-api "^4.1.0"
     vue-docgen-loader "^1.3.0-beta.0"
 
-"@storybook/addon-knobs@5.3.0-rc.11":
-  version "5.3.0-rc.11"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-5.3.0-rc.11.tgz#321296e2ba033d03a998e39c8ed249e4df1994a0"
-  integrity sha512-FEaqCHTOPU1nU6OZvnVuz4XIGwzU2kEqi4PPf0FdT01KosJVhiggw/SxhFU70AIzMj//3vw8agGR8o8pq4yyuQ==
+"@storybook/addon-knobs@5.3.0-rc.12":
+  version "5.3.0-rc.12"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-5.3.0-rc.12.tgz#74be99e09608e5507acf429226102ce6897dd515"
+  integrity sha512-fSvfYzHHZn5Ur8QBwK6tFc8WlQUCZvg2HP4VewesmzdcRK2/Q9nlb7XCZqPGHaRo76RhuoopCRMcFr3xnFZJwQ==
   dependencies:
-    "@storybook/addons" "5.3.0-rc.11"
-    "@storybook/api" "5.3.0-rc.11"
-    "@storybook/client-api" "5.3.0-rc.11"
-    "@storybook/components" "5.3.0-rc.11"
-    "@storybook/core-events" "5.3.0-rc.11"
-    "@storybook/theming" "5.3.0-rc.11"
+    "@storybook/addons" "5.3.0-rc.12"
+    "@storybook/api" "5.3.0-rc.12"
+    "@storybook/client-api" "5.3.0-rc.12"
+    "@storybook/components" "5.3.0-rc.12"
+    "@storybook/core-events" "5.3.0-rc.12"
+    "@storybook/theming" "5.3.0-rc.12"
     "@types/react-color" "^3.0.1"
     copy-to-clipboard "^3.0.8"
     core-js "^3.0.1"
@@ -1806,17 +1806,6 @@
     telejson "^3.2.0"
     util-deprecate "^1.0.2"
 
-"@storybook/channel-postmessage@5.3.0-rc.11":
-  version "5.3.0-rc.11"
-  resolved "https://registry.yarnpkg.com/@storybook/channel-postmessage/-/channel-postmessage-5.3.0-rc.11.tgz#8a2758010aacd52582d82ebd39aedc2955fb00e3"
-  integrity sha512-8/859NOhc8nr/u697eArVMtPMQ2inS6OceALteHyy2ENgijc9uw0zC/Lgyj8R3vwsG2htfMm3Fyysci1mxYVuA==
-  dependencies:
-    "@storybook/channels" "5.3.0-rc.11"
-    "@storybook/client-logger" "5.3.0-rc.11"
-    core-js "^3.0.1"
-    global "^4.3.2"
-    telejson "^3.2.0"
-
 "@storybook/channel-postmessage@5.3.0-rc.12":
   version "5.3.0-rc.12"
   resolved "https://registry.yarnpkg.com/@storybook/channel-postmessage/-/channel-postmessage-5.3.0-rc.12.tgz#de4654b12b5fb7948c312cee82f56799bdbad0a5"
@@ -1841,28 +1830,6 @@
   integrity sha512-+kNMdPNmeWrflxV9ir17FM2vH8yqNXQ7Llc3yQX2wRLDKgVWv3TRKPm5jwtQFZMym3NVSujzA7+lVFMKU6H5xQ==
   dependencies:
     core-js "^3.0.1"
-
-"@storybook/client-api@5.3.0-rc.11":
-  version "5.3.0-rc.11"
-  resolved "https://registry.yarnpkg.com/@storybook/client-api/-/client-api-5.3.0-rc.11.tgz#b80414a72f60d2d5faa138c2ea3c5f8ac8ecff44"
-  integrity sha512-m5q/cWobJAwkeq8Vs039553lEoDHJGkHIyPsn3eCjUB/hJ04rD6qhiLbiUjhN986vR1zoErZOOf+Orh85VQNMA==
-  dependencies:
-    "@storybook/addons" "5.3.0-rc.11"
-    "@storybook/channel-postmessage" "5.3.0-rc.11"
-    "@storybook/channels" "5.3.0-rc.11"
-    "@storybook/client-logger" "5.3.0-rc.11"
-    "@storybook/core-events" "5.3.0-rc.11"
-    "@storybook/csf" "0.0.1"
-    core-js "^3.0.1"
-    eventemitter3 "^4.0.0"
-    global "^4.3.2"
-    is-plain-object "^3.0.0"
-    lodash "^4.17.15"
-    memoizerific "^1.11.3"
-    qs "^6.6.0"
-    stable "^0.1.8"
-    ts-dedent "^1.1.0"
-    util-deprecate "^1.0.2"
 
 "@storybook/client-api@5.3.0-rc.12":
   version "5.3.0-rc.12"
