@@ -1821,6 +1821,13 @@
   dependencies:
     core-js "^3.0.1"
 
+"@storybook/client-logger@5.3.1":
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-5.3.1.tgz#6e60e9a4431290c7bb566fb3c4d747822a503375"
+  integrity sha512-9CaUdzItrjMU8B0G4stBrbU0CytcQY2NMom7A1YLRBuov+XFBrKv1td+bO9SfBGFCSP5Kw2sKpY6t0vJSdfEow==
+  dependencies:
+    core-js "^3.0.1"
+
 "@storybook/components@5.3.0-rc.12":
   version "5.3.0-rc.12"
   resolved "https://registry.yarnpkg.com/@storybook/components/-/components-5.3.0-rc.12.tgz#63150b36a8315f7e55a31a16621c4691e9329918"
@@ -2025,6 +2032,24 @@
     "@emotion/core" "^10.0.20"
     "@emotion/styled" "^10.0.17"
     "@storybook/client-logger" "5.3.0-rc.12"
+    core-js "^3.0.1"
+    deep-object-diff "^1.1.0"
+    emotion-theming "^10.0.19"
+    global "^4.3.2"
+    memoizerific "^1.11.3"
+    polished "^3.3.1"
+    prop-types "^15.7.2"
+    resolve-from "^5.0.0"
+    ts-dedent "^1.1.0"
+
+"@storybook/theming@5.3.1":
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-5.3.1.tgz#26ab6fa785b3c63e433b025fa9d0d28f1199b27a"
+  integrity sha512-eh2QTn1BJ+1U6t3idIXMT/gdlXhqWgyxWxLvjNlLnIGWyOJ9v/G7Ycu7R9RN5BHn237I842iq9gkxdA6r9CCxA==
+  dependencies:
+    "@emotion/core" "^10.0.20"
+    "@emotion/styled" "^10.0.17"
+    "@storybook/client-logger" "5.3.1"
     core-js "^3.0.1"
     deep-object-diff "^1.1.0"
     emotion-theming "^10.0.19"
