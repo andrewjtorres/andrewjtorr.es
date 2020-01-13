@@ -132,17 +132,7 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
-"@babel/generator@^7.4.0", "@babel/generator@^7.7.4", "@babel/generator@^7.7.7":
-  version "7.7.7"
-  resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.7.7.tgz#859ac733c44c74148e1a72980a64ec84b85f4f45"
-  integrity sha512-/AOIBpHh/JU1l0ZFS4kiRCBnLi6OTHzh0RPk3h9isBxkkqELtQNFi1Vr/tiG9p1yfoUdKVwISuXWQR+hwwM4VQ==
-  dependencies:
-    "@babel/types" "^7.7.4"
-    jsesc "^2.5.1"
-    lodash "^4.17.13"
-    source-map "^0.5.0"
-
-"@babel/generator@^7.8.0":
+"@babel/generator@^7.4.0", "@babel/generator@^7.7.4", "@babel/generator@^7.7.7", "@babel/generator@^7.8.0":
   version "7.8.0"
   resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.8.0.tgz#40a1244677be58ffdc5cd01e22634cd1d5b29edf"
   integrity sha512-2Lp2e02CV2C7j/H4n4D9YvsvdhPVVg9GDIamr6Tu4tU35mL3mzOrzl1lZ8ZJtysfZXh+y+AGORc2rPS7yHxBUg==
@@ -437,12 +427,7 @@
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.5.5.tgz#02f077ac8817d3df4a832ef59de67565e71cca4b"
   integrity sha512-E5BN68cqR7dhKan1SfqgPGhQ178bkVKpXTPEXnFJBrEt8/DKRZlybmy+IgYLTeN7tp1R5Ccmbm2rBk17sHYU3g==
 
-"@babel/parser@^7.0.0", "@babel/parser@^7.1.0", "@babel/parser@^7.1.6", "@babel/parser@^7.3.2", "@babel/parser@^7.4.2", "@babel/parser@^7.4.3", "@babel/parser@^7.7.4", "@babel/parser@^7.7.7":
-  version "7.7.7"
-  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.7.7.tgz#1b886595419cf92d811316d5b715a53ff38b4937"
-  integrity sha512-WtTZMZAZLbeymhkd/sEaPD8IQyGAhmuTuvTzLiCFM7iXiVdY0gc0IaI+cW0fh1BnSMbJSzXX6/fHllgHKwHhXw==
-
-"@babel/parser@^7.8.0":
+"@babel/parser@^7.0.0", "@babel/parser@^7.1.0", "@babel/parser@^7.1.6", "@babel/parser@^7.3.2", "@babel/parser@^7.4.2", "@babel/parser@^7.4.3", "@babel/parser@^7.7.4", "@babel/parser@^7.7.7", "@babel/parser@^7.8.0":
   version "7.8.0"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.8.0.tgz#54682775f1fb25dd29a93a02315aab29a6a292bb"
   integrity sha512-VVtsnUYbd1+2A2vOVhm4P2qNXQE8L/W859GpUHfUcdhX8d3pEKThZuIr6fztocWx9HbK+00/CR0tXnhAggJ4CA==
@@ -1807,10 +1792,10 @@
     ts-dedent "^1.1.0"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-docs@5.3.0-rc.12":
-  version "5.3.0-rc.12"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-docs/-/addon-docs-5.3.0-rc.12.tgz#4e41d797b5c23b431a5c2da3be9e58310e264ac7"
-  integrity sha512-I+hghdfZb/hCEoy6trBX8kZYs4Y5YWqoaC0iJn/5hC0AYCIb9cPznmNUTdH8SA/uiv/2cjci1OoHx6hwMZgXmQ==
+"@storybook/addon-docs@5.3.2":
+  version "5.3.2"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-docs/-/addon-docs-5.3.2.tgz#287c181d1f93fbf27cd12644a6aead6c69a4df2a"
+  integrity sha512-gGxDYP2VMl2Js3eSR0FM/QCf8PULLoZq57LIA8mxX38oxOydC3mIG1970sUM/g6MDtP4TV4F6rjd++eY4Gc07g==
   dependencies:
     "@babel/generator" "^7.4.0"
     "@babel/parser" "^7.4.2"
@@ -1820,13 +1805,14 @@
     "@mdx-js/loader" "^1.5.1"
     "@mdx-js/mdx" "^1.5.1"
     "@mdx-js/react" "^1.5.1"
-    "@storybook/addons" "5.3.0-rc.12"
-    "@storybook/api" "5.3.0-rc.12"
-    "@storybook/components" "5.3.0-rc.12"
+    "@storybook/addons" "5.3.2"
+    "@storybook/api" "5.3.2"
+    "@storybook/components" "5.3.2"
+    "@storybook/core-events" "5.3.2"
     "@storybook/csf" "0.0.1"
-    "@storybook/postinstall" "5.3.0-rc.12"
-    "@storybook/source-loader" "5.3.0-rc.12"
-    "@storybook/theming" "5.3.0-rc.12"
+    "@storybook/postinstall" "5.3.2"
+    "@storybook/source-loader" "5.3.2"
+    "@storybook/theming" "5.3.2"
     acorn "^7.1.0"
     acorn-jsx "^5.1.0"
     acorn-walk "^7.0.0"
@@ -2034,6 +2020,33 @@
     simplebar-react "^1.0.0-alpha.6"
     ts-dedent "^1.1.0"
 
+"@storybook/components@5.3.2":
+  version "5.3.2"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-5.3.2.tgz#bc0824e9fc3f096652c3ce30fc1aff9d82211b74"
+  integrity sha512-JtVPz03vVDI9/QqUbYitTQhLGxXHN0+49y97G527Xn3y6S71DkdQAVgYqUNnsUpPSyNLESgvAV39HRvzy/LSyw==
+  dependencies:
+    "@storybook/client-logger" "5.3.2"
+    "@storybook/theming" "5.3.2"
+    "@types/react-syntax-highlighter" "11.0.2"
+    "@types/react-textarea-autosize" "^4.3.3"
+    core-js "^3.0.1"
+    global "^4.3.2"
+    lodash "^4.17.15"
+    markdown-to-jsx "^6.9.1"
+    memoizerific "^1.11.3"
+    polished "^3.3.1"
+    popper.js "^1.14.7"
+    prop-types "^15.7.2"
+    react "^16.8.3"
+    react-dom "^16.8.3"
+    react-focus-lock "^2.1.0"
+    react-helmet-async "^1.0.2"
+    react-popper-tooltip "^2.8.3"
+    react-syntax-highlighter "^11.0.2"
+    react-textarea-autosize "^7.1.0"
+    simplebar-react "^1.0.0-alpha.6"
+    ts-dedent "^1.1.0"
+
 "@storybook/core-events@5.3.0-rc.12":
   version "5.3.0-rc.12"
   resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-5.3.0-rc.12.tgz#fd8ab6972a95fdb8e0d310fd09412d258d652aab"
@@ -2145,10 +2158,10 @@
     pretty-hrtime "^1.0.3"
     regenerator-runtime "^0.13.3"
 
-"@storybook/postinstall@5.3.0-rc.12":
-  version "5.3.0-rc.12"
-  resolved "https://registry.yarnpkg.com/@storybook/postinstall/-/postinstall-5.3.0-rc.12.tgz#14923e202886111ca55eae2983e59ae3c008e7f3"
-  integrity sha512-OOElpH9qc2FpLabJ0RX7WlU+6lX5d+NE+3OMnBEEIpYQ6vF8BDcuWAJdrYiKCjzVmyPGMMCkzuon7AVrKkatxw==
+"@storybook/postinstall@5.3.2":
+  version "5.3.2"
+  resolved "https://registry.yarnpkg.com/@storybook/postinstall/-/postinstall-5.3.2.tgz#76046fc07eb98bfff09392135fb05e89e4126c56"
+  integrity sha512-SHDXiubFKSoIpV5E2R9K104Ye4qhRQuoN9SKCB400Ya2JyBSGz5FMuNVmRpO8JqJrUe9uI1d/k18/Mma1/73YA==
   dependencies:
     core-js "^3.0.1"
 
@@ -2209,13 +2222,13 @@
     qs "^6.6.0"
     util-deprecate "^1.0.2"
 
-"@storybook/source-loader@5.3.0-rc.12":
-  version "5.3.0-rc.12"
-  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-5.3.0-rc.12.tgz#91072f8b254702813fa9a32c82b9429df66af36d"
-  integrity sha512-dSntNETqXMGV1a1mYxiC3SfyGx6Hp0A4RUtUEaKp4f0/+NtUw+aTh7fG1QfLynua4GTmx2xvG/s7u5GMQzb4BA==
+"@storybook/source-loader@5.3.2":
+  version "5.3.2"
+  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-5.3.2.tgz#23d2095b26a265e3df46b370db20af2f2803edfa"
+  integrity sha512-bHEWLXTSn89jip/fy/rjf2Psrmu4ZdquOD/SmB+WVuKRYE8JxcN1ybNUOhM7+XqekzIV/iw9rivhjGO1nZ7HAQ==
   dependencies:
-    "@storybook/addons" "5.3.0-rc.12"
-    "@storybook/client-logger" "5.3.0-rc.12"
+    "@storybook/addons" "5.3.2"
+    "@storybook/client-logger" "5.3.2"
     "@storybook/csf" "0.0.1"
     core-js "^3.0.1"
     estraverse "^4.2.0"
