@@ -78,6 +78,12 @@ const Html: React.FunctionComponent<Props> = ({
       />
       <link rel="manifest" href="/site.webmanifest" />
       <link rel="mask-icon" href="/mask-icon.svg" color="#f15b5b" />
+      <style
+        dangerouslySetInnerHTML={{
+          __html:
+            "@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700&display=swap');",
+        }}
+      />
       {styles}
     </head>
     <body>

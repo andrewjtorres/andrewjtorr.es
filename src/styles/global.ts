@@ -218,8 +218,6 @@ const GlobalStyle = createGlobalStyle`
     text-shadow: none;
   }
 
-  @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700&display=swap');
-
   @media print {
     *,
     *::before,
