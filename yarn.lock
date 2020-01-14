@@ -158,12 +158,12 @@
     "@babel/helper-explode-assignable-expression" "^7.8.3"
     "@babel/types" "^7.8.3"
 
-"@babel/helper-builder-react-jsx@^7.7.4":
-  version "7.7.4"
-  resolved "https://registry.yarnpkg.com/@babel/helper-builder-react-jsx/-/helper-builder-react-jsx-7.7.4.tgz#da188d247508b65375b2c30cf59de187be6b0c66"
-  integrity sha512-kvbfHJNN9dg4rkEM4xn1s8d1/h6TYNvajy9L1wx4qLn9HFg0IkTsQi4rfBe92nxrPUFcMsHoMV+8rU7MJb3fCA==
+"@babel/helper-builder-react-jsx@^7.7.4", "@babel/helper-builder-react-jsx@^7.8.3":
+  version "7.8.3"
+  resolved "https://registry.yarnpkg.com/@babel/helper-builder-react-jsx/-/helper-builder-react-jsx-7.8.3.tgz#dee98d7d79cc1f003d80b76fe01c7f8945665ff6"
+  integrity sha512-JT8mfnpTkKNCboTqZsQTdGo3l3Ik3l7QIt9hh0O9DYiwVel37VoJpILKM4YFbP2euF32nkQSb+F9cUk9b7DDXQ==
   dependencies:
-    "@babel/types" "^7.7.4"
+    "@babel/types" "^7.8.3"
     esutils "^2.0.0"
 
 "@babel/helper-call-delegate@^7.8.3":
@@ -879,13 +879,13 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
-"@babel/plugin-transform-react-inline-elements@^7.7.4":
-  version "7.7.4"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-react-inline-elements/-/plugin-transform-react-inline-elements-7.7.4.tgz#356c48c44b22bb9db7ed205800c04d65976f59cd"
-  integrity sha512-x6Gao9Ef3TCItoh1MsotH25mBAz/CjS3uECoprrgJX5poXTqKsH3Od3M8DlRotSNTp48nuniztkE8thWY/MKIA==
+"@babel/plugin-transform-react-inline-elements@^7.8.3":
+  version "7.8.3"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-react-inline-elements/-/plugin-transform-react-inline-elements-7.8.3.tgz#fc234d02a35bb188ee3f933d068824e067e42b23"
+  integrity sha512-CGKUlW3vtgk6YYrIMyfpohmmpILnaeFwszqwTIcem2LQkK1qWJj5w2yTZ7LJr2IR8F0XQ60AZoM8jgAB4zpxCg==
   dependencies:
-    "@babel/helper-builder-react-jsx" "^7.7.4"
-    "@babel/helper-plugin-utils" "^7.0.0"
+    "@babel/helper-builder-react-jsx" "^7.8.3"
+    "@babel/helper-plugin-utils" "^7.8.3"
 
 "@babel/plugin-transform-react-jsx-self@^7.7.4":
   version "7.7.4"
