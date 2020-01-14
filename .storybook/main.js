@@ -4,6 +4,7 @@ const { join, resolve } = require('path')
 const mdxCompiler = require('@storybook/addon-docs/mdx-compiler-plugin')
 
 const rootDir = resolve(__dirname, '..')
+const srcDir = join(rootDir, 'src')
 
 module.exports = {
   addons: [
@@ -36,7 +37,7 @@ module.exports = {
 
     config.module.rules.push({
       test: /\.ts(x)?$/,
-      include: [join(rootDir, '.storybook'), join(rootDir, 'src')],
+      include: [join(rootDir, '.storybook'), srcDir],
       loader: require.resolve('babel-loader'),
       options: {
         cacheCompression: isProd,
@@ -47,7 +48,7 @@ module.exports = {
     })
 
     config.resolve.extensions.push('.ts', '.tsx')
-    config.resolve.modules.push(join(rootDir, 'src'))
+    config.resolve.modules.push(srcDir)
 
     return config
   },

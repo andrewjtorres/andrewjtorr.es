@@ -22,6 +22,7 @@ type Target =
 
 const rootDir = resolve(__dirname, '..')
 const buildDir = join(rootDir, 'build')
+const srcDir = join(rootDir, 'src')
 
 const env = process.env.NODE_ENV ?? 'development'
 const isProd = /^prod(uction)?$/i.test(env)
@@ -61,7 +62,7 @@ const createConfig = (target: Target, configFactory: ConfigFactory) =>
             },
             {
               test: /\.ts(x)?$/,
-              include: join(rootDir, 'src'),
+              include: srcDir,
               loader: require.resolve('babel-loader'),
               options: {
                 cacheCompression: isRelease,
@@ -116,7 +117,7 @@ const createConfig = (target: Target, configFactory: ConfigFactory) =>
     ],
     resolve: {
       extensions: ['.js', '.json', '.mjs', '.ts', '.tsx', '.wasm'],
-      modules: ['node_modules', join(rootDir, 'src')],
+      modules: ['node_modules', srcDir],
     },
     stats: {
       cached: isVerbose,
