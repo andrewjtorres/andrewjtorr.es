@@ -11,9 +11,6 @@ const createConfig = ({ caller, env }) => {
 
   return {
     plugins: [
-      '@babel/proposal-nullish-coalescing-operator',
-      '@babel/proposal-optional-chaining',
-      '@babel/syntax-dynamic-import',
       ...(isProd
         ? [
             '@babel/transform-react-constant-elements',
@@ -22,7 +19,7 @@ const createConfig = ({ caller, env }) => {
         : []),
       ['@babel/transform-runtime', { corejs: 3, helpers: false }],
       '@loadable/babel-plugin',
-      ...(isTest ? ['dynamic-import-node'] : ['polished']),
+      ...(isTest ? [] : ['polished']),
       'graphql-tag',
       ['styled-components', { displayName: isDev, pure: isProd }],
     ],
