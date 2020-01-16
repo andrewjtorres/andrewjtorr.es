@@ -93,7 +93,7 @@
     "@semantic-release/github": "^6.0.1",
     "@semantic-release/release-notes-generator": "^7.3.5",
     "@storybook/addon-a11y": "^5.3.4",
-    "@storybook/addon-docs": "^5.3.3",
+    "@storybook/addon-docs": "^5.3.4",
     "@storybook/addon-knobs": "^5.3.4",
     "@storybook/addons": "^5.3.4",
     "@storybook/react": "^5.3.4",
