@@ -4,7 +4,6 @@ import { create } from '@storybook/theming'
 
 addons.setConfig({
   selectedPanel: PANEL_ID,
-  showRoots: true,
   theme: create({
     base: 'light',
     brandTitle: 'andrewjtorr.es',

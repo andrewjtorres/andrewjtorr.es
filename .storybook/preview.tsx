@@ -19,4 +19,11 @@ addDecorator(story => (
   </ThemeProvider>
 ))
 
-addParameters({ docs: { container: DocsContainer, page: DocsPage } })
+addParameters({
+  docs: { container: DocsContainer, page: DocsPage },
+  options: {
+    showRoots: true,
+    storySort: ({ 1: a }: any, { 1: b }: any) =>
+      a.kind === b.kind ? 0 : a.id.localeCompare(b.id, 'en', { numeric: true }),
+  },
+})
