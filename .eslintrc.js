@@ -3,6 +3,7 @@
 const typescriptPlugin = require('@typescript-eslint/eslint-plugin')
 const prettierTypescriptConfig = require('eslint-config-prettier/@typescript-eslint')
 const jestPlugin = require('eslint-plugin-jest')
+const jestDomPlugin = require('eslint-plugin-jest-dom')
 
 module.exports = {
   plugins: [
@@ -73,8 +74,14 @@ module.exports = {
         'src/**/?(*.)test.ts?(x)',
       ],
       globals: jestPlugin.environments.globals.globals,
-      plugins: jestPlugin.configs.recommended.plugins,
-      rules: jestPlugin.configs.recommended.rules,
+      plugins: [
+        ...jestPlugin.configs.recommended.plugins,
+        ...jestDomPlugin.configs.recommended.plugins,
+      ],
+      rules: {
+        ...jestPlugin.configs.recommended.rules,
+        ...jestDomPlugin.configs.recommended.rules,
+      },
     },
   ],
   settings: {
