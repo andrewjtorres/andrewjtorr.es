@@ -9,13 +9,8 @@ import GlobalStyle from 'styles/global'
 import theme from 'styles/theme'
 import { InitializationQueryData, initializationQuery } from './graphql'
 
-const Home = loadable(() =>
-  import(/* webpackChunkName: 'home' */ 'routes/home')
-)
-
-const NotFound = loadable(() =>
-  import(/* webpackChunkName: 'not-found' */ 'routes/not-found')
-)
+const Home = loadable(() => import('routes/home'))
+const NotFound = loadable(() => import('routes/not-found'))
 
 const Root: React.FunctionComponent = () => {
   const { currentLocale = 'en', translations = [] } =
