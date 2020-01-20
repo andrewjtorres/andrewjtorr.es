@@ -222,12 +222,10 @@
     "*.{js,ts,tsx}": [
       "eslint --fix",
       "stylelint",
-      "jest --bail --findRelatedTests",
-      "git add"
+      "jest --bail --findRelatedTests"
     ],
     "*.{json,md,mdx,yml}": [
-      "prettylint --fix",
-      "git add"
+      "prettylint --fix"
     ]
   }
 }
