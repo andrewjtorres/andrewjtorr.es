@@ -98,7 +98,7 @@
     "@storybook/addons": "^5.3.7",
     "@storybook/react": "^5.3.7",
     "@storybook/theming": "^5.3.7",
-    "@svgr/webpack": "^5.0.1",
+    "@svgr/webpack": "^5.1.0",
     "@testing-library/jest-dom": "4.2.4",
     "@testing-library/react": "^9.4.0",
     "@types/archiver": "^3.0.0",
