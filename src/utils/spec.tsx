@@ -1,11 +1,11 @@
 import {
   History,
   LocationProvider,
-  LocationProviderRenderFn,
   createHistory,
   createMemorySource,
 } from '@reach/router'
-import { render } from '@testing-library/react'
+import { Queries, queries } from '@testing-library/dom'
+import { RenderOptions, render } from '@testing-library/react'
 import React from 'react'
 import { IntlConfig, IntlProvider } from 'react-intl'
 import { DefaultTheme, ThemeProvider } from 'styled-components'
@@ -18,14 +18,16 @@ type Theme =
   | AnyIfEmpty<DefaultTheme>
   | ((theme: AnyIfEmpty<DefaultTheme>) => AnyIfEmpty<DefaultTheme>)
 
-interface Options extends Partial<IntlConfig> {
+interface Options<TQueries extends Queries = typeof queries>
+  extends Partial<IntlConfig>,
+    RenderOptions<TQueries> {
   history?: History
   initialPath?: string
   theme?: Theme
 }
 
-export const renderWithContext = (
-  node: React.ReactNode | LocationProviderRenderFn,
+export const renderWithContext = <TQueries extends Queries>(
+  ui: React.ReactElement,
   {
     defaultFormats,
     defaultLocale = 'en',
@@ -38,13 +40,14 @@ export const renderWithContext = (
     textComponent,
     theme = defaultTheme,
     timeZone,
-  }: Options = {}
+    ...restOptions
+  }: Options<TQueries> = {}
 ) => {
   const history =
     providedHistory ?? createHistory(createMemorySource(initialPath))
 
   return {
-    ...render(
+    ...render<TQueries>(
       <IntlProvider
         defaultFormats={defaultFormats}
         defaultLocale={defaultLocale}
@@ -56,9 +59,10 @@ export const renderWithContext = (
         timeZone={timeZone}
       >
         <ThemeProvider theme={theme}>
-          <LocationProvider history={history}>{node}</LocationProvider>
+          <LocationProvider history={history}>{ui}</LocationProvider>
         </ThemeProvider>
-      </IntlProvider>
+      </IntlProvider>,
+      restOptions
     ),
     history,
   }
