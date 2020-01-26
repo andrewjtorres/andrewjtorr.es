@@ -6,7 +6,7 @@ import styled, { css } from 'styled-components'
 import BaseLogoIcon from 'assets/logo.svg'
 import { container, medium, untilMedium } from 'styles/mixins'
 
-type LayoutProps = React.HTMLAttributes<HTMLDivElement>
+export type LayoutProps = React.HTMLAttributes<HTMLDivElement>
 
 const Root = styled.div`
   display: flex;
@@ -65,26 +65,26 @@ const LogoIcon = styled(BaseLogoIcon)`
   height: ${rem(32)};
 `
 
-const Layout = React.forwardRef<HTMLDivElement, LayoutProps>(function Layout(
-  { children, ...props }: LayoutProps,
-  ref?: React.Ref<HTMLDivElement>
-) {
-  return (
-    <Root ref={ref} {...props}>
-      <header>
-        <Navbar aria-label="main navigation">
-          <Container>
-            <Brand>
-              <Link aria-label="home" data-testid="logo" to="/">
-                <LogoIcon />
-              </Link>
-            </Brand>
-          </Container>
-        </Navbar>
-      </header>
-      {children}
-    </Root>
-  )
-})
-
-export default Layout
+export const Layout = React.forwardRef<HTMLDivElement, LayoutProps>(
+  function Layout(
+    { children, ...props }: LayoutProps,
+    ref?: React.Ref<HTMLDivElement>
+  ) {
+    return (
+      <Root ref={ref} {...props}>
+        <header>
+          <Navbar aria-label="main navigation">
+            <Container>
+              <Brand>
+                <Link aria-label="home" data-testid="logo" to="/">
+                  <LogoIcon />
+                </Link>
+              </Brand>
+            </Container>
+          </Navbar>
+        </header>
+        {children}
+      </Root>
+    )
+  }
+)

@@ -12,12 +12,16 @@ import { InitializationQueryData, initializationQuery } from './graphql'
 const Home = loadable(() => import('routes/home'))
 const NotFound = loadable(() => import('routes/not-found'))
 
-const Root: React.FunctionComponent = () => {
+export const Root: React.FunctionComponent = () => {
   const { currentLocale = 'en', translations = [] } =
     useQuery<InitializationQueryData>(initializationQuery)?.data ?? {}
 
-  const messages = translations.reduce(
-    (acc, { id, message }) => ({ ...acc, [id]: message }),
+  const messages = translations.reduce<Record<string, string>>(
+    (acc, { id, message }) => {
+      acc[id] = message // eslint-disable-line no-param-reassign
+
+      return acc
+    },
     {}
   )
 
@@ -39,5 +43,3 @@ const Root: React.FunctionComponent = () => {
     </React.StrictMode>
   )
 }
-
-export default Root

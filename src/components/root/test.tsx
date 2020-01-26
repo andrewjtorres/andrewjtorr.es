@@ -4,26 +4,24 @@ import React from 'react'
 
 import { resolvers } from 'store'
 import { renderWithContext } from 'utils/spec'
-import { QueriedTranslation, initializationQuery } from './graphql'
-import Root from '.'
+import { InitializationQueryData, initializationQuery } from './graphql'
+import { Root } from '.'
 
-const queriedTranslations: QueriedTranslation[] = [
-  {
-    __typename: 'Translation',
-    id: 'path.to.file.a',
-    message: 'message a',
-    defaultMessage: 'default message a',
-    description: 'description a',
-  },
-]
+const data: InitializationQueryData = {
+  currentLocale: 'en',
+  translations: [
+    {
+      __typename: 'Translation',
+      id: 'path.to.file.a',
+      message: 'message a',
+      defaultMessage: 'default message a',
+      description: 'description a',
+    },
+  ],
+}
 
 const mocks: MockedResponse[] = [
-  {
-    request: { query: initializationQuery },
-    result: {
-      data: { currentLocale: 'en', translations: queriedTranslations },
-    },
-  },
+  { request: { query: initializationQuery }, result: { data } },
 ]
 
 test('should render correctly', async () => {

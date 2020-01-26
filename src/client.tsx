@@ -11,7 +11,7 @@ import React from 'react'
 import deepForceUpdate from 'react-deep-force-update'
 import { hydrate, render } from 'react-dom'
 
-import Root from './components/root'
+import { Root } from './components/root'
 import { resolvers, typeDefs } from './store'
 import { createApolloClient, createErrorLink } from './utils/apollo'
 import { createPath } from './utils/history'

@@ -2,7 +2,7 @@ import { fireEvent, screen } from '@testing-library/react'
 import React from 'react'
 
 import { renderWithContext } from 'utils/spec'
-import Layout from '.'
+import { Layout } from '.'
 
 test('should render correctly', () => {
   renderWithContext(

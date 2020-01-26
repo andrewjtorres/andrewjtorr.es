@@ -6,7 +6,7 @@ import fixingTheMustacheUrl from 'assets/fixing-the-mustache.png'
 
 type StateKey = keyof State
 
-interface Props extends React.HtmlHTMLAttributes<HTMLElement> {
+export interface HtmlProps extends React.HtmlHTMLAttributes<HTMLHtmlElement> {
   alternateLocales?: string[]
   children: string
   description?: string
@@ -22,7 +22,7 @@ interface State {
   __APOLLO_STATE__: Record<string, any>
 }
 
-const Html: React.FunctionComponent<Props> = ({
+export const Html: React.FunctionComponent<HtmlProps> = ({
   alternateLocales = [],
   children,
   description = 'Personal website of Andrew Torres',
@@ -33,7 +33,7 @@ const Html: React.FunctionComponent<Props> = ({
   styles,
   title = 'Andrew Torres',
   ...props
-}: Props) => (
+}: HtmlProps) => (
   <html lang={lang} {...props}>
     <head>
       <meta charSet="utf-8" />
@@ -110,5 +110,3 @@ const Html: React.FunctionComponent<Props> = ({
     </body>
   </html>
 )
-
-export default Html

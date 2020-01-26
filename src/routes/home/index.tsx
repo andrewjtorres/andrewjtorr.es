@@ -9,10 +9,10 @@ import BaseGitHub from 'assets/github.svg'
 import BaseGitLab from 'assets/gitlab.svg'
 import BaseLinkedIn from 'assets/linkedin.svg'
 import BaseTwitter from 'assets/twitter.svg'
-import Layout from 'components/layout'
+import { Layout } from 'components/layout'
 import { container, isHiddenSmall, isHiddenUntilSmall } from 'styles/mixins'
 
-type Props = RouteComponentProps
+type HomeProps = RouteComponentProps
 
 const github = hsl(0, 0.05, 0.09)
 const gitlab = hsl(8, 0.76, 0.52)
@@ -253,7 +253,7 @@ const Twitter = styled(BaseTwitter)`
   ${icon}
 `
 
-const Home: React.FunctionComponent<Props> = (props: Props) => {
+const Home: React.FunctionComponent<HomeProps> = (props: HomeProps) => {
   const { formatMessage } = useIntl()
   const links: HTMLAnchorElement[] = []
   const mediumLinkContainer = React.useRef<HTMLDivElement>()
