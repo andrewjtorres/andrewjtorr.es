@@ -36,7 +36,7 @@ const mergeToFile = async (
   const file = join(rootDir, `src/i18n/translations/${locale}.json`)
 
   try {
-    const data: Translation[] = JSON.parse(await readFile(file))
+    const data: Translation[] = JSON.parse((await readFile(file)) as string)
 
     data.forEach(translation => {
       originalTranslations[translation.id] = translation
