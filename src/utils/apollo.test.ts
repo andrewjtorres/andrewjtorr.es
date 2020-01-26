@@ -60,9 +60,7 @@ describe('createApolloClient', () => {
 
     expect(
       client.readQuery<LocalesQueryData>({ query })
-    ).toMatchObject({
-      locales: ['es'],
-    })
+    ).toMatchObject({ locales: ['es'] })
 
     await client.resetStore()
 

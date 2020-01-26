@@ -1,3 +1,4 @@
+import { screen } from '@testing-library/react'
 import React from 'react'
 
 import { renderWithContext } from 'utils/spec'
@@ -16,13 +17,14 @@ test('should render correctly', () => {
     }),
   })
 
-  const { getByTestId } = renderWithContext(<Home />)
-  const github = getByTestId('github')
-  const gitlab = getByTestId('gitlab')
-  const imageContainer = getByTestId('image-container')
-  const linkContainer = getByTestId('link-container')
-  const linkedin = getByTestId('linkedin')
-  const twitter = getByTestId('twitter')
+  renderWithContext(<Home />)
+
+  const github = screen.getByTestId('github')
+  const gitlab = screen.getByTestId('gitlab')
+  const imageContainer = screen.getByTestId('image-container')
+  const linkContainer = screen.getByTestId('link-container')
+  const linkedin = screen.getByTestId('linkedin')
+  const twitter = screen.getByTestId('twitter')
 
   expect(imageContainer).not.toContainElement(github)
   expect(imageContainer).not.toContainElement(gitlab)
@@ -49,13 +51,14 @@ test('should render correctly on medium to extra large screens', () => {
     }),
   })
 
-  const { getByTestId } = renderWithContext(<Home />)
-  const github = getByTestId('github')
-  const gitlab = getByTestId('gitlab')
-  const imageContainer = getByTestId('image-container')
-  const linkContainer = getByTestId('link-container')
-  const linkedin = getByTestId('linkedin')
-  const twitter = getByTestId('twitter')
+  renderWithContext(<Home />)
+
+  const github = screen.getByTestId('github')
+  const gitlab = screen.getByTestId('gitlab')
+  const imageContainer = screen.getByTestId('image-container')
+  const linkContainer = screen.getByTestId('link-container')
+  const linkedin = screen.getByTestId('linkedin')
+  const twitter = screen.getByTestId('twitter')
 
   expect(imageContainer).toContainElement(github)
   expect(imageContainer).toContainElement(gitlab)
@@ -70,8 +73,9 @@ test('should render correctly on medium to extra large screens', () => {
 })
 
 test("clicking the linkedin icon should navigate to andrew torres' linkedin profile", () => {
-  const { getByTestId } = renderWithContext(<Home />)
-  const icon = getByTestId('linkedin')
+  renderWithContext(<Home />)
+
+  const icon = screen.getByTestId('linkedin')
 
   expect(icon).toBeInTheDocument()
   expect(icon).toHaveAttribute(
@@ -81,24 +85,27 @@ test("clicking the linkedin icon should navigate to andrew torres' linkedin prof
 })
 
 test("clicking the github icon should navigate to andrew torres' github profile", () => {
-  const { getByTestId } = renderWithContext(<Home />)
-  const icon = getByTestId('github')
+  renderWithContext(<Home />)
+
+  const icon = screen.getByTestId('github')
 
   expect(icon).toBeInTheDocument()
   expect(icon).toHaveAttribute('href', 'https://github.com/ajtorres9')
 })
 
 test("clicking the gitlab icon should navigate to andrew torres' gitlab profile", () => {
-  const { getByTestId } = renderWithContext(<Home />)
-  const icon = getByTestId('gitlab')
+  renderWithContext(<Home />)
+
+  const icon = screen.getByTestId('gitlab')
 
   expect(icon).toBeInTheDocument()
   expect(icon).toHaveAttribute('href', 'https://gitlab.com/ajtorres9')
 })
 
 test("clicking the twitter icon should navigate to andrew torres' twitter profile", () => {
-  const { getByTestId } = renderWithContext(<Home />)
-  const icon = getByTestId('twitter')
+  renderWithContext(<Home />)
+
+  const icon = screen.getByTestId('twitter')
 
   expect(icon).toBeInTheDocument()
   expect(icon).toHaveAttribute('href', 'https://twitter.com/ajtorres333')
