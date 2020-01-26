@@ -5,10 +5,18 @@ import { promisify } from 'util'
 import { ZlibOptions } from 'zlib'
 import archiver from 'archiver'
 import glob, { IOptions as GlobOptions } from 'glob'
-import mkdirp from 'mkdirp'
 import rimraf from 'rimraf'
 
 type CopyDirOptions = Omit<GlobOptions, 'cwd'>
+
+type MakeDirOptions =
+  | null
+  | number
+  | string
+  | {
+      mode?: number
+      recursive?: boolean
+    }
 
 type ZipDirOptions = Omit<GlobOptions, 'cwd'> & ZlibOptions
 
@@ -72,7 +80,10 @@ export const copyFile = (source: string, target: string) =>
     readStream.pipe(writeStream)
   })
 
-export const makeDir = (path: string) => promisify(mkdirp)(path)
+export const makeDir = (
+  path: string,
+  options: MakeDirOptions = { recursive: true }
+) => promisify(fs.mkdir)(path, options)
 
 export const readDir = (path: string, options: GlobOptions) =>
   promisify(glob)(path, options)
