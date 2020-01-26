@@ -36,10 +36,10 @@ interface HashFileOptions extends HashOptions {
 export const checksumFile = (
   source: string,
   target: string,
-  { algorithm = 'sha256', digestEncoding, ...options }: HashFileOptions = {}
+  { algorithm = 'sha256', digestEncoding, ...restOptions }: HashFileOptions = {}
 ) =>
   new Promise((resolve, reject) => {
-    const hash = crypto.createHash(algorithm, { ...options })
+    const hash = crypto.createHash(algorithm, { ...restOptions })
     const readStream = fs.createReadStream(source)
     const writeStream = fs.createWriteStream(target)
     let callbackCalled = false
@@ -99,9 +99,14 @@ export const readDir = (path: string, options?: GlobOptions) =>
 export const copyDir = async (
   source: string,
   target: string,
-  { dot = true, nosort = true, ...options }: CopyDirOptions = {}
+  { dot = true, nosort = true, ...restOptions }: CopyDirOptions = {}
 ) => {
-  const dirs = await readDir('**/*.*', { cwd: source, dot, nosort, ...options })
+  const dirs = await readDir('**/*.*', {
+    cwd: source,
+    dot,
+    nosort,
+    ...restOptions,
+  })
 
   await Promise.all(
     dirs.map(async dir => {
@@ -137,7 +142,7 @@ export const zipDir = async (
     nosort = true,
     strategy,
     windowBits,
-    ...options
+    ...restOptions
   }: ZipDirOptions = {}
 ) => {
   const archive = archiver('zip', {
@@ -158,6 +163,6 @@ export const zipDir = async (
   archive.pipe(fs.createWriteStream(target))
 
   await archive
-    .glob('**/*.*', { cwd: source, dot, nosort, ...options })
+    .glob('**/*.*', { cwd: source, dot, nosort, ...restOptions })
     .finalize()
 }

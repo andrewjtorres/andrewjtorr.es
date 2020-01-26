@@ -40,7 +40,7 @@ export const createApolloClient = ({
   defaults,
   links = [],
   preloadedCache,
-  ...options
+  ...restOptions
 }: Options = {}) => {
   let cache = providedCache ?? createInMemoryCache()
 
@@ -56,7 +56,7 @@ export const createApolloClient = ({
     assumeImmutableResults: true,
     cache,
     link: ApolloLink.from(links),
-    ...options,
+    ...restOptions,
   })
 
   if (defaults) {

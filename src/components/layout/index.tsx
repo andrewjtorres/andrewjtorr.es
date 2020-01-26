@@ -67,11 +67,11 @@ const LogoIcon = styled(BaseLogoIcon)`
 
 export const Layout = React.forwardRef<HTMLDivElement, LayoutProps>(
   function Layout(
-    { children, ...props }: LayoutProps,
+    { children, ...restProps }: LayoutProps,
     ref?: React.Ref<HTMLDivElement>
   ) {
     return (
-      <Root ref={ref} {...props}>
+      <Root ref={ref} {...restProps}>
         <header>
           <Navbar aria-label="main navigation">
             <Container>

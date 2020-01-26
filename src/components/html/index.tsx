@@ -32,9 +32,9 @@ export const Html: React.FunctionComponent<HtmlProps> = ({
   state = { __APOLLO_CACHE__: {}, __APOLLO_STATE__: {} },
   styles,
   title = 'Andrew Torres',
-  ...props
+  ...restProps
 }: HtmlProps) => (
-  <html lang={lang} {...props}>
+  <html lang={lang} {...restProps}>
     <head>
       <meta charSet="utf-8" />
       <title>{title}</title>
