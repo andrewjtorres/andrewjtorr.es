@@ -65,7 +65,7 @@
     "express-request-language": "^1.1.15",
     "graphql": "^14.6.0",
     "graphql-tools": "^4.0.6",
-    "polished": "^3.4.2",
+    "polished": "^3.4.3",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-intl": "3.10.0",

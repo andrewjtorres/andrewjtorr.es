@@ -1,11 +1,10 @@
-import { em, hsl, normalize, rem } from 'polished'
-import { createGlobalStyle } from 'styled-components'
+import { em, hsl, rem } from 'polished'
+import { createGlobalStyle, css } from 'styled-components'
 
 import { overflowTouch } from './mixins'
 
-const GlobalStyle = createGlobalStyle`
-  ${normalize()}
-
+const GlobalStyle = createGlobalStyle(
+  ({ theme }) => css`
   *,
   *::before,
   *::after {
@@ -15,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    background-color: ${({ theme }) => theme.colors.white};
+    background-color: ${theme.colors.white};
     box-sizing: border-box;
     font-size: 16px;
     margin: 0;
@@ -28,10 +27,10 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    color: ${({ theme }) => theme.colors.text};
-    font-family: ${({ theme }) => theme.fonts.primary};
+    color: ${theme.colors.text};
+    font-family: ${theme.fonts.primary};
     font-size: ${em(16)};
-    font-weight: ${({ theme }) => theme.fontWeights.normal};
+    font-weight: ${theme.fontWeights.normal};
     line-height: 1.5;
     margin: 0;
     padding: 0;
@@ -48,7 +47,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: ${({ theme }) => theme.colors.link};
+    color: ${theme.colors.link};
     cursor: pointer;
     text-decoration: none;
 
@@ -57,7 +56,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     &:hover {
-      color: ${({ theme }) => theme.linkHoverColor};
+      color: ${theme.linkHoverColor};
     }
   }
 
@@ -87,7 +86,7 @@ const GlobalStyle = createGlobalStyle`
   input,
   select,
   textarea {
-    font-family: ${({ theme }) => theme.fonts.primary};
+    font-family: ${theme.fonts.primary};
     margin: 0;
   }
 
@@ -95,12 +94,12 @@ const GlobalStyle = createGlobalStyle`
   pre {
     -moz-osx-font-smoothing: auto;
     -webkit-font-smoothing: auto;
-    font-family: ${({ theme }) => theme.fonts.code};
+    font-family: ${theme.fonts.code};
   }
 
   code {
-    background-color: ${({ theme }) => theme.colors.codeContrast};
-    color: ${({ theme }) => theme.colors.code};
+    background-color: ${theme.colors.codeContrast};
+    color: ${theme.colors.code};
     font-size: ${em(14)};
     font-weight: 400;
     padding: ${em(4)} ${em(8)};
@@ -126,7 +125,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   hr {
-    background-color: ${({ theme }) => theme.colors.background};
+    background-color: ${theme.colors.background};
     border: none;
     display: block;
     height: 2px;
@@ -147,8 +146,8 @@ const GlobalStyle = createGlobalStyle`
 
   pre {
     ${overflowTouch}
-    background-color: ${({ theme }) => theme.colors.preContrast};
-    color: ${({ theme }) => theme.colors.pre};
+    background-color: ${theme.colors.preContrast};
+    color: ${theme.colors.pre};
     font-size: ${em(14)};
     margin: 0;
     overflow-x: auto;
@@ -174,8 +173,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   strong {
-    color: ${({ theme }) => theme.colors.textStrong};
-    font-weight: ${({ theme }) => theme.fontWeights.bold};
+    color: ${theme.colors.textStrong};
+    font-weight: ${theme.fontWeights.bold};
   }
 
   td,
@@ -193,7 +192,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     th {
-      color: ${({ theme }) => theme.colors.textStrong};
+      color: ${theme.colors.textStrong};
     }
   }
 
@@ -214,7 +213,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::selection {
-    background-color: ${({ theme }) => theme.colors.textSelection};
+    background-color: ${theme.colors.textSelection};
     text-shadow: none;
   }
 
@@ -278,5 +277,6 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 `
+)
 
 export default GlobalStyle
