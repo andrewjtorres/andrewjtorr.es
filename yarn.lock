@@ -966,10 +966,10 @@
     pirates "^4.0.0"
     source-map-support "^0.5.16"
 
-"@babel/runtime-corejs3@^7.7.4", "@babel/runtime-corejs3@^7.8.3":
-  version "7.8.3"
-  resolved "https://registry.yarnpkg.com/@babel/runtime-corejs3/-/runtime-corejs3-7.8.3.tgz#a2445836d0699e5ba77eea2c790ad9ea51e2cd27"
-  integrity sha512-lrIU4aVbmlM/wQPzhEvzvNJskKyYptuXb0fGC0lTQTupTOYtR2Vqbu6/jf8vTr4M8Wt1nIzxVrSvPI5qESa/xA==
+"@babel/runtime-corejs3@^7.7.4", "@babel/runtime-corejs3@^7.8.4":
+  version "7.8.4"
+  resolved "https://registry.yarnpkg.com/@babel/runtime-corejs3/-/runtime-corejs3-7.8.4.tgz#ccc4e042e2fae419c67fa709567e5d2179ed3940"
+  integrity sha512-+wpLqy5+fbQhvbllvlJEVRIpYj+COUWnnsm+I4jZlA8Lo7/MJmBhGTCHyk1/RWfOqBRJ2MbadddG6QltTKTlrg==
   dependencies:
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.2"
@@ -11307,10 +11307,10 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
-lint-staged@^10.0.4:
-  version "10.0.4"
-  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-10.0.4.tgz#89212e005890595e4edb2df63afb486ad8d5ad78"
-  integrity sha512-lTmhvbFCyKKV8wcyuENTccjlsHP9bYtl/Xxe5ZMTwEZ7Qvar78jOGomkf6nzHuQns6vKRUYWS6L9N8s7x+jnXQ==
+lint-staged@^10.0.6:
+  version "10.0.6"
+  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-10.0.6.tgz#62d3f49a09a12e4df876dd8667a09d9a2d39495c"
+  integrity sha512-pz3k0J2/+sy2a2pUsMMCpbsChcK8nIyDIf73xAHPqXQRPogBedb0r/nHDKgrtu9v9cZ96Fc60NieoNMQoQU65Q==
   dependencies:
     chalk "^3.0.0"
     commander "^4.0.1"
