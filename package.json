@@ -87,7 +87,7 @@
     "@loadable/babel-plugin": "^5.12.0",
     "@loadable/webpack-plugin": "^5.12.0",
     "@mdx-js/loader": "^1.5.5",
-    "@semantic-release/commit-analyzer": "^8.0.0",
+    "@semantic-release/commit-analyzer": "^8.0.1",
     "@semantic-release/exec": "^5.0.0",
     "@semantic-release/git": "^9.0.0",
     "@semantic-release/github": "^7.0.1",
