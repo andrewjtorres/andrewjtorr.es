@@ -3,7 +3,7 @@ import {
   InMemoryCacheConfig as InMemoryCacheOptions,
   NormalizedCacheObject,
 } from 'apollo-cache-inmemory'
-import ApolloClient, { ApolloClientOptions } from 'apollo-client'
+import { ApolloClient, ApolloClientOptions } from 'apollo-client'
 import { ApolloLink } from 'apollo-link'
 import { ErrorLink } from 'apollo-link-error'
 

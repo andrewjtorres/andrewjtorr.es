@@ -1,5 +1,5 @@
 import { PANEL_ID } from '@storybook/addon-knobs'
-import addons from '@storybook/addons'
+import { addons } from '@storybook/addons'
 import { create } from '@storybook/theming'
 
 addons.setConfig({

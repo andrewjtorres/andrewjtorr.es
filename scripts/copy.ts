@@ -1,5 +1,5 @@
 import { dirname, join, relative } from 'path'
-import chokidar from 'chokidar'
+import { watch } from 'chokidar'
 
 import packageConfig from '../package.json'
 import {
@@ -38,10 +38,9 @@ const copy = async () => {
   ])
 
   if (isWatch) {
-    const watcher = chokidar.watch(
-      ['public/**/*', 'src/i18n/translations/**/*'],
-      { ignoreInitial: true }
-    )
+    const watcher = watch(['public/**/*', 'src/i18n/translations/**/*'], {
+      ignoreInitial: true,
+    })
 
     // eslint-disable-next-line @typescript-eslint/no-misused-promises
     watcher.on('all', async (eventName, path) => {

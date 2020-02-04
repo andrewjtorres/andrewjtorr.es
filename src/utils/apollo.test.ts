@@ -1,5 +1,5 @@
 import { InMemoryCache } from 'apollo-cache-inmemory'
-import ApolloClient from 'apollo-client'
+import { ApolloClient } from 'apollo-client'
 import { ApolloLink, Observable, execute } from 'apollo-link'
 import { ErrorLink } from 'apollo-link-error'
 import { GraphQLError } from 'graphql'

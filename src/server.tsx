@@ -3,9 +3,9 @@ import { ApolloProvider } from '@apollo/react-hooks'
 import { renderToStringWithData } from '@apollo/react-ssr'
 import { ChunkExtractor, ChunkExtractorManager } from '@loadable/server'
 import { ServerLocation, isRedirect } from '@reach/router'
-import SchemaLink from 'apollo-link-schema'
+import { SchemaLink } from 'apollo-link-schema'
 import { ApolloServer } from 'apollo-server-express'
-import bodyParser from 'body-parser'
+import { json, urlencoded } from 'body-parser'
 import compression from 'compression'
 import cookieParser from 'cookie-parser'
 import cors from 'cors'
@@ -38,8 +38,8 @@ const server = new ApolloServer({
 })
 
 app
-  .use(bodyParser.json())
-  .use(bodyParser.urlencoded({ extended: true }))
+  .use(json())
+  .use(urlencoded({ extended: true }))
   .use(compression())
   .use(cookieParser())
   .use(cors())

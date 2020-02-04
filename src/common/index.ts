@@ -1,6 +1,6 @@
 import { ApolloCache } from 'apollo-cache'
 import { IdGetter, NormalizedCacheObject } from 'apollo-cache-inmemory'
-import ApolloClient from 'apollo-client'
+import { ApolloClient } from 'apollo-client'
 import { FragmentMap } from 'apollo-utilities'
 import { Response } from 'express'
 import { FieldNode } from 'graphql'

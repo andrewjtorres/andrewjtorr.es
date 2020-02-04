@@ -1,7 +1,7 @@
 import { join, resolve } from 'path'
 import { PluginItem, loadPartialConfig, transformFileAsync } from '@babel/core'
 import { ExtractedMessageDescriptor } from 'babel-plugin-react-intl'
-import chokidar from 'chokidar'
+import { watch } from 'chokidar'
 
 import { Translation } from '../src/common'
 import { locales } from '../src/config'
@@ -130,7 +130,7 @@ const extractTranslations = async () => {
   await updateTranslations()
 
   if (isWatch) {
-    const watcher = chokidar.watch('src/**/*.ts?(x)', {
+    const watcher = watch('src/**/*.ts?(x)', {
       ignoreInitial: true,
       ignored: 'src/**/?(*.)test.ts?(x)',
     })
