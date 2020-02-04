@@ -97,7 +97,7 @@
     "@storybook/addon-knobs": "^5.3.11",
     "@storybook/addons": "^5.3.12",
     "@storybook/react": "^5.3.11",
-    "@storybook/theming": "^5.3.11",
+    "@storybook/theming": "^5.3.12",
     "@svgr/webpack": "^5.1.0",
     "@testing-library/dom": "^6.12.2",
     "@testing-library/jest-dom": "^5.1.1",
