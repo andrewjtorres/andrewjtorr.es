@@ -2282,7 +2282,7 @@
     prop-types "^15.7.2"
     regenerator-runtime "^0.13.3"
 
-"@storybook/theming@5.3.11", "@storybook/theming@^5.3.11":
+"@storybook/theming@5.3.11":
   version "5.3.11"
   resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-5.3.11.tgz#5e74fc85a9a4782cd558f6f25114968c877382ef"
   integrity sha512-//9Tg9/dLXzsZhI5EIRq9YfVmpu1yUUbNOf0H5I8yTvAFL99YLwdEx5ie20Z5kCPTghft6dBGuAM5pIzszrEyQ==
@@ -2300,7 +2300,7 @@
     resolve-from "^5.0.0"
     ts-dedent "^1.1.0"
 
-"@storybook/theming@5.3.12":
+"@storybook/theming@5.3.12", "@storybook/theming@^5.3.12":
   version "5.3.12"
   resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-5.3.12.tgz#70908dc23c0635765256fc4dbb7cd6d318886dfe"
   integrity sha512-LwyFBbxYtm2rr86mA0d+oYisIpW2GrDqmv0ZGEmx9EqKK1JwG3N99VSK7iHig6vpNu42LHLakuaqK55H2Q7YcA==
