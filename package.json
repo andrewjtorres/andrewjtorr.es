@@ -106,7 +106,7 @@
     "@types/aws-serverless-express": "^3.3.3",
     "@types/body-parser": "^1.17.1",
     "@types/browser-sync": "^2.26.1",
-    "@types/compression": "^1.0.1",
+    "@types/compression": "^1.7.0",
     "@types/cookie-parser": "^1.4.2",
     "@types/cors": "^2.8.6",
     "@types/dotenv-safe": "^8.1.0",
