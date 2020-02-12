@@ -11,7 +11,7 @@ interface TranslationsQueryData {
 }
 
 jest.mock('fs')
-jest.mock('config', () => ({ locales: ['en'] }))
+jest.mock('../config', () => ({ locales: ['en'] }))
 
 const readFile = (path: string, _options: any, callback: Callback) => {
   const error = new Error(`EACCES: permission denied, open '${path}'`)

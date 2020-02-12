@@ -3,8 +3,8 @@ import { join } from 'path'
 import { promisify } from 'util'
 import gql from 'graphql-tag'
 
+import { locales } from '../config'
 import { Context, Resolvers } from 'common'
-import { locales } from 'config'
 
 export const typeDefs = gql`
   type Query {
