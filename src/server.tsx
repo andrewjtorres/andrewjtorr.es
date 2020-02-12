@@ -105,9 +105,7 @@ app.get('*', async (req: Request, res: Response, next: NextFunction) => {
       </Html>
     )
 
-    res.status(200)
-
-    return res.send(`<!doctype html>${html}`)
+    return res.status(200).send(`<!doctype html>${html}`)
   } catch (error) {
     return isRedirect(error) ? res.redirect(error.uri) : next(error)
   }
