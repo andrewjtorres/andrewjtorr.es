@@ -33,6 +33,7 @@ module.exports = {
       'never',
       { ignore: ['after-declaration'] },
     ],
+    'value-keyword-case': null,
     'order/order': [
       'custom-properties',
       'dollar-variables',

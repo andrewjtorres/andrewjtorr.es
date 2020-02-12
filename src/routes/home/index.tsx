@@ -90,11 +90,11 @@ const Content = styled.p`
 `
 
 const Br = styled.br`
-  ${isHiddenUntilSmall}
+  ${isHiddenUntilSmall};
 `
 
 const LinkContainer = styled.div`
-  ${isHiddenSmall}
+  ${isHiddenSmall};
   margin-top: ${rem(12)};
 `
 
@@ -238,19 +238,19 @@ const icon = css`
 `
 
 const LinkedIn = styled(BaseLinkedIn)`
-  ${icon}
+  ${icon};
 `
 
 const GitHub = styled(BaseGitHub)`
-  ${icon}
+  ${icon};
 `
 
 const GitLab = styled(BaseGitLab)`
-  ${icon}
+  ${icon};
 `
 
 const Twitter = styled(BaseTwitter)`
-  ${icon}
+  ${icon};
 `
 
 const Home: React.FunctionComponent<HomeProps> = (props: HomeProps) => {
