@@ -28,7 +28,7 @@ module.exports = {
   testMatch: ['<rootDir>/src/**/*(*.)test.ts?(x)'],
   testRunner: 'jest-circus/runner',
   transform: {
-    '^(?!.*\\.(js|json|ts(x)?)$)': '<rootDir>/config/jest/file-transformer.js',
+    '^(?!.*\\.(js|json|ts(x)?)$)': '<rootDir>/config/jest/transformers/file.js',
     '^.+\\.ts(x)?$': require.resolve('babel-jest'),
   },
   transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.js$'],
