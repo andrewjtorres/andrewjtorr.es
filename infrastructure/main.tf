@@ -2,7 +2,7 @@ terraform {
   required_version = ">=0.12"
 
   required_providers {
-    aws = ">=2.46"
+    aws = ">=2.48"
   }
 
   backend "remote" {
@@ -22,7 +22,7 @@ locals {
 }
 
 provider "aws" {
-  version = ">=2.46"
+  version = ">=2.48"
   region  = "us-east-1"
 }
 
