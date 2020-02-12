@@ -19,5 +19,3 @@ coverage
 # Miscellaneous
 .env*
 !.env.example
-.eslintcache
-.stylelintcache

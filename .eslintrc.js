@@ -32,6 +32,7 @@ module.exports = {
     'prettier/standard',
     'prettier/unicorn',
   ],
+  ignorePatterns: ['!**/.*', '.git'],
   rules: {
     'no-console': ['error', { allow: ['error', 'info', 'warn'] }],
     'no-param-reassign': ['error', { props: true }],

@@ -28,6 +28,7 @@ module.exports = {
       },
     ],
   ],
+  ignoreFiles: ['!**/.*', '.git'],
   rules: {
     'declaration-empty-line-before': [
       'never',

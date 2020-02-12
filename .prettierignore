@@ -23,5 +23,3 @@ coverage
 .all-contributorsrc
 .env*
 !.env.example
-.eslintcache
-.stylelintcache

@@ -65,8 +65,10 @@ export const checksumFile = (
     readStream.pipe(hash)
   })
 
-export const cleanDir = (path: string, options?: GlobOptions) =>
-  promisify(rimraf)(path, { glob: options })
+export const cleanDir = (
+  path: string,
+  { nosort = true, silent = true, ...restOptions }: GlobOptions = {}
+) => promisify(rimraf)(path, { glob: { nosort, silent, ...restOptions } })
 
 export const copyFile = (source: string, target: string) =>
   new Promise((resolve, reject) => {
