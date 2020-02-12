@@ -27,7 +27,9 @@ jobs:
         with:
           path: ${{ steps.yarn-cache.outputs.dir }}
           key: ${{ runner.os }}-yarn-cache-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-yarn-cache-
+          restore-keys: |
+            ${{ runner.os }}-yarn-cache-
+            ${{ runner.os }}-
       - name: Install Node dependencies
         run: yarn install --frozen-lockfile
       - name: Lint files, scripts, styles, and types
@@ -52,7 +54,9 @@ jobs:
         with:
           path: ${{ steps.yarn-cache.outputs.dir }}
           key: ${{ runner.os }}-yarn-cache-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-yarn-cache-
+          restore-keys: |
+            ${{ runner.os }}-yarn-cache-
+            ${{ runner.os }}-
       - name: Install Node dependencies
         run: yarn install --frozen-lockfile
       - name: Test units
@@ -85,7 +89,9 @@ jobs:
         with:
           path: ${{ steps.yarn-cache.outputs.dir }}
           key: ${{ runner.os }}-yarn-cache-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-yarn-cache-
+          restore-keys: |
+            ${{ runner.os }}-yarn-cache-
+            ${{ runner.os }}-
       - name: Install Node dependencies
         run: yarn install --frozen-lockfile
       - name: Deploy application
