@@ -189,7 +189,7 @@
     "react-dev-utils": "^10.2.0",
     "react-error-overlay": "^6.0.6",
     "rimraf": "^3.0.2",
-    "semantic-release": "^17.0.3",
+    "semantic-release": "^17.0.4",
     "stylelint": "^13.2.0",
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-standard": "^20.0.0",
