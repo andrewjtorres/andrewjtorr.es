@@ -103,7 +103,7 @@
     "@svgr/webpack": "^5.1.0",
     "@testing-library/dom": "^6.12.2",
     "@testing-library/jest-dom": "^5.1.1",
-    "@testing-library/react": "^9.4.0",
+    "@testing-library/react": "^9.4.1",
     "@types/archiver": "^3.0.0",
     "@types/aws-serverless-express": "^3.3.3",
     "@types/babel__core": "^7.1.5",
