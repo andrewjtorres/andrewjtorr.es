@@ -1078,8 +1078,8 @@
 
 "@emotion/is-prop-valid@0.8.7", "@emotion/is-prop-valid@^0.8.3":
   version "0.8.7"
-  resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-0.8.6.tgz#4757646f0a58e9dec614c47c838e7147d88c263c"
-  integrity sha512-mnZMho3Sq8BfzkYYRVc8ilQTnc8U02Ytp6J1AwM6taQStZ3AhsEJBX2LzhA/LJirNCwM2VtHL3VFIZ+sNJUgUQ==
+  resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-0.8.7.tgz#803449993f436f9a6c67752251ea3fc492a1044c"
+  integrity sha512-OPkKzUeiid0vEKjZqnGcy2mzxjIlCffin+L2C02pdz/bVlt5zZZE2VzO0D3XOPnH0NEeF21QNKSXiZphjr4xiQ==
   dependencies:
     "@emotion/memoize" "0.7.4"
 
@@ -1691,10 +1691,10 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
-"@reach/router@^1.2.1", "@reach/router@^1.3.1":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@reach/router/-/router-1.3.2.tgz#1d9401f2eab6bb814cbfc9a081efc893499b2479"
-  integrity sha512-DBlIGaUMk1XzpGSNzPJhRIWdjo9abLcpfJuru4HsFRjc5xHZzimDeXynv9kwGL1wlyrFP4CRyKWX6ytOsxR/Zg==
+"@reach/router@^1.2.1", "@reach/router@^1.3.3":
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/@reach/router/-/router-1.3.3.tgz#58162860dce6c9449d49be86b0561b5ef46d80db"
+  integrity sha512-gOIAiFhWdiVGSVjukKeNKkCRBLmnORoTPyBihI/jLunICPgxdP30DroAvPQuf1eVfQbfGJQDJkwhJXsNPMnVWw==
   dependencies:
     create-react-context "0.3.0"
     invariant "^2.2.3"
@@ -4576,9 +4576,9 @@ babel-plugin-dynamic-import-node@^2.3.0:
     object.assign "^4.1.0"
 
 babel-plugin-emotion@^10.0.20, babel-plugin-emotion@^10.0.27:
-  version "10.0.27"
-  resolved "https://registry.yarnpkg.com/babel-plugin-emotion/-/babel-plugin-emotion-10.0.27.tgz#59001cf5de847c1d61f2079cd906a90a00d3184f"
-  integrity sha512-SUNYcT4FqhOqvwv0z1oeYhqgheU8qrceLojuHyX17ngo7WtWqN5I9l3IGHzf21Xraj465CVzF4IvOlAF+3ed0A==
+  version "10.0.28"
+  resolved "https://registry.yarnpkg.com/babel-plugin-emotion/-/babel-plugin-emotion-10.0.28.tgz#731133577795ea04e5b1d11aff247fa0ad3fd364"
+  integrity sha512-h25EMmPxYVNOgsEkGIjCv2Ok+HzW/e/b5lf2v2U17T9k6y6g0ku3TG9b+jy94ZrqMh+b/njRF4uOQrwVr28QfQ==
   dependencies:
     "@babel/helper-module-imports" "^7.0.0"
     "@emotion/hash" "0.7.4"
