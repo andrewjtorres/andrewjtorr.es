@@ -7556,10 +7556,10 @@ eslint-plugin-es@^3.0.0:
     eslint-utils "^2.0.0"
     regexpp "^3.0.0"
 
-eslint-plugin-formatjs@^1.5.11:
-  version "1.5.11"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-formatjs/-/eslint-plugin-formatjs-1.5.11.tgz#2a06d4a63d8ed9c19fdd183e561e838865c06757"
-  integrity sha512-83W85Nnw9OQQg46J3xGq5CTkX/240L35TIozEtVNBOA6BZhTMUSYM/0qSqMoIE7SBMCazXoifJ9ynY0Iq4pKAQ==
+eslint-plugin-formatjs@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-formatjs/-/eslint-plugin-formatjs-1.6.0.tgz#027eee50808d826d4822efb517192aab8a83180b"
+  integrity sha512-tG+s0TXV1Gy3RwK5M91S2Y41hXAznQJZD6Q1caAbycUVkvyO/oCoYQXPAH5HjwWQh0T47Vx54qpzHERe2esaTg==
   dependencies:
     "@types/emoji-regex" "^8.0.0"
     emoji-regex "^8.0.0"
