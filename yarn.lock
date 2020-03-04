@@ -2545,15 +2545,16 @@
     "@svgr/plugin-svgo" "^5.2.0"
     loader-utils "^1.2.3"
 
-"@testing-library/dom@^6.11.0", "@testing-library/dom@^6.13.0":
-  version "6.13.0"
-  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-6.13.0.tgz#8509d3cceaebd900c193e9598b911e4690608fe3"
-  integrity sha512-kF1mnDK3eOCtOGapkbQK0fXXL4/mFydTSbyqNTtUHEf9tO9Dt33fwZyVNqeVdGiXRP6r9Ti1Fc56cX7fGr5ZJg==
+"@testing-library/dom@^6.11.0", "@testing-library/dom@^6.14.0":
+  version "6.14.0"
+  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-6.14.0.tgz#0004076fdf7e20a8afdd6b66903a119ff305d1d5"
+  integrity sha512-yy265Ukih04xv7opGUFESRuoOJKyBurN3UoNzHfm3cn0krGXrHZbxDHSPbK0VgpfSsRV5k1ANbIjhCcluqjSiw==
   dependencies:
     "@babel/runtime" "^7.6.2"
     "@sheerun/mutationobserver-shim" "^0.3.2"
     "@types/testing-library__dom" "^6.0.0"
     aria-query "3.0.0"
+    dom-accessibility-api "^0.3.0"
     pretty-format "^24.9.0"
     wait-for-expect "^3.0.0"
 
@@ -6986,6 +6987,11 @@ doctypes@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/doctypes/-/doctypes-1.1.0.tgz#ea80b106a87538774e8a3a4a5afe293de489e0a9"
   integrity sha1-6oCxBqh1OHdOijpKWv4pPeSJ4Kk=
+
+dom-accessibility-api@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/dom-accessibility-api/-/dom-accessibility-api-0.3.0.tgz#511e5993dd673b97c87ea47dba0e3892f7e0c983"
+  integrity sha512-PzwHEmsRP3IGY4gv/Ug+rMeaTIyTJvadCb+ujYXYeIylbHJezIyNToe8KfEgHTCEYyC+/bUghYOGg8yMGlZ6vA==
 
 dom-converter@^0.2:
   version "0.2.0"
