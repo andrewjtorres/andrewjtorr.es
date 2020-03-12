@@ -2553,6 +2553,17 @@
     pretty-format "^25.1.0"
     wait-for-expect "^3.0.2"
 
+"@testing-library/dom@^7.0.1":
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-7.0.1.tgz#33999d6c73341d74baafe2a957d0d2ddf18935a2"
+  integrity sha512-YxJnmr9TjjODHtc8K57la0Rk0ISAC/pw207PkZqiTsnZAbldW+SRLtlkovZ/39oJ+28XeGLqR04CII/JJTn+cw==
+  dependencies:
+    "@babel/runtime" "^7.8.4"
+    "@types/testing-library__dom" "^6.12.1"
+    aria-query "^4.0.2"
+    dom-accessibility-api "^0.3.0"
+    pretty-format "^25.1.0"
+
 "@testing-library/jest-dom@^5.1.1":
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/@testing-library/jest-dom/-/jest-dom-5.1.1.tgz#e88a5c08f9b9f36b384f948a0532eae2abbc8204"
