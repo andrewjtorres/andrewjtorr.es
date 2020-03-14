@@ -1833,10 +1833,10 @@
     ts-dedent "^1.1.0"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-docs@^5.3.14":
-  version "5.3.14"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-docs/-/addon-docs-5.3.14.tgz#4c12d24bb035482749aeb16476bdf09dd8ddcef9"
-  integrity sha512-UFu0ERWbJeK/B6gXDLrCSB1M5TMz0+noAnyeUijWaeMEC1CouDL++JLlnEUyHgRLhrpLZKiajJIcm5FfNOT2gw==
+"@storybook/addon-docs@^5.3.15":
+  version "5.3.15"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-docs/-/addon-docs-5.3.15.tgz#e9cd734b43f23e4896997558531bf13b49e7bdee"
+  integrity sha512-jgysy00jIHHtYnaZuwDKUL2rc1E5mgcQNUXnMczIwlT5mslvDb542qAz50esMvFMnHUcKeW0nsUgplx2DjDXeg==
   dependencies:
     "@babel/generator" "^7.4.0"
     "@babel/parser" "^7.4.2"
@@ -1846,14 +1846,14 @@
     "@mdx-js/loader" "^1.5.1"
     "@mdx-js/mdx" "^1.5.1"
     "@mdx-js/react" "^1.5.1"
-    "@storybook/addons" "5.3.14"
-    "@storybook/api" "5.3.14"
-    "@storybook/components" "5.3.14"
-    "@storybook/core-events" "5.3.14"
+    "@storybook/addons" "5.3.15"
+    "@storybook/api" "5.3.15"
+    "@storybook/components" "5.3.15"
+    "@storybook/core-events" "5.3.15"
     "@storybook/csf" "0.0.1"
-    "@storybook/postinstall" "5.3.14"
-    "@storybook/source-loader" "5.3.14"
-    "@storybook/theming" "5.3.14"
+    "@storybook/postinstall" "5.3.15"
+    "@storybook/source-loader" "5.3.15"
+    "@storybook/theming" "5.3.15"
     acorn "^7.1.0"
     acorn-jsx "^5.1.0"
     acorn-walk "^7.0.0"
@@ -1910,7 +1910,7 @@
     global "^4.3.2"
     util-deprecate "^1.0.2"
 
-"@storybook/addons@^5.3.15":
+"@storybook/addons@5.3.15", "@storybook/addons@^5.3.15":
   version "5.3.15"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-5.3.15.tgz#3720e600f2e0a4c8220d7f86cf6f04b414dcba71"
   integrity sha512-nJZMLoa8I5Avu0sfE1OLxgdbdKbhsdeRsJy2rAsxN2RnChmOLgL5cKFmlg2utMX7l2xQEX0M2n9CSt9RrDMihQ==
@@ -2064,6 +2064,33 @@
     simplebar-react "^1.0.0-alpha.6"
     ts-dedent "^1.1.0"
 
+"@storybook/components@5.3.15":
+  version "5.3.15"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-5.3.15.tgz#f7d94bfbaf78885b3521f88408f031601e650300"
+  integrity sha512-P0w3rJWADOoiyenDZe0e4nZS4bveEPkj10+jX/pod0Hg71UII27fmyeBL04aWOhUFzkJj3WinXpqLwUH2IfWeg==
+  dependencies:
+    "@storybook/client-logger" "5.3.15"
+    "@storybook/theming" "5.3.15"
+    "@types/react-syntax-highlighter" "11.0.2"
+    "@types/react-textarea-autosize" "^4.3.3"
+    core-js "^3.0.1"
+    global "^4.3.2"
+    lodash "^4.17.15"
+    markdown-to-jsx "^6.9.1"
+    memoizerific "^1.11.3"
+    polished "^3.3.1"
+    popper.js "^1.14.7"
+    prop-types "^15.7.2"
+    react "^16.8.3"
+    react-dom "^16.8.3"
+    react-focus-lock "^2.1.0"
+    react-helmet-async "^1.0.2"
+    react-popper-tooltip "^2.8.3"
+    react-syntax-highlighter "^11.0.2"
+    react-textarea-autosize "^7.1.0"
+    simplebar-react "^1.0.0-alpha.6"
+    ts-dedent "^1.1.0"
+
 "@storybook/core-events@5.3.14":
   version "5.3.14"
   resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-5.3.14.tgz#d476eea7032670db1a84bef7e5baadb04c2de529"
@@ -2176,10 +2203,10 @@
     pretty-hrtime "^1.0.3"
     regenerator-runtime "^0.13.3"
 
-"@storybook/postinstall@5.3.14":
-  version "5.3.14"
-  resolved "https://registry.yarnpkg.com/@storybook/postinstall/-/postinstall-5.3.14.tgz#f17f4963036d0746503f863b511a112b3a85e289"
-  integrity sha512-qziSInBJeSr25Ba0TyF0f0z8rjgIqTRjFcSpNSVPWHlN366HpiWC2qTxvHn9rJisl8c0P5QnfTQeCvgyenNy6Q==
+"@storybook/postinstall@5.3.15":
+  version "5.3.15"
+  resolved "https://registry.yarnpkg.com/@storybook/postinstall/-/postinstall-5.3.15.tgz#46661bda31cca252229a083a94ed7ff9858ed78e"
+  integrity sha512-za2iK3TbOuyqNqE76REuwwdhWP4JD3ZnOZiYuZuaDEoI52Z1hWmXSb5xmC7P/tWm9KnId+wmDZpk3YpihS3efQ==
   dependencies:
     core-js "^3.0.1"
 
@@ -2240,13 +2267,13 @@
     qs "^6.6.0"
     util-deprecate "^1.0.2"
 
-"@storybook/source-loader@5.3.14":
-  version "5.3.14"
-  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-5.3.14.tgz#62428a1b12fc9f51f24d27194a06d343366d8bf5"
-  integrity sha512-j4z83KLfiYrFi/KDwX9K6LsLfFo0vbsWProUMjVV/Hapio/ozvFm2YAYc4UWrYkzg+DM8/OKrK5wXLf18HcHDA==
+"@storybook/source-loader@5.3.15":
+  version "5.3.15"
+  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-5.3.15.tgz#b91685c44cadace12c66c7bf91bb33eba789b097"
+  integrity sha512-fZd12VP3PTg07DUSVV8maUjGF2OSHzaMn7sYoJNi6n9lj6uPZ8OzCvSTj54ad9OF4CC7FNQE5IWiFjFfXaLArA==
   dependencies:
-    "@storybook/addons" "5.3.14"
-    "@storybook/client-logger" "5.3.14"
+    "@storybook/addons" "5.3.15"
+    "@storybook/client-logger" "5.3.15"
     "@storybook/csf" "0.0.1"
     core-js "^3.0.1"
     estraverse "^4.2.0"
