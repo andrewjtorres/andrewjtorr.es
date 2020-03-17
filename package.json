@@ -172,7 +172,7 @@
     "eslint-plugin-react-hooks": "^2.5.0",
     "eslint-plugin-standard": "^4.0.1",
     "eslint-plugin-unicorn": "^17.2.0",
-    "file-loader": "^5.1.0",
+    "file-loader": "^6.0.0",
     "glob": "^7.1.6",
     "graphql-tag": "^2.10.3",
     "husky": "^4.2.3",
