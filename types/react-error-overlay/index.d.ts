@@ -12,15 +12,13 @@ declare module 'react-error-overlay' {
     onError?: () => void
   }
 
-  export function dismissBuildError(): void
+  function dismissBuildError(): void
 
-  export function reportBuildError(error: string): void
+  function reportBuildError(error: string): void
 
-  export function setEditorHandler(handler: EditorHandler | null): void
+  function setEditorHandler(handler: EditorHandler | null): void
 
-  export function startReportingRuntimeErrors(
-    options: RuntimeReportingOptions
-  ): void
+  function startReportingRuntimeErrors(options: RuntimeReportingOptions): void
 
-  export function stopReportingRuntimeErrors(): void
+  function stopReportingRuntimeErrors(): void
 }

@@ -1,7 +1,7 @@
 import 'express'
 
 declare module 'express' {
-  export interface Express {
+  interface Express {
     hot?: __WebpackModuleApi.Hot
   }
 }

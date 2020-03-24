@@ -28,7 +28,7 @@ declare module 'aws-serverless-express' {
     cognitoIdentityPoolId: string
   }
 
-  export interface Context {
+  interface Context {
     awsRequestId: string
     callbackWaitsForEmptyEventLoop: boolean
     clientContext?: ClientContext

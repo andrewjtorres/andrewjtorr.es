@@ -32,7 +32,7 @@ declare module 'webpack-hot-middleware/client' {
     timeout?: number
   }
 
-  export function useCustomOverlay(customOverlay: CustomOverlay): void
+  function useCustomOverlay(customOverlay: CustomOverlay): void
 
-  export function setOptionsAndConnect(overrides: Config): void
+  function setOptionsAndConnect(overrides: Config): void
 }

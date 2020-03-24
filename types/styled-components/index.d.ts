@@ -59,7 +59,7 @@ declare module 'styled-components' {
 
   type ToneContrasts = Record<ToneContrast, string>
 
-  export type ViewportBreakpoint = 'small' | 'medium' | 'large' | 'extraLarge'
+  type ViewportBreakpoint = 'small' | 'medium' | 'large' | 'extraLarge'
 
   type ViewportBreakpoints = Record<ViewportBreakpoint, number>
 
@@ -118,7 +118,7 @@ declare module 'styled-components' {
     linkContrast: string
   }
 
-  export interface DefaultTheme extends ViewportBreakpoints {
+  interface DefaultTheme extends ViewportBreakpoints {
     colors: Colors
 
     borderHoverColor: string
