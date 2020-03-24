@@ -43,7 +43,7 @@ const createCompilationPromise = (
       console.info(`[${format(start)}] Compiling '${name}'`)
     })
 
-    compiler.hooks.done.tap(name, stats => {
+    compiler.hooks.done.tap(name, (stats) => {
       console.info(stats.toString(config.stats))
 
       const end = new Date()
@@ -180,7 +180,7 @@ const start = async () => {
     }
 
     appPromiseIsResolved = false
-    appPromise = new Promise(resolve => (appPromiseResolve = resolve))
+    appPromise = new Promise((resolve) => (appPromiseResolve = resolve))
   })
 
   server.use((req, res) =>
@@ -188,7 +188,7 @@ const start = async () => {
       // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
       // @ts-ignore TS2339
       .then(() => app.handle(req, res))
-      .catch(error => console.error(error))
+      .catch((error) => console.error(error))
   )
 
   const checkForUpdate = (fromUpdate = false) => {
@@ -217,7 +217,7 @@ const start = async () => {
           } else {
             console.info(`${hmrPrefix}Updated modules:`)
 
-            outdatedModules.forEach(moduleId =>
+            outdatedModules.forEach((moduleId) =>
               console.info(`${hmrPrefix} - ${moduleId}`)
             )
 

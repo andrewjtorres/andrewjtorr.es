@@ -31,7 +31,7 @@ if (require.main === module && process.argv.length > 2) {
 
   const module: Module = require(`./${process.argv[2]}`).default
 
-  run(module).catch(error => {
+  run(module).catch((error) => {
     console.error(error.stack)
 
     process.exit(1) // eslint-disable-line unicorn/no-process-exit

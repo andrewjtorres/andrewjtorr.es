@@ -38,7 +38,7 @@ const mergeToFile = async (
   try {
     const data: Translation[] = JSON.parse((await readFile(file)) as string)
 
-    data.forEach(translation => {
+    data.forEach((translation) => {
       originalTranslations[translation.id] = translation
 
       delete originalTranslations[translation.id].files
@@ -49,7 +49,7 @@ const mergeToFile = async (
     }
   }
 
-  Object.keys(newTranslations).forEach(id => {
+  Object.keys(newTranslations).forEach((id) => {
     const { defaultMessage, description, message } =
       originalTranslations[id] ?? defaultTranslation
 
@@ -63,7 +63,7 @@ const mergeToFile = async (
   })
 
   const updatedTranslations = Object.keys(originalTranslations)
-    .map(id => originalTranslations[id])
+    .map((id) => originalTranslations[id])
     .filter(({ files, message }) => files || message)
     .sort((a, b) => a.id.localeCompare(b.id))
   const data = `${JSON.stringify(updatedTranslations, null, 2)}\n`
@@ -93,7 +93,7 @@ const processFile = async (file: string, presets: PluginItem[]) => {
 const updateTranslations = async (toBuild = false) => {
   const newTranslations: Translations = {}
 
-  Object.keys(extractedTranslations).forEach(file =>
+  Object.keys(extractedTranslations).forEach((file) =>
     extractedTranslations[file].forEach(
       ({ defaultMessage, description, id }) => {
         const { files = [], ...translation } =
@@ -111,7 +111,7 @@ const updateTranslations = async (toBuild = false) => {
   )
 
   await Promise.all(
-    locales.map(locale => mergeToFile(locale, newTranslations, toBuild))
+    locales.map((locale) => mergeToFile(locale, newTranslations, toBuild))
   )
 }
 
@@ -126,7 +126,7 @@ const extractTranslations = async () => {
     nosort: true,
   })
 
-  await Promise.all(files.map(file => processFile(file, presets ?? [])))
+  await Promise.all(files.map((file) => processFile(file, presets ?? [])))
   await updateTranslations()
 
   if (isWatch) {

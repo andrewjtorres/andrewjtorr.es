@@ -10,7 +10,7 @@ import theme from 'styles/theme'
 
 addDecorator(withA11y)
 addDecorator(withKnobs)
-addDecorator(story => (
+addDecorator((story) => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
     {story()}

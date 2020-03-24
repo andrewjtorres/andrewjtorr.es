@@ -55,7 +55,7 @@ export const Html: React.FunctionComponent<HtmlProps> = ({
       <meta property="og:url" content="https://andrewjtorr.es" />
       <meta property="og:description" content={description} />
       <meta property="og:locale" content={lang} />
-      {alternateLocales.map(locale => (
+      {alternateLocales.map((locale) => (
         <meta key={locale} property="og:locale:alternate" content={locale} />
       ))}
       {links}
@@ -91,7 +91,7 @@ export const Html: React.FunctionComponent<HtmlProps> = ({
         You need to enable JavaScript to run this application.
       </noscript>
       <div id="root" dangerouslySetInnerHTML={{ __html: children }} />
-      {Object.keys(state).map(key => (
+      {Object.keys(state).map((key) => (
         <script
           dangerouslySetInnerHTML={{
             __html: `window.${key}=${serialize(state[key as StateKey])};`,

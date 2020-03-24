@@ -111,7 +111,7 @@ export const copyDir = async (
   })
 
   await Promise.all(
-    dirs.map(async dir => {
+    dirs.map(async (dir) => {
       const from = resolve(source, dir)
       const to = resolve(target, dir)
 

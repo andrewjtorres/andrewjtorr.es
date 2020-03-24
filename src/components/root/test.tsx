@@ -1,5 +1,5 @@
 import { MockedProvider, MockedResponse } from '@apollo/react-testing'
-import { screen, waitForElement } from '@testing-library/react'
+import { screen, waitFor } from '@testing-library/react'
 import React from 'react'
 
 import { resolvers } from 'store'
@@ -33,9 +33,7 @@ test('should render correctly', async () => {
     </MockedProvider>
   )
 
-  expect(
-    await waitForElement(() => screen.getByTestId('home'))
-  ).toBeInTheDocument()
+  expect(await waitFor(() => screen.getByTestId('home'))).toBeInTheDocument()
 })
 
 test('should render the default route correctly', async () => {
@@ -49,6 +47,6 @@ test('should render the default route correctly', async () => {
   )
 
   expect(
-    await waitForElement(() => screen.getByTestId('not-found'))
+    await waitFor(() => screen.getByTestId('not-found'))
   ).toBeInTheDocument()
 })

@@ -282,7 +282,7 @@ const Home: React.FunctionComponent<HomeProps> = (props: HomeProps) => {
       <Root>
         <ImageContainer
           data-testid="image-container"
-          ref={element =>
+          ref={(element) =>
             element !== null && (mediumLinkContainer.current = element)
           }
         >
@@ -295,7 +295,7 @@ const Home: React.FunctionComponent<HomeProps> = (props: HomeProps) => {
         </Content>
         <LinkContainer
           data-testid="link-container"
-          ref={element =>
+          ref={(element) =>
             element !== null && (smallLinkContainer.current = element)
           }
         >
@@ -303,7 +303,7 @@ const Home: React.FunctionComponent<HomeProps> = (props: HomeProps) => {
             aria-label="linkedin"
             data-testid="linkedin"
             href="https://www.linkedin.com/in/andrew-torres-305a7913a"
-            ref={element => {
+            ref={(element) => {
               if (element !== null) {
                 links.push(element)
               }
@@ -317,7 +317,7 @@ const Home: React.FunctionComponent<HomeProps> = (props: HomeProps) => {
             aria-label="github"
             data-testid="github"
             href="https://github.com/ajtorres9"
-            ref={element => {
+            ref={(element) => {
               if (element !== null) {
                 links.push(element)
               }
@@ -331,7 +331,7 @@ const Home: React.FunctionComponent<HomeProps> = (props: HomeProps) => {
             aria-label="gitlab"
             data-testid="gitlab"
             href="https://gitlab.com/ajtorres9"
-            ref={element => {
+            ref={(element) => {
               if (element !== null) {
                 links.push(element)
               }
@@ -345,7 +345,7 @@ const Home: React.FunctionComponent<HomeProps> = (props: HomeProps) => {
             aria-label="twitter"
             data-testid="twitter"
             href="https://twitter.com/ajtorres333"
-            ref={element => {
+            ref={(element) => {
               if (element !== null) {
                 links.push(element)
               }
