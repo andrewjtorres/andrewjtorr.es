@@ -70,7 +70,7 @@
     "polished": "^3.5.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-intl": "^4.2.2",
+    "react-intl": "^4.3.0",
     "react-is": "^16.13.1",
     "serialize-javascript": "^3.0.0",
     "source-map-support": "^0.5.16",
