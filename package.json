@@ -143,7 +143,7 @@
     "@typescript-eslint/parser": "^2.25.0",
     "apollo-link-logger": "^1.2.3",
     "archiver": "^3.1.1",
-    "aws-sdk": "^2.647.0",
+    "aws-sdk": "^2.648.0",
     "babel-jest": "^25.2.3",
     "babel-loader": "^8.1.0",
     "babel-plugin-graphql-tag": "^2.5.0",
