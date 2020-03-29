@@ -177,7 +177,7 @@
     "graphql-tag": "^2.10.3",
     "husky": "^4.2.3",
     "jest": "^25.2.3",
-    "jest-circus": "^25.2.3",
+    "jest-circus": "^25.2.4",
     "jest-config": "^25.2.4",
     "jest-styled-components": "^7.0.0",
     "lint-staged": "^10.0.10",
