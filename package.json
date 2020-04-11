@@ -190,7 +190,7 @@
     "react-error-overlay": "^6.0.7",
     "rimraf": "^3.0.2",
     "semantic-release": "^17.0.4",
-    "stylelint": "^13.3.1",
+    "stylelint": "^13.3.2",
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-config-styled-components": "^0.1.1",
