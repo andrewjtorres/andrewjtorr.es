@@ -3384,10 +3384,10 @@
   resolved "https://registry.yarnpkg.com/@types/webpack-env/-/webpack-env-1.15.1.tgz#c8e84705e08eed430b5e15b39c65b0944e4d1422"
   integrity sha512-eWN5ElDTeBc5lRDh95SqA8x18D0ll2pWudU3uWiyfsRmIZcmUXpEsxPU+7+BsdCrO2vfLRC629u/MmjbmF+2tA==
 
-"@types/webpack-hot-middleware@^2.25.1":
-  version "2.25.1"
-  resolved "https://registry.yarnpkg.com/@types/webpack-hot-middleware/-/webpack-hot-middleware-2.25.1.tgz#8d86521633c7287db39410d9ddd5f7e303bc916e"
-  integrity sha512-6BgNQLbLBIWJJ2hEOqwaaAa8XfRujonjwJI9fS8cfKCwui46D25GyFMDTAlAxc77jN+l5qoeYdu6UVI/5GrGoQ==
+"@types/webpack-hot-middleware@^2.25.2":
+  version "2.25.2"
+  resolved "https://registry.yarnpkg.com/@types/webpack-hot-middleware/-/webpack-hot-middleware-2.25.2.tgz#22280f76e86a9dae41bc55ca0de5e88d22178f86"
+  integrity sha512-Q05ffLL61Gk4rDmQzb4xYuxXepStWWcdAvKXUg9NgcnVaiXsSPyr9m96I33Ui8k8iuPFKxCQ5XjfwFl0qReHJg==
   dependencies:
     "@types/connect" "*"
     "@types/webpack" "*"
