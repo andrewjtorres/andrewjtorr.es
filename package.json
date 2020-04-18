@@ -23,6 +23,7 @@
     "copy": "ts-node --files --project tsconfig.node.json scripts/run copy",
     "deploy": "ts-node --files --project tsconfig.node.json --require ./config/dotenv-safe scripts/run deploy",
     "extract:translations": "ts-node --files --project tsconfig.node.json --require ./config/dotenv-safe scripts/run extract-translations",
+    "hook:pre-commit": "lint-staged",
     "lint": "npm-run-all --parallel \"lint:*\"",
     "lint:files": "prettylint \"**/*.{json,md,mdx,yml}\"",
     "lint:scripts": "eslint --ignore-path .gitignore \"**/*.{js,ts,tsx}\"",
@@ -218,7 +219,7 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "yarn hook:pre-commit"
     }
   },
   "lint-staged": {
