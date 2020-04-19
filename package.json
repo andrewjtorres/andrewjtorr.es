@@ -73,7 +73,7 @@
     "react-intl": "^4.4.0",
     "react-is": "^16.13.1",
     "serialize-javascript": "^3.0.0",
-    "source-map-support": "^0.5.16",
+    "source-map-support": "^0.5.17",
     "styled-components": "^5.1.0",
     "styled-system": "^5.1.5"
   },
