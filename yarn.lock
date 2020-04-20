@@ -7774,14 +7774,14 @@ eslint-plugin-es@^3.0.0:
     eslint-utils "^2.0.0"
     regexpp "^3.0.0"
 
-eslint-plugin-formatjs@^2.1.4:
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-formatjs/-/eslint-plugin-formatjs-2.1.4.tgz#28dcb7b0020b8f5925993b8ed24c1a5ba4b0ed13"
-  integrity sha512-Eue2xFI1q/keTXXSKKKJ+OX46IpN3poC8Uw/7EeFj7URKj9g61Xobuhm9SaXrgp326lEe/zVfJG4bHVeqxo4og==
+eslint-plugin-formatjs@^2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-formatjs/-/eslint-plugin-formatjs-2.1.5.tgz#d4f680b14b4c6c4e4fa6eca660c8fdd0eff2871f"
+  integrity sha512-HqtUUAVwdF4jkbvrwP805+Y+MTTf+W89kDHbvwwC/wZkxlVgY3Heh22vyjz2SGKq1i+BocT4F285RARF/Fd+xQ==
   dependencies:
     "@types/emoji-regex" "^8.0.0"
     emoji-regex "^8.0.0"
-    intl-messageformat-parser "^4.1.4"
+    intl-messageformat-parser "^5.0.0"
 
 eslint-plugin-import@^2.20.2:
   version "2.20.2"
