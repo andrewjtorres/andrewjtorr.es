@@ -34,7 +34,7 @@ module.exports = {
       'never',
       { ignore: ['after-declaration'] },
     ],
-    'value-keyword-case': null,
+    'value-keyword-case': null, // eslint-disable-line unicorn/no-null
     'order/order': [
       'custom-properties',
       'dollar-variables',

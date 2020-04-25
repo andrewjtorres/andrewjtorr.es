@@ -6,7 +6,7 @@ Object.defineProperty(window, 'matchMedia', {
     addListener: jest.fn(),
     matches: false,
     media: query,
-    onchange: null,
+    onchange: undefined,
     removeListener: jest.fn(),
   }),
   writable: true,
