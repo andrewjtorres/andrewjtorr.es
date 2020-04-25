@@ -1,6 +1,6 @@
 import { basename, dirname } from 'path'
 
-type Callback = (error: NodeJS.ErrnoException | null, data: string) => void
+type Callback = (error: NodeJS.ErrnoException | undefined, data: string) => void
 
 type Files = Record<string, string>
 
@@ -23,7 +23,7 @@ const readFile = (path: string, _options: any, callback: Callback) => {
   if (directory) {
     const data = directory[basename(path)]
 
-    return data ? callback(null, data) : callback(error, '')
+    return data ? callback(undefined, data) : callback(error, '')
   }
 
   return callback(error, '')

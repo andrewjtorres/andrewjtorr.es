@@ -12,7 +12,7 @@ test('should render correctly', () => {
       addListener: jest.fn(),
       matches: false,
       media: query,
-      onchange: null,
+      onchange: undefined,
       removeListener: jest.fn(),
     }),
   })
@@ -46,7 +46,7 @@ test('should render correctly on medium to extra large screens', () => {
       addListener: jest.fn(),
       matches: true,
       media: query,
-      onchange: null,
+      onchange: undefined,
       removeListener: jest.fn(),
     }),
   })

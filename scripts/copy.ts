@@ -20,7 +20,7 @@ const config = JSON.stringify(
     engines: packageConfig.engines,
     private: true,
   },
-  null,
+  undefined,
   2
 )
 
