@@ -2877,6 +2877,13 @@
   dependencies:
     "@types/node" "*"
 
+"@types/fs-extra@^8.1.0":
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/@types/fs-extra/-/fs-extra-8.1.0.tgz#1114834b53c3914806cd03b3304b37b3bd221a4d"
+  integrity sha512-UoOfVEzAUpeSPmjm7h1uk5MH6KZma2z2O7a75onTGjnNvAvMVrPzPL/vBbT65iIGHWj6rokwfmYcmxmlSf2uwg==
+  dependencies:
+    "@types/node" "*"
+
 "@types/glob@*", "@types/glob@^7.1.1":
   version "7.1.1"
   resolved "https://registry.yarnpkg.com/@types/glob/-/glob-7.1.1.tgz#aa59a1c6e3fbc421e07ccd31a944c30eba521575"
@@ -4841,18 +4848,19 @@ babel-plugin-react-docgen@^4.0.0:
     react-docgen "^5.0.0"
     recast "^0.14.7"
 
-babel-plugin-react-intl@^7.5.3:
-  version "7.5.3"
-  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-7.5.3.tgz#3f3c223a6a246416a8d30adf66c35fb424245c14"
-  integrity sha512-xnVX7zuQWapEsi3/weWd8t26tXTqSa3JX1mfH6Gey84qgmk9xrGT+uURP52YwzJ7fkFKAzkClwybizQ4IlNKUg==
+babel-plugin-react-intl@^7.5.4:
+  version "7.5.4"
+  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-7.5.4.tgz#f25437728d0c92b04639f6908925fc18e3da6216"
+  integrity sha512-sVOHX9XAt5r1d39gFZFRqjayyHJmcghAjvafn/LjelNORZmUGV04Tt/2iGi70zbVSiiNJ9oohkUvtO0IanSZfA==
   dependencies:
     "@babel/core" "^7.9.0"
     "@babel/helper-plugin-utils" "^7.8.3"
     "@babel/types" "^7.9.5"
     "@types/babel__core" "^7.1.7"
+    "@types/fs-extra" "^8.1.0"
     "@types/schema-utils" "^2.4.0"
     fs-extra "^9.0.0"
-    intl-messageformat-parser "^5.0.1"
+    intl-messageformat-parser "^5.0.2"
     schema-utils "^2.6.6"
 
 "babel-plugin-styled-components@>= 1", babel-plugin-styled-components@^1.10.7:
@@ -9963,7 +9971,7 @@ intl-format-cache@^4.2.26:
     "@types/chai" "^4.2.11"
     chai "^4.2.0"
 
-intl-messageformat-parser@^5.0.1, intl-messageformat-parser@^5.0.2:
+intl-messageformat-parser@^5.0.2:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-5.0.2.tgz#878c0d66459b366f4135a812007a873789875b95"
   integrity sha512-7logOIMKQX4cWTAGdMSPdlzlGG2aGcpdTr/Laroi3/LTgXvYqMQ8fbC7DolygSEWUxbYrzDIuQsoQGJO6Kp8Gg==
