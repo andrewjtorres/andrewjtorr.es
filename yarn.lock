@@ -10619,10 +10619,10 @@ jest-changed-files@^25.5.0:
     execa "^3.2.0"
     throat "^5.0.0"
 
-jest-circus@^25.5.0:
-  version "25.5.0"
-  resolved "https://registry.yarnpkg.com/jest-circus/-/jest-circus-25.5.0.tgz#8415edcc6041bcf1a125335158c43c38e81d1df4"
-  integrity sha512-mNr3eUsKXWZJ+4ziqHDuX9Jx4DgdhnT43wD1OtB+0M7O9GK0DAWG6eUw+/KtJoI/vbPfBgyFJ00m7K9oCGIVXw==
+jest-circus@^25.5.1:
+  version "25.5.1"
+  resolved "https://registry.yarnpkg.com/jest-circus/-/jest-circus-25.5.1.tgz#4a94bb8264f812edb5c9e48c1b0c425a8c3382fa"
+  integrity sha512-eVRyGIoYFy198ngvZBlZ5i9G+WUxMyCEW62tydCDBqp+X39IgSLBkMRIwtpVvS5f9+aSmpQ4tsSEcpvoUTqzeA==
   dependencies:
     "@babel/traverse" "^7.1.0"
     "@jest/environment" "^25.5.0"
@@ -10635,8 +10635,8 @@ jest-circus@^25.5.0:
     jest-each "^25.5.0"
     jest-matcher-utils "^25.5.0"
     jest-message-util "^25.5.0"
-    jest-runtime "^25.5.0"
-    jest-snapshot "^25.5.0"
+    jest-runtime "^25.5.1"
+    jest-snapshot "^25.5.1"
     jest-util "^25.5.0"
     pretty-format "^25.5.0"
     stack-utils "^1.0.1"
@@ -10979,39 +10979,7 @@ jest-runner@^25.5.1:
     source-map-support "^0.5.6"
     throat "^5.0.0"
 
-jest-runtime@^25.5.0:
-  version "25.5.0"
-  resolved "https://registry.yarnpkg.com/jest-runtime/-/jest-runtime-25.5.0.tgz#d1df2c601710974001f7095ab25c865ce5882cbc"
-  integrity sha512-s7TqawKRjaNaE82PjXxDYVhjrMQqjTiiY63N1jFcYtX2xtg05xsgCBk0ls6NMR3fy3AtvbPIQjD3FpssH01l6A==
-  dependencies:
-    "@jest/console" "^25.5.0"
-    "@jest/environment" "^25.5.0"
-    "@jest/globals" "^25.5.0"
-    "@jest/source-map" "^25.5.0"
-    "@jest/test-result" "^25.5.0"
-    "@jest/transform" "^25.5.0"
-    "@jest/types" "^25.5.0"
-    "@types/yargs" "^15.0.0"
-    chalk "^3.0.0"
-    collect-v8-coverage "^1.0.0"
-    exit "^0.1.2"
-    glob "^7.1.3"
-    graceful-fs "^4.2.4"
-    jest-config "^25.5.0"
-    jest-haste-map "^25.5.0"
-    jest-message-util "^25.5.0"
-    jest-mock "^25.5.0"
-    jest-regex-util "^25.2.6"
-    jest-resolve "^25.5.0"
-    jest-snapshot "^25.5.0"
-    jest-util "^25.5.0"
-    jest-validate "^25.5.0"
-    realpath-native "^2.0.0"
-    slash "^3.0.0"
-    strip-bom "^4.0.0"
-    yargs "^15.3.1"
-
-jest-runtime@^25.5.1:
+jest-runtime@^25.5.0, jest-runtime@^25.5.1:
   version "25.5.1"
   resolved "https://registry.yarnpkg.com/jest-runtime/-/jest-runtime-25.5.1.tgz#eb25667050da64c0d9fb5cc3aaa89cfd61d0803f"
   integrity sha512-C8neT+c1k/Sr0HlsLJqZgQmmBI5Plyh3FHfO5VF/K670/V/gAN375WQwwIzbTevK3nbOl7NzuKxS2A3Ps5SLgg==
@@ -11055,28 +11023,7 @@ jest-serializer@^25.5.0:
   dependencies:
     graceful-fs "^4.2.4"
 
-jest-snapshot@^25.5.0:
-  version "25.5.0"
-  resolved "https://registry.yarnpkg.com/jest-snapshot/-/jest-snapshot-25.5.0.tgz#0344dc1b8a949aeffefa45075508bb6277ee07d1"
-  integrity sha512-DveG7ZRn6HEmpDxpZXXR/U5x/aKG5N88tdaB+CH0d5jpb9tuvLMZn8rGZeBiLPS0RCO5VIlu8HL/WtY6wMk0QA==
-  dependencies:
-    "@babel/types" "^7.0.0"
-    "@jest/types" "^25.5.0"
-    "@types/prettier" "^1.19.0"
-    chalk "^3.0.0"
-    expect "^25.5.0"
-    graceful-fs "^4.2.4"
-    jest-diff "^25.5.0"
-    jest-get-type "^25.2.6"
-    jest-matcher-utils "^25.5.0"
-    jest-message-util "^25.5.0"
-    jest-resolve "^25.5.0"
-    make-dir "^3.0.0"
-    natural-compare "^1.4.0"
-    pretty-format "^25.5.0"
-    semver "^6.3.0"
-
-jest-snapshot@^25.5.1:
+jest-snapshot@^25.5.0, jest-snapshot@^25.5.1:
   version "25.5.1"
   resolved "https://registry.yarnpkg.com/jest-snapshot/-/jest-snapshot-25.5.1.tgz#1a2a576491f9961eb8d00c2e5fd479bc28e5ff7f"
   integrity sha512-C02JE1TUe64p2v1auUJ2ze5vcuv32tkv9PyhEb318e8XOKF7MOyXdJ7kdjbvrp3ChPLU2usI7Rjxs97Dj5P0uQ==
