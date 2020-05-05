@@ -2644,16 +2644,16 @@
     "@svgr/plugin-svgo" "^5.4.0"
     loader-utils "^2.0.0"
 
-"@testing-library/dom@^7.2.2":
-  version "7.2.2"
-  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-7.2.2.tgz#30ab09cca132fe49b2ca61ccd9ed785c5f0a6fc5"
-  integrity sha512-g+gT//COYh2FgRrlgcgdkifkjqSk7wQIS7F8jbrf6yoEsh85PJUJ/QtO0bJ9QU7pQPYQgKcgqNJsOs0dlyFYag==
+"@testing-library/dom@^7.2.2", "@testing-library/dom@^7.3.0":
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-7.3.0.tgz#f26edc23023414d25ed5b187d2db240f627f65de"
+  integrity sha512-F/gFzOGsX1ulldWMREiDkoBg4/kfKXhXi04iW9irwwwF/BLW9dSMLyK0zqnBjCTx76A8B584EuYBhNgWNOnUfA==
   dependencies:
-    "@babel/runtime" "^7.9.2"
-    "@types/testing-library__dom" "^7.0.0"
+    "@babel/runtime" "^7.9.6"
+    "@types/testing-library__dom" "^7.0.2"
     aria-query "^4.0.2"
-    dom-accessibility-api "^0.4.2"
-    pretty-format "^25.1.0"
+    dom-accessibility-api "^0.4.3"
+    pretty-format "^26.0.1"
 
 "@testing-library/jest-dom@^5.5.0":
   version "5.5.0"
@@ -3354,7 +3354,7 @@
     "@types/webpack" "*"
     terser "^4.3.9"
 
-"@types/testing-library__dom@*", "@types/testing-library__dom@^7.0.0", "@types/testing-library__dom@^7.0.2":
+"@types/testing-library__dom@*", "@types/testing-library__dom@^7.0.2":
   version "7.0.2"
   resolved "https://registry.yarnpkg.com/@types/testing-library__dom/-/testing-library__dom-7.0.2.tgz#2906f8a0dce58b0746c6ab606f786bd06fe6940e"
   integrity sha512-8yu1gSwUEAwzg2OlPNbGq+ixhmSviGurBu1+ivxRKq1eRcwdjkmlwtPvr9VhuxTq2fNHBWN2po6Iem3Xt5A6rg==
@@ -7228,7 +7228,7 @@ doctypes@^1.1.0:
   resolved "https://registry.yarnpkg.com/doctypes/-/doctypes-1.1.0.tgz#ea80b106a87538774e8a3a4a5afe293de489e0a9"
   integrity sha1-6oCxBqh1OHdOijpKWv4pPeSJ4Kk=
 
-dom-accessibility-api@^0.4.2:
+dom-accessibility-api@^0.4.3:
   version "0.4.3"
   resolved "https://registry.yarnpkg.com/dom-accessibility-api/-/dom-accessibility-api-0.4.3.tgz#93ca9002eb222fd5a343b6e5e6b9cf5929411c4c"
   integrity sha512-JZ8iPuEHDQzq6q0k7PKMGbrIdsgBB7TRrtVOUm4nSMCExlg5qQG4KXWTH2k90yggjM4tTumRGwTKJSldMzKyLA==
