@@ -2644,13 +2644,12 @@
     "@svgr/plugin-svgo" "^5.4.0"
     loader-utils "^2.0.0"
 
-"@testing-library/dom@^7.2.2", "@testing-library/dom@^7.4.0":
-  version "7.4.0"
-  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-7.4.0.tgz#0c2ac09f209c1141324eb5117ff1e9e04978bbce"
-  integrity sha512-47Zy7msjFXpQAHuqNNEeBm1wHn5vJGQKzMN9RA5O3KkPYGXMgBtCg16z7ihhFg5AarJIZxGX17CjTzNzDsfKUw==
+"@testing-library/dom@^7.2.2", "@testing-library/dom@^7.5.0":
+  version "7.5.0"
+  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-7.5.0.tgz#5ce5de905daa782b48c131790377d844e46af67b"
+  integrity sha512-v5YzEHPkZKVgopz76mGdY2pNj7yoOk0x59YDUVzqSRPrYxNAeT4cvpKsOzNXa4bwBV4CCjVNyNj8ukBCEzRERA==
   dependencies:
     "@babel/runtime" "^7.9.6"
-    "@types/testing-library__dom" "^7.0.2"
     aria-query "^4.0.2"
     dom-accessibility-api "^0.4.3"
     pretty-format "^26.0.1"
