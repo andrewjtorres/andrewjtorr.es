@@ -4890,10 +4890,10 @@ babel-plugin-react-docgen@^4.0.0:
     react-docgen "^5.0.0"
     recast "^0.14.7"
 
-babel-plugin-react-intl@^7.5.6:
-  version "7.5.6"
-  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-7.5.6.tgz#4bfc4759595870faffd1a04da0f438791e3052a0"
-  integrity sha512-LujwIv6mWpfnNULUcTJ3FINSgPuI8BNeLZlihw8kd9rHiG7W1HLChGebKdUuO4af9b3ifLN3oPDQkFY31iZ+pg==
+babel-plugin-react-intl@^7.5.7:
+  version "7.5.7"
+  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-7.5.7.tgz#00dc00389779f910866a9270f52e0b8c1640ba72"
+  integrity sha512-9WCijcMIyPhJ0LPgsd+EIF00wJGz8+IcKT17IG5FH7CDVTdJBvC5lK/9V42NP8/CHalXKJZTrqwhdzsm3KIG6w==
   dependencies:
     "@babel/core" "^7.9.0"
     "@babel/helper-plugin-utils" "^7.8.3"
