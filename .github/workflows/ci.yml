@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.0.0
+        uses: actions/checkout@v2.1.0
       - name: Setup Node
         uses: actions/setup-node@v1.4.2
         with:
@@ -37,7 +37,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.0.0
+        uses: actions/checkout@v2.1.0
       - name: Setup Node
         uses: actions/setup-node@v1.4.2
         with:
@@ -68,7 +68,7 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.0.0
+        uses: actions/checkout@v2.1.0
       - name: Setup Node
         uses: actions/setup-node@v1.4.2
         with:
