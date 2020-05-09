@@ -4,6 +4,7 @@ const typescriptPlugin = require('@typescript-eslint/eslint-plugin')
 const prettierTypescriptConfig = require('eslint-config-prettier/@typescript-eslint')
 const jestPlugin = require('eslint-plugin-jest')
 const jestDomPlugin = require('eslint-plugin-jest-dom')
+const testingLibraryPlugin = require('eslint-plugin-testing-library')
 
 module.exports = {
   plugins: [
@@ -77,10 +78,12 @@ module.exports = {
       plugins: [
         ...jestPlugin.configs.recommended.plugins,
         ...jestDomPlugin.configs.recommended.plugins,
+        ...testingLibraryPlugin.configs.react.plugins,
       ],
       rules: {
         ...jestPlugin.configs.recommended.rules,
         ...jestDomPlugin.configs.recommended.rules,
+        ...testingLibraryPlugin.configs.react.rules,
       },
     },
   ],
