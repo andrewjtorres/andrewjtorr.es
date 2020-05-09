@@ -6,10 +6,6 @@ import schema from './schema'
 
 type Callback = (error: NodeJS.ErrnoException | null, data: string) => void
 
-interface TranslationsQueryData {
-  translations: Translation[]
-}
-
 jest.mock('fs')
 jest.mock('../config', () => ({ locales: ['en'] }))
 
@@ -41,7 +37,7 @@ describe('translation', () => {
     `
 
     test('should return query metadata containing an error related to an unsupported locale', async () => {
-      const { data, errors } = await graphql<TranslationsQueryData>({
+      const { data, errors } = await graphql({
         contextValue: { locale: 'es' },
         schema,
         source,
@@ -72,7 +68,7 @@ describe('translation', () => {
 
       fs.setMockFiles({ 'dir/en.json': JSON.stringify(translations) })
 
-      const { data, errors } = await graphql<TranslationsQueryData>({
+      const { data, errors } = await graphql({
         contextValue: { locale: 'en' },
         schema,
         source,
@@ -87,7 +83,7 @@ describe('translation', () => {
     })
 
     test('should return query metadata containing an error related to a non-existent locale file', async () => {
-      const { data, errors } = await graphql<TranslationsQueryData>({
+      const { data, errors } = await graphql({
         contextValue: { locale: 'en' },
         schema,
         source,
@@ -106,10 +102,7 @@ describe('translation', () => {
 
       Object.defineProperty(fs, 'readFile', { value: readFile })
 
-      const { data, errors } = await graphql<TranslationsQueryData>({
-        schema,
-        source,
-      })
+      const { data, errors } = await graphql({ schema, source })
 
       expect(data).toMatchObject({ translations: [] })
       expect(errors).toBeUndefined()
