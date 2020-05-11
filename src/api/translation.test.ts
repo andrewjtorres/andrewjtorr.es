@@ -7,7 +7,7 @@ import schema from './schema'
 type Callback = (error: NodeJS.ErrnoException | null, data: string) => void
 
 jest.mock('fs')
-jest.mock('../config', () => ({ locales: ['en'] }))
+jest.mock('../config', () => ({ __esModule: true, locales: ['en'] }))
 
 const readFile = (path: string, _options: any, callback: Callback) => {
   const error = new Error(`EACCES: permission denied, open '${path}'`)

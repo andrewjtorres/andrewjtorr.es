@@ -2,6 +2,7 @@ import { GraphQLSchema, graphql } from 'graphql'
 import gql from 'graphql-tag'
 
 jest.mock('./translation', () => ({
+  __esModule: true,
   resolvers: {
     Query: {
       translations: () => {
