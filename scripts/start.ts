@@ -207,6 +207,8 @@ const start = async () => {
         // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
         // @ts-ignore TS2345
         .check(true)
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        // @ts-ignore TS2339
         .then((outdatedModules: __WebpackModuleApi.ModuleId[]) => {
           if (!outdatedModules) {
             return fromUpdate && console.info(`${hmrPrefix}Update applied`)
