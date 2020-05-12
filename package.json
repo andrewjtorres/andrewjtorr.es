@@ -140,7 +140,7 @@
     "@types/webpack-hot-middleware": "^2.25.2",
     "@types/webpack-node-externals": "^1.7.1",
     "@typescript-eslint/eslint-plugin": "^2.32.0",
-    "@typescript-eslint/parser": "^2.32.0",
+    "@typescript-eslint/parser": "^2.33.0",
     "apollo-link-logger": "^1.2.3",
     "archiver": "^4.0.1",
     "aws-sdk": "^2.675.0",
