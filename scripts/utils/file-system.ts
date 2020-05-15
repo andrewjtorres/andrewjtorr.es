@@ -22,7 +22,7 @@ type ReadFileOptions =
   | null
   | string
   | {
-      encoding?: null | string
+      encoding?: BufferEncoding | null
       flag?: string
     }
 
