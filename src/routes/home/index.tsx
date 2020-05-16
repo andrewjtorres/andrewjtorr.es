@@ -1,4 +1,3 @@
-import { RouteComponentProps } from '@reach/router'
 import { darken, em, hsl, rem } from 'polished'
 import React from 'react'
 import { defineMessages, useIntl } from 'react-intl'
@@ -11,8 +10,6 @@ import BaseLinkedIn from 'assets/linkedin.svg'
 import BaseTwitter from 'assets/twitter.svg'
 import { Layout } from 'components/layout'
 import { container, isHiddenSmall, isHiddenUntilSmall } from 'styles/mixins'
-
-type HomeProps = RouteComponentProps
 
 const github = hsl(0, 0.05, 0.09)
 const gitlab = hsl(8, 0.76, 0.52)
@@ -253,7 +250,7 @@ const Twitter = styled(BaseTwitter)`
   ${icon};
 `
 
-const Home: React.FunctionComponent<HomeProps> = (props: HomeProps) => {
+const Home: React.FunctionComponent = (props) => {
   const { formatMessage } = useIntl()
   const links: HTMLAnchorElement[] = []
   const mediumLinkContainer = React.useRef<HTMLDivElement>()

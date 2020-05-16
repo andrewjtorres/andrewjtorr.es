@@ -2,7 +2,6 @@ import { join } from 'path'
 import { ApolloProvider } from '@apollo/react-hooks'
 import { renderToStringWithData } from '@apollo/react-ssr'
 import { ChunkExtractor, ChunkExtractorManager } from '@loadable/server'
-import { ServerLocation, isRedirect } from '@reach/router'
 import { SchemaLink } from 'apollo-link-schema'
 import { ApolloServer } from 'apollo-server-express'
 import { json, urlencoded } from 'body-parser'
@@ -13,12 +12,14 @@ import express, { Express, NextFunction, Request, Response } from 'express'
 import requestLanguage from 'express-request-language'
 import React from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
+import { StaticRouter } from 'react-router-dom/server'
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
 
 import schema from './api/schema'
 import { Context } from './common'
 import { Html } from './components/html'
 import { Root } from './components/root'
+import routes from './routes'
 import { Defaults, defaults as baseDefaults, resolvers } from './store'
 import { createApolloClient, createErrorLink } from './utils/apollo'
 import { locales, port } from './config'
@@ -80,11 +81,11 @@ app.get('*', async (req: Request, res: Response, next: NextFunction) => {
     const root = await renderToStringWithData(
       <ChunkExtractorManager extractor={extractor}>
         <StyleSheetManager sheet={sheet.instance}>
-          <ServerLocation url={req.url}>
+          <StaticRouter location={req.url}>
             <ApolloProvider client={client}>
-              <Root />
+              <Root routes={routes} />
             </ApolloProvider>
-          </ServerLocation>
+          </StaticRouter>
         </StyleSheetManager>
       </ChunkExtractorManager>
     )
@@ -107,14 +108,14 @@ app.get('*', async (req: Request, res: Response, next: NextFunction) => {
 
     return res.status(200).send(`<!doctype html>${html}`)
   } catch (error) {
-    return isRedirect(error) ? res.redirect(error.uri) : next(error)
+    return next(error)
   }
 })
 
 if (module.hot) {
   app.hot = module.hot
 
-  module.hot.accept('./components/root')
+  module.hot.accept('./routes')
 } else {
   app.listen(port, () =>
     console.info(`The server is running at http://localhost:${port}`)

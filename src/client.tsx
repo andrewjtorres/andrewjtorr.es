@@ -1,25 +1,16 @@
 import { ApolloProvider } from '@apollo/react-hooks'
 import { loadableReady } from '@loadable/component'
-import {
-  HistoryActionType,
-  HistoryLocation,
-  HistorySource,
-  createHistory,
-} from '@reach/router'
 import { HttpLink } from 'apollo-link-http'
+import { createBrowserHistory, createPath, Action, Listener } from 'history'
 import React from 'react'
 import deepForceUpdate from 'react-deep-force-update'
 import { hydrate, render } from 'react-dom'
+import { BrowserRouter } from 'react-router-dom'
 
 import { Root } from './components/root'
+import routes from './routes'
 import { resolvers, typeDefs } from './store'
 import { createApolloClient, createErrorLink } from './utils/apollo'
-import { createPath } from './utils/history'
-
-interface HistoryMetadata {
-  location: HistoryLocation
-  action?: HistoryActionType
-}
 
 const client = createApolloClient({
   defaults: window.__APOLLO_STATE__,
@@ -34,12 +25,17 @@ const client = createApolloClient({
   typeDefs,
 })
 const container = document.querySelector('#root')
-const history = createHistory((window as unknown) as HistorySource)
+const history = createBrowserHistory()
 let currentLocation = history.location
+let isInitialRender = true
 let root: React.ComponentType | void
 
-const onLocationChange = async ({ action, location }: HistoryMetadata) => {
-  const renderOrHydrate = action ? render : hydrate
+const onLocationChange: Listener = async ({ location }) => {
+  const renderOrHydrate = isInitialRender ? hydrate : render
+
+  if (isInitialRender) {
+    isInitialRender = false
+  }
 
   currentLocation = location
 
@@ -47,9 +43,11 @@ const onLocationChange = async ({ action, location }: HistoryMetadata) => {
     await loadableReady()
 
     root = renderOrHydrate(
-      <ApolloProvider client={client}>
-        <Root />
-      </ApolloProvider>,
+      <BrowserRouter>
+        <ApolloProvider client={client}>
+          <Root routes={routes} />
+        </ApolloProvider>
+      </BrowserRouter>,
       container,
       () => {
         if (window.ga) {
@@ -66,17 +64,17 @@ const onLocationChange = async ({ action, location }: HistoryMetadata) => {
   }
 }
 
-history.listen(onLocationChange) // eslint-disable-line @typescript-eslint/no-misused-promises
-onLocationChange({ location: currentLocation })
+history.listen(onLocationChange)
+onLocationChange({ action: Action.Push, location: currentLocation })
 
 if (module.hot) {
-  module.hot.accept('./components/root', () => {
+  module.hot.accept('./routes', () => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
     // @ts-ignore TS2339
     if (root?.updater.isMounted(root)) {
       deepForceUpdate(root)
     }
 
-    onLocationChange({ location: currentLocation })
+    onLocationChange({ action: Action.Push, location: currentLocation })
   })
 }

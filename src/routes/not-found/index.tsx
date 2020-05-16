@@ -1,10 +1,7 @@
-import { RouteComponentProps } from '@reach/router'
 import { rem } from 'polished'
 import React from 'react'
 import { defineMessages, useIntl } from 'react-intl'
 import styled from 'styled-components'
-
-type NotFoundProps = RouteComponentProps
 
 const rootId = 'routes.notFound'
 
@@ -42,9 +39,7 @@ const Content = styled.p`
   width: ${rem(280)};
 `
 
-const NotFound: React.FunctionComponent<NotFoundProps> = (
-  props: NotFoundProps
-) => {
+const NotFound: React.FunctionComponent = (props) => {
   const { formatMessage } = useIntl()
 
   return (

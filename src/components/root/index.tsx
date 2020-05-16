@@ -1,43 +1,49 @@
 import { useQuery } from '@apollo/react-hooks'
-import loadable from '@loadable/component'
-import { Router } from '@reach/router'
 import React from 'react'
 import { IntlProvider } from 'react-intl'
+import { useRoutes, PartialRouteObject } from 'react-router'
 import { ThemeProvider } from 'styled-components'
 
 import GlobalStyle from 'styles/global'
 import theme from 'styles/theme'
 import { InitializationQueryData, initializationQuery } from './graphql'
 
-const Home = loadable(() => import('routes/home'))
-const NotFound = loadable(() => import('routes/not-found'))
+type Messages = Record<string, string>
 
-export const Root: React.FunctionComponent = () => {
-  const { currentLocale = 'en', translations = [] } =
-    useQuery<InitializationQueryData>(initializationQuery)?.data ?? {}
+interface RootProps {
+  routes: PartialRouteObject[]
+}
 
-  const messages = translations.reduce<Record<string, string>>(
-    (acc, { id, message }) => {
-      acc[id] = message // eslint-disable-line no-param-reassign
+const defaultLocale = 'en'
 
-      return acc
+export const Root: React.FunctionComponent<RootProps> = ({
+  routes,
+}: RootProps) => {
+  const [messages, setMessages] = React.useState<Messages>()
+  const route = useRoutes(routes)
+
+  const { data } = useQuery<InitializationQueryData>(initializationQuery, {
+    onCompleted: ({ translations = [] }) => {
+      const messages: Messages = {}
+
+      for (const { id, message } of translations) {
+        messages[id] = message
+      }
+
+      setMessages(messages)
     },
-    {}
-  )
+  })
 
   return (
     <React.StrictMode>
       <IntlProvider
-        defaultLocale="en"
-        locale={currentLocale}
+        defaultLocale={defaultLocale}
+        locale={data?.currentLocale || defaultLocale}
         messages={messages}
       >
         <ThemeProvider theme={theme}>
           <GlobalStyle />
-          <Router>
-            <Home data-testid="home" path="/" />
-            <NotFound data-testid="not-found" default />
-          </Router>
+          {route}
         </ThemeProvider>
       </IntlProvider>
     </React.StrictMode>

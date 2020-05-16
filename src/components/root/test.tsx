@@ -1,5 +1,4 @@
 import { MockedProvider, MockedResponse } from '@apollo/react-testing'
-import { RouteComponentProps } from '@reach/router'
 import { act, screen } from '@testing-library/react'
 import React from 'react'
 
@@ -8,19 +7,15 @@ import { renderWithContext } from 'utils/spec'
 import { InitializationQueryData, initializationQuery } from './graphql'
 import { Root } from '.'
 
-interface MockRouteProps extends RouteComponentProps {
-  'data-testid'?: string
-}
-
 const data: InitializationQueryData = {
   currentLocale: 'en',
   translations: [
     {
       __typename: 'Translation',
-      id: 'path.to.file.a',
-      message: 'message a',
-      defaultMessage: 'default message a',
-      description: 'description a',
+      id: 'test.translation',
+      message: 'Test message',
+      defaultMessage: 'Test default message',
+      description: 'Test description',
     },
   ],
 }
@@ -29,45 +24,28 @@ const mocks: MockedResponse[] = [
   { request: { query: initializationQuery }, result: { data } },
 ]
 
-const MockRoute: React.FunctionComponent<MockRouteProps> = ({
-  'data-testid': dataTestid,
-}: MockRouteProps) => <div data-testid={dataTestid} />
-
-jest.mock('routes/home', () => ({ __esModule: true, default: MockRoute }))
-jest.mock('routes/not-found', () => ({ __esModule: true, default: MockRoute }))
-
-test('should render correctly', async () => {
+test('should render correctly', () => {
   const { history } = renderWithContext(
     // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
     // @ts-ignore TS2322
     <MockedProvider mocks={mocks} resolvers={resolvers}>
-      <Root />
-    </MockedProvider>
+      <Root
+        routes={[
+          { element: <div data-testid="test-root" />, path: '/' },
+          { element: <div data-testid="test-default" />, path: '*' },
+        ]}
+      />
+    </MockedProvider>,
+    { route: '/not-root' }
   )
 
-  expect(screen.queryByTestId('home')).not.toBeInTheDocument()
+  expect(screen.queryByTestId('test-root')).not.toBeInTheDocument()
+  expect(screen.getByTestId('test-default')).toBeInTheDocument()
 
-  await act(async () => {
-    await history.navigate('/')
+  act(() => {
+    history.push('/')
   })
 
-  expect(await screen.findByTestId('home')).toBeInTheDocument()
-})
-
-test('should render the default route correctly', async () => {
-  const { history } = renderWithContext(
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore TS2322
-    <MockedProvider mocks={mocks} resolvers={resolvers}>
-      <Root />
-    </MockedProvider>
-  )
-
-  expect(screen.queryByTestId('not-found')).not.toBeInTheDocument()
-
-  await act(async () => {
-    await history.navigate('/not-found')
-  })
-
-  expect(await screen.findByTestId('not-found')).toBeInTheDocument()
+  expect(screen.getByTestId('test-root')).toBeInTheDocument()
+  expect(screen.queryByTestId('test-default')).not.toBeInTheDocument()
 })

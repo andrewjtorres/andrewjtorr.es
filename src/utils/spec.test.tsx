@@ -13,7 +13,7 @@ describe('renderWithContext', () => {
 
   test('should return render metadata containing a modified history object', () => {
     const { history } = renderWithContext(<div data-testid="test-child" />, {
-      initialPath: '/not-root',
+      route: '/not-root',
     })
 
     expect(screen.getByTestId('test-child')).toBeInTheDocument()

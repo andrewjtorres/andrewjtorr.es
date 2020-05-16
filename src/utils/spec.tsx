@@ -1,13 +1,9 @@
-import {
-  History,
-  LocationProvider,
-  createHistory,
-  createMemorySource,
-} from '@reach/router'
 import { Queries, queries } from '@testing-library/dom'
 import { RenderOptions, render } from '@testing-library/react'
+import { createMemoryHistory } from 'history'
 import React from 'react'
 import { IntlConfig, IntlProvider } from 'react-intl'
+import { Router, RouterProps } from 'react-router'
 import { DefaultTheme, ThemeProvider } from 'styled-components'
 
 import defaultTheme from 'styles/theme'
@@ -20,10 +16,15 @@ type Theme =
 
 interface Options<TQueries extends Queries = typeof queries>
   extends Partial<IntlConfig>,
-    RenderOptions<TQueries> {
-  history?: History
-  initialPath?: string
+    RenderOptions<TQueries>,
+    Omit<Partial<RouterProps>, 'children' | 'static'> {
+  isStatic?: boolean
+  route?: string
   theme?: Theme
+}
+
+interface WrapperProps {
+  children?: React.ReactNode
 }
 
 export const renderWithContext = <TQueries extends Queries>(
@@ -32,38 +33,42 @@ export const renderWithContext = <TQueries extends Queries>(
     defaultFormats,
     defaultLocale = 'en',
     formats,
-    history: providedHistory,
-    initialPath = '/',
+    route = '/',
+    history = createMemoryHistory({ initialEntries: [route] }),
+    isStatic,
     locale = 'en',
     messages,
     onError,
     textComponent,
     theme = defaultTheme,
+    timeout,
     timeZone,
     ...restOptions
   }: Options<TQueries> = {}
 ) => {
-  const history =
-    providedHistory ?? createHistory(createMemorySource(initialPath))
+  const Wrapper: React.FunctionComponent<WrapperProps> = ({
+    children,
+  }: WrapperProps) => (
+    <IntlProvider
+      defaultFormats={defaultFormats}
+      defaultLocale={defaultLocale}
+      formats={formats}
+      locale={locale}
+      messages={messages}
+      onError={onError}
+      textComponent={textComponent}
+      timeZone={timeZone}
+    >
+      <ThemeProvider theme={theme}>
+        <Router history={history} static={isStatic} timeout={timeout}>
+          {children}
+        </Router>
+      </ThemeProvider>
+    </IntlProvider>
+  )
 
   return {
-    ...render<TQueries>(
-      <IntlProvider
-        defaultFormats={defaultFormats}
-        defaultLocale={defaultLocale}
-        formats={formats}
-        locale={locale}
-        messages={messages}
-        onError={onError}
-        textComponent={textComponent}
-        timeZone={timeZone}
-      >
-        <ThemeProvider theme={theme}>
-          <LocationProvider history={history}>{ui}</LocationProvider>
-        </ThemeProvider>
-      </IntlProvider>,
-      restOptions
-    ),
+    ...render<TQueries>(ui, { wrapper: Wrapper, ...restOptions }),
     history,
   }
 }

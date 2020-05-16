@@ -16,7 +16,7 @@ test('should render correctly', () => {
 
 test('clicking the logo icon should navigate to the root path', () => {
   const { history } = renderWithContext(<Layout>child</Layout>, {
-    initialPath: '/not-root',
+    route: '/not-root',
   })
   const icon = screen.getByTestId('logo')
 

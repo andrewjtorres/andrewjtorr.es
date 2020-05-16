@@ -1,4 +1,4 @@
-import { Link as BaseLink } from '@reach/router'
+import { Link as BaseLink } from 'react-router-dom'
 import { rem } from 'polished'
 import React from 'react'
 import styled, { css } from 'styled-components'
