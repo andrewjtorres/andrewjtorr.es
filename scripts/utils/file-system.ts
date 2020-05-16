@@ -53,8 +53,7 @@ export const checksumFile = (
     }
 
     readStream.on('end', () => {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore TS2345
+      // @ts-expect-error TS2345
       writeStream.write(hash.digest(digestEncoding))
 
       return writeStream.close()

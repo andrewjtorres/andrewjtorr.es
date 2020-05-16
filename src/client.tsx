@@ -69,8 +69,7 @@ onLocationChange({ action: Action.Push, location: currentLocation })
 
 if (module.hot) {
   module.hot.accept('./routes', () => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore TS2339
+    // @ts-expect-error TS2339
     if (root?.updater.isMounted(root)) {
       deepForceUpdate(root)
     }
