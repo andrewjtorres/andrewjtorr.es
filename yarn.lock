@@ -7785,17 +7785,17 @@ eslint-plugin-es@^3.0.0:
     eslint-utils "^2.0.0"
     regexpp "^3.0.0"
 
-eslint-plugin-formatjs@^2.2.5:
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-formatjs/-/eslint-plugin-formatjs-2.2.5.tgz#49b581c0612d9f139519a2cfc0da7adffe2f5c8d"
-  integrity sha512-yEY7HJ2y4tBlmOVsAta9rb68Oh7zZXgpJHzwY3s90it42NohPUp824LPfbxOd8zi0N1zgtNkHSkx9svRksGTNA==
+eslint-plugin-formatjs@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-formatjs/-/eslint-plugin-formatjs-2.3.0.tgz#8405f10fbe7856c3aa324ede8cf0e0e4f5af21ce"
+  integrity sha512-JFjF3kkrg73xuZ5wzcGeAswl+xpNXjig9S5/NJZnZvpip+I14F3k9OdSrlpHLlGAqSIvagS2woK9u13NDnOroQ==
   dependencies:
     "@types/emoji-regex" "^8.0.0"
     "@types/eslint" "^6.8.0"
     "@types/estree" "^0.0.44"
     "@typescript-eslint/typescript-estree" "^2.29.0"
     emoji-regex "^9.0.0"
-    intl-messageformat-parser "^5.0.3"
+    intl-messageformat-parser "^5.0.4"
 
 eslint-plugin-import@^2.20.2:
   version "2.20.2"
@@ -9971,7 +9971,7 @@ intl-format-cache@^4.2.28:
   resolved "https://registry.yarnpkg.com/intl-format-cache/-/intl-format-cache-4.2.28.tgz#67cccee0ae5234cb61bb72f82c4f1df5804aed7f"
   integrity sha512-yFACAtiacQj2nPfFSyDd/ZRgDFDDtw55cmqdYux7ncqrqvaMTajf3Biuc4a3HAWNuMvk0r2VHBfwy2YmOmAZ+A==
 
-intl-messageformat-parser@^5.0.3, intl-messageformat-parser@^5.0.4:
+intl-messageformat-parser@^5.0.4:
   version "5.0.4"
   resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-5.0.4.tgz#c3e2f3be02a51ae78bb3cc61f8ade6d1e2aa7f5c"
   integrity sha512-7+MvIzLkcjCEPBKW/NLGBIZr1cpOz/iAp6Thx8tc1BZUeWMfHOIb/Z53/nTwWd4p0ij9plB8+tHcFmI24Ubvuw==
