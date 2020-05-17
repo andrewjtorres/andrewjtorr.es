@@ -23,7 +23,7 @@ export const Root: React.FunctionComponent<RootProps> = ({
   const route = useRoutes(routes)
 
   const { data } = useQuery<InitializationQueryData>(initializationQuery, {
-    onCompleted: ({ translations = [] }) => {
+    onCompleted: ({ translations }) => {
       const messages: Messages = {}
 
       for (const { id, message } of translations) {
