@@ -4859,10 +4859,10 @@ babel-plugin-react-docgen@^4.0.0:
     react-docgen "^5.0.0"
     recast "^0.14.7"
 
-babel-plugin-react-intl@^7.5.9:
-  version "7.5.9"
-  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-7.5.9.tgz#2ef26ca77a4529b183a6c3ae7af4880d59d60904"
-  integrity sha512-4JDXKbllKmPUdURw0bEOXaUjfdZMtEWTcNoHu9fCEZ0wW6JG57/0q8fM25Lp3e03fghb+bHZ9yRzHYufTKHEOg==
+babel-plugin-react-intl@^7.5.10:
+  version "7.5.10"
+  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-7.5.10.tgz#8c0b1e6f010b5ec07d505fae1b5072075f82c170"
+  integrity sha512-GHcaLMg1nk5y1+zvQr967xly97++jxL90VnHK9kxu7mr/byL6LsQCu/8tfnem303eNWuoiaA20+kmfB4BR6OIA==
   dependencies:
     "@babel/core" "^7.9.0"
     "@babel/helper-plugin-utils" "^7.8.3"
@@ -4871,7 +4871,7 @@ babel-plugin-react-intl@^7.5.9:
     "@types/fs-extra" "^8.1.0"
     "@types/schema-utils" "^2.4.0"
     fs-extra "^9.0.0"
-    intl-messageformat-parser "^5.0.5"
+    intl-messageformat-parser "^5.0.6"
     schema-utils "^2.6.6"
 
 "babel-plugin-styled-components@>= 1", babel-plugin-styled-components@^1.10.7:
@@ -9954,10 +9954,10 @@ intl-format-cache@^4.2.28:
   resolved "https://registry.yarnpkg.com/intl-format-cache/-/intl-format-cache-4.2.28.tgz#67cccee0ae5234cb61bb72f82c4f1df5804aed7f"
   integrity sha512-yFACAtiacQj2nPfFSyDd/ZRgDFDDtw55cmqdYux7ncqrqvaMTajf3Biuc4a3HAWNuMvk0r2VHBfwy2YmOmAZ+A==
 
-intl-messageformat-parser@^5.0.4, intl-messageformat-parser@^5.0.5:
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-5.0.5.tgz#d50c5a295631585ed4e3a1c4e84ce2c06bf01f6d"
-  integrity sha512-qPiOBJ525Q6l9JYRoe4Zz2PH3iowBBcv6S/eKXxX8VN9rtLSc90UtP/6+TFlIPynSx8PeStkkHOZkW/ZXAjIEw==
+intl-messageformat-parser@^5.0.4, intl-messageformat-parser@^5.0.5, intl-messageformat-parser@^5.0.6:
+  version "5.0.6"
+  resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-5.0.6.tgz#5722c7de5178367657da77c5adbe07b28bd74530"
+  integrity sha512-jaIjJsyol5v5fk3kxGViMw4LzyFgHW9Z7wlhBXWjeSz6lhw+iMCl/4Y04DjFj23+ZEbfwVgT8oAPtwadAXmfww==
   dependencies:
     "@formatjs/intl-numberformat" "^3.3.8"
 
