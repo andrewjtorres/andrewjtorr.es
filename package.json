@@ -135,7 +135,7 @@
     "@types/testing-library__jest-dom": "^5.7.0",
     "@types/testing-library__react": "^10.0.1",
     "@types/webpack": "^4.41.13",
-    "@types/webpack-bundle-analyzer": "^2.13.3",
+    "@types/webpack-bundle-analyzer": "^3.8.0",
     "@types/webpack-dev-middleware": "^3.7.1",
     "@types/webpack-env": "^1.15.2",
     "@types/webpack-hot-middleware": "^2.25.3",
