@@ -7766,17 +7766,17 @@ eslint-plugin-es@^3.0.0:
     eslint-utils "^2.0.0"
     regexpp "^3.0.0"
 
-eslint-plugin-formatjs@^2.3.3:
-  version "2.3.3"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-formatjs/-/eslint-plugin-formatjs-2.3.3.tgz#8bb7aeae5bc4aca13bd748e47107517bb19489d9"
-  integrity sha512-ak9gQHFwvw+AJZFbiicFGhRlSI8NiqKjsPjtRO1nQNkzISQvUBh2xekjKVU+IHRRAED8aNHlZe+gRRGVvD1bpg==
+eslint-plugin-formatjs@^2.3.5:
+  version "2.3.5"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-formatjs/-/eslint-plugin-formatjs-2.3.5.tgz#37154a7b0301178061ad760986c29d19e18a7919"
+  integrity sha512-/veGUBJdzSEDaN+JoKciteuwekdLgfWaR2k363waEO6ysxc3i7swky+QiyTTcEVUhucn30eVgjDNEtjYQ3qOKw==
   dependencies:
     "@types/emoji-regex" "^8.0.0"
     "@types/eslint" "^6.8.0"
     "@types/estree" "^0.0.44"
     "@typescript-eslint/typescript-estree" "^2.29.0"
     emoji-regex "^9.0.0"
-    intl-messageformat-parser "^5.0.6"
+    intl-messageformat-parser "^5.0.8"
 
 eslint-plugin-import@^2.20.2:
   version "2.20.2"
