@@ -100,7 +100,7 @@
     "@storybook/addon-docs": "^5.3.18",
     "@storybook/addon-knobs": "^5.3.18",
     "@storybook/addons": "^5.3.19",
-    "@storybook/react": "^5.3.18",
+    "@storybook/react": "^5.3.19",
     "@storybook/theming": "^5.3.19",
     "@svgr/webpack": "^5.4.0",
     "@testing-library/dom": "^7.5.7",
