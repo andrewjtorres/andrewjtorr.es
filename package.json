@@ -76,7 +76,7 @@
     "react-router-dom": "6.0.0-alpha.4",
     "serialize-javascript": "^3.0.0",
     "source-map-support": "^0.5.19",
-    "styled-components": "^5.1.0",
+    "styled-components": "^5.1.1",
     "styled-system": "^5.1.5"
   },
   "devDependencies": {
