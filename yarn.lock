@@ -1328,18 +1328,18 @@
   resolved "https://registry.yarnpkg.com/@formatjs/intl-utils/-/intl-utils-3.1.0.tgz#759012e2e444f7fbeb61f5148a8d95202713d82e"
   integrity sha512-Q7+ksGpN6Dzp+W4qPai6OcUJ6pka2jPICJ0WlStFdy1RKGm90basrjSmox4xUR9DnMsWE5AfaiSu95nohCTLXw==
 
-"@graphql-tools/schema@^6.0.4":
-  version "6.0.4"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/schema/-/schema-6.0.4.tgz#5e5db15ea875d21dcd02db9b4dfc43a2f5d3cb66"
-  integrity sha512-6qdBWke8syP7Qv/4JQgSzg81dCjRdzy0B9lRVXasPPuqp6D2N+FEdzqTqLi1uS6kjLuYNXFBJvqh67nc5nB5Ig==
+"@graphql-tools/schema@^6.0.5":
+  version "6.0.5"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/schema/-/schema-6.0.5.tgz#6dc6f15861a48f2b8f82407b0701b3ec0476e7ce"
+  integrity sha512-F1MAW2uufz5O6fSUTdb72MMICbgP0km7l7wbsOC0izeEG/EqvvAs0dBDzvC6cNokDz/X/PCHhIdunK9o7XY/0g==
   dependencies:
-    "@graphql-tools/utils" "6.0.4"
+    "@graphql-tools/utils" "6.0.5"
     tslib "~2.0.0"
 
-"@graphql-tools/utils@6.0.4":
-  version "6.0.4"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-6.0.4.tgz#22081fca2724d61ecbf70f4c9df2a5b42feac281"
-  integrity sha512-7I2gwBduh6FGT2dc4GgUF9Pn2sWzHV86BjGPWlRoTLZtum+SPVAA0VJao5EyvMZLzGnW4+jPMgALEDgIOGD2cQ==
+"@graphql-tools/utils@6.0.5":
+  version "6.0.5"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-6.0.5.tgz#f46462ded39388cc28e1a1477e3e5c82185f9910"
+  integrity sha512-RRBx+ZKrw82dFXaXqh5lLNtjF9uD28G9OXESTj404+JSuz+eLbP0LIA/S6bcdUFfWqppgoswkK1sngvNpelKrg==
   dependencies:
     camel-case "4.1.1"
 
@@ -3439,13 +3439,13 @@
   resolved "https://registry.yarnpkg.com/@types/tapable/-/tapable-1.0.5.tgz#9adbc12950582aa65ead76bffdf39fe0c27a3c02"
   integrity sha512-/gG2M/Imw7cQFp8PGvz/SwocNrmKFjFsm5Pb8HdbHkZ1K8pmuPzOX4VeVoiEecFCVf4CsN1r3/BRvx+6sNqwtQ==
 
-"@types/terser-webpack-plugin@^2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@types/terser-webpack-plugin/-/terser-webpack-plugin-2.2.0.tgz#b1561e3118b9319d80ff65798c345877669b3e12"
-  integrity sha512-ywqEfTm7KdKoX9aYx0zYtiFU1z6IHrIYW9FJqeay2Ea58rTPML1J0hvoztGal2Jow3bkgGKcAmEZNL+8LqUVrA==
+"@types/terser-webpack-plugin@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@types/terser-webpack-plugin/-/terser-webpack-plugin-3.0.0.tgz#8c5781922ce60611037b28186baf192e28780a03"
+  integrity sha512-K5C7izOT8rR4qiE2vfXcQNEJN4lT9cq/2qJgpMUWR2HsjDW/KVrHx2CaHuaXvaqDNsRmdELPLaxeJHiI4GjVrA==
   dependencies:
     "@types/webpack" "*"
-    terser "^4.3.9"
+    terser "^4.6.13"
 
 "@types/testing-library__dom@*", "@types/testing-library__dom@^7.0.2":
   version "7.0.2"
@@ -17278,7 +17278,7 @@ terser-webpack-plugin@^3.0.2:
     terser "^4.6.13"
     webpack-sources "^1.4.3"
 
-terser@^4.1.2, terser@^4.3.9, terser@^4.6.12, terser@^4.6.13, terser@^4.6.3:
+terser@^4.1.2, terser@^4.6.12, terser@^4.6.13, terser@^4.6.3:
   version "4.6.13"
   resolved "https://registry.yarnpkg.com/terser/-/terser-4.6.13.tgz#e879a7364a5e0db52ba4891ecde007422c56a916"
   integrity sha512-wMvqukYgVpQlymbnNbabVZbtM6PN63AzqexpwJL8tbh/mRT9LE5o+ruVduAGL7D6Fpjl+Q+06U5I9Ul82odAhw==
