@@ -1316,6 +1316,13 @@
   dependencies:
     "@formatjs/intl-utils" "^3.1.0"
 
+"@formatjs/intl-numberformat@^4.2.2":
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl-numberformat/-/intl-numberformat-4.2.2.tgz#a5eb349c0d17500c48ad2b60a29f399330ae57a2"
+  integrity sha512-zhCU3Cz+sMQ5dKGwmsuzB0I2+xqbRJqFvgGq1fHALdg7jjDg+NaGYD6M5bU1bSjppLEopAE3rmBoVh+iHjjatw==
+  dependencies:
+    "@formatjs/intl-utils" "^3.2.0"
+
 "@formatjs/intl-relativetimeformat@^5.2.1":
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/@formatjs/intl-relativetimeformat/-/intl-relativetimeformat-5.2.1.tgz#e639015057f6435341f4bf7b6712babbc7b4ad5f"
@@ -1327,6 +1334,11 @@
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@formatjs/intl-utils/-/intl-utils-3.1.0.tgz#759012e2e444f7fbeb61f5148a8d95202713d82e"
   integrity sha512-Q7+ksGpN6Dzp+W4qPai6OcUJ6pka2jPICJ0WlStFdy1RKGm90basrjSmox4xUR9DnMsWE5AfaiSu95nohCTLXw==
+
+"@formatjs/intl-utils@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl-utils/-/intl-utils-3.2.0.tgz#637093cedb68f1aeb7cc4af9ee5a736e7af9620c"
+  integrity sha512-mMbu+V65bJO2WyIQM2gEfaiOSsHdCbf0YGxHFTDfFBqvQp4DLIV0K4OAeoPUxgluJxLlL/VbWJRZfNpeGUWwsw==
 
 "@graphql-tools/schema@^6.0.6":
   version "6.0.6"
@@ -7873,17 +7885,17 @@ eslint-plugin-es@^3.0.0:
     eslint-utils "^2.0.0"
     regexpp "^3.0.0"
 
-eslint-plugin-formatjs@^2.3.8:
-  version "2.3.8"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-formatjs/-/eslint-plugin-formatjs-2.3.8.tgz#b398a021f1bc60296037e4235b215d3a0eb9beb0"
-  integrity sha512-3Vt1Mty6PZoczH5PknQCc283JIifPW1OhC13MG5qdj00SF5xoiKqhJg4z+x6G13c2UrMkGMCEmJ8GWqbZatBWQ==
+eslint-plugin-formatjs@^2.3.9:
+  version "2.3.9"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-formatjs/-/eslint-plugin-formatjs-2.3.9.tgz#924d4ccab51efe301794c23ac2553649b0d236bd"
+  integrity sha512-LqMK3cel2rxWts22c3ufzK0Iij2Zetr0dMLMP4IpuoRrHpaT5Efh3h+NKCJfPuzB+5Tz5xyqnv1kMgexwqF01Q==
   dependencies:
     "@types/emoji-regex" "^8.0.0"
     "@types/eslint" "^6.8.0"
     "@types/estree" "^0.0.44"
     "@typescript-eslint/typescript-estree" "^2.29.0"
     emoji-regex "^9.0.0"
-    intl-messageformat-parser "^5.0.11"
+    intl-messageformat-parser "^5.0.12"
 
 eslint-plugin-import@^2.20.2:
   version "2.20.2"
@@ -10047,12 +10059,12 @@ intl-format-cache@^4.2.33:
   resolved "https://registry.yarnpkg.com/intl-format-cache/-/intl-format-cache-4.2.33.tgz#74e29a6ebb738e18a16f7b1610e43b497a569f10"
   integrity sha512-+mCPTnw2bjSlX+uN8BCUsmdsgy9FpQGHR+i2hrU1FTl9RzCNFvVkoyhvY6oogpCzDJl1cqYHOYKyf/T7PvO87Q==
 
-intl-messageformat-parser@^5.0.11:
-  version "5.0.11"
-  resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-5.0.11.tgz#5f4a84b07bffb4f0c9f08e0ebbfe9c31601ef531"
-  integrity sha512-QaCmqP7XI6e7f1KWbgLeY3C9PmagBDKQCmQlt1X3PIoeEA2q+IpUUw8MAX6FQxZSE5QGIrLNCINbvvbyXIHgfg==
+intl-messageformat-parser@^5.0.11, intl-messageformat-parser@^5.0.12:
+  version "5.0.12"
+  resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-5.0.12.tgz#e3c74055e753f2fe91a29701e1fbbc629967085d"
+  integrity sha512-jWsfY8Bq1rPoR/gHcpkC3quJFmR6Gp7Iq80+pIuaWyPOgXrpCw7rVPG0wowP8Mw0Qd9/MIsm0FEpSqS7d2dtWA==
   dependencies:
-    "@formatjs/intl-numberformat" "^4.2.1"
+    "@formatjs/intl-numberformat" "^4.2.2"
 
 intl-messageformat@^8.3.18:
   version "8.3.18"
