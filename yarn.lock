@@ -4976,10 +4976,10 @@ babel-plugin-react-docgen@^4.0.0:
     react-docgen "^5.0.0"
     recast "^0.14.7"
 
-babel-plugin-react-intl@^7.5.17:
-  version "7.5.17"
-  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-7.5.17.tgz#ab1e709ab547890fe416c04c829a68b87fed7e1b"
-  integrity sha512-Fp89HR5VsN6OC+M5tl4tD2Pr9G7LeuxjydaEWyetPHbnh3jeJAprXLYf8dHOkFq1tRHDH3dZX8knbBBkvPZtug==
+babel-plugin-react-intl@^7.5.18:
+  version "7.5.18"
+  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-7.5.18.tgz#2ce9cef0d7bc1d730c3b54c191bd26d21622556f"
+  integrity sha512-Ozxpx7iZ21RWaV3zn+cZc6E0vUaNUNHGgCkr2ba54AXX9apF7mGAK193bxVnMc+nlEhtWhbpdo1Rl/zDKFVsMg==
   dependencies:
     "@babel/core" "^7.9.0"
     "@babel/helper-plugin-utils" "^7.8.3"
@@ -4988,7 +4988,7 @@ babel-plugin-react-intl@^7.5.17:
     "@types/fs-extra" "^8.1.0"
     "@types/schema-utils" "^2.4.0"
     fs-extra "^9.0.0"
-    intl-messageformat-parser "^5.1.0"
+    intl-messageformat-parser "^5.1.1"
     schema-utils "^2.6.6"
 
 "babel-plugin-styled-components@>= 1", babel-plugin-styled-components@^1.10.7:
@@ -10043,7 +10043,7 @@ intl-format-cache@^4.2.36:
   resolved "https://registry.yarnpkg.com/intl-format-cache/-/intl-format-cache-4.2.36.tgz#d23eba77be5357c0f5efb5e059024d3a9b3576d3"
   integrity sha512-fOPm5Z0Krge7/rYq6hc1c/m8HRu9MwgnhLU7M9J4w3wHZS2RQwyZ0kpzmY9n86YRuUlcH29bGoeKDx/7D1nRhg==
 
-intl-messageformat-parser@^5.1.0, intl-messageformat-parser@^5.1.1:
+intl-messageformat-parser@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-5.1.1.tgz#1f223c6c615ada46bd8902cdae7f5f7c21f08934"
   integrity sha512-KSKa+pGpxhfAtx9CptkdqGebs2/f6GWAGfoWsPe6SvxRNk6egYFfewpyH3YXwY2ZMeiZ/Q82buWZhxHKazFrBQ==
