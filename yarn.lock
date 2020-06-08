@@ -2956,10 +2956,10 @@
   dependencies:
     dotenv "^8.2.0"
 
-"@types/dotenv-webpack@^1.7.0":
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/@types/dotenv-webpack/-/dotenv-webpack-1.7.0.tgz#48eb5a430737e7321f169bfec6c93a3ac566c094"
-  integrity sha512-/dXQdLSma6nYkeTiO571+IUEPY0hs3uwJfsLVvj4v/6/CqBUm/4TNiGHpqveIllQ0M0YVB67sdl9Fmgr2riBRQ==
+"@types/dotenv-webpack@^1.8.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@types/dotenv-webpack/-/dotenv-webpack-1.8.0.tgz#cbd9905a35475502b8bd0c7c1c23357ef167dee5"
+  integrity sha512-MQbyRnVjS1LheFMMm/k5ogBt61J748t7aM19ZS2iDJQHasg6x15MU0ssBp51yQHOyyOqP4/vppNNlHXnJ4Vi3A==
   dependencies:
     "@types/webpack" "*"
 
