@@ -122,7 +122,7 @@
     "@types/loadable__component": "^5.10.0",
     "@types/loadable__server": "^5.12.2",
     "@types/loadable__webpack-plugin": "^5.7.0",
-    "@types/node": "^14.0.12",
+    "@types/node": "^14.0.13",
     "@types/node-fetch": "^2.5.7",
     "@types/react-dev-utils": "^9.0.4",
     "@types/react-dom": "^16.9.8",
