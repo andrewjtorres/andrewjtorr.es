@@ -10,12 +10,11 @@ type ConfigFactory = (config: Configuration) => Configuration
 
 type Target =
   | 'async-node'
-  | 'atom'
   | 'electron-main'
+  | 'electron-preload'
   | 'electron-renderer'
-  | 'electron'
-  | 'node-webkit'
   | 'node'
+  | 'node-webkit'
   | 'web'
   | 'webworker'
   | ((compiler?: any) => void)
@@ -145,7 +144,7 @@ const clientConfig = createConfig('web', ({ plugins = [], ...baseConfig }) => ({
         sourceMap: true,
         terserOptions: {
           mangle: { safari10: true },
-          output: { ascii_only: true }, // eslint-disable-line @typescript-eslint/camelcase
+          output: { ascii_only: true },
         },
       }),
     ],
