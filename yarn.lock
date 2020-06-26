@@ -1306,6 +1306,13 @@
   dependencies:
     "@formatjs/intl-utils" "^3.4.1"
 
+"@formatjs/intl-numberformat@^4.2.10":
+  version "4.2.10"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl-numberformat/-/intl-numberformat-4.2.10.tgz#2c05add2233bb87e58e992778f9eb39996703421"
+  integrity sha512-mdubK3/Ml16LB/sS9LGSqCsXZ2CAHd7B3CvFhLTiPYFZSwNE9YUxp7n0VK3P/g8H5C9oweegI05onILkRCp6XQ==
+  dependencies:
+    "@formatjs/intl-utils" "^3.4.1"
+
 "@formatjs/intl-numberformat@^4.2.9":
   version "4.2.9"
   resolved "https://registry.yarnpkg.com/@formatjs/intl-numberformat/-/intl-numberformat-4.2.9.tgz#ed36f3c47e4e991ad36a4831c699123895ca136d"
@@ -7901,17 +7908,17 @@ eslint-plugin-es@^3.0.0:
     eslint-utils "^2.0.0"
     regexpp "^3.0.0"
 
-eslint-plugin-formatjs@^2.3.16:
-  version "2.3.16"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-formatjs/-/eslint-plugin-formatjs-2.3.16.tgz#f6498ab242654b7397a43d0e33fa053e56723e88"
-  integrity sha512-MHnoYkzpDo6eptUX4nw0+1Pj57DLE3H9nI803vgKN3D+OfNQvI9EuTqxWH8rQaPu00X/AKUTRpv0c8H3qtmfOA==
+eslint-plugin-formatjs@^2.3.17:
+  version "2.3.17"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-formatjs/-/eslint-plugin-formatjs-2.3.17.tgz#a673fc48cdd2a637a8cfce46b68f44ace88858d3"
+  integrity sha512-otHSpXPIt3oVcVsMl3+WzPhvrazlXH2BcLdxmWJ3bSiV/hRIaGqyUBWCsN/HC+MVledegFL0BKJ4RP1/WDnmYA==
   dependencies:
     "@types/emoji-regex" "^8.0.0"
     "@types/eslint" "^6.8.0"
     "@types/estree" "^0.0.44"
     "@typescript-eslint/typescript-estree" "^2.29.0"
     emoji-regex "^9.0.0"
-    intl-messageformat-parser "^5.1.6"
+    intl-messageformat-parser "^5.2.0"
 
 eslint-plugin-import@^2.21.2:
   version "2.21.2"
@@ -10079,12 +10086,12 @@ intl-format-cache@^4.2.41:
   resolved "https://registry.yarnpkg.com/intl-format-cache/-/intl-format-cache-4.2.41.tgz#a8bc569bba9802714236a271c8cc8a25519967ea"
   integrity sha512-iWArZcbzMmHJCrRUNMq+3HxysFTpzq5rUuNNnzCwN4uMzlKV+xbZmqrDy2Lovnq0IyeoztpXiufU8l1Ywq2zSQ==
 
-intl-messageformat-parser@^5.1.6:
-  version "5.1.6"
-  resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-5.1.6.tgz#0c63c1828e3ea09344420d882daeb4e3c53f45e0"
-  integrity sha512-gGbR2GbaQt7L9+edO/zL5CUmnBOnkTn8AT+mujxo05h7ofNChcN8DLAMynVOLehgtU40Ycrj+SrGTYetXWrYAw==
+intl-messageformat-parser@^5.1.6, intl-messageformat-parser@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-5.2.0.tgz#c9b0cb60dbd327c4ed93f24db7d1806cd45f4769"
+  integrity sha512-SNEyrrDkkSVUfnt+b+RCwn2rq5cMz7hZIJvn76ot0CcoRMIm8i9rU4Rpy6xUM8oayJyD1ayQYVjjeC1+Qea6Aw==
   dependencies:
-    "@formatjs/intl-numberformat" "^4.2.9"
+    "@formatjs/intl-numberformat" "^4.2.10"
 
 intl-messageformat@^8.3.26:
   version "8.3.26"
