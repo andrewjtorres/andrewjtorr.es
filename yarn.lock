@@ -14925,13 +14925,13 @@ react-redux@^7.0.2:
     prop-types "^15.7.2"
     react-is "^16.9.0"
 
-react-router-dom@6.0.0-alpha.4:
-  version "6.0.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.0.0-alpha.4.tgz#4bb41e4c25ea359db28605279ffd40bda3e1f0c7"
-  integrity sha512-QOsHfuM/CLiWKue4PwgUjnnhDm2rg0W82ylgcpDOPw89VDXjAbWU5NDX3qKdFyBdiFFYsk3q6/YJGdS2p4MHcw==
+react-router-dom@6.0.0-beta.0:
+  version "6.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.0.0-beta.0.tgz#9dcc8555365f22f7fbd09f26b6b82543f3eb97d6"
+  integrity sha512-36yNNGMT8RB9FRPL9nKJi6HKDkgOakU+o/2hHpSzR6e37gN70MpOU6QQlmif4oAWWBwjyGc3ZNOMFCsFuHUY5w==
   dependencies:
-    history "5.0.0-beta.9"
     prop-types "^15.7.2"
+    react-router "6.0.0-beta.0"
 
 react-router@6.0.0-alpha.4:
   version "6.0.0-alpha.4"
@@ -14939,6 +14939,13 @@ react-router@6.0.0-alpha.4:
   integrity sha512-UZdelX0qUxc8X2737nX4bOlgjLpSKE/aKjwZWf3IgB66oqh78YtyZ7msacnYtwe0403eixZzZtAwxcldpFT9xA==
   dependencies:
     history "5.0.0-beta.9"
+    prop-types "^15.7.2"
+
+react-router@6.0.0-beta.0:
+  version "6.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/react-router/-/react-router-6.0.0-beta.0.tgz#3e11f39b6ded4412c2fed9e4f989dd4c8156724d"
+  integrity sha512-VgMdfpVcmFQki/LZuLh8E/MNACekDetz4xqft+a6fBZvvJnVqKbLqebF7hyoawGrV1HcO5tVaUang2Og4W2j1Q==
+  dependencies:
     prop-types "^15.7.2"
 
 react-select@^3.0.8:
