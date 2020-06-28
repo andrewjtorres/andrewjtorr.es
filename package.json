@@ -209,7 +209,7 @@
     "webpack-node-externals": "^1.7.2"
   },
   "engines": {
-    "node": ">=12.16",
+    "node": ">=12.18",
     "yarn": ">=1.22"
   },
   "private": true,
