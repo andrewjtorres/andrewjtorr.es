@@ -228,7 +228,7 @@
     "*.{js,ts,tsx}": [
       "eslint --fix",
       "stylelint",
-      "jest --bail --findRelatedTests"
+      "jest --bail --find-related-tests"
     ],
     "*.{json,md,mdx,yml}": [
       "prettylint --fix"

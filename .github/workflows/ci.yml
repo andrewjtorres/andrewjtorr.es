@@ -26,7 +26,7 @@ jobs:
         uses: actions/cache@v2.0.0
         with:
           path: ${{ steps.yarn-cache.outputs.dir }}
-          key: yarn-cache-${{ hashFiles('**/yarn.lock') }}
+          key: yarn-cache-${{ hashFiles('yarn.lock') }}
           restore-keys: yarn-cache-
       - name: Install Node dependencies
         run: yarn install --frozen-lockfile
@@ -51,12 +51,12 @@ jobs:
         uses: actions/cache@v2.0.0
         with:
           path: ${{ steps.yarn-cache.outputs.dir }}
-          key: yarn-cache-${{ hashFiles('**/yarn.lock') }}
+          key: yarn-cache-${{ hashFiles('yarn.lock') }}
           restore-keys: yarn-cache-
       - name: Install Node dependencies
         run: yarn install --frozen-lockfile
       - name: Test units
-        run: yarn --silent test:units --coverage --runInBand
+        run: yarn --silent test:units --coverage --run-in-band
       - name: Publish code coverage results
         uses: codecov/codecov-action@v1.0.7
   deploy:
@@ -82,7 +82,7 @@ jobs:
         uses: actions/cache@v2.0.0
         with:
           path: ${{ steps.yarn-cache.outputs.dir }}
-          key: yarn-cache-${{ hashFiles('**/yarn.lock') }}
+          key: yarn-cache-${{ hashFiles('yarn.lock') }}
           restore-keys: yarn-cache-
       - name: Install Node dependencies
         run: yarn install --frozen-lockfile
