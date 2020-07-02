@@ -10103,9 +10103,9 @@ interpret@^2.0.0:
   integrity sha512-Ju0Bz/cEia55xDwUWEa8+olFpCiQoypjnQySseKtmjNrnps3P+xfpUmGr90T7yjlVJmOtybRvPXhKMbHr+fWnw==
 
 intl-format-cache@^4.2.42:
-  version "4.2.42"
-  resolved "https://registry.yarnpkg.com/intl-format-cache/-/intl-format-cache-4.2.42.tgz#8fc1de0fe72764d05b339a71b7ee0517c5ef0757"
-  integrity sha512-NJldCapugigFv1yAyqsY8jDdHFIJU427Ko47xf4yg2qLj4TtBA0d9lwqFnP5s9WOLJoNP/4ddu85B3ix0c5R7Q==
+  version "4.2.43"
+  resolved "https://registry.yarnpkg.com/intl-format-cache/-/intl-format-cache-4.2.43.tgz#e72e46afbee437591141168416115cc6621776bb"
+  integrity sha512-FCLGvHfAp1pT8XdzdWbZdtJAIE5IjrjTb8kcEUreJhbxBsqUQRcnVl6TZZzMkgJyFLdh9DKc+VytgtncrAyxKQ==
 
 intl-messageformat-parser@^5.2.0, intl-messageformat-parser@^5.2.1:
   version "5.2.1"
