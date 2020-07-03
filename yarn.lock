@@ -1115,16 +1115,7 @@
     globals "^11.1.0"
     lodash "^4.17.13"
 
-"@babel/types@^7.0.0", "@babel/types@^7.1.6", "@babel/types@^7.10.1", "@babel/types@^7.10.3", "@babel/types@^7.3.0", "@babel/types@^7.3.3", "@babel/types@^7.4.0", "@babel/types@^7.4.4", "@babel/types@^7.6.0", "@babel/types@^7.9.5", "@babel/types@^7.9.6":
-  version "7.10.3"
-  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.10.3.tgz#6535e3b79fea86a6b09e012ea8528f935099de8e"
-  integrity sha512-nZxaJhBXBQ8HVoIcGsf9qWep3Oh3jCENK54V4mRF7qaJabVsAYdbTtmSD8WmAp1R6ytPiu5apMwSXyxB1WlaBA==
-  dependencies:
-    "@babel/helper-validator-identifier" "^7.10.3"
-    lodash "^4.17.13"
-    to-fast-properties "^2.0.0"
-
-"@babel/types@^7.10.4":
+"@babel/types@^7.0.0", "@babel/types@^7.1.6", "@babel/types@^7.10.1", "@babel/types@^7.10.3", "@babel/types@^7.10.4", "@babel/types@^7.3.0", "@babel/types@^7.3.3", "@babel/types@^7.4.0", "@babel/types@^7.4.4", "@babel/types@^7.6.0", "@babel/types@^7.9.5", "@babel/types@^7.9.6":
   version "7.10.4"
   resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.10.4.tgz#369517188352e18219981efd156bfdb199fff1ee"
   integrity sha512-UTCFOxC3FsFHb7lkRMVvgLzaRVamXuAs2Tz4wajva4WxtVY82eZeaUBtC2Zt95FU9TiznuC0Zk35tsim8jeVpg==
@@ -1327,12 +1318,12 @@
   dependencies:
     "@formatjs/intl-utils" "^3.4.1"
 
-"@formatjs/intl-numberformat@^4.2.11":
-  version "4.2.11"
-  resolved "https://registry.yarnpkg.com/@formatjs/intl-numberformat/-/intl-numberformat-4.2.11.tgz#b7d2446b5bb2e6d760d66d9d053e51c045439936"
-  integrity sha512-LiPrkg2sRZsH0F6XOz9Esgu+Ou6vux3QPiNDHKKrHL5T4pRbcethI9+vwttnY44FIVnTxjQdywkcJILLjgWPUw==
+"@formatjs/intl-numberformat@^5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl-numberformat/-/intl-numberformat-5.0.1.tgz#6d9755fe89be5cc35dbd71abb44ce66507d03bd0"
+  integrity sha512-oIilbdy5JhwZZk5HUBLbYbOMN5WJUakJN3/BynXyM5vIVo72rBQL0kPDAn/4pvfUIzm8j0tY+5hnA0ptjLTSUQ==
   dependencies:
-    "@formatjs/intl-utils" "^3.5.0"
+    "@formatjs/intl-utils" "^3.6.0"
 
 "@formatjs/intl-relativetimeformat@^5.2.10":
   version "5.2.10"
@@ -1348,10 +1339,10 @@
   dependencies:
     emojis-list "^3.0.0"
 
-"@formatjs/intl-utils@^3.5.0":
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/@formatjs/intl-utils/-/intl-utils-3.5.0.tgz#77f2590e86d58d330014b104049f54343e09ba86"
-  integrity sha512-bXKUZFyOhcsjZlLfo+/Aeiu9FN8bh3ugwVx2FpoRC0sxixk9iALvlBPz2J6LGeJMtc/2zgdk6qqwR6RdAFGNBQ==
+"@formatjs/intl-utils@^3.6.0":
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl-utils/-/intl-utils-3.6.0.tgz#25c11a099c01ac9b7b904dda84cb840417893fa3"
+  integrity sha512-KojfGYH3b0HbyN8H+HRHxEYOctC9tOne8jU1MNw7O+g8QyIPK9y0y1cyXlj6FoLsHRi26u9jR1CJg5XrRfArug==
   dependencies:
     emojis-list "^3.0.0"
 
@@ -5081,10 +5072,10 @@ babel-plugin-react-docgen@^4.0.0:
     react-docgen "^5.0.0"
     recast "^0.14.7"
 
-babel-plugin-react-intl@^7.5.25:
-  version "7.5.25"
-  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-7.5.25.tgz#836420ac44adf0f4215fafdc93fe8e0df7ef433d"
-  integrity sha512-Y5stkEbha5tR8LLLMl405Mklu3mfqViYG16yefrPqOm+JVd5WA6IR8PX3ggbpMnVE9NECZzZTc658bs5Zs0uzQ==
+babel-plugin-react-intl@^7.5.27:
+  version "7.5.27"
+  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-7.5.27.tgz#a4c20dc5daa4145ccd5305a684afa2b61b62a3dc"
+  integrity sha512-V2y7tyevS3NoIB4rJnGVpXPd+T6KpryVSY8cOWg2m1p5nPxy08XP8N1MBL6EMFn8akiVBKs2sbnQ3n6y33jz8w==
   dependencies:
     "@babel/core" "^7.9.0"
     "@babel/helper-plugin-utils" "^7.8.3"
@@ -5093,7 +5084,7 @@ babel-plugin-react-intl@^7.5.25:
     "@types/fs-extra" "^8.1.0"
     "@types/schema-utils" "^2.4.0"
     fs-extra "^9.0.0"
-    intl-messageformat-parser "^5.2.1"
+    intl-messageformat-parser "^5.2.3"
     schema-utils "^2.6.6"
 
 "babel-plugin-styled-components@>= 1", babel-plugin-styled-components@^1.10.7:
@@ -10174,12 +10165,12 @@ intl-format-cache@^4.2.42:
   resolved "https://registry.yarnpkg.com/intl-format-cache/-/intl-format-cache-4.2.43.tgz#e72e46afbee437591141168416115cc6621776bb"
   integrity sha512-FCLGvHfAp1pT8XdzdWbZdtJAIE5IjrjTb8kcEUreJhbxBsqUQRcnVl6TZZzMkgJyFLdh9DKc+VytgtncrAyxKQ==
 
-intl-messageformat-parser@^5.2.0, intl-messageformat-parser@^5.2.1:
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-5.2.1.tgz#75176fa2638597b814145709c6cbd843f2ad73ef"
-  integrity sha512-sRDHQZumkMArCMtNxAN14bCwN/MmzdBHg6dW3Gr33WFxa+BwTTqcsz0Z084foR67FJR0Dk2yS8xjyDmx3bVNSg==
+intl-messageformat-parser@^5.2.0, intl-messageformat-parser@^5.2.1, intl-messageformat-parser@^5.2.3:
+  version "5.2.3"
+  resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-5.2.3.tgz#9ba9577ac9d07b23a8fbb2ca45aeb7ea4617006b"
+  integrity sha512-fo5YAWCwVlSi9ok94SKCT80PTXwZVhZyGgTTqWEWAyFnsS9f3Z+Az7e6IqjXrwYx8Xi6yF0TnZ6sn1tGi9JDPQ==
   dependencies:
-    "@formatjs/intl-numberformat" "^4.2.11"
+    "@formatjs/intl-numberformat" "^5.0.1"
 
 intl-messageformat@^8.4.0:
   version "8.4.0"
