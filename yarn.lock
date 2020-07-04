@@ -2469,12 +2469,12 @@
   dependencies:
     lodash "^4.17.15"
 
-"@loadable/webpack-plugin@^5.12.0":
-  version "5.12.0"
-  resolved "https://registry.yarnpkg.com/@loadable/webpack-plugin/-/webpack-plugin-5.12.0.tgz#b28c6e7a979e9c2f8d8b743a634de0ede124c76f"
-  integrity sha512-9G/DOSvR0BZHF8DCd7jWTVEjfLnyLKB+S5KhBOSCK8pTMwDcTKeb0oVd4iwPyeAfPAN4ibqN90r9qnSKnJ+WEQ==
+"@loadable/webpack-plugin@^5.13.0":
+  version "5.13.0"
+  resolved "https://registry.yarnpkg.com/@loadable/webpack-plugin/-/webpack-plugin-5.13.0.tgz#40af22f0955dbb669498a65fbf90c07e3c829538"
+  integrity sha512-MrMnpci590POKdmyTTaj/hv8A5BhGfG3Sg8WJ9M/HxEPnjoOFGWWSnV0yqBEi05etILE0Gl9xL5GSK/nZQbdOw==
   dependencies:
-    mkdirp "^0.5.1"
+    make-dir "^3.0.2"
 
 "@mdx-js/loader@^1.5.1", "@mdx-js/loader@^1.6.6":
   version "1.6.6"
