@@ -85,7 +85,7 @@
     "@babel/plugin-transform-react-constant-elements": "^7.10.4",
     "@babel/plugin-transform-react-inline-elements": "^7.10.4",
     "@babel/plugin-transform-runtime": "^7.10.4",
-    "@babel/preset-env": "^7.10.3",
+    "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "^7.10.1",
     "@babel/preset-typescript": "^7.10.1",
     "@loadable/babel-plugin": "^5.12.0",
