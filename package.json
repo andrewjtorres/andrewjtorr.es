@@ -167,7 +167,7 @@
     "eslint-plugin-unicorn": "^20.1.0",
     "file-loader": "^6.0.0",
     "glob": "^7.1.6",
-    "graphql-tag": "^2.10.3",
+    "graphql-tag": "^2.10.4",
     "husky": "^4.2.5",
     "jest": "^26.1.0",
     "jest-circus": "^26.1.0",
