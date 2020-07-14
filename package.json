@@ -70,7 +70,7 @@
     "polished": "^3.6.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-intl": "^5.0.2",
+    "react-intl": "^5.1.0",
     "react-is": "^16.13.1",
     "react-router": "6.0.0-alpha.4",
     "react-router-dom": "6.0.0-alpha.4",
