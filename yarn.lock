@@ -16844,9 +16844,9 @@ void-elements@^2.0.1:
   integrity sha1-wGavtYK7HLQSjWDqkjkulNXp2+w=
 
 vue-docgen-api@^4.1.0:
-  version "4.27.1"
-  resolved "https://registry.yarnpkg.com/vue-docgen-api/-/vue-docgen-api-4.27.1.tgz#bfc16faa987a55c8f76cf0fbbddf2f3dc0f821c4"
-  integrity sha512-lYI0XVPrzwssts8N5KFYFEW8u/unnxtzv0xKCxPjQHIFFYIykMBgOB5RTbZK6Rs6ywoHj5ByxbsoKNkWJPcpLA==
+  version "4.28.0"
+  resolved "https://registry.yarnpkg.com/vue-docgen-api/-/vue-docgen-api-4.28.0.tgz#8a5427588bb52901386cf012168d1aee9958507f"
+  integrity sha512-daq6fBYUvoGQE3oJgwApT17WyHhdso65MtnJCrVNAK6MCad1/QKN6IX81yZRt4tN1zLOOhDRggGJ6lXJhFWzdg==
   dependencies:
     "@babel/parser" "^7.6.0"
     "@babel/types" "^7.6.0"
