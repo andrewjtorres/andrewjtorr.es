@@ -151,7 +151,7 @@
     "cz-conventional-changelog": "^3.2.0",
     "dotenv-safe": "^8.2.0",
     "dotenv-webpack": "^2.0.0",
-    "eslint": "^7.4.0",
+    "eslint": "^7.5.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-import-resolver-typescript": "1.1.1",
     "eslint-plugin-formatjs": "^2.5.6",
