@@ -2047,12 +2047,12 @@
   dependencies:
     "@formatjs/intl-utils" "^3.8.1"
 
-"@formatjs/intl-numberformat@^5.3.2":
-  version "5.3.2"
-  resolved "https://registry.yarnpkg.com/@formatjs/intl-numberformat/-/intl-numberformat-5.3.2.tgz#c781aaec87819edbb15d8509d22ab875ec609d01"
-  integrity sha512-0M5KM9rxzHWBgkwofN0UPqaXaHKJe4fB3rDvNSay4+bjrkEe8a6ERIGhwAOZ9dgpOEt10RLNNc7MKsLJu7OvIg==
+"@formatjs/intl-numberformat@^5.3.3":
+  version "5.3.3"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl-numberformat/-/intl-numberformat-5.3.3.tgz#ade268890d33a4a5535bdfbc8a9415df62113d2c"
+  integrity sha512-keU4arK7WoQMMfUuXzVP5nPzKFXrNpcNne/58OxxDxoJfqiv4vHiBjHHfPzy5xf+1rgnoplaV1mabNt1HTPtwA==
   dependencies:
-    "@formatjs/intl-utils" "^3.8.1"
+    "@formatjs/intl-utils" "^3.8.2"
 
 "@formatjs/intl-relativetimeformat@^6.2.3":
   version "6.2.3"
@@ -2065,6 +2065,13 @@
   version "3.8.1"
   resolved "https://registry.yarnpkg.com/@formatjs/intl-utils/-/intl-utils-3.8.1.tgz#e9bf5b7705dd9653d33f2f7af575d92bdb280b7c"
   integrity sha512-Vm7WRiokXWdu4iWVAQ+omDVWRt4ImUzgfKJAWocz3m1h6/ftgc+YuIcL4RDE6TH3jYben7exTREWHXIwWnx4YA==
+  dependencies:
+    emojis-list "^3.0.0"
+
+"@formatjs/intl-utils@^3.8.2":
+  version "3.8.2"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl-utils/-/intl-utils-3.8.2.tgz#168b528d482483e333a08646258eb17e26c9760d"
+  integrity sha512-34J1HmuNSRYQgJ6Gi/dYJQzdDsyAPJOrzXx977UajrhlXlI+0dvoqleP4W+Qtyc65EqzTGtUSgqLYhoPty8v3w==
   dependencies:
     emojis-list "^3.0.0"
 
@@ -9991,25 +9998,25 @@ interpret@^2.0.0:
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-2.2.0.tgz#1a78a0b5965c40a5416d007ad6f50ad27c417df9"
   integrity sha512-Ju0Bz/cEia55xDwUWEa8+olFpCiQoypjnQySseKtmjNrnps3P+xfpUmGr90T7yjlVJmOtybRvPXhKMbHr+fWnw==
 
-intl-format-cache@^4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/intl-format-cache/-/intl-format-cache-4.3.0.tgz#09bb93a06d9774bb35e5a7117c0f047475cd5f1c"
-  integrity sha512-kGumT8fncIYMXb+YiWJKJ0t8n1tjSGrysZ+IFvXJc8oGT9U9PzH8DY2pFd0OY8L8RId6uNk2AiAFGP6bBHFSTg==
+intl-format-cache@^4.3.0, intl-format-cache@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/intl-format-cache/-/intl-format-cache-4.3.1.tgz#484d31a9872161e6c02139349b259a6229ade377"
+  integrity sha512-OEUYNA7D06agqPOYhbTkl0T8HA3QKSuwWh1HiClEnpd9vw7N+3XsQt5iZ0GUEchp5CW1fQk/tary+NsbF3yQ1Q==
 
-intl-messageformat-parser@^5.3.5, intl-messageformat-parser@^5.3.6:
-  version "5.3.6"
-  resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-5.3.6.tgz#b44a5825a5f808d8422b7be173dd5f7b3e6ac5f0"
-  integrity sha512-ghIc5YOWzeCpNqDNXxYWYe1rCK+nIgfenNy5WLUi99PPII+WPKq0ds0epcjWtFdVaOs24C/J2HKxgCVLvq5RZw==
+intl-messageformat-parser@^5.3.5, intl-messageformat-parser@^5.3.6, intl-messageformat-parser@^5.3.7:
+  version "5.3.7"
+  resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-5.3.7.tgz#96d93cc1856048ee8e09193951f1e1ba69073204"
+  integrity sha512-83C+eODXu/zfR35bKjSz/HKEGkNSHbsF1WOuZDgFs/TudaEuVIZ8pstQYFyY0CIuCGXomcSevrFW1d4y7nW5xw==
   dependencies:
-    "@formatjs/intl-numberformat" "^5.3.2"
+    "@formatjs/intl-numberformat" "^5.3.3"
 
 intl-messageformat@^9.1.5:
-  version "9.1.5"
-  resolved "https://registry.yarnpkg.com/intl-messageformat/-/intl-messageformat-9.1.5.tgz#3e846137e10d04a94aabda8e805523a78f4aa708"
-  integrity sha512-sfzOaNoWlp8sMhgFv0HXWgoQQGyRH7vP+hscCbbLPCxDWOfWHiydPZo+td5nJXXbkGHsxGAoZLNyhpByJPIJcA==
+  version "9.1.7"
+  resolved "https://registry.yarnpkg.com/intl-messageformat/-/intl-messageformat-9.1.7.tgz#a9452fc002bf4e36f61d8bbdfbe58b9af07f5fd7"
+  integrity sha512-ASm4uT84F6szEK5bvmyNhwFyLKQy+7W6uXxMg1CaQZHHhZSJI0hsh4mlrfy7aCqn1+A7WTUPGVmzUGfFhdoGAw==
   dependencies:
-    intl-format-cache "^4.3.0"
-    intl-messageformat-parser "^5.3.5"
+    intl-format-cache "^4.3.1"
+    intl-messageformat-parser "^5.3.7"
 
 invariant@^2.2.2, invariant@^2.2.3, invariant@^2.2.4:
   version "2.2.4"
