@@ -44,7 +44,7 @@
     "@apollo/react-hooks": "^3.1.5",
     "@apollo/react-ssr": "^4.0.0",
     "@babel/runtime-corejs3": "^7.10.5",
-    "@graphql-tools/schema": "^6.0.12",
+    "@graphql-tools/schema": "^6.0.15",
     "@loadable/component": "^5.13.1",
     "@loadable/server": "^5.13.1",
     "@types/react": "^16.9.43",
