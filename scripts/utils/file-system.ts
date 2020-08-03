@@ -91,7 +91,7 @@ export const copyFile = (source: string, target: string) =>
 
 export const makeDir = (
   path: string,
-  options: MakeDirOptions = { recursive: true }
+  options: MakeDirOptions = { recursive: true } // eslint-disable-line unicorn/no-object-as-default-parameter
 ) => promisify(fs.mkdir)(path, options)
 
 export const readDir = (path: string, options?: GlobOptions) =>

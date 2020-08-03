@@ -256,19 +256,18 @@ const Home: React.FunctionComponent = (props) => {
   const mediumLinkContainer = React.useRef<HTMLDivElement>()
   const smallLinkContainer = React.useRef<HTMLDivElement>()
 
+  const smallMediumTransition = ({
+    matches,
+  }: MediaQueryList | MediaQueryListEvent) => {
+    const { current } = matches ? mediumLinkContainer : smallLinkContainer
+
+    return current?.append(...links)
+  }
+
   React.useEffect(() => {
     const mediaQueryList = window.matchMedia(
       'screen and (min-width: 769px), print'
     )
-
-    // eslint-disable-next-line unicorn/consistent-function-scoping
-    const smallMediumTransition = ({
-      matches,
-    }: MediaQueryList | MediaQueryListEvent) => {
-      const { current } = matches ? mediumLinkContainer : smallLinkContainer
-
-      return current?.append(...links)
-    }
 
     mediaQueryList.addListener(smallMediumTransition)
     smallMediumTransition(mediaQueryList)
