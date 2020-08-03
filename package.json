@@ -80,7 +80,7 @@
     "styled-system": "^5.1.5"
   },
   "devDependencies": {
-    "@apollo/react-testing": "^3.1.4",
+    "@apollo/react-testing": "^4.0.0",
     "@babel/core": "^7.10.5",
     "@babel/plugin-transform-react-constant-elements": "^7.10.4",
     "@babel/plugin-transform-react-inline-elements": "^7.10.4",
