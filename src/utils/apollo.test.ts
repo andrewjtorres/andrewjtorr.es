@@ -1,9 +1,13 @@
-import { InMemoryCache } from 'apollo-cache-inmemory'
-import { ApolloClient } from 'apollo-client'
-import { ApolloLink, Observable, execute } from 'apollo-link'
-import { ErrorLink } from 'apollo-link-error'
+import {
+  execute,
+  gql,
+  ApolloClient,
+  ApolloLink,
+  Observable,
+} from '@apollo/client'
+import { InMemoryCache } from '@apollo/client/cache'
+import { ErrorLink } from '@apollo/client/link/error'
 import { GraphQLError } from 'graphql'
-import gql from 'graphql-tag'
 
 import { createApolloClient, createErrorLink } from './apollo'
 

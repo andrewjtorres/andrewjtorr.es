@@ -1,7 +1,7 @@
 import fs from 'fs'
 import { join } from 'path'
 import { promisify } from 'util'
-import gql from 'graphql-tag'
+import { gql } from '@apollo/client'
 
 import { locales } from '../config'
 import { Context, Resolvers } from 'common'

@@ -1,4 +1,4 @@
-import { useQuery } from '@apollo/react-hooks'
+import { useQuery } from '@apollo/client'
 import React from 'react'
 import { IntlProvider } from 'react-intl'
 import { useRoutes, PartialRouteObject } from 'react-router'

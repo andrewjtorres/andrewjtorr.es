@@ -1,17 +1,30 @@
 import {
+  gql,
+  ApolloClient,
+  ApolloClientOptions,
+  ApolloLink,
+} from '@apollo/client'
+import {
   InMemoryCache,
   InMemoryCacheConfig as InMemoryCacheOptions,
   NormalizedCacheObject,
-} from 'apollo-cache-inmemory'
-import { ApolloClient, ApolloClientOptions } from 'apollo-client'
-import { ApolloLink } from 'apollo-link'
-import { ErrorLink } from 'apollo-link-error'
+} from '@apollo/client/cache'
+import { ErrorLink } from '@apollo/client/link/error'
+import { DocumentNode } from 'graphql'
 
 interface Options extends Partial<ApolloClientOptions<NormalizedCacheObject>> {
   defaults?: Record<string, any>
   links?: ApolloLink[]
   preloadedCache?: NormalizedCacheObject
+  query?: DocumentNode
 }
+
+const storeQuery = gql`
+  query StoreQuery {
+    currentLocale
+    locales
+  }
+`
 
 export const createErrorLink = () =>
   new ErrorLink(({ graphQLErrors = [], networkError }) => {
@@ -33,13 +46,14 @@ export const createErrorLink = () =>
   })
 
 const createInMemoryCache = (options: InMemoryCacheOptions = {}) =>
-  new InMemoryCache({ freezeResults: true, ...options })
+  new InMemoryCache(options)
 
 export const createApolloClient = ({
   cache: providedCache,
   defaults,
   links = [],
   preloadedCache,
+  query = storeQuery,
   ...restOptions
 }: Options = {}) => {
   let cache = providedCache ?? createInMemoryCache()
@@ -49,7 +63,7 @@ export const createApolloClient = ({
   }
 
   if (defaults) {
-    cache.writeData({ data: defaults })
+    cache.writeQuery({ data: defaults, query })
   }
 
   const client = new ApolloClient({
@@ -61,7 +75,7 @@ export const createApolloClient = ({
 
   if (defaults) {
     client.onResetStore(() =>
-      Promise.resolve(cache.writeData({ data: defaults }))
+      Promise.resolve(cache.writeQuery({ data: defaults, query }))
     )
   }
 

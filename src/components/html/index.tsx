@@ -1,4 +1,4 @@
-import { NormalizedCacheObject } from 'apollo-cache-inmemory'
+import { NormalizedCacheObject } from '@apollo/client/cache'
 import React from 'react'
 import serialize from 'serialize-javascript'
 

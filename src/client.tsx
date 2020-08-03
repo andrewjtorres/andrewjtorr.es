@@ -1,6 +1,5 @@
-import { ApolloProvider } from '@apollo/react-hooks'
+import { ApolloProvider, HttpLink } from '@apollo/client'
 import { loadableReady } from '@loadable/component'
-import { HttpLink } from 'apollo-link-http'
 import { createBrowserHistory, createPath, Action, Listener } from 'history'
 import React from 'react'
 import deepForceUpdate from 'react-deep-force-update'

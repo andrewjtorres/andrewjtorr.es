@@ -17,9 +17,10 @@ module.exports = {
     'react-hooks',
     'unicorn',
   ],
-  env: { browser: true },
+  env: { browser: true, node: true },
   globals: { __IS_DEV__: false },
   extends: [
+    'eslint:recommended',
     'plugin:import/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:promise/recommended',
@@ -103,5 +104,6 @@ module.exports = {
     'import/resolver': {
       typescript: { alwaysTryTypes: true, directory: 'tsconfig.json' },
     },
+    react: { version: 'latest' },
   },
 }
