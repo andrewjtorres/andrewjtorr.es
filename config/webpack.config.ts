@@ -177,7 +177,7 @@ const handlerConfig = createConfig(
     ...baseConfig,
     entry: { handler: resolve('./src/handler.ts') },
     externals: [
-      nodeExternals({ whitelist: [/\.(bmp|gif|jp(e)?g|png|webp)$/] }),
+      nodeExternals({ allowlist: [/\.(bmp|gif|jp(e)?g|png|webp)$/] }),
     ],
     name: 'handler',
     node: false,
@@ -205,7 +205,7 @@ const serverConfig = createConfig(
     ...baseConfig,
     entry: { server: resolve('./src/server.tsx') },
     externals: [
-      nodeExternals({ whitelist: [/\.(bmp|gif|jp(e)?g|png|webp)$/] }),
+      nodeExternals({ allowlist: [/\.(bmp|gif|jp(e)?g|png|webp)$/] }),
     ],
     name: 'server',
     node: false,
