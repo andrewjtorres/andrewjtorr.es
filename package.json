@@ -45,7 +45,7 @@
     "@graphql-tools/schema": "^6.0.15",
     "@loadable/component": "^5.13.1",
     "@loadable/server": "^5.13.1",
-    "@types/react": "^16.9.43",
+    "@types/react": "^16.9.44",
     "apollo-server-express": "^2.16.1",
     "aws-serverless-express": "^3.3.8",
     "body-parser": "^1.19.0",
