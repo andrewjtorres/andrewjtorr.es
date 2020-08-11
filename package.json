@@ -153,7 +153,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.20.4",
     "eslint-plugin-react-hooks": "^4.0.8",
-    "eslint-plugin-testing-library": "^3.3.1",
+    "eslint-plugin-testing-library": "^3.6.0",
     "eslint-plugin-unicorn": "^21.0.0",
     "file-loader": "^6.0.0",
     "glob": "^7.1.6",
