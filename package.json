@@ -85,7 +85,7 @@
     "@storybook/addon-knobs": "^5.3.19",
     "@storybook/addons": "^5.3.19",
     "@storybook/react": "^5.3.19",
-    "@storybook/theming": "^5.3.19",
+    "@storybook/theming": "^6.0.5",
     "@svgr/webpack": "^5.4.0",
     "@testing-library/dom": "^7.21.4",
     "@testing-library/jest-dom": "^5.11.2",
