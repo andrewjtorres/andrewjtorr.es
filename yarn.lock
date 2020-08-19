@@ -1517,12 +1517,12 @@
   dependencies:
     emojis-list "^3.0.0"
 
-"@formatjs/ts-transformer@^2.7.0":
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/@formatjs/ts-transformer/-/ts-transformer-2.7.0.tgz#d5eda2ba8e6304e793662262bede94cea3500ab1"
-  integrity sha512-uIXV959/o6goQuTIseknTPmqN2b84EUuAmJVE/KwsVQ9skMfPI70yDaxFNDllrOCg68rNmwzj/S7IFcPySm7GQ==
+"@formatjs/ts-transformer@^2.7.3":
+  version "2.7.3"
+  resolved "https://registry.yarnpkg.com/@formatjs/ts-transformer/-/ts-transformer-2.7.3.tgz#0c2f2dd315d53b24701b9af550c78545c25f6f4f"
+  integrity sha512-wRFCWrL8ToaxUnm9rpPDDJ/I99VCCa1Ycj3bS7Uu86LObHs4kDgmc8CPiw7bBDEiPb/ZVwbpI2POXx+XCOU8rw==
   dependencies:
-    intl-messageformat-parser "^5.3.9"
+    intl-messageformat-parser "^5.4.2"
     typescript "^3.8"
 
 "@graphql-tools/schema@^6.0.18":
@@ -5342,18 +5342,18 @@ babel-plugin-react-docgen@^4.0.0:
     react-docgen "^5.0.0"
     recast "^0.14.7"
 
-babel-plugin-react-intl@^8.1.0:
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-8.1.0.tgz#e9f7cc50b138204723900a3bfbd283549cc24405"
-  integrity sha512-PN8N5ySUdTccjwCg4Mv+JLt28+HusN7oqtxHe1r/B9Ffo5B0cItXti1FIOpJjIDipC+HRg6zopCt9X8HnC24gQ==
+babel-plugin-react-intl@^8.1.3:
+  version "8.1.3"
+  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-8.1.3.tgz#ed3cab7f919a8f836056cd3267270dcaeb447cff"
+  integrity sha512-OJeJO52jVNP0ha5np5BVW8ZZnRlsU+voKHj+I2a65rPxTJ5Y7nd1SEsUn5SWlcbxrG7TPHJ+xK8MFt7c23YfzQ==
   dependencies:
     "@babel/core" "^7.9.0"
     "@babel/helper-plugin-utils" "^7.8.3"
     "@babel/types" "^7.9.5"
-    "@formatjs/ts-transformer" "^2.7.0"
+    "@formatjs/ts-transformer" "^2.7.3"
     "@types/babel__core" "^7.1.7"
     "@types/schema-utils" "^2.4.0"
-    intl-messageformat-parser "^5.3.9"
+    intl-messageformat-parser "^5.4.2"
     schema-utils "^2.6.6"
 
 "babel-plugin-styled-components@>= 1", babel-plugin-styled-components@^1.10.7:
@@ -9851,7 +9851,7 @@ interpret@^2.0.0:
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-2.2.0.tgz#1a78a0b5965c40a5416d007ad6f50ad27c417df9"
   integrity sha512-Ju0Bz/cEia55xDwUWEa8+olFpCiQoypjnQySseKtmjNrnps3P+xfpUmGr90T7yjlVJmOtybRvPXhKMbHr+fWnw==
 
-intl-messageformat-parser@^5.3.7, intl-messageformat-parser@^5.3.9, intl-messageformat-parser@^5.4.2:
+intl-messageformat-parser@^5.3.7, intl-messageformat-parser@^5.4.2:
   version "5.4.2"
   resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-5.4.2.tgz#d8b106458798ccd81e79d8d52c6f97f3a4124356"
   integrity sha512-VHu6UWgWLJykaSeI1M2DpZMVRLuGCOV91i5I81xnJuAI0MKHP7ZJ3my5naOQkzG10ris3hBr+o5RElF1wQ5IXA==
