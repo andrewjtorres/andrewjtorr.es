@@ -80,7 +80,7 @@
     "@loadable/babel-plugin": "^5.13.0",
     "@loadable/webpack-plugin": "^5.13.0",
     "@mdx-js/loader": "^1.6.16",
-    "@storybook/addon-a11y": "^5.3.19",
+    "@storybook/addon-a11y": "^6.0.12",
     "@storybook/addon-docs": "^6.0.4",
     "@storybook/addon-knobs": "^6.0.12",
     "@storybook/addons": "^5.3.19",
