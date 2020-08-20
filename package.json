@@ -137,7 +137,7 @@
     "babel-plugin-react-intl": "^8.1.0",
     "babel-plugin-styled-components": "^1.10.7",
     "browser-sync": "^2.26.12",
-    "chokidar": "^3.4.1",
+    "chokidar": "^3.4.2",
     "cz-conventional-changelog": "^3.2.0",
     "dotenv-safe": "^8.2.0",
     "dotenv-webpack": "^2.0.0",
