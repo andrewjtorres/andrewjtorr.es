@@ -8,6 +8,7 @@ import { ThemeProvider } from 'styled-components'
 import GlobalStyle from 'styles/global'
 import theme from 'styles/theme'
 
+// @ts-expect-error TS2345
 addDecorator(withA11y)
 addDecorator(withKnobs)
 addDecorator((story) => (
