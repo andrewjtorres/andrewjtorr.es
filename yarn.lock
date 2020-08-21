@@ -7631,18 +7631,6 @@ expand-tilde@^2.0.0, expand-tilde@^2.0.2:
   dependencies:
     homedir-polyfill "^1.0.1"
 
-expect@^26.3.0:
-  version "26.4.0"
-  resolved "https://registry.yarnpkg.com/expect/-/expect-26.4.0.tgz#34a0aae523343b0931ff1cf0aa972dfe40edfab4"
-  integrity sha512-dbYDJhFcqQsamlos6nEwAMe+ahdckJBk5fmw1DYGLQGabGSlUuT+Fm2jHYw5119zG3uIhP+lCQbjJhFEdZMJtg==
-  dependencies:
-    "@jest/types" "^26.3.0"
-    ansi-styles "^4.0.0"
-    jest-get-type "^26.3.0"
-    jest-matcher-utils "^26.4.0"
-    jest-message-util "^26.3.0"
-    jest-regex-util "^26.0.0"
-
 expect@^26.4.1:
   version "26.4.1"
   resolved "https://registry.yarnpkg.com/expect/-/expect-26.4.1.tgz#6ed3dc218e6a9ffce16c15edc518f44bad9a6731"
@@ -9779,10 +9767,10 @@ jest-changed-files@^26.3.0:
     execa "^4.0.0"
     throat "^5.0.0"
 
-jest-circus@^26.3.0:
-  version "26.3.0"
-  resolved "https://registry.yarnpkg.com/jest-circus/-/jest-circus-26.3.0.tgz#8674b23a591f064328540384964d44a9ddcec179"
-  integrity sha512-/uXYaz7E98LZ2djshyjnM/sRvLYfPfBTK1WAJA6Q0qlFi1Yj0SW2pmu3d3Mv2RX610KJXU5OymbQTQxKQSmmdw==
+jest-circus@^26.4.1:
+  version "26.4.1"
+  resolved "https://registry.yarnpkg.com/jest-circus/-/jest-circus-26.4.1.tgz#06d23d313bb891db0bdac7477bd50ff2c69cb630"
+  integrity sha512-rc3cj7aPMx5ZrrI7PC4n44oYbfVtAJ+QTQIWpNESzgFDe9+bpcUOUtgo9pfH7WeB8Q6EWEL1SetFQgvEl6eVrA==
   dependencies:
     "@babel/traverse" "^7.1.0"
     "@jest/environment" "^26.3.0"
@@ -9792,16 +9780,16 @@ jest-circus@^26.3.0:
     chalk "^4.0.0"
     co "^4.6.0"
     dedent "^0.7.0"
-    expect "^26.3.0"
+    expect "^26.4.1"
     is-generator-fn "^2.0.0"
-    jest-each "^26.3.0"
-    jest-matcher-utils "^26.3.0"
+    jest-each "^26.4.0"
+    jest-matcher-utils "^26.4.1"
     jest-message-util "^26.3.0"
-    jest-runner "^26.3.0"
-    jest-runtime "^26.3.0"
-    jest-snapshot "^26.3.0"
+    jest-runner "^26.4.1"
+    jest-runtime "^26.4.1"
+    jest-snapshot "^26.4.1"
     jest-util "^26.3.0"
-    pretty-format "^26.3.0"
+    pretty-format "^26.4.0"
     stack-utils "^2.0.2"
     throat "^5.0.0"
 
@@ -9824,7 +9812,7 @@ jest-cli@^26.4.1:
     prompts "^2.0.1"
     yargs "^15.3.1"
 
-jest-config@^26.1.0, jest-config@^26.4.0, jest-config@^26.4.1:
+jest-config@^26.1.0, jest-config@^26.4.1:
   version "26.4.1"
   resolved "https://registry.yarnpkg.com/jest-config/-/jest-config-26.4.1.tgz#16b5a8e25c43279025718b1678115e39607f914f"
   integrity sha512-0kUnVceEax0sYN+wdkNYF7fxjYKbsvmKmjVWwJvsSYA2p94bIL6wSy3oehewev7L9Dp/FDZFhmc9dyOoavdT6A==
@@ -9879,17 +9867,6 @@ jest-docblock@^26.0.0:
   integrity sha512-RDZ4Iz3QbtRWycd8bUEPxQsTlYazfYn/h5R65Fc6gOfwozFhoImx+affzky/FFBuqISPTqjXomoIGJVKBWoo0w==
   dependencies:
     detect-newline "^3.0.0"
-
-jest-each@^26.3.0:
-  version "26.3.0"
-  resolved "https://registry.yarnpkg.com/jest-each/-/jest-each-26.3.0.tgz#f70192d59f6a8d72b4ccfe8e9a39ddf667b1263e"
-  integrity sha512-OSAnLv0Eo/sDVhV0ifT2u6Q4aYUBoZ97R4k9cQshUFLTco0iRDbViJiW3Y6ySZjW95Tb83/xMYCppBih/7sW/A==
-  dependencies:
-    "@jest/types" "^26.3.0"
-    chalk "^4.0.0"
-    jest-get-type "^26.3.0"
-    jest-util "^26.3.0"
-    pretty-format "^26.3.0"
 
 jest-each@^26.4.0:
   version "26.4.0"
@@ -10000,16 +9977,6 @@ jest-matcher-utils@^25.1.0:
     jest-get-type "^25.2.6"
     pretty-format "^25.5.0"
 
-jest-matcher-utils@^26.3.0, jest-matcher-utils@^26.4.0:
-  version "26.4.0"
-  resolved "https://registry.yarnpkg.com/jest-matcher-utils/-/jest-matcher-utils-26.4.0.tgz#2bce9a939e008b894faf1bd4b5bb58facd00c252"
-  integrity sha512-u+xdCdq+F262DH+PutJKXLGr2H5P3DImdJCir51PGSfi3TtbLQ5tbzKaN8BkXbiTIU6ayuAYBWTlU1nyckVdzA==
-  dependencies:
-    chalk "^4.0.0"
-    jest-diff "^26.4.0"
-    jest-get-type "^26.3.0"
-    pretty-format "^26.4.0"
-
 jest-matcher-utils@^26.4.1:
   version "26.4.1"
   resolved "https://registry.yarnpkg.com/jest-matcher-utils/-/jest-matcher-utils-26.4.1.tgz#f9f2d1d37d301e328eb22e9df09e7343d6cc1b25"
@@ -10075,32 +10042,6 @@ jest-resolve@^26.4.0:
     resolve "^1.17.0"
     slash "^3.0.0"
 
-jest-runner@^26.3.0:
-  version "26.4.0"
-  resolved "https://registry.yarnpkg.com/jest-runner/-/jest-runner-26.4.0.tgz#4cb91b266390fbf266294a7d8250d0e7bf8c7a9d"
-  integrity sha512-XF+tnUGolnPriu6Gg+HHWftspMjD5NkTV2mQppQnpZe39GcUangJ0al7aBGtA3GbVAcRd048DQiJPmsQRdugjw==
-  dependencies:
-    "@jest/console" "^26.3.0"
-    "@jest/environment" "^26.3.0"
-    "@jest/test-result" "^26.3.0"
-    "@jest/types" "^26.3.0"
-    "@types/node" "*"
-    chalk "^4.0.0"
-    emittery "^0.7.1"
-    exit "^0.1.2"
-    graceful-fs "^4.2.4"
-    jest-config "^26.4.0"
-    jest-docblock "^26.0.0"
-    jest-haste-map "^26.3.0"
-    jest-leak-detector "^26.4.0"
-    jest-message-util "^26.3.0"
-    jest-resolve "^26.4.0"
-    jest-runtime "^26.4.0"
-    jest-util "^26.3.0"
-    jest-worker "^26.3.0"
-    source-map-support "^0.5.6"
-    throat "^5.0.0"
-
 jest-runner@^26.4.1:
   version "26.4.1"
   resolved "https://registry.yarnpkg.com/jest-runner/-/jest-runner-26.4.1.tgz#5a98c87b558aacf88e761d5ee83e98bfb0a59839"
@@ -10127,7 +10068,7 @@ jest-runner@^26.4.1:
     source-map-support "^0.5.6"
     throat "^5.0.0"
 
-jest-runtime@^26.3.0, jest-runtime@^26.4.0, jest-runtime@^26.4.1:
+jest-runtime@^26.4.1:
   version "26.4.1"
   resolved "https://registry.yarnpkg.com/jest-runtime/-/jest-runtime-26.4.1.tgz#9a6ffefc7167b0f244e0907f4820ab38d825cdd2"
   integrity sha512-zXPQBS4iL/CEZtDfX+rDz+oZ/inQK/EYOeVt3uDWu8kwSdP/Cw4yOZtCTPApeNsGtZy6X5WQ1U+fyagN1B/Qkw==
@@ -10167,7 +10108,7 @@ jest-serializer@^26.3.0:
     "@types/node" "*"
     graceful-fs "^4.2.4"
 
-jest-snapshot@^26.3.0, jest-snapshot@^26.4.1:
+jest-snapshot@^26.4.1:
   version "26.4.1"
   resolved "https://registry.yarnpkg.com/jest-snapshot/-/jest-snapshot-26.4.1.tgz#41dd85c41dbb76ac874e36c18dcfe722c88d22c4"
   integrity sha512-5DsxbSSuYA8rZ/ynO+l5J65wSIyzDB2AXjuIvep90YmtslrROqDtba2hBgq1Cj6L6A0j/jv6h8JydEe2WYPM/g==
@@ -12420,7 +12361,7 @@ pretty-format@^25.2.1, pretty-format@^25.5.0:
     ansi-styles "^4.0.0"
     react-is "^16.12.0"
 
-pretty-format@^26.3.0, pretty-format@^26.4.0:
+pretty-format@^26.4.0:
   version "26.4.0"
   resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-26.4.0.tgz#c08073f531429e9e5024049446f42ecc9f933a3b"
   integrity sha512-mEEwwpCseqrUtuMbrJG4b824877pM5xald3AkilJ47Po2YLr97/siejYQHqj2oDQBeJNbu+Q0qUuekJ8F0NAPg==
