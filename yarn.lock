@@ -1934,26 +1934,26 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@storybook/addon-a11y@^5.3.19":
-  version "5.3.19"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-5.3.19.tgz#6a21d200c1e67362ae3680d3beb76bfb4ff6c508"
-  integrity sha512-obh2Uy8IeXU+UPQXoqT2Q0hRdAuQdfZjYdrGJ9RGoehVEzMxZlR0x1Cml5xf3u9v6+l72hi85RvA6YEGl+jKZw==
+"@storybook/addon-a11y@^6.0.16":
+  version "6.0.16"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-6.0.16.tgz#702bf0a18e11e69a910850a25839e60975cba2f7"
+  integrity sha512-E9pgs1gc3MqngUtsXldX3G3f5NR2yHa7mWf6t9SglGwL/GyMGTG6W/lvYCmLNIP+0HkoIS9GRcSoK9qxyFM7XQ==
   dependencies:
-    "@storybook/addons" "5.3.19"
-    "@storybook/api" "5.3.19"
-    "@storybook/client-logger" "5.3.19"
-    "@storybook/components" "5.3.19"
-    "@storybook/core-events" "5.3.19"
-    "@storybook/theming" "5.3.19"
-    axe-core "^3.3.2"
+    "@storybook/addons" "6.0.16"
+    "@storybook/api" "6.0.16"
+    "@storybook/channels" "6.0.16"
+    "@storybook/client-api" "6.0.16"
+    "@storybook/client-logger" "6.0.16"
+    "@storybook/components" "6.0.16"
+    "@storybook/core-events" "6.0.16"
+    "@storybook/theming" "6.0.16"
+    axe-core "^3.5.2"
     core-js "^3.0.1"
     global "^4.3.2"
-    memoizerific "^1.11.3"
-    react "^16.8.3"
-    react-redux "^7.0.2"
+    lodash "^4.17.15"
     react-sizeme "^2.5.2"
-    redux "^4.0.1"
-    ts-dedent "^1.1.0"
+    regenerator-runtime "^0.13.3"
+    ts-dedent "^1.1.1"
     util-deprecate "^1.0.2"
 
 "@storybook/addon-docs@^6.0.13":
@@ -5007,7 +5007,7 @@ aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.10.1.tgz#e1e82e4f3e999e2cfd61b161280d16a111f86428"
   integrity sha512-zg7Hz2k5lI8kb7U32998pRRFin7zJlkfezGJjUc2heaD4Pw2wObakCDVzkKztTm/Ln7eiVvYsjqak0Ed4LkMDA==
 
-axe-core@^3.3.2, axe-core@^3.5.4:
+axe-core@^3.5.2, axe-core@^3.5.4:
   version "3.5.5"
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-3.5.5.tgz#84315073b53fa3c0c51676c588d59da09a192227"
   integrity sha512-5P0QZ6J5xGikH780pghEdbEKijCTrruK9KxtPZCFWUpef0f6GipO+xEZ5GKCb020mmqgbiNO6TcA55CriL784Q==
@@ -13555,7 +13555,7 @@ react-intl@^5.4.4:
     intl-messageformat-parser "^5.3.7"
     shallow-equal "^1.2.1"
 
-react-is@^16.12.0, react-is@^16.13.1, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.9.0:
+react-is@^16.12.0, react-is@^16.13.1, react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
@@ -13585,17 +13585,6 @@ react-popper@^1.3.7:
     prop-types "^15.6.1"
     typed-styles "^0.0.7"
     warning "^4.0.2"
-
-react-redux@^7.0.2:
-  version "7.2.1"
-  resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-7.2.1.tgz#8dedf784901014db2feca1ab633864dee68ad985"
-  integrity sha512-T+VfD/bvgGTUA74iW9d2i5THrDQWbweXP0AVNI8tNd1Rk5ch1rnMiJkDD67ejw7YBKM4+REvcvqRuWJb7BLuEg==
-  dependencies:
-    "@babel/runtime" "^7.5.5"
-    hoist-non-react-statics "^3.3.0"
-    loose-envify "^1.4.0"
-    prop-types "^15.7.2"
-    react-is "^16.9.0"
 
 react-router-dom@6.0.0-alpha.4:
   version "6.0.0-alpha.4"
@@ -13848,14 +13837,6 @@ redent@^3.0.0:
   dependencies:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
-
-redux@^4.0.1:
-  version "4.0.5"
-  resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.5.tgz#4db5de5816e17891de8a80c424232d06f051d93f"
-  integrity sha512-VSz1uMAH24DM6MF72vcojpYPtrTUu3ByVWfPL1nPfVRb5mZVTve5GnNCUV53QM/BZ66xfWrm0CTWoM+Xlz8V1w==
-  dependencies:
-    loose-envify "^1.4.0"
-    symbol-observable "^1.2.0"
 
 refractor@^2.4.1:
   version "2.10.1"
