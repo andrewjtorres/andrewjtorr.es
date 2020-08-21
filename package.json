@@ -83,7 +83,7 @@
     "@storybook/addon-a11y": "^5.3.19",
     "@storybook/addon-docs": "^6.0.13",
     "@storybook/addon-knobs": "^6.0.16",
-    "@storybook/addons": "^5.3.19",
+    "@storybook/addons": "^6.0.16",
     "@storybook/react": "^5.3.19",
     "@storybook/theming": "^6.0.5",
     "@svgr/webpack": "^5.4.0",
