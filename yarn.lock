@@ -1306,13 +1306,10 @@
     "@types/es-abstract" "^1.17.1"
     es-abstract "^1.17.6"
 
-"@formatjs/ecma402-abstract@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@formatjs/ecma402-abstract/-/ecma402-abstract-1.0.3.tgz#26c77b2c33512f4c59dd03bbd1e10f5d400e0042"
-  integrity sha512-ZT5ZwqT9o+5pqDSI840s+CaAmUcyfA8KjbPrxUD2maCh99K5Iwu0L8tGmF20aZ6NAd8mBasrB999bV12kasQJA==
-  dependencies:
-    "@types/es-abstract" "^1.17.1"
-    es-abstract "^1.17.6"
+"@formatjs/ecma402-abstract@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@formatjs/ecma402-abstract/-/ecma402-abstract-1.1.0.tgz#a109d2cc963953ba7cb22ffb998abd6a4e9b7e18"
+  integrity sha512-t5wDT1bIF5v5O9mk/reI0TvhqBKs0WiLf2ihVQcUvVCc0qb7poP/KFXWPehooaARDNRJ66LGFLVOHPPsJ+W2Xg==
 
 "@formatjs/intl-datetimeformat@^2.6.2":
   version "2.6.2"
@@ -1358,15 +1355,6 @@
     "@types/es-abstract" "^1.17.1"
     es-abstract "^1.17.6"
 
-"@formatjs/intl-numberformat@^5.5.4":
-  version "5.5.4"
-  resolved "https://registry.yarnpkg.com/@formatjs/intl-numberformat/-/intl-numberformat-5.5.4.tgz#6bbe9b5530e7d5eb9a0aeda0d5048c70e7251543"
-  integrity sha512-YiAVYSDvIkgQ+BssPNVlNYceqygApeatYJnlUBrF4fj7qDyAHN8NX1JZkJNVQC+/nRpBVgha1bqar/NB7Ayyig==
-  dependencies:
-    "@formatjs/ecma402-abstract" "^1.0.3"
-    "@types/es-abstract" "^1.17.1"
-    es-abstract "^1.17.6"
-
 "@formatjs/intl-relativetimeformat@^7.2.2":
   version "7.2.2"
   resolved "https://registry.yarnpkg.com/@formatjs/intl-relativetimeformat/-/intl-relativetimeformat-7.2.2.tgz#02743044cb3bbad03aba84578d5ee052ea9613ff"
@@ -1376,12 +1364,12 @@
     "@types/es-abstract" "^1.17.1"
     es-abstract "^1.17.6"
 
-"@formatjs/ts-transformer@^2.7.6", "@formatjs/ts-transformer@^2.7.8":
-  version "2.7.8"
-  resolved "https://registry.yarnpkg.com/@formatjs/ts-transformer/-/ts-transformer-2.7.8.tgz#6a3746361341cbe3aa0f321a74ee2d6c8838e8e2"
-  integrity sha512-HDCfK3X90qFq65gab1Qv33EGWPwGLGKAYmThBd59INw+N4nQOffPW5QWsv02ujCQSUJzsq9V133G9PWOPMZwRg==
+"@formatjs/ts-transformer@^2.7.8", "@formatjs/ts-transformer@^2.7.9":
+  version "2.7.9"
+  resolved "https://registry.yarnpkg.com/@formatjs/ts-transformer/-/ts-transformer-2.7.9.tgz#5c483dfbd4ba8835f94b8a4e607934d7c62b2324"
+  integrity sha512-NPcsi86KO95idHsgAqV4sud3RqFVzpEqUyowlH4KeoRjpWVDKJgd3ICorY5UjycsduXL4/TK1JtBPgskFwiutQ==
   dependencies:
-    intl-messageformat-parser "^6.0.3"
+    intl-messageformat-parser "^6.0.4"
     typescript "^3.8"
 
 "@graphql-tools/schema@^6.0.18":
@@ -7065,18 +7053,18 @@ eslint-module-utils@^2.6.0:
     debug "^2.6.9"
     pkg-dir "^2.0.0"
 
-eslint-plugin-formatjs@^2.7.2:
-  version "2.7.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-formatjs/-/eslint-plugin-formatjs-2.7.2.tgz#c6b19d7cf42729c08f59beb071976739444a3fbd"
-  integrity sha512-r7i7HzjoOBERtTVcMgc7K5gYr5b1mPEelaLjLbpduK9cM07ye0Dr2USFw7IOF3hpR2TmYeWVaUy4U+qkOmAQFA==
+eslint-plugin-formatjs@^2.7.5:
+  version "2.7.5"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-formatjs/-/eslint-plugin-formatjs-2.7.5.tgz#a522079679b2ad8d322e0cc0ab49641ab967acb6"
+  integrity sha512-v6HTmA0/CtMvuEsKaChZbb9DwjzRZWsg+B0MTwzrb4kRo7gM84jXOx0LJiZ5oMMEmX2KokLM7DrCYxfMG4VWgw==
   dependencies:
-    "@formatjs/ts-transformer" "^2.7.6"
+    "@formatjs/ts-transformer" "^2.7.9"
     "@types/emoji-regex" "^8.0.0"
     "@types/eslint" "^7.2.0"
     "@types/estree" "^0.0.45"
     "@typescript-eslint/typescript-estree" "^3.6.0"
     emoji-regex "^9.0.0"
-    intl-messageformat-parser "^6.0.1"
+    intl-messageformat-parser "^6.0.4"
 
 eslint-plugin-import@^2.22.0:
   version "2.22.0"
@@ -9019,12 +9007,12 @@ interpret@^2.0.0:
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-2.2.0.tgz#1a78a0b5965c40a5416d007ad6f50ad27c417df9"
   integrity sha512-Ju0Bz/cEia55xDwUWEa8+olFpCiQoypjnQySseKtmjNrnps3P+xfpUmGr90T7yjlVJmOtybRvPXhKMbHr+fWnw==
 
-intl-messageformat-parser@^6.0.1, intl-messageformat-parser@^6.0.3:
-  version "6.0.3"
-  resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-6.0.3.tgz#84b4fb000dcb546e5722892ad8490df66987ede8"
-  integrity sha512-8+OKjj2joWTnLHQhYkuxHrA8d+A30OKt9ykdPettUEzR9VWIq8u++NpK9VSL0CU5MBCfWw1hvM8+6a5CAOaprQ==
+intl-messageformat-parser@^6.0.1, intl-messageformat-parser@^6.0.3, intl-messageformat-parser@^6.0.4:
+  version "6.0.4"
+  resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-6.0.4.tgz#487a16ad58ee681ae67a3e86bae76ae7b7e7e03c"
+  integrity sha512-jdD/LbP0xI9N0/ce/U3yzxvKIlXTQHOj1bvj56K7+hnJD3hoD1pOuvMf3393wmze952RVD5poRfQpoTjy4CajA==
   dependencies:
-    "@formatjs/intl-numberformat" "^5.5.4"
+    "@formatjs/ecma402-abstract" "^1.1.0"
 
 intl-messageformat@^9.3.2:
   version "9.3.2"
