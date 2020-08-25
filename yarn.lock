@@ -9325,12 +9325,12 @@ intl-messageformat-parser@^6.0.1, intl-messageformat-parser@^6.0.3, intl-message
     "@formatjs/ecma402-abstract" "^1.1.0"
 
 intl-messageformat@^9.3.2:
-  version "9.3.2"
-  resolved "https://registry.yarnpkg.com/intl-messageformat/-/intl-messageformat-9.3.2.tgz#d681f87917690089ab3ead9deddeeb423fe47a42"
-  integrity sha512-VOrm0To7BSZNyPXUE9T+Y92aX/cGcJqOQj9vJDYXL2sQDJUjXGdUB6XCP3/fXYXsbufVxp28vX75YpyuWAS2yw==
+  version "9.3.5"
+  resolved "https://registry.yarnpkg.com/intl-messageformat/-/intl-messageformat-9.3.5.tgz#8b8fdfcf5d20e85682da24d4f709ef5903742310"
+  integrity sha512-tLut2QoEf+8XBMHdInTIl5AYbLdpyjap28R9MqvAlXrJh0TbB8MYb5un2lRnmIwJdbBKcVrLPp397WjKe2O2cA==
   dependencies:
     fast-memoize "^2.5.2"
-    intl-messageformat-parser "^6.0.1"
+    intl-messageformat-parser "^6.0.4"
 
 invariant@^2.2.2, invariant@^2.2.3, invariant@^2.2.4:
   version "2.2.4"
