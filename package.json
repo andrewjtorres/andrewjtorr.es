@@ -127,7 +127,7 @@
     "apollo-link": "^1.2.14",
     "apollo-link-logger": "^1.2.3",
     "archiver": "^5.0.0",
-    "aws-sdk": "^2.738.0",
+    "aws-sdk": "^2.739.0",
     "babel-jest": "^26.3.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-graphql-tag": "^3.0.0",
