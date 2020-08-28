@@ -1364,7 +1364,7 @@
     "@types/es-abstract" "^1.17.1"
     es-abstract "^1.17.6"
 
-"@formatjs/ts-transformer@^2.7.8", "@formatjs/ts-transformer@^2.7.9":
+"@formatjs/ts-transformer@^2.7.9":
   version "2.7.9"
   resolved "https://registry.yarnpkg.com/@formatjs/ts-transformer/-/ts-transformer-2.7.9.tgz#5c483dfbd4ba8835f94b8a4e607934d7c62b2324"
   integrity sha512-NPcsi86KO95idHsgAqV4sud3RqFVzpEqUyowlH4KeoRjpWVDKJgd3ICorY5UjycsduXL4/TK1JtBPgskFwiutQ==
@@ -5041,18 +5041,18 @@ babel-plugin-react-docgen@^4.1.0:
     react-docgen "^5.0.0"
     recast "^0.14.7"
 
-babel-plugin-react-intl@^8.1.8:
-  version "8.1.8"
-  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-8.1.8.tgz#1a6d8295dfe784a59b4418f85d4eac5aaf431985"
-  integrity sha512-7o5W4Ws9T/P2HN6iGDP32J9lHGZleErYrWhk8iIjDFnCYrcAKN6t/Q+NzreZrJxStvBSaibM6gkriRzScUNf9w==
+babel-plugin-react-intl@^8.1.9:
+  version "8.1.9"
+  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-8.1.9.tgz#082324ac94d3ed69d5e9287c4592d853a474b467"
+  integrity sha512-ZoU2O8cqq39zyv9U6FG2VjmoJnDXSPwBozpELxrUDuV3rWfpSiJch18do2tAm/eflyMSl1moek0hpJg7aPfuQA==
   dependencies:
     "@babel/core" "^7.9.0"
     "@babel/helper-plugin-utils" "^7.8.3"
     "@babel/types" "^7.9.5"
-    "@formatjs/ts-transformer" "^2.7.8"
+    "@formatjs/ts-transformer" "^2.7.9"
     "@types/babel__core" "^7.1.7"
     "@types/schema-utils" "^2.4.0"
-    intl-messageformat-parser "^6.0.3"
+    intl-messageformat-parser "^6.0.4"
     schema-utils "^2.6.6"
 
 "babel-plugin-styled-components@>= 1", babel-plugin-styled-components@^1.11.1:
@@ -9511,7 +9511,7 @@ interpret@^2.0.0:
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-2.2.0.tgz#1a78a0b5965c40a5416d007ad6f50ad27c417df9"
   integrity sha512-Ju0Bz/cEia55xDwUWEa8+olFpCiQoypjnQySseKtmjNrnps3P+xfpUmGr90T7yjlVJmOtybRvPXhKMbHr+fWnw==
 
-intl-messageformat-parser@^6.0.1, intl-messageformat-parser@^6.0.3, intl-messageformat-parser@^6.0.4:
+intl-messageformat-parser@^6.0.1, intl-messageformat-parser@^6.0.4:
   version "6.0.4"
   resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-6.0.4.tgz#487a16ad58ee681ae67a3e86bae76ae7b7e7e03c"
   integrity sha512-jdD/LbP0xI9N0/ce/U3yzxvKIlXTQHOj1bvj56K7+hnJD3hoD1pOuvMf3393wmze952RVD5poRfQpoTjy4CajA==
