@@ -4406,9 +4406,9 @@ apollo-server-types@^0.5.1:
     apollo-server-env "^2.4.5"
 
 apollo-tracing@^0.11.1:
-  version "0.11.1"
-  resolved "https://registry.yarnpkg.com/apollo-tracing/-/apollo-tracing-0.11.1.tgz#3e3a4ce4b21e57dcc57b10bbd539db243b752606"
-  integrity sha512-l7g+uILw7v32GA46IRXIx5XXbZhFI96BhSqrGK9yyvfq+NMcvVZrj3kIhRImPGhAjMdV+5biA/jztabElAbDjg==
+  version "0.11.2"
+  resolved "https://registry.yarnpkg.com/apollo-tracing/-/apollo-tracing-0.11.2.tgz#14308b176e021f5e6ec3ee670f8f96e9fbfdb50c"
+  integrity sha512-QjmRd2ozGD+PfmF6U9w/w6jrclYSBNczN6Bzppr8qA5somEGl5pqdprIZYL28H0IapZiutA3x6p6ZVF/cVX8wA==
   dependencies:
     apollo-server-env "^2.4.5"
     apollo-server-plugin-base "^0.9.1"
