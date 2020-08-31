@@ -1357,13 +1357,13 @@
     "@types/es-abstract" "^1.17.1"
     es-abstract "^1.17.6"
 
-"@formatjs/ts-transformer@^2.7.9":
-  version "2.7.9"
-  resolved "https://registry.yarnpkg.com/@formatjs/ts-transformer/-/ts-transformer-2.7.9.tgz#5c483dfbd4ba8835f94b8a4e607934d7c62b2324"
-  integrity sha512-NPcsi86KO95idHsgAqV4sud3RqFVzpEqUyowlH4KeoRjpWVDKJgd3ICorY5UjycsduXL4/TK1JtBPgskFwiutQ==
+"@formatjs/ts-transformer@^2.7.9", "@formatjs/ts-transformer@^2.8.0":
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/@formatjs/ts-transformer/-/ts-transformer-2.8.0.tgz#a301306ed54990f7b1c1f5a02d47abe9b21bac65"
+  integrity sha512-4F5iUgPmMP1QmzntahdtNepdgwr2Y3f2O/kZprRzPF+fWPI4P+f9PNORdRB35eWZjG66bZ1vs/SPPZnqW/Ruaw==
   dependencies:
-    intl-messageformat-parser "^6.0.4"
-    typescript "^3.8"
+    intl-messageformat-parser "^6.0.5"
+    typescript "^4.0"
 
 "@graphql-tools/schema@^6.1.0":
   version "6.1.0"
@@ -5029,18 +5029,18 @@ babel-plugin-react-docgen@^4.1.0:
     react-docgen "^5.0.0"
     recast "^0.14.7"
 
-babel-plugin-react-intl@^8.1.9:
-  version "8.1.9"
-  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-8.1.9.tgz#082324ac94d3ed69d5e9287c4592d853a474b467"
-  integrity sha512-ZoU2O8cqq39zyv9U6FG2VjmoJnDXSPwBozpELxrUDuV3rWfpSiJch18do2tAm/eflyMSl1moek0hpJg7aPfuQA==
+babel-plugin-react-intl@^8.1.11:
+  version "8.1.11"
+  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-8.1.11.tgz#ea1976e8c8195bfaf125eb7f9d65930f93a5f0fd"
+  integrity sha512-wcO43FLJs7WCClrpkYblsDM1OIii8qCs4zoSBHP4QYvSqo1WEahZv2usfBo/hkEMbjByMDrcBU6HMQF9BmTYrA==
   dependencies:
     "@babel/core" "^7.9.0"
     "@babel/helper-plugin-utils" "^7.8.3"
     "@babel/types" "^7.9.5"
-    "@formatjs/ts-transformer" "^2.7.9"
+    "@formatjs/ts-transformer" "^2.8.0"
     "@types/babel__core" "^7.1.7"
     "@types/schema-utils" "^2.4.0"
-    intl-messageformat-parser "^6.0.4"
+    intl-messageformat-parser "^6.0.5"
     schema-utils "^2.6.6"
 
 "babel-plugin-styled-components@>= 1", babel-plugin-styled-components@^1.11.1:
@@ -15450,12 +15450,7 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@^3.8:
-  version "3.9.7"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.7.tgz#98d600a5ebdc38f40cb277522f12dc800e9e25fa"
-  integrity sha512-BLbiRkiBzAwsjut4x/dsibSTB6yWpwT5qWmC2OfuCg3GgVQCSgMs4vEctYPhsaGtd0AeuuHMkjZ2h2WG8MSzRw==
-
-typescript@^4.0.2:
+typescript@^4.0, typescript@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.0.2.tgz#7ea7c88777c723c681e33bf7988be5d008d05ac2"
   integrity sha512-e4ERvRV2wb+rRZ/IQeb3jm2VxBsirQLpQhdxplZ2MEzGvDkkMmPglecnNDfSUBivMjP93vRbngYYDQqQ/78bcQ==
