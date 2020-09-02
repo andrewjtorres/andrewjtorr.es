@@ -51,12 +51,16 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['**/*.ts?(x)', '**/.*/**/*.ts?(x)'],
+      files: ['*.ts?(x)'],
       parser: typescriptPlugin.configs.base.parser,
-      parserOptions: { project: 'tsconfig.json' },
+      parserOptions: {
+        ...typescriptPlugin.configs.base.parserOptions,
+        project: 'tsconfig.json',
+      },
       plugins: typescriptPlugin.configs.base.plugins,
       rules: {
         ...typescriptPlugin.configs.recommended.rules,
+        ...typescriptPlugin.configs['eslint-recommended'].overrides[0].rules,
         ...typescriptPlugin.configs['recommended-requiring-type-checking']
           .rules,
         '@typescript-eslint/explicit-function-return-type': 'off',

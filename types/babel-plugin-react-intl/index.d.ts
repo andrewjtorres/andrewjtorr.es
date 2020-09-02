@@ -1,4 +1,4 @@
-import 'babel-plugin-react-intl'
+import { ExtractedMessageDescriptor } from 'babel-plugin-react-intl'
 
 declare module 'babel-plugin-react-intl' {
   interface ReactIntlMetadata {

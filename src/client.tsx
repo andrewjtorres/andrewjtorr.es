@@ -12,6 +12,7 @@ import { resolvers, typeDefs } from './store'
 import { createApolloClient, createErrorLink } from './utils/apollo'
 
 const client = createApolloClient({
+  // @ts-expect-error TS2551
   defaults: window.__APOLLO_STATE__,
   links: [
     createErrorLink(),
@@ -49,7 +50,9 @@ const onLocationChange: Listener = async ({ location }) => {
       </BrowserRouter>,
       container,
       () => {
+        // @ts-expect-error TS2339
         if (window.ga) {
+          // @ts-expect-error TS2339
           window.ga('send', 'pageview', createPath(location))
         }
       }

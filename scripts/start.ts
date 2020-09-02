@@ -7,7 +7,7 @@ import webpack, {
   Configuration,
   DefinePlugin,
   HotModuleReplacementPlugin,
-  WatchOptions,
+  Options,
 } from 'webpack'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
@@ -16,7 +16,7 @@ import webpackConfig from '../config/webpack.config'
 import clean from './clean'
 import run, { format } from './run'
 
-const watchOptions: WatchOptions = {}
+const watchOptions: Options.WatchOptions = {}
 
 const rootDir = resolve(__dirname, '..')
 const publicDir = join(rootDir, 'public')
