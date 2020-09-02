@@ -1488,7 +1488,7 @@
     intl-messageformat "^9.3.6"
     intl-messageformat-parser "^6.0.5"
 
-"@formatjs/ts-transformer@^2.7.9", "@formatjs/ts-transformer@^2.8.0":
+"@formatjs/ts-transformer@^2.8.0":
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/@formatjs/ts-transformer/-/ts-transformer-2.8.0.tgz#a301306ed54990f7b1c1f5a02d47abe9b21bac65"
   integrity sha512-4F5iUgPmMP1QmzntahdtNepdgwr2Y3f2O/kZprRzPF+fWPI4P+f9PNORdRB35eWZjG66bZ1vs/SPPZnqW/Ruaw==
@@ -7244,18 +7244,18 @@ eslint-module-utils@^2.6.0:
     debug "^2.6.9"
     pkg-dir "^2.0.0"
 
-eslint-plugin-formatjs@^2.7.5:
-  version "2.7.5"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-formatjs/-/eslint-plugin-formatjs-2.7.5.tgz#a522079679b2ad8d322e0cc0ab49641ab967acb6"
-  integrity sha512-v6HTmA0/CtMvuEsKaChZbb9DwjzRZWsg+B0MTwzrb4kRo7gM84jXOx0LJiZ5oMMEmX2KokLM7DrCYxfMG4VWgw==
+eslint-plugin-formatjs@^2.7.7:
+  version "2.7.7"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-formatjs/-/eslint-plugin-formatjs-2.7.7.tgz#25e8f016ebc4e356dcb61a8e5d64a6a9e08116ec"
+  integrity sha512-4H3ra0uFxktaldzFjS8EQ6RIo/iGbIZpcPzMXXu8gGc/VmA76c1x/+3kyqe/IXwvAEtDK3wJf5u9VSFXunROGw==
   dependencies:
-    "@formatjs/ts-transformer" "^2.7.9"
+    "@formatjs/ts-transformer" "^2.8.0"
     "@types/emoji-regex" "^8.0.0"
     "@types/eslint" "^7.2.0"
     "@types/estree" "^0.0.45"
     "@typescript-eslint/typescript-estree" "^3.6.0"
     emoji-regex "^9.0.0"
-    intl-messageformat-parser "^6.0.4"
+    intl-messageformat-parser "^6.0.5"
 
 eslint-plugin-import@^2.22.0:
   version "2.22.0"
@@ -9204,7 +9204,7 @@ interpret@^2.0.0:
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-2.2.0.tgz#1a78a0b5965c40a5416d007ad6f50ad27c417df9"
   integrity sha512-Ju0Bz/cEia55xDwUWEa8+olFpCiQoypjnQySseKtmjNrnps3P+xfpUmGr90T7yjlVJmOtybRvPXhKMbHr+fWnw==
 
-intl-messageformat-parser@^6.0.4, intl-messageformat-parser@^6.0.5:
+intl-messageformat-parser@^6.0.5:
   version "6.0.5"
   resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-6.0.5.tgz#098b052ac2714101b4da06fd45d68199d3abd131"
   integrity sha512-4aO/RTUtzWiV/naqif4ubwz8P7THOxhraN6XmQpgXj4mdGjtPNO2j3vKlEDgAvv4BEi12R/JCHfLf7SUyfPKog==
