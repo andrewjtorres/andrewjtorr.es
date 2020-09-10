@@ -6,7 +6,7 @@ type Files = Record<string, string>
 
 type MockFiles = Record<string, Record<string, string>>
 
-const fs: typeof import('fs') = jest.genMockFromModule('fs')
+const fs: typeof import('fs') = jest.createMockFromModule('fs')
 let mockFiles: MockFiles = Object.freeze(Object.create(null))
 
 const readFile = (path: string, _options: any, callback: Callback) => {
