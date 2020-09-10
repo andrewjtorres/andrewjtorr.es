@@ -14,12 +14,15 @@ test('should render correctly', () => {
       color: #363636;
       font-size: 2.5rem;
       font-weight: 600;
+    }
+
+    .c1 {
       line-height: 1.125;
       word-break: break-word;
     }
 
     <h2
-      class="b75vhe-0 c0"
+      class="c0 c1"
       color="#363636"
       font-size="2.5rem"
       font-weight="600"
