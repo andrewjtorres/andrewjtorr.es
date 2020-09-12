@@ -1,8 +1,11 @@
 terraform {
-  required_version = ">=0.12"
+  required_version = ">=0.13"
 
   required_providers {
-    aws = ">=2.54"
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">=3.6"
+    }
   }
 
   backend "remote" {
@@ -22,8 +25,7 @@ locals {
 }
 
 provider "aws" {
-  version = ">=2.54"
-  region  = "us-east-1"
+  region = "us-east-1"
 }
 
 /* =========================================================================
