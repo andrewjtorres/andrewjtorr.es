@@ -1400,10 +1400,10 @@
     intl-messageformat "^9.3.8"
     intl-messageformat-parser "^6.0.7"
 
-"@formatjs/ts-transformer@^2.10.1":
-  version "2.10.1"
-  resolved "https://registry.yarnpkg.com/@formatjs/ts-transformer/-/ts-transformer-2.10.1.tgz#883d77c37a6752e3491be3ffdd705beb85cfd6f8"
-  integrity sha512-d5zpKWnk52bgA7Xf3KteiJ4r5RnDnIGUoUXD32yFiJVZRpPyUeEcuuyBS/1mxb7UDRpFB2gDqimYlqhjeURozA==
+"@formatjs/ts-transformer@^2.10.1", "@formatjs/ts-transformer@^2.11.0":
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/@formatjs/ts-transformer/-/ts-transformer-2.11.0.tgz#90c4b5afae55fd8b8c7ab6aa08ca94a123eb94b9"
+  integrity sha512-d0++zpEeeCtE+RwbEB+TYw0WnC+jlNniIZu9NcILdgN6LEr9+TRxO+Gz4d7nj3g0D5X1LyNx6P4JI+byGxHqzw==
   dependencies:
     intl-messageformat-parser "^6.0.7"
     typescript "^4.0"
@@ -4625,15 +4625,15 @@ babel-plugin-react-docgen@^4.1.0:
     react-docgen "^5.0.0"
     recast "^0.14.7"
 
-babel-plugin-react-intl@^8.2.3:
-  version "8.2.3"
-  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-8.2.3.tgz#8b54344b49c5a622201bef2666bf6e2b84d4ac15"
-  integrity sha512-KoQ35ZXgKEacS1vx63UKQZ3PYa90H87tnnNW/LNm1KU9mvmGhJmEODoAFVgGBow6IQRkTOJl9/4cm+zhGz3zCQ==
+babel-plugin-react-intl@^8.2.4:
+  version "8.2.4"
+  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-8.2.4.tgz#887e5a11793103cfb73c252b3620b6a10d4f6a22"
+  integrity sha512-B25BYeGxvzqdjirMiAAPgYTHryhxOc/o3/WRw+YRd/OmFTYuj2ybYNEsDgDU04O895XgogtylVepHPcwtxqiqw==
   dependencies:
     "@babel/core" "^7.9.0"
     "@babel/helper-plugin-utils" "^7.8.3"
     "@babel/types" "^7.9.5"
-    "@formatjs/ts-transformer" "^2.10.1"
+    "@formatjs/ts-transformer" "^2.11.0"
     "@types/babel__core" "^7.1.7"
     "@types/schema-utils" "^2.4.0"
     intl-messageformat-parser "^6.0.7"
