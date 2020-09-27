@@ -140,7 +140,7 @@
     "dotenv-safe": "^8.2.0",
     "dotenv-webpack": "^3.0.0",
     "eslint": "^7.9.0",
-    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-prettier": "^6.12.0",
     "eslint-import-resolver-typescript": "1.1.1",
     "eslint-plugin-formatjs": "^2.7.11",
     "eslint-plugin-import": "^2.22.0",
