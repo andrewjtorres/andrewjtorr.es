@@ -125,7 +125,7 @@
     "@typescript-eslint/eslint-plugin": "^4.2.0",
     "@typescript-eslint/parser": "^4.2.0",
     "apollo-link": "^1.2.14",
-    "apollo-link-logger": "^1.2.3",
+    "apollo-link-logger": "^2.0.0",
     "archiver": "^5.0.2",
     "aws-sdk": "^2.761.0",
     "babel-jest": "^26.3.0",
