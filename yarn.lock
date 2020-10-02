@@ -1328,12 +1328,13 @@
     intl-messageformat "^9.3.8"
     intl-messageformat-parser "^6.0.7"
 
-"@formatjs/ts-transformer@^2.11.0":
-  version "2.11.0"
-  resolved "https://registry.yarnpkg.com/@formatjs/ts-transformer/-/ts-transformer-2.11.0.tgz#90c4b5afae55fd8b8c7ab6aa08ca94a123eb94b9"
-  integrity sha512-d0++zpEeeCtE+RwbEB+TYw0WnC+jlNniIZu9NcILdgN6LEr9+TRxO+Gz4d7nj3g0D5X1LyNx6P4JI+byGxHqzw==
+"@formatjs/ts-transformer@^2.11.0", "@formatjs/ts-transformer@^2.11.1":
+  version "2.11.1"
+  resolved "https://registry.yarnpkg.com/@formatjs/ts-transformer/-/ts-transformer-2.11.1.tgz#9b30c066cd1ca1831bfc76e22b01e2858b931923"
+  integrity sha512-VAjFBnWSQfO71PrR0NeGgwGoHOAlNMuQv4kdV6GpxQ/3d4YM+202Cpu6r1BmCvxkuXhijTMUu7ubKeenUr8WcA==
   dependencies:
-    intl-messageformat-parser "^6.0.7"
+    intl-messageformat-parser "^6.0.8"
+    tslib "^2.0.1"
     typescript "^4.0"
 
 "@graphql-tools/schema@^6.2.4":
@@ -7089,18 +7090,19 @@ eslint-module-utils@^2.6.0:
     debug "^2.6.9"
     pkg-dir "^2.0.0"
 
-eslint-plugin-formatjs@^2.7.12:
-  version "2.7.12"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-formatjs/-/eslint-plugin-formatjs-2.7.12.tgz#7d1b468709fd4c0028b5872e2a77c4734f384ff9"
-  integrity sha512-b/F2dudv37lJFK8ZZAbha1kjtFrshxO3d8vTu27KtfyxbZ0JuLU9uecK0rdgz79JelU0VveI8E1JhCBw96EgpQ==
+eslint-plugin-formatjs@^2.7.13:
+  version "2.7.13"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-formatjs/-/eslint-plugin-formatjs-2.7.13.tgz#24164e6a1afde7c6e5ea918c8e99551da3356869"
+  integrity sha512-KLEQsWZQPdzClYao3Y/3YM+e7ZK1sXeUhizxbpziGYsbOYHkQK4wrB/EBN4JB/A7lH0xmr0KbUBpD62eIJkZ/g==
   dependencies:
-    "@formatjs/ts-transformer" "^2.11.0"
+    "@formatjs/ts-transformer" "^2.11.1"
     "@types/emoji-regex" "^8.0.0"
     "@types/eslint" "^7.2.0"
     "@types/estree" "^0.0.45"
     "@typescript-eslint/typescript-estree" "^3.6.0"
     emoji-regex "^9.0.0"
-    intl-messageformat-parser "^6.0.7"
+    intl-messageformat-parser "^6.0.8"
+    tslib "^2.0.1"
 
 eslint-plugin-import@^2.22.1:
   version "2.22.1"
