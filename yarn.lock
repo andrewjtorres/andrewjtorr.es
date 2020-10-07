@@ -1452,19 +1452,7 @@
     "@types/node" "*"
     jest-mock "^26.5.2"
 
-"@jest/fake-timers@^26.5.0":
-  version "26.5.0"
-  resolved "https://registry.yarnpkg.com/@jest/fake-timers/-/fake-timers-26.5.0.tgz#107ceeb580bc42dd6e0843df5bbc92cb4fe9cb00"
-  integrity sha512-sQK6xUembaZ0qLnZpSjJJuJiKvyrjCJhaYjbmatFpj5+cM8h2D7YEkeEBC26BMzvF1O3tNM9OL7roqyBmom0KA==
-  dependencies:
-    "@jest/types" "^26.5.0"
-    "@sinonjs/fake-timers" "^6.0.1"
-    "@types/node" "*"
-    jest-message-util "^26.5.0"
-    jest-mock "^26.5.0"
-    jest-util "^26.5.0"
-
-"@jest/fake-timers@^26.5.2":
+"@jest/fake-timers@^26.5.0", "@jest/fake-timers@^26.5.2":
   version "26.5.2"
   resolved "https://registry.yarnpkg.com/@jest/fake-timers/-/fake-timers-26.5.2.tgz#1291ac81680ceb0dc7daa1f92c059307eea6400a"
   integrity sha512-09Hn5Oraqt36V1akxQeWMVL0fR9c6PnEhpgLaYvREXZJAh2H2Y+QLCsl0g7uMoJeoWJAuz4tozk1prbR1Fc1sw==
@@ -10077,20 +10065,7 @@ jest-each@^26.5.2:
     jest-util "^26.5.2"
     pretty-format "^26.5.2"
 
-jest-environment-jsdom@^26.5.0:
-  version "26.5.0"
-  resolved "https://registry.yarnpkg.com/jest-environment-jsdom/-/jest-environment-jsdom-26.5.0.tgz#f9a6726402fde787632a69df5ff3390ab04337a3"
-  integrity sha512-Xuqh3bx8egymaJR566ECkiztIIVOIWWPGIxo++ziWyCOqQChUguRCH1hRXBbfINPbb/SRFe7GCD+SunaUgTmCw==
-  dependencies:
-    "@jest/environment" "^26.5.0"
-    "@jest/fake-timers" "^26.5.0"
-    "@jest/types" "^26.5.0"
-    "@types/node" "*"
-    jest-mock "^26.5.0"
-    jest-util "^26.5.0"
-    jsdom "^16.4.0"
-
-jest-environment-jsdom@^26.5.2:
+jest-environment-jsdom@^26.5.0, jest-environment-jsdom@^26.5.2:
   version "26.5.2"
   resolved "https://registry.yarnpkg.com/jest-environment-jsdom/-/jest-environment-jsdom-26.5.2.tgz#5feab05b828fd3e4b96bee5e0493464ddd2bb4bc"
   integrity sha512-fWZPx0bluJaTQ36+PmRpvUtUlUFlGGBNyGX1SN3dLUHHMcQ4WseNEzcGGKOw4U5towXgxI4qDoI3vwR18H0RTw==
@@ -10200,7 +10175,7 @@ jest-matcher-utils@^26.5.2:
     jest-get-type "^26.3.0"
     pretty-format "^26.5.2"
 
-jest-message-util@^26.3.0, jest-message-util@^26.5.0, jest-message-util@^26.5.2:
+jest-message-util@^26.3.0, jest-message-util@^26.5.2:
   version "26.5.2"
   resolved "https://registry.yarnpkg.com/jest-message-util/-/jest-message-util-26.5.2.tgz#6c4c4c46dcfbabb47cd1ba2f6351559729bc11bb"
   integrity sha512-Ocp9UYZ5Jl15C5PNsoDiGEk14A4NG0zZKknpWdZGoMzJuGAkVt10e97tnEVMYpk7LnQHZOfuK2j/izLBMcuCZw==
