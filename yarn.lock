@@ -10233,13 +10233,13 @@ jest-regex-util@^26.0.0:
   integrity sha512-Gv3ZIs/nA48/Zvjrl34bf+oD76JHiGDUxNOVgUjh3j890sblXryjY4rss71fPtD/njchl6PSE2hIhvyWa1eT0A==
 
 jest-resolve-dependencies@^26.4.2:
-  version "26.5.0"
-  resolved "https://registry.yarnpkg.com/jest-resolve-dependencies/-/jest-resolve-dependencies-26.5.0.tgz#6c4a863685e6c63b225e903c6006a70fb8ecac0a"
-  integrity sha512-2e3YdS+dlTY00s0CEiMAa7Ap/mPfPaQV7d6Fzp7BQqHXO/2QhXn/yVTxnxR+dOIo/NOh7pqXZTQSn+2iWwPQQA==
+  version "26.5.2"
+  resolved "https://registry.yarnpkg.com/jest-resolve-dependencies/-/jest-resolve-dependencies-26.5.2.tgz#ee30b7cfea81c81bf5e195a9287d7ec07f893170"
+  integrity sha512-LLkc8LuRtxqOx0AtX/Npa2C4I23WcIrwUgNtHYXg4owYF/ZDQShcwBAHjYZIFR06+HpQcZ43+kCTMlQ3aDCYTg==
   dependencies:
-    "@jest/types" "^26.5.0"
+    "@jest/types" "^26.5.2"
     jest-regex-util "^26.0.0"
-    jest-snapshot "^26.5.0"
+    jest-snapshot "^26.5.2"
 
 jest-resolve@^26.4.0, jest-resolve@^26.5.0:
   version "26.5.0"
@@ -10335,7 +10335,7 @@ jest-serializer@^26.5.0:
     "@types/node" "*"
     graceful-fs "^4.2.4"
 
-jest-snapshot@^26.4.2, jest-snapshot@^26.5.0, jest-snapshot@^26.5.2:
+jest-snapshot@^26.4.2, jest-snapshot@^26.5.2:
   version "26.5.2"
   resolved "https://registry.yarnpkg.com/jest-snapshot/-/jest-snapshot-26.5.2.tgz#0cf7642eaf8e8d2736bd443f619959bf237f9ccf"
   integrity sha512-MkXIDvEefzDubI/WaDVSRH4xnkuirP/Pz8LhAIDXcVQTmcEfwxywj5LGwBmhz+kAAIldA7XM4l96vbpzltSjqg==
