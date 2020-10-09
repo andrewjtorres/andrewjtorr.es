@@ -9078,12 +9078,12 @@ intl-messageformat-parser@^6.0.8, intl-messageformat-parser@^6.0.9:
     tslib "^2.0.1"
 
 intl-messageformat@^9.3.9:
-  version "9.3.9"
-  resolved "https://registry.yarnpkg.com/intl-messageformat/-/intl-messageformat-9.3.9.tgz#41f9f139adbbb509da657133047c8c5bf4ca22a9"
-  integrity sha512-SB6b68bY+RZPBhg3XTmwfX0lL3ywvOuAcS+iH6cptiHPfzOPSzP05F3ZOirARwj8pVbC9Xd4w0pMtF/sGnHurw==
+  version "9.3.10"
+  resolved "https://registry.yarnpkg.com/intl-messageformat/-/intl-messageformat-9.3.10.tgz#bd217a22a756e97b85734cb63de85f61ed673606"
+  integrity sha512-LHkUjt0cDm6a/Rd+bGDPcgHZor7KXQeZA5kM64P9I4Sg7xiNUMnzHPJ9n3ah6/LV/4vTUIJKp00Q9RLs+4nLCQ==
   dependencies:
     fast-memoize "^2.5.2"
-    intl-messageformat-parser "^6.0.8"
+    intl-messageformat-parser "^6.0.9"
     tslib "^2.0.1"
 
 invariant@^2.2.2, invariant@^2.2.3, invariant@^2.2.4:
@@ -14888,9 +14888,9 @@ tslib@^1.10.0, tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
   integrity sha512-+Zw5lu0D9tvBMjGP8LpvMb0u2WW2QV3y+D8mO6J+cNzCYIN4sVy43Bf9vl92nqFahutN0I8zHa7cc4vihIshnw==
 
 tslib@^2.0.0, tslib@^2.0.1, tslib@~2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.0.1.tgz#410eb0d113e5b6356490eec749603725b021b43e"
-  integrity sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.0.2.tgz#462295631185db44b21b1ea3615b63cd1c038242"
+  integrity sha512-wAH28hcEKwna96/UacuWaVspVLkg4x1aDM9JlzqaQTOFczCktkVAb5fmXChgandR1EraDPs2w8P+ozM+oafwxg==
 
 tsutils@^3.17.1:
   version "3.17.1"
