@@ -139,7 +139,7 @@
     "cz-conventional-changelog": "^3.3.0",
     "dotenv-safe": "^8.2.0",
     "dotenv-webpack": "^3.0.0",
-    "eslint": "^7.10.0",
+    "eslint": "^7.11.0",
     "eslint-config-prettier": "^6.12.0",
     "eslint-import-resolver-typescript": "1.1.1",
     "eslint-plugin-formatjs": "^2.7.14",
