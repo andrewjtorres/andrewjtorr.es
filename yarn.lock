@@ -2430,10 +2430,10 @@
     "@svgr/plugin-svgo" "^5.4.0"
     loader-utils "^2.0.0"
 
-"@testing-library/dom@^7.24.2", "@testing-library/dom@^7.24.5":
-  version "7.24.5"
-  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-7.24.5.tgz#862124eec8c37ad184716379f09742476b23815d"
-  integrity sha512-oyOp8R2rhmnkOjgrySb4iYc2q73dzvQUAGddpbmicGJdCf4jkLmf5U9zOyobLMLWXbIHHK4UUHHjDTH8tSPLsA==
+"@testing-library/dom@^7.24.2", "@testing-library/dom@^7.25.0":
+  version "7.25.0"
+  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-7.25.0.tgz#f1cc5478ae1eb4cf93f7eed977776493dc78d940"
+  integrity sha512-wUp3k/LOQTRJjcebJreWp4CYUUoVo8r86M760Qxe6MY913LKBLEBH4kTGZozqX8zjZH5Tw2GogX/fQGlXYWOWQ==
   dependencies:
     "@babel/code-frame" "^7.10.4"
     "@babel/runtime" "^7.10.3"
@@ -7204,10 +7204,10 @@ eslint-plugin-react@^7.21.4:
     resolve "^1.17.0"
     string.prototype.matchall "^4.0.2"
 
-eslint-plugin-testing-library@^3.9.0:
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-testing-library/-/eslint-plugin-testing-library-3.9.0.tgz#96e8a88e0f8765d375166a724b88e3a44aa72eae"
-  integrity sha512-86GULfQGAyaygbkemFmDgcTW0TUYO7mwkZMZ7lcawOkDra+iYWUHFf2Fr/QMfeFQHuc7v++G35gToJ7Vaamgow==
+eslint-plugin-testing-library@^3.9.1:
+  version "3.9.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-testing-library/-/eslint-plugin-testing-library-3.9.1.tgz#b59d4c8d5a22f88a32b36b56c1ec2ea14cb89459"
+  integrity sha512-E7AtT0A+BiRJUdJfK92fSXn3Bm0YDUwxnsyFHu1wfLzmq/h5GHP3zuiAY6J2gvsd3QYHpf8zCHeKenchrL6fmQ==
   dependencies:
     "@typescript-eslint/experimental-utils" "^3.10.1"
 
