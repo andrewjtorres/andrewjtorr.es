@@ -59,7 +59,7 @@
     "history": "^5.0.0",
     "polished": "^4.0.2",
     "react": "^16.14.0",
-    "react-dom": "^16.13.1",
+    "react-dom": "^16.14.0",
     "react-intl": "^5.8.6",
     "react-is": "^16.13.1",
     "react-router": "6.0.0-alpha.4",
