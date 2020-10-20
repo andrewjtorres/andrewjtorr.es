@@ -43,7 +43,7 @@
     "@apollo/client": "^3.2.5",
     "@babel/runtime-corejs3": "^7.12.1",
     "@graphql-tools/schema": "^6.2.4",
-    "@loadable/component": "^5.13.2",
+    "@loadable/component": "^5.14.0",
     "@loadable/server": "^5.13.2",
     "@types/react": "^16.9.52",
     "apollo-server-express": "^2.18.2",
