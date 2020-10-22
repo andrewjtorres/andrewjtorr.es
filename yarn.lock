@@ -4823,9 +4823,9 @@ better-assert@~1.0.0:
     callsite "1.0.0"
 
 better-opn@^2.0.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/better-opn/-/better-opn-2.1.0.tgz#7ba970a2b23783c76d3e33db3ffe54b28cdace03"
-  integrity sha512-e96ADSxi4s0DRmmBqux43JxDG7FnJwTd5k6Hi/MtOmEHF8t6ujA/bdP/zMcp4b5Z9dirQqW5cOKD3qll6/hYTg==
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/better-opn/-/better-opn-2.1.1.tgz#94a55b4695dc79288f31d7d0e5f658320759f7c6"
+  integrity sha512-kIPXZS5qwyKiX/HcRvDYfmBQUa8XP17I0mYZZ0y4UhpYOSvtsLHDYqmomS+Mj20aDvD3knEiQ0ecQy2nhio3yA==
   dependencies:
     open "^7.0.3"
 
