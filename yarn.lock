@@ -10468,19 +10468,7 @@ jest-util@^26.6.0, jest-util@^26.6.1:
     is-ci "^2.0.0"
     micromatch "^4.0.2"
 
-jest-validate@^26.6.0:
-  version "26.6.0"
-  resolved "https://registry.yarnpkg.com/jest-validate/-/jest-validate-26.6.0.tgz#b95e2076cca1a58b183e5bcce2bf43af52eebf10"
-  integrity sha512-FKHNqvh1Pgs4NWas56gsTPmjcIoGAAzSVUCK1+g8euzuCGbmdEr8LRTtOEFjd29uMZUk0PhzmzKGlHPe6j3UWw==
-  dependencies:
-    "@jest/types" "^26.6.0"
-    camelcase "^6.0.0"
-    chalk "^4.0.0"
-    jest-get-type "^26.3.0"
-    leven "^3.1.0"
-    pretty-format "^26.6.0"
-
-jest-validate@^26.6.1:
+jest-validate@^26.6.0, jest-validate@^26.6.1:
   version "26.6.1"
   resolved "https://registry.yarnpkg.com/jest-validate/-/jest-validate-26.6.1.tgz#28730eb8570d60968d9d06f1a8c94d922167bd2a"
   integrity sha512-BEFpGbylKocnNPZULcnk+TGaz1oFZQH/wcaXlaXABbu0zBwkOGczuWgdLucUouuQqn7VadHZZeTvo8VSFDLMOA==
