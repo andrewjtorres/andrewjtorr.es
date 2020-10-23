@@ -10004,11 +10004,11 @@ jake@^10.6.1:
     minimatch "^3.0.4"
 
 jest-changed-files@^26.6.0:
-  version "26.6.0"
-  resolved "https://registry.yarnpkg.com/jest-changed-files/-/jest-changed-files-26.6.0.tgz#63b04aa261b5733c6ade96b7dd24784d12d8bb2d"
-  integrity sha512-k8PZzlp3cRWDe0fDc/pYs+c4w36+hiWXe1PpW/pW1UJmu1TNTAcQfZUrVYleij+uEqlY6z4mPv7Iff3kY0o5SQ==
+  version "26.6.1"
+  resolved "https://registry.yarnpkg.com/jest-changed-files/-/jest-changed-files-26.6.1.tgz#2fac3dc51297977ee883347948d8e3d37c417fba"
+  integrity sha512-NhSdZ5F6b/rIN5V46x1l31vrmukD/bJUXgYAY8VtP1SknYdJwjYDRxuLt7Z8QryIdqCjMIn2C0Cd98EZ4umo8Q==
   dependencies:
-    "@jest/types" "^26.6.0"
+    "@jest/types" "^26.6.1"
     execa "^4.0.0"
     throat "^5.0.0"
 
