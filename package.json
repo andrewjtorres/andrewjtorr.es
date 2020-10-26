@@ -58,7 +58,7 @@
     "graphql": "14.6.0",
     "history": "^5.0.0",
     "polished": "^4.0.3",
-    "react": "^16.14.0",
+    "react": "^17.0.1",
     "react-dom": "^16.14.0",
     "react-intl": "^5.8.6",
     "react-is": "^16.13.1",
