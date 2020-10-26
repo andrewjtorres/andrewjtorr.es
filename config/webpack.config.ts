@@ -141,7 +141,6 @@ const clientConfig = createConfig('web', ({ plugins = [], ...baseConfig }) => ({
     minimize: isRelease,
     minimizer: [
       new TerserPlugin({
-        sourceMap: true,
         terserOptions: {
           mangle: { safari10: true },
           output: { ascii_only: true },
