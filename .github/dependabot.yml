@@ -21,9 +21,6 @@ updates:
       - dependency-name: eslint-import-resolver-typescript
         versions:
           - '> 1.1.1'
-      - dependency-name: graphql
-        versions:
-          - '> 14.6.0'
       - dependency-name: react-router
         versions:
           - '> 6.0.0-alpha.4'
