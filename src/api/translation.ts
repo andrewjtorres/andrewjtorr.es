@@ -1,5 +1,5 @@
 import fs from 'fs'
-import { join } from 'path'
+import path from 'path'
 import { promisify } from 'util'
 import { gql } from '@apollo/client'
 
@@ -35,7 +35,7 @@ export const resolvers: Resolvers<undefined, Context> = {
 
       try {
         data = await readFile(
-          join(process.env.TRANSLATIONS_DIR, `${locale}.json`)
+          path.join(process.env.TRANSLATIONS_DIR, `${locale}.json`)
         )
       } catch (error) {
         if (error.code === 'ENOENT') {

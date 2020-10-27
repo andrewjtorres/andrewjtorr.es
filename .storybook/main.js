@@ -1,10 +1,10 @@
 'use strict'
 
-const { join, resolve } = require('path')
+const path = require('path')
 const mdxCompiler = require('@storybook/addon-docs/mdx-compiler-plugin')
 
-const rootDir = resolve(__dirname, '..')
-const srcDir = join(rootDir, 'src')
+const rootDir = path.resolve(__dirname, '..')
+const srcDir = path.join(rootDir, 'src')
 
 module.exports = {
   addons: [
@@ -37,7 +37,7 @@ module.exports = {
 
     config.module.rules.push({
       test: /\.ts(x)?$/,
-      include: [join(rootDir, '.storybook'), srcDir],
+      include: [path.join(rootDir, '.storybook'), srcDir],
       loader: require.resolve('babel-loader'),
       options: {
         cacheCompression: isProd,

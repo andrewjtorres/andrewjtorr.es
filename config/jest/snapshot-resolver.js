@@ -1,6 +1,6 @@
 'use strict'
 
-const { posix } = require('path')
+const path = require('path')
 
 module.exports = {
   resolveSnapshotPath: (testPath, snapshotExtension) =>
@@ -9,7 +9,7 @@ module.exports = {
     snapshotPath
       .replace('__snapshots__', '__tests__')
       .slice(0, -snapshotExtension.length),
-  testPathForConsistencyCheck: posix.join(
+  testPathForConsistencyCheck: path.posix.join(
     'consistency-check',
     '__tests__',
     'example.test.js'

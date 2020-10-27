@@ -1,4 +1,4 @@
-import { join, resolve } from 'path'
+import path from 'path'
 import browserSync from 'browser-sync'
 import express, { Express } from 'express'
 import errorOverlayMiddleware from 'react-dev-utils/errorOverlayMiddleware'
@@ -18,9 +18,9 @@ import run, { format } from './run'
 
 const watchOptions: Options.WatchOptions = {}
 
-const rootDir = resolve(__dirname, '..')
-const publicDir = join(rootDir, 'public')
-const translationsDir = join(rootDir, 'src/i18n/translations')
+const rootDir = path.resolve(__dirname, '..')
+const publicDir = path.join(rootDir, 'public')
+const translationsDir = path.join(rootDir, 'src/i18n/translations')
 
 const env = process.env.NODE_ENV ?? 'development'
 const isProd = /^prod(uction)?$/i.test(env)

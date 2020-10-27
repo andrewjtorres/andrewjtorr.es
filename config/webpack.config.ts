@@ -1,4 +1,4 @@
-import { join, resolve } from 'path'
+import path from 'path'
 import LoadablePlugin from '@loadable/webpack-plugin'
 import DotenvPlugin from 'dotenv-webpack'
 import TerserPlugin from 'terser-webpack-plugin'
@@ -19,9 +19,9 @@ type Target =
   | 'webworker'
   | ((compiler?: any) => void)
 
-const rootDir = resolve(__dirname, '..')
-const buildDir = join(rootDir, 'build')
-const srcDir = join(rootDir, 'src')
+const rootDir = path.resolve(__dirname, '..')
+const buildDir = path.join(rootDir, 'build')
+const srcDir = path.join(rootDir, 'src')
 
 const env = process.env.NODE_ENV ?? 'development'
 const isProd = /^prod(uction)?$/i.test(env)
@@ -97,9 +97,9 @@ const createConfig = (target: Target, configFactory: ConfigFactory) =>
         ? '[name].[chunkhash:8].chunk.js'
         : '[name].chunk.js',
       devtoolModuleFilenameTemplate: ({ absoluteResourcePath }) =>
-        resolve(absoluteResourcePath).replace(/\\/g, '/'),
+        path.resolve(absoluteResourcePath).replace(/\\/g, '/'),
       filename: isRelease ? '[name].[chunkhash:8].js' : '[name].js',
-      path: join(buildDir, 'public/assets'),
+      path: path.join(buildDir, 'public/assets'),
       pathinfo: isVerbose,
       publicPath: '/assets/',
     },
@@ -109,8 +109,8 @@ const createConfig = (target: Target, configFactory: ConfigFactory) =>
         ...(target === 'web' ? { 'process.env.BROWSER_ENV': `'${env}'` } : {}),
       }),
       new DotenvPlugin({
-        path: join(rootDir, envFile),
-        safe: join(rootDir, '.env.example'),
+        path: path.join(rootDir, envFile),
+        safe: path.join(rootDir, '.env.example'),
         systemvars: true,
       }),
     ],
@@ -135,7 +135,7 @@ const createConfig = (target: Target, configFactory: ConfigFactory) =>
 
 const clientConfig = createConfig('web', ({ plugins = [], ...baseConfig }) => ({
   ...baseConfig,
-  entry: { client: resolve('./src/client.tsx') },
+  entry: { client: path.resolve('./src/client.tsx') },
   name: 'client',
   optimization: {
     minimize: isRelease,
@@ -174,7 +174,7 @@ const handlerConfig = createConfig(
   'node',
   ({ output = {}, plugins = [], ...baseConfig }) => ({
     ...baseConfig,
-    entry: { handler: resolve('./src/handler.ts') },
+    entry: { handler: path.resolve('./src/handler.ts') },
     externals: [
       nodeExternals({ allowlist: [/\.(bmp|gif|jp(e)?g|png|webp)$/] }),
     ],
@@ -202,7 +202,7 @@ const serverConfig = createConfig(
   'node',
   ({ output = {}, plugins = [], ...baseConfig }) => ({
     ...baseConfig,
-    entry: { server: resolve('./src/server.tsx') },
+    entry: { server: path.resolve('./src/server.tsx') },
     externals: [
       nodeExternals({ allowlist: [/\.(bmp|gif|jp(e)?g|png|webp)$/] }),
     ],

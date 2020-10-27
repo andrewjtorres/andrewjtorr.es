@@ -1,6 +1,6 @@
 import crypto, { HashOptions, HexBase64Latin1Encoding } from 'crypto'
 import fs, { WriteFileOptions } from 'fs'
-import { dirname, resolve } from 'path'
+import path from 'path'
 import { promisify } from 'util'
 import { ZlibOptions } from 'zlib'
 import archiver from 'archiver'
@@ -111,10 +111,10 @@ export const copyDir = async (
 
   await Promise.all(
     dirs.map(async (dir) => {
-      const from = resolve(source, dir)
-      const to = resolve(target, dir)
+      const from = path.resolve(source, dir)
+      const to = path.resolve(target, dir)
 
-      await makeDir(dirname(to))
+      await makeDir(path.dirname(to))
       await copyFile(from, to)
     })
   )
@@ -159,7 +159,7 @@ export const zipDir = async (
     },
   })
 
-  await makeDir(dirname(target))
+  await makeDir(path.dirname(target))
 
   archive.pipe(fs.createWriteStream(target))
 

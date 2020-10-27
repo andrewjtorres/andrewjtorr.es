@@ -1,4 +1,4 @@
-import { dirname, join, relative } from 'path'
+import path from 'path'
 import { watch } from 'chokidar'
 
 import packageConfig from '../package.json'
@@ -43,17 +43,17 @@ const copy = async () => {
     })
 
     // eslint-disable-next-line @typescript-eslint/no-misused-promises
-    watcher.on('all', async (eventName, path) => {
+    watcher.on('all', async (eventName, filePath) => {
       const start = new Date()
-      const src = relative('./', path)
-      const dist = join(
+      const src = path.relative('./', filePath)
+      const dist = path.join(
         'build/',
-        src.startsWith('src') ? relative('src', src) : src
+        src.startsWith('src') ? path.relative('src', src) : src
       )
 
       if (/^(add|change)$/.test(eventName)) {
-        await makeDir(dirname(dist))
-        await copyFile(path, dist)
+        await makeDir(path.dirname(dist))
+        await copyFile(filePath, dist)
       } else if (/^unlink(Dir)?$/.test(eventName)) {
         cleanDir(dist, { dot: true, nosort: true })
       } else {

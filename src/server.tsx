@@ -1,4 +1,4 @@
-import { join } from 'path'
+import path from 'path'
 import { ApolloProvider } from '@apollo/client'
 import { SchemaLink } from '@apollo/client/link/schema'
 import { renderToStringWithData } from '@apollo/client/react/ssr'
@@ -44,7 +44,7 @@ app
   .use(compression())
   .use(cookieParser())
   .use(cors())
-  .use(express.static(join(__dirname, 'public')))
+  .use(express.static(path.join(__dirname, 'public')))
   .use(
     requestLanguage({
       cookie: { name: 'lang', url: '/lang/{language}' },
@@ -73,7 +73,7 @@ app.get('*', async (req: Request, res: Response, next: NextFunction) => {
   })
   const extractor = new ChunkExtractor({
     entrypoints: 'client',
-    statsFile: join(__dirname, 'stats.json'),
+    statsFile: path.join(__dirname, 'stats.json'),
   })
   const sheet = new ServerStyleSheet()
 

@@ -1,5 +1,5 @@
 import fs from 'fs'
-import { basename, join, resolve } from 'path'
+import path from 'path'
 import { Lambda, S3 } from 'aws-sdk'
 
 import packageConfig from '../package.json'
@@ -7,12 +7,12 @@ import { execFile } from './utils/child-process'
 import { checksumFile, zipDir } from './utils/file-system'
 import build from './build'
 
-const rootDir = resolve(__dirname, '..')
-const artifactDir = join(rootDir, '.artifact')
-const buildDir = join(rootDir, 'build')
+const rootDir = path.resolve(__dirname, '..')
+const artifactDir = path.join(rootDir, '.artifact')
+const buildDir = path.join(rootDir, 'build')
 
-const shasum256 = join(artifactDir, 'shasum256.txt')
-const sourceCode = join(artifactDir, `${packageConfig.name}.zip`)
+const shasum256 = path.join(artifactDir, 'shasum256.txt')
+const sourceCode = path.join(artifactDir, `${packageConfig.name}.zip`)
 
 const deploy = async () => {
   const lambda = new Lambda()
@@ -33,14 +33,14 @@ const deploy = async () => {
       .upload({
         Body: fs.createReadStream(shasum256),
         Bucket: packageConfig.name,
-        Key: basename(shasum256),
+        Key: path.basename(shasum256),
       })
       .promise(),
     s3
       .upload({
         Body: fs.createReadStream(sourceCode),
         Bucket: packageConfig.name,
-        Key: basename(sourceCode),
+        Key: path.basename(sourceCode),
       })
       .promise(),
   ])
@@ -49,7 +49,7 @@ const deploy = async () => {
     .updateFunctionCode({
       FunctionName: packageConfig.name.replace('.', '_'),
       S3Bucket: packageConfig.name,
-      S3Key: basename(sourceCode),
+      S3Key: path.basename(sourceCode),
     })
     .promise()
 }

@@ -1,4 +1,4 @@
-import { join, resolve } from 'path'
+import path from 'path'
 import { PluginItem, loadPartialConfig, transformFileAsync } from '@babel/core'
 import { ExtractedMessageDescriptor } from 'babel-plugin-react-intl'
 import { watch } from 'chokidar'
@@ -19,7 +19,7 @@ const defaultTranslation: Translation = {
 
 const extractedTranslations: Record<string, ExtractedMessageDescriptor[]> = {}
 
-const rootDir = resolve(__dirname, '..')
+const rootDir = path.resolve(__dirname, '..')
 
 const env = process.env.NODE_ENV ?? 'development'
 const isProd = /^prod(uction)?$/i.test(env)
@@ -33,7 +33,7 @@ const mergeToFile = async (
   toBuild: boolean
 ) => {
   const originalTranslations: Translations = {}
-  const file = join(rootDir, `src/i18n/translations/${locale}.json`)
+  const file = path.join(rootDir, `src/i18n/translations/${locale}.json`)
 
   try {
     const data: Translation[] = JSON.parse((await readFile(file)) as string)
@@ -71,7 +71,10 @@ const mergeToFile = async (
   await writeFile(file, data)
 
   if (toBuild) {
-    await writeFile(join(rootDir, `build/translations/${locale}.json`), data)
+    await writeFile(
+      path.join(rootDir, `build/translations/${locale}.json`),
+      data
+    )
   }
 }
 
