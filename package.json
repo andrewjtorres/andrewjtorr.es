@@ -152,7 +152,7 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-testing-library": "^3.9.2",
-    "eslint-plugin-unicorn": "^21.0.0",
+    "eslint-plugin-unicorn": "^23.0.0",
     "file-loader": "^6.1.1",
     "glob": "^7.1.6",
     "graphql-tag": "^2.11.0",
