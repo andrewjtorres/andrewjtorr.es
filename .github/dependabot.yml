@@ -27,6 +27,15 @@ updates:
       - dependency-name: react-router-dom
         versions:
           - '> 6.0.0-alpha.4'
+      - dependency-name: terser-webpack-plugin
+        versions:
+          - '> 4.2.3'
+      - dependency-name: webpack
+        versions:
+          - '> 4.44.2'
+      - dependency-name: webpack-dev-middleware
+        versions:
+          - '> 3.7.2'
     labels:
       - ':horse: chore'
     open-pull-requests-limit: 10

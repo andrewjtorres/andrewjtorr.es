@@ -7,6 +7,7 @@ import webpack, {
   Configuration,
   DefinePlugin,
   HotModuleReplacementPlugin,
+  Options,
 } from 'webpack'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
@@ -14,6 +15,8 @@ import webpackHotMiddleware from 'webpack-hot-middleware'
 import webpackConfig from '../config/webpack.config'
 import clean from './clean'
 import run, { format } from './run'
+
+const watchOptions: Options.WatchOptions = {}
 
 const rootDir = path.resolve(__dirname, '..')
 const publicDir = path.join(rootDir, 'public')
@@ -157,7 +160,13 @@ const start = async () => {
   )
 
   server
-    .use(webpackDevMiddleware(clientCompiler, { publicPath }))
+    .use(
+      webpackDevMiddleware(clientCompiler, {
+        logLevel: 'silent',
+        publicPath,
+        watchOptions,
+      })
+    )
     .use(webpackHotMiddleware(clientCompiler, { log: false }))
 
   let app: Express
@@ -232,7 +241,7 @@ const start = async () => {
     )
   }
 
-  serverCompiler.watch({}, (error, stats) => {
+  serverCompiler.watch(watchOptions, (error, stats) => {
     if (app && !error && !stats.hasErrors()) {
       return checkForUpdate().then(() => {
         appPromiseIsResolved = true
