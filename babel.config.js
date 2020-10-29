@@ -3,7 +3,7 @@
 const packageConfig = require('./package.json')
 
 const createConfig = ({ caller, env }) => {
-  const { 0: node = '12.18' } =
+  const { 0: node = '12.19' } =
     /(\d+\.?)+/.exec(packageConfig.engines.node) || []
   const isDev = env('development')
   const isProd = env('production')
