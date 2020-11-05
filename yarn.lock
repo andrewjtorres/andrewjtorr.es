@@ -1325,6 +1325,13 @@
   dependencies:
     tslib "^2.0.1"
 
+"@formatjs/ecma402-abstract@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@formatjs/ecma402-abstract/-/ecma402-abstract-1.3.0.tgz#c9aa2a71173e61c6c3a965c47b2affa073776267"
+  integrity sha512-Bu9rvgsFH7LVVGf2v3jImowP7GJ2RkkLQdeBEu/mmT4xFWtKJN6JwYRYjB3MNsnmKLmGiCCDyNTSLQaM/Ji0YQ==
+  dependencies:
+    tslib "^2.0.1"
+
 "@formatjs/intl-displaynames@^3.4.1":
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/@formatjs/intl-displaynames/-/intl-displaynames-3.4.1.tgz#b63276045065761cd9d4a2548f337fb3a430a898"
@@ -9118,21 +9125,21 @@ interpret@^2.0.0:
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-2.2.0.tgz#1a78a0b5965c40a5416d007ad6f50ad27c417df9"
   integrity sha512-Ju0Bz/cEia55xDwUWEa8+olFpCiQoypjnQySseKtmjNrnps3P+xfpUmGr90T7yjlVJmOtybRvPXhKMbHr+fWnw==
 
-intl-messageformat-parser@^6.0.11:
-  version "6.0.11"
-  resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-6.0.11.tgz#b5769990f9eb8c015ef726cf4d782a9445544993"
-  integrity sha512-0avgk5LN8KGpH6CC8OsDAttzkTtR/6Oy50dYaUpbulnNUDrSxPFMc79IJRktN8PT+HwOzhk26vvfJHXyPdf6ZA==
+intl-messageformat-parser@^6.0.11, intl-messageformat-parser@^6.0.12:
+  version "6.0.12"
+  resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-6.0.12.tgz#9a4f4e109384eeaa5e9c2de9db03a4098b9f192a"
+  integrity sha512-IXxFpNhFFtucwOHS5aj91EIm97um6p/dyu0G88UTH0K8DwQHmTB2HqRtsEwl38+V1ebL9s+qz5TjR04A1EIu6A==
   dependencies:
-    "@formatjs/ecma402-abstract" "^1.2.6"
+    "@formatjs/ecma402-abstract" "^1.3.0"
     tslib "^2.0.1"
 
 intl-messageformat@^9.3.12:
-  version "9.3.12"
-  resolved "https://registry.yarnpkg.com/intl-messageformat/-/intl-messageformat-9.3.12.tgz#a5a3f02b7cb275ac1f5bc8127a86763c24fc1255"
-  integrity sha512-+BrnExt/3ICcMVTQoN1aTueTvCblZ94UH/hQQ4sTFaN7E59BPqTN/vBF5W446JFWuYY0cGjuielBbjSsye+13w==
+  version "9.3.13"
+  resolved "https://registry.yarnpkg.com/intl-messageformat/-/intl-messageformat-9.3.13.tgz#3b7e8a933bccec02d7faa7961abb4f8c71ff8ef5"
+  integrity sha512-F6sacmeykGuxfrBtHVddvdc5FGI+jz1gUxr00zE092rb6tQq+XjZVjtxje7vPyBoTMP6GSgKwYL8ZvO2opDJ4w==
   dependencies:
     fast-memoize "^2.5.2"
-    intl-messageformat-parser "^6.0.11"
+    intl-messageformat-parser "^6.0.12"
     tslib "^2.0.1"
 
 invariant@^2.2.3, invariant@^2.2.4:
