@@ -1318,7 +1318,7 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@formatjs/ecma402-abstract@^1.3.0":
+"@formatjs/ecma402-abstract@1.3.0", "@formatjs/ecma402-abstract@^1.3.0":
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/@formatjs/ecma402-abstract/-/ecma402-abstract-1.3.0.tgz#c9aa2a71173e61c6c3a965c47b2affa073776267"
   integrity sha512-Bu9rvgsFH7LVVGf2v3jImowP7GJ2RkkLQdeBEu/mmT4xFWtKJN6JwYRYjB3MNsnmKLmGiCCDyNTSLQaM/Ji0YQ==
@@ -9119,11 +9119,11 @@ interpret@^2.0.0:
   integrity sha512-Ju0Bz/cEia55xDwUWEa8+olFpCiQoypjnQySseKtmjNrnps3P+xfpUmGr90T7yjlVJmOtybRvPXhKMbHr+fWnw==
 
 intl-messageformat-parser@^6.0.11, intl-messageformat-parser@^6.0.12:
-  version "6.0.12"
-  resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-6.0.12.tgz#9a4f4e109384eeaa5e9c2de9db03a4098b9f192a"
-  integrity sha512-IXxFpNhFFtucwOHS5aj91EIm97um6p/dyu0G88UTH0K8DwQHmTB2HqRtsEwl38+V1ebL9s+qz5TjR04A1EIu6A==
+  version "6.0.13"
+  resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-6.0.13.tgz#705ca7274f3eb9c67a81debb65c7582341d14d66"
+  integrity sha512-9B+pD1vUjDHEXQQeZR/7GNpQrxH7k1JmmV8dAz7OLA1Vln7cBH3f2cWa0BwwClSycLrkrMevEwemFch4PoZDaQ==
   dependencies:
-    "@formatjs/ecma402-abstract" "^1.3.0"
+    "@formatjs/ecma402-abstract" "1.3.0"
     tslib "^2.0.1"
 
 intl-messageformat@^9.3.13:
