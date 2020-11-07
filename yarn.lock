@@ -1387,7 +1387,16 @@
     intl-messageformat-parser "6.0.13"
     tslib "^2.0.1"
 
-"@formatjs/ts-transformer@^2.12.0", "@formatjs/ts-transformer@^2.12.1":
+"@formatjs/ts-transformer@2.12.3":
+  version "2.12.3"
+  resolved "https://registry.yarnpkg.com/@formatjs/ts-transformer/-/ts-transformer-2.12.3.tgz#a05250fc9d15272dcab17ecc78c63b3ddc92bdeb"
+  integrity sha512-subR1DzJDeE14dZ+z8U2mUEtkf6ojJk8Ey8dYExXJ7U1VS7jcFgMSEMHO783N2aBFAdzO5N5H7DqAjwszCnR+A==
+  dependencies:
+    intl-messageformat-parser "6.0.13"
+    tslib "^2.0.1"
+    typescript "^4.0"
+
+"@formatjs/ts-transformer@^2.12.1":
   version "2.12.1"
   resolved "https://registry.yarnpkg.com/@formatjs/ts-transformer/-/ts-transformer-2.12.1.tgz#80adce9bcfc2655dd11435bf1800d4a4a2dafaae"
   integrity sha512-GB3sR9BxE/WxRkhvH5Ky7aI3z6Rk5F1BwmTGzAfsge2pIFJXaXQCHI0KKCF6vB6MYEhKdLSysMUpRdTM0IVsCQ==
@@ -4606,18 +4615,18 @@ babel-plugin-react-docgen@^4.2.1:
     lodash "^4.17.15"
     react-docgen "^5.0.0"
 
-babel-plugin-react-intl@^8.2.10:
-  version "8.2.10"
-  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-8.2.10.tgz#b80db63ea462a195918aa630b28bb8cbd3a73169"
-  integrity sha512-+cEBDvRWM7CvZsbjpm3W+CX4D9JA8dbH+EMod6vEW7wEhUqePwPrMG7ES3WO1/4HPZUJEZNz2hggtftCABRsJQ==
+babel-plugin-react-intl@^8.2.13:
+  version "8.2.13"
+  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-8.2.13.tgz#9385080f53c992a17a76477d9650f4814962b475"
+  integrity sha512-VhJ8xLoGQaNSUCuPledKDTvLQdL+oSDICYsEXHOVJmsER+JTsFLpEmIfxvGNgSAeAjjTbWp+0oZXVFIkNc0jFQ==
   dependencies:
     "@babel/core" "^7.9.0"
     "@babel/helper-plugin-utils" "^7.8.3"
     "@babel/types" "^7.9.5"
-    "@formatjs/ts-transformer" "^2.12.0"
+    "@formatjs/ts-transformer" "2.12.3"
     "@types/babel__core" "^7.1.7"
     "@types/schema-utils" "^2.4.0"
-    intl-messageformat-parser "^6.0.11"
+    intl-messageformat-parser "6.0.13"
     schema-utils "^3.0.0"
     tslib "^2.0.1"
 
@@ -9166,7 +9175,7 @@ interpret@^2.0.0:
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-2.2.0.tgz#1a78a0b5965c40a5416d007ad6f50ad27c417df9"
   integrity sha512-Ju0Bz/cEia55xDwUWEa8+olFpCiQoypjnQySseKtmjNrnps3P+xfpUmGr90T7yjlVJmOtybRvPXhKMbHr+fWnw==
 
-intl-messageformat-parser@6.0.13, intl-messageformat-parser@^6.0.11, intl-messageformat-parser@^6.0.12:
+intl-messageformat-parser@6.0.13, intl-messageformat-parser@^6.0.12:
   version "6.0.13"
   resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-6.0.13.tgz#705ca7274f3eb9c67a81debb65c7582341d14d66"
   integrity sha512-9B+pD1vUjDHEXQQeZR/7GNpQrxH7k1JmmV8dAz7OLA1Vln7cBH3f2cWa0BwwClSycLrkrMevEwemFch4PoZDaQ==
