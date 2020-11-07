@@ -79,7 +79,7 @@
     "@babel/preset-typescript": "^7.12.1",
     "@loadable/babel-plugin": "^5.13.2",
     "@loadable/webpack-plugin": "^5.14.0",
-    "@mdx-js/loader": "^1.6.19",
+    "@mdx-js/loader": "^1.6.21",
     "@storybook/addon-a11y": "^6.0.28",
     "@storybook/addon-docs": "^6.0.28",
     "@storybook/addon-knobs": "^6.0.28",
