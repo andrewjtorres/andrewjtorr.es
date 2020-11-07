@@ -1396,15 +1396,6 @@
     tslib "^2.0.1"
     typescript "^4.0"
 
-"@formatjs/ts-transformer@^2.12.1":
-  version "2.12.1"
-  resolved "https://registry.yarnpkg.com/@formatjs/ts-transformer/-/ts-transformer-2.12.1.tgz#80adce9bcfc2655dd11435bf1800d4a4a2dafaae"
-  integrity sha512-GB3sR9BxE/WxRkhvH5Ky7aI3z6Rk5F1BwmTGzAfsge2pIFJXaXQCHI0KKCF6vB6MYEhKdLSysMUpRdTM0IVsCQ==
-  dependencies:
-    intl-messageformat-parser "^6.0.12"
-    tslib "^2.0.1"
-    typescript "^4.0"
-
 "@graphql-tools/schema@^7.0.0":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@graphql-tools/schema/-/schema-7.0.0.tgz#f87e307d00a3d388f5c54d32f4697611396c0127"
@@ -7178,18 +7169,18 @@ eslint-module-utils@^2.6.0:
     debug "^2.6.9"
     pkg-dir "^2.0.0"
 
-eslint-plugin-formatjs@^2.9.1:
-  version "2.9.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-formatjs/-/eslint-plugin-formatjs-2.9.1.tgz#89bac8051745ac6deb79efcdf44143d2c07990ae"
-  integrity sha512-Chxd6eCjuh7D6mrmjbjyF4Lz7N3ODBMO5+7P62vO0ehw/ZvCrPEYZqP2W5GY1kBfNMhpXTsAmjRMmnx6Q3POcQ==
+eslint-plugin-formatjs@^2.9.3:
+  version "2.9.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-formatjs/-/eslint-plugin-formatjs-2.9.3.tgz#4b8156689922c6068525f07c61a9e1445931b6a4"
+  integrity sha512-+xyYiZLVbfhqs5T5GZYmpMdNm4m4R9mEVyUcHlhYq4Ex9fe1Mc3XNyUk9mT8fJ7W2WCHBHKB33uw6x0x1aCN0g==
   dependencies:
-    "@formatjs/ts-transformer" "^2.12.1"
+    "@formatjs/ts-transformer" "2.12.3"
     "@types/emoji-regex" "^8.0.0"
     "@types/eslint" "^7.2.0"
     "@types/estree" "^0.0.45"
     "@typescript-eslint/typescript-estree" "^3.6.0"
     emoji-regex "^9.0.0"
-    intl-messageformat-parser "^6.0.12"
+    intl-messageformat-parser "6.0.13"
     tslib "^2.0.1"
 
 eslint-plugin-import@^2.22.1:
@@ -9175,7 +9166,7 @@ interpret@^2.0.0:
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-2.2.0.tgz#1a78a0b5965c40a5416d007ad6f50ad27c417df9"
   integrity sha512-Ju0Bz/cEia55xDwUWEa8+olFpCiQoypjnQySseKtmjNrnps3P+xfpUmGr90T7yjlVJmOtybRvPXhKMbHr+fWnw==
 
-intl-messageformat-parser@6.0.13, intl-messageformat-parser@^6.0.12:
+intl-messageformat-parser@6.0.13:
   version "6.0.13"
   resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-6.0.13.tgz#705ca7274f3eb9c67a81debb65c7582341d14d66"
   integrity sha512-9B+pD1vUjDHEXQQeZR/7GNpQrxH7k1JmmV8dAz7OLA1Vln7cBH3f2cWa0BwwClSycLrkrMevEwemFch4PoZDaQ==
