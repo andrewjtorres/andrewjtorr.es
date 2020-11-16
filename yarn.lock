@@ -14793,9 +14793,9 @@ tar@^6.0.2:
     yallist "^4.0.0"
 
 telejson@^5.0.2:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/telejson/-/telejson-5.0.2.tgz#ed1e64be250cc1c757a53c19e1740b49832b3d51"
-  integrity sha512-XCrDHGbinczsscs8LXFr9jDhvy37yBk9piB7FJrCfxE8oP66WDkolNMpaBkWYgQqB9dQGBGtTDzGQPedc9KJmw==
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/telejson/-/telejson-5.1.0.tgz#cc04e4c2a355f9eb6af557e37acd6449feb1d146"
+  integrity sha512-Yy0N2OV0mosmr1SCZEm3Ezhu/oi5Dbao5RqauZu4+VI5I/XtVBHXajRk0txuqbFYtKdzzWGDZFGSif9ovVLjEA==
   dependencies:
     "@types/is-function" "^1.0.0"
     global "^4.4.0"
@@ -14803,7 +14803,7 @@ telejson@^5.0.2:
     is-regex "^1.1.1"
     is-symbol "^1.0.3"
     isobject "^4.0.0"
-    lodash "^4.17.19"
+    lodash "^4.17.20"
     memoizerific "^1.11.3"
 
 term-size@^2.1.0:
