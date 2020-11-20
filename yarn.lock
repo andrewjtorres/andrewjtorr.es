@@ -4103,10 +4103,10 @@ archiver-utils@^2.1.0:
     normalize-path "^3.0.0"
     readable-stream "^2.0.0"
 
-archiver@^5.0.2:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/archiver/-/archiver-5.0.2.tgz#b2c435823499b1f46eb07aa18e7bcb332f6ca3fc"
-  integrity sha512-Tq3yV/T4wxBsD2Wign8W9VQKhaUxzzRmjEiSoOK0SLqPgDP/N1TKdYyBeIEu56T4I9iO4fKTTR0mN9NWkBA0sg==
+archiver@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/archiver/-/archiver-5.1.0.tgz#05b0f6f7836f3e6356a0532763d2bb91017a7e37"
+  integrity sha512-iKuQUP1nuKzBC2PFlGet5twENzCfyODmvkxwDV0cEFXavwcLrIW5ssTuHi9dyTPvpWr6Faweo2eQaQiLIwyXTA==
   dependencies:
     archiver-utils "^2.1.0"
     async "^3.2.0"
@@ -4114,7 +4114,7 @@ archiver@^5.0.2:
     readable-stream "^3.6.0"
     readdir-glob "^1.0.0"
     tar-stream "^2.1.4"
-    zip-stream "^4.0.0"
+    zip-stream "^4.0.4"
 
 are-we-there-yet@~1.1.2:
   version "1.1.5"
@@ -16274,7 +16274,7 @@ zen-observable@^0.8.0, zen-observable@^0.8.14:
   resolved "https://registry.yarnpkg.com/zen-observable/-/zen-observable-0.8.15.tgz#96415c512d8e3ffd920afd3889604e30b9eaac15"
   integrity sha512-PQ2PC7R9rslx84ndNBZB/Dkv8V8fZEpk83RLgXtYd0fwUgEjseMn1Dgajh2x6S8QbZAFa9p2qVCEuYZNgve0dQ==
 
-zip-stream@^4.0.0:
+zip-stream@^4.0.4:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/zip-stream/-/zip-stream-4.0.4.tgz#3a8f100b73afaa7d1ae9338d910b321dec77ff3a"
   integrity sha512-a65wQ3h5gcQ/nQGWV1mSZCEzCML6EK/vyVPcrPNynySP1j3VBbQKh3nhC8CbORb+jfl2vXvh56Ul5odP1bAHqw==
