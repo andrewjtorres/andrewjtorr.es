@@ -92,7 +92,7 @@ describe('createErrorLink', () => {
   })
 
   test('should output the message of the graphql error to the web console', () =>
-    new Promise((resolve) => {
+    new Promise<void>((resolve) => {
       const warn = jest.spyOn(console, 'warn').mockImplementation()
       const error = new GraphQLError("Locale 'es' not supported")
 
@@ -114,7 +114,7 @@ describe('createErrorLink', () => {
     }))
 
   test('should output the locations, message, and path of the graphql error to the web console', () =>
-    new Promise((resolve) => {
+    new Promise<void>((resolve) => {
       const warn = jest.spyOn(console, 'warn').mockImplementation()
 
       const node = gql`
@@ -157,7 +157,7 @@ describe('createErrorLink', () => {
     }))
 
   test('should output the message of the network error to the web console', () =>
-    new Promise((resolve) => {
+    new Promise<void>((resolve) => {
       const warn = jest.spyOn(console, 'warn').mockImplementation()
       const error = new Error('Internal Server Error')
 

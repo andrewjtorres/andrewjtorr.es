@@ -180,7 +180,7 @@ const start = async () => {
     }
 
     appPromiseIsResolved = false
-    appPromise = new Promise((resolve) => (appPromiseResolve = resolve))
+    appPromise = new Promise<void>((resolve) => (appPromiseResolve = resolve))
   })
 
   server.use((req, res) =>

@@ -38,7 +38,7 @@ export const checksumFile = (
   target: string,
   { algorithm = 'sha256', digestEncoding, ...restOptions }: HashFileOptions = {}
 ) =>
-  new Promise((resolve, reject) => {
+  new Promise<void>((resolve, reject) => {
     const hash = crypto.createHash(algorithm, { ...restOptions })
     const readStream = fs.createReadStream(source)
     const writeStream = fs.createWriteStream(target)
@@ -70,7 +70,7 @@ export const cleanDir = (
 ) => promisify(rimraf)(path, { glob: { nosort, silent, ...restOptions } })
 
 export const copyFile = (source: string, target: string) =>
-  new Promise((resolve, reject) => {
+  new Promise<void>((resolve, reject) => {
     const readStream = fs.createReadStream(source)
     const writeStream = fs.createWriteStream(target)
     let callbackCalled = false
