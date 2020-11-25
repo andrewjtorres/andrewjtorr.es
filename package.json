@@ -70,7 +70,7 @@
     "styled-system": "^5.1.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.7",
+    "@babel/core": "^7.12.9",
     "@babel/plugin-transform-react-constant-elements": "^7.12.1",
     "@babel/plugin-transform-react-inline-elements": "^7.12.1",
     "@babel/plugin-transform-runtime": "^7.12.1",
