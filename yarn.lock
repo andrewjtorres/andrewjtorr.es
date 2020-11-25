@@ -1938,7 +1938,7 @@
     react-select "^3.0.8"
     regenerator-runtime "^0.13.7"
 
-"@storybook/addons@6.1.2", "@storybook/addons@^6.1.1":
+"@storybook/addons@6.1.2":
   version "6.1.2"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-6.1.2.tgz#e073d4d930d84cb5d54cef5bd4376724369b56de"
   integrity sha512-Q+xTYikVz4cfS3IWw4Ns9YDY8jzC4E8C7meuoAMWZMaQn3Y8CdvTNrnoPZ1XnxaArVvkROCF45cdsDX7t0GNRQ==
@@ -1953,7 +1953,7 @@
     global "^4.3.2"
     regenerator-runtime "^0.13.7"
 
-"@storybook/addons@6.1.6":
+"@storybook/addons@6.1.6", "@storybook/addons@^6.1.6":
   version "6.1.6"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-6.1.6.tgz#9480843714a29190a943627a4a56a7292163a034"
   integrity sha512-8g3dCLLTAiiMhNl2VKhpDIvtZlbYXMRf4yLwDObA6YSwn4G3zgJszzY4nFMrBCNiAv1LgGCRk7osuHX5VhAMoQ==
