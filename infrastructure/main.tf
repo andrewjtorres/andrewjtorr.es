@@ -4,7 +4,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = ">=3.16"
+      version = ">=3.18"
     }
   }
 
@@ -123,6 +123,10 @@ resource "aws_acm_certificate" "certificate" {
 
   options {
     certificate_transparency_logging_preference = "ENABLED"
+  }
+
+  lifecycle {
+    create_before_destroy = true
   }
 
   tags = {
