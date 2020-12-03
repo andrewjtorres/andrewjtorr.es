@@ -3476,6 +3476,14 @@
     "@typescript-eslint/types" "4.8.2"
     eslint-visitor-keys "^2.0.0"
 
+"@vendia/serverless-express@^3.4.0-rc1":
+  version "3.4.0-rc1"
+  resolved "https://registry.yarnpkg.com/@vendia/serverless-express/-/serverless-express-3.4.0-rc1.tgz#aff83b046ed60357fb0f5e0bde155f54818b760e"
+  integrity sha512-gXpcP7rCZwkn7VRKNbJNrx5l2YISOm/5DIy3GRtT8TbBeCuXSjo7ZraJnZNKmW8xLvu/5sPvcTz1a0iyoyIrqw==
+  dependencies:
+    binary-case "^1.0.0"
+    type-is "^1.6.16"
+
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.9.0.tgz#bd850604b4042459a5a41cd7d338cbed695ed964"
@@ -4357,11 +4365,12 @@ aws-sdk@^2.802.0:
     uuid "3.3.2"
     xml2js "0.4.19"
 
-aws-serverless-express@^3.3.8:
-  version "3.3.8"
-  resolved "https://registry.yarnpkg.com/aws-serverless-express/-/aws-serverless-express-3.3.8.tgz#8c05e0ce3651fc277725c6d2e1b8f8a36dbe4f4b"
-  integrity sha512-2TQdF5EhxnAtGeEi+wSi2M3xCfpiemuImnpU7HKih3onH0izJ/G2tkM+gwcGHZEsW/gLWFl/JjQAYGa3fILfvw==
+aws-serverless-express@^3.3.9:
+  version "3.3.9"
+  resolved "https://registry.yarnpkg.com/aws-serverless-express/-/aws-serverless-express-3.3.9.tgz#4e009abeabaeb10f4137b40bb4104bfb43ed7159"
+  integrity sha512-ZKyO31zILUtPU+bvsnuB94pwL/sfM8cRXftGRMxVWSNrTNqi2yIWogo7iW/XW24Iw2+IlVuVHkp9VfH8Q9Tdbw==
   dependencies:
+    "@vendia/serverless-express" "^3.4.0-rc1"
     binary-case "^1.0.0"
     type-is "^1.6.16"
 
