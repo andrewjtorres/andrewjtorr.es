@@ -7529,10 +7529,10 @@ eslint-plugin-import@^2.22.1:
     resolve "^1.17.0"
     tsconfig-paths "^3.9.0"
 
-eslint-plugin-jest-dom@^3.5.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jest-dom/-/eslint-plugin-jest-dom-3.5.0.tgz#e5198d3aa30eca0b902b09e018df5a3b65c4e932"
-  integrity sha512-23+G4noSZRSN2znHMYBIOGBuRbNaxzL/o4WUelOJD9gL7jlpVJCczE89vE5nFt01cs7PRdP+wA4N6f0l+q1DTA==
+eslint-plugin-jest-dom@^3.6.1:
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest-dom/-/eslint-plugin-jest-dom-3.6.1.tgz#4f84f6290d997cf7f532ea2a6c85c353e738dce8"
+  integrity sha512-RS8iNOz0zG2qomkh7FhNtWbx3JgNQmgGC2eid/VRcrL9DdTKBfE2SZzged+K3zJ6VGNgDFQlYGnfUtWe+tqJew==
   dependencies:
     "@babel/runtime" "^7.9.6"
     "@testing-library/dom" "^7.28.1"
