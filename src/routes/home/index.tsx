@@ -1,5 +1,5 @@
 import { darken, em, hsl, rem } from 'polished'
-import React from 'react'
+import { useEffect, useRef, FunctionComponent } from 'react'
 import { defineMessages, useIntl } from 'react-intl'
 import styled, { css } from 'styled-components'
 
@@ -250,11 +250,11 @@ const Twitter = styled(BaseTwitter)`
   ${icon};
 `
 
-const Home: React.FunctionComponent = (props) => {
+const Home: FunctionComponent = (props) => {
   const { formatMessage } = useIntl()
   const links: HTMLAnchorElement[] = []
-  const mediumLinkContainer = React.useRef<HTMLDivElement>()
-  const smallLinkContainer = React.useRef<HTMLDivElement>()
+  const mediumLinkContainer = useRef<HTMLDivElement>()
+  const smallLinkContainer = useRef<HTMLDivElement>()
 
   const smallMediumTransition = ({
     matches,
@@ -264,7 +264,7 @@ const Home: React.FunctionComponent = (props) => {
     return current?.append(...links)
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     const mediaQueryList = window.matchMedia(
       'screen and (min-width: 769px), print'
     )

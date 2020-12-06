@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { renderWithContext } from 'utils/spec'
 import { Heading } from '.'
 

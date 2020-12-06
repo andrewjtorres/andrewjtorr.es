@@ -1,7 +1,7 @@
 import { ApolloProvider, HttpLink } from '@apollo/client'
 import { loadableReady } from '@loadable/component'
 import { createBrowserHistory, createPath, Action, Listener } from 'history'
-import React from 'react'
+import { ComponentType } from 'react'
 import deepForceUpdate from 'react-deep-force-update'
 import { hydrate, render } from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
@@ -28,7 +28,7 @@ const container = document.querySelector('#root')
 const history = createBrowserHistory()
 let currentLocation = history.location
 let isInitialRender = true
-let root: React.ComponentType | void
+let root: ComponentType | void
 
 const onLocationChange: Listener = async ({ location }) => {
   const renderOrHydrate = isInitialRender ? hydrate : render

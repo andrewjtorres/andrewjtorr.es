@@ -1,5 +1,5 @@
 import { rem } from 'polished'
-import React from 'react'
+import { FunctionComponent } from 'react'
 import { defineMessages, useIntl } from 'react-intl'
 import styled from 'styled-components'
 
@@ -39,7 +39,7 @@ const Content = styled.p`
   width: ${rem(280)};
 `
 
-const NotFound: React.FunctionComponent = (props) => {
+const NotFound: FunctionComponent = (props) => {
   const { formatMessage } = useIntl()
 
   return (

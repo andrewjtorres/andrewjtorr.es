@@ -1,7 +1,7 @@
 import { Queries, queries } from '@testing-library/dom'
 import { RenderOptions, render } from '@testing-library/react'
 import { createMemoryHistory } from 'history'
-import React from 'react'
+import { FunctionComponent, ReactElement, ReactNode } from 'react'
 import { IntlConfig, IntlProvider } from 'react-intl'
 import { Router, RouterProps } from 'react-router'
 import { DefaultTheme, ThemeProvider } from 'styled-components'
@@ -24,11 +24,11 @@ interface Options<TQueries extends Queries = typeof queries>
 }
 
 interface WrapperProps {
-  children?: React.ReactNode
+  children?: ReactNode
 }
 
 export const renderWithContext = <TQueries extends Queries>(
-  ui: React.ReactElement,
+  ui: ReactElement,
   {
     defaultFormats,
     defaultLocale = 'en',
@@ -46,7 +46,7 @@ export const renderWithContext = <TQueries extends Queries>(
     ...restOptions
   }: Options<TQueries> = {}
 ) => {
-  const Wrapper: React.FunctionComponent<WrapperProps> = ({
+  const Wrapper: FunctionComponent<WrapperProps> = ({
     children,
   }: WrapperProps) => (
     <IntlProvider

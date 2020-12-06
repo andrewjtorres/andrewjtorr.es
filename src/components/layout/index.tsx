@@ -1,12 +1,12 @@
 import { Link as BaseLink } from 'react-router-dom'
 import { rem } from 'polished'
-import React from 'react'
+import { forwardRef, HTMLAttributes, Ref } from 'react'
 import styled, { css } from 'styled-components'
 
 import BaseLogoIcon from 'assets/logo.svg'
 import { container, medium, untilMedium } from 'styles/mixins'
 
-export type LayoutProps = React.HTMLAttributes<HTMLDivElement>
+export type LayoutProps = HTMLAttributes<HTMLDivElement>
 
 const Root = styled.div`
   display: flex;
@@ -65,26 +65,24 @@ const LogoIcon = styled(BaseLogoIcon)`
   height: ${rem(32)};
 `
 
-export const Layout = React.forwardRef<HTMLDivElement, LayoutProps>(
-  function Layout(
-    { children, ...restProps }: LayoutProps,
-    ref?: React.Ref<HTMLDivElement>
-  ) {
-    return (
-      <Root ref={ref} {...restProps}>
-        <header>
-          <Navbar aria-label="main navigation">
-            <Container>
-              <Brand>
-                <Link aria-label="home" data-testid="logo" to="/">
-                  <LogoIcon />
-                </Link>
-              </Brand>
-            </Container>
-          </Navbar>
-        </header>
-        {children}
-      </Root>
-    )
-  }
-)
+export const Layout = forwardRef<HTMLDivElement, LayoutProps>(function Layout(
+  { children, ...restProps }: LayoutProps,
+  ref?: Ref<HTMLDivElement>
+) {
+  return (
+    <Root ref={ref} {...restProps}>
+      <header>
+        <Navbar aria-label="main navigation">
+          <Container>
+            <Brand>
+              <Link aria-label="home" data-testid="logo" to="/">
+                <LogoIcon />
+              </Link>
+            </Brand>
+          </Container>
+        </Navbar>
+      </header>
+      {children}
+    </Root>
+  )
+})

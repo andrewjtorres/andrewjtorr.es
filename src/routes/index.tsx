@@ -1,5 +1,4 @@
 import loadable from '@loadable/component'
-import React from 'react'
 import { PartialRouteObject } from 'react-router'
 
 const Home = loadable(() => import('routes/home'))

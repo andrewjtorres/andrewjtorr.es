@@ -32,7 +32,11 @@ const createConfig = ({ caller, env }) => {
       ],
       [
         '@babel/preset-react',
-        { development: isDev || isTest, useBuiltIns: true },
+        {
+          development: isDev || isTest,
+          runtime: 'automatic',
+          useBuiltIns: true,
+        },
       ],
       '@babel/preset-typescript',
     ],

@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client'
-import React from 'react'
+import { useState, FunctionComponent, StrictMode } from 'react'
 import { IntlProvider } from 'react-intl'
 import { useRoutes, PartialRouteObject } from 'react-router'
 import { ThemeProvider } from 'styled-components'
@@ -16,10 +16,8 @@ interface RootProps {
 
 const defaultLocale = 'en'
 
-export const Root: React.FunctionComponent<RootProps> = ({
-  routes,
-}: RootProps) => {
-  const [messages, setMessages] = React.useState<Messages>()
+export const Root: FunctionComponent<RootProps> = ({ routes }: RootProps) => {
+  const [messages, setMessages] = useState<Messages>()
   const route = useRoutes(routes)
 
   const { data } = useQuery<InitializationQueryData>(initializationQuery, {
@@ -35,7 +33,7 @@ export const Root: React.FunctionComponent<RootProps> = ({
   })
 
   return (
-    <React.StrictMode>
+    <StrictMode>
       <IntlProvider
         defaultLocale={defaultLocale}
         locale={data?.currentLocale || defaultLocale}
@@ -46,6 +44,6 @@ export const Root: React.FunctionComponent<RootProps> = ({
           {route}
         </ThemeProvider>
       </IntlProvider>
-    </React.StrictMode>
+    </StrictMode>
   )
 }

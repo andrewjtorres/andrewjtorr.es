@@ -1,19 +1,19 @@
 import { NormalizedCacheObject } from '@apollo/client/cache'
-import React from 'react'
+import { FunctionComponent, HtmlHTMLAttributes, ReactElement } from 'react'
 import serialize from 'serialize-javascript'
 
 import fixingTheMustacheUrl from 'assets/fixing-the-mustache.png'
 
 type StateKey = keyof State
 
-export interface HtmlProps extends React.HtmlHTMLAttributes<HTMLHtmlElement> {
+export interface HtmlProps extends HtmlHTMLAttributes<HTMLHtmlElement> {
   alternateLocales?: string[]
   children: string
   description?: string
-  links?: React.ReactElement[]
-  scripts?: React.ReactElement[]
+  links?: ReactElement[]
+  scripts?: ReactElement[]
   state?: State
-  styles?: React.ReactElement[]
+  styles?: ReactElement[]
   title?: string
 }
 
@@ -22,7 +22,7 @@ interface State {
   __APOLLO_STATE__: Record<string, any>
 }
 
-export const Html: React.FunctionComponent<HtmlProps> = ({
+export const Html: FunctionComponent<HtmlProps> = ({
   alternateLocales = [],
   children,
   description = 'Personal website of Andrew Torres',

@@ -1,4 +1,4 @@
-import React from 'react'
+import { ElementType, HTMLAttributes, RefAttributes } from 'react'
 import styled from 'styled-components'
 import {
   ColorProps,
@@ -15,14 +15,14 @@ import {
 } from 'styled-system'
 
 export interface BoxProps
-  extends React.RefAttributes<HTMLDivElement>,
-    Omit<React.HTMLAttributes<HTMLDivElement>, 'color'>,
+  extends RefAttributes<HTMLDivElement>,
+    Omit<HTMLAttributes<HTMLDivElement>, 'color'>,
     ColorProps,
     FlexboxProps,
     LayoutProps,
     SpaceProps,
     TypographyProps {
-  as?: React.ElementType<any>
+  as?: ElementType<any>
 }
 
 export const Box = styled.div<BoxProps>`

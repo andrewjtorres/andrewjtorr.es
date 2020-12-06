@@ -1,4 +1,4 @@
-import React from 'react'
+import { ElementType, HTMLAttributes, RefAttributes } from 'react'
 import styled, { DefaultTheme, ThemedStyledProps } from 'styled-components'
 import {
   ColorProps,
@@ -22,14 +22,14 @@ interface Elements {
 }
 
 export interface HeadingProps
-  extends React.RefAttributes<HTMLHeadingElement>,
-    Omit<React.HTMLAttributes<HTMLHeadingElement>, 'color'>,
+  extends RefAttributes<HTMLHeadingElement>,
+    Omit<HTMLAttributes<HTMLHeadingElement>, 'color'>,
     ColorProps,
     FlexboxProps,
     LayoutProps,
     SpaceProps,
     TypographyProps {
-  as?: React.ElementType<any>
+  as?: ElementType<any>
   level?: Level
 }
 

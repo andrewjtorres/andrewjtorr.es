@@ -1,6 +1,5 @@
 import { MockedProvider, MockedResponse } from '@apollo/client/testing'
 import { act, screen } from '@testing-library/react'
-import React from 'react'
 import { FormattedMessage } from 'react-intl'
 
 import { resolvers } from 'store'
