@@ -53,6 +53,7 @@ app
   )
   .use(server.getMiddleware({ cors: false, path: '/api' }))
 
+// eslint-disable-next-line @typescript-eslint/no-misused-promises
 app.get('*', async (req: Request, res: Response, next: NextFunction) => {
   const defaults: Defaults = {
     ...baseDefaults,
