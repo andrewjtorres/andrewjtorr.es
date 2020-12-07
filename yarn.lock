@@ -3390,7 +3390,7 @@
   resolved "https://registry.yarnpkg.com/@ungap/global-this/-/global-this-0.4.2.tgz#bc59a79799862e3e0cf647c090fd3f3f2285cf56"
   integrity sha512-uFg7Kz+E12RBlgBLMlWVjmn2OIeE2J1Lzij0RseNcCVsrJX+LEB4fQ9MnoPXkXJmO5cHtTEzI5ATtb3IJfQ9tQ==
 
-"@vendia/serverless-express@^3.4.0-rc1":
+"@vendia/serverless-express@^3.4.0":
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/@vendia/serverless-express/-/serverless-express-3.4.0.tgz#156f47d364b067ae6fa678a914c51887f494321a"
   integrity sha512-/UAAbi9qRjUtjRISt5MJ1sfhtrHb26hqQ0nvE5qhMLsAdR5H7ErBwPD8Q/v2OENKm0iWsGwErIZEg7ebUeFDjQ==
@@ -4267,12 +4267,12 @@ aws-sdk@^2.804.0:
     uuid "3.3.2"
     xml2js "0.4.19"
 
-aws-serverless-express@^3.3.9:
-  version "3.3.9"
-  resolved "https://registry.yarnpkg.com/aws-serverless-express/-/aws-serverless-express-3.3.9.tgz#4e009abeabaeb10f4137b40bb4104bfb43ed7159"
-  integrity sha512-ZKyO31zILUtPU+bvsnuB94pwL/sfM8cRXftGRMxVWSNrTNqi2yIWogo7iW/XW24Iw2+IlVuVHkp9VfH8Q9Tdbw==
+aws-serverless-express@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/aws-serverless-express/-/aws-serverless-express-3.4.0.tgz#74153b8cc80dbd2c6a32a51e6d353a325c2710d7"
+  integrity sha512-YG9ZjAOI9OpwqDDWzkRc3kKJYJuR7gTMjLa3kAWopO17myoprxskCUyCEee+RKe34tcR4UNrVtgAwW5yDe74bw==
   dependencies:
-    "@vendia/serverless-express" "^3.4.0-rc1"
+    "@vendia/serverless-express" "^3.4.0"
     binary-case "^1.0.0"
     type-is "^1.6.16"
 
