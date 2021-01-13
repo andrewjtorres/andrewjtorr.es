@@ -4195,12 +4195,12 @@ anymatch@^3.0.3, anymatch@~3.1.1:
     picomatch "^2.0.4"
 
 apollo-cache-control@^0.11.4:
-  version "0.11.4"
-  resolved "https://registry.yarnpkg.com/apollo-cache-control/-/apollo-cache-control-0.11.4.tgz#06d57d728e6f928e03b9cc3b993f6102f305c32e"
-  integrity sha512-FUKE8ASr8GxVq5rmky/tY8bsf++cleGT591lfLiqnPsP1fo3kAfgRfWA2QRHTCKFNlQxzUhVOEDv+PaysqiOjw==
+  version "0.11.5"
+  resolved "https://registry.yarnpkg.com/apollo-cache-control/-/apollo-cache-control-0.11.5.tgz#de208bd6fef440c1fed451b830d6402eab307a2e"
+  integrity sha512-jvarfQhwDRazpOsmkt5Pd7qGFrtbL70zMbUZGqDhJSYpfqI672f7bXXc7O3vtpbD3qnS3XTBvK2kspX/Bdo0IA==
   dependencies:
     apollo-server-env "^2.4.5"
-    apollo-server-plugin-base "^0.10.2"
+    apollo-server-plugin-base "^0.10.3"
 
 apollo-datasource@^0.7.2:
   version "0.7.2"
