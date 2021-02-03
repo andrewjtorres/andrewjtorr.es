@@ -18,9 +18,6 @@ updates:
     allow:
       - dependency-type: all
     ignore:
-      - dependency-name: '@loadable/server'
-        versions:
-          - '> 5.14.0'
       - dependency-name: eslint-import-resolver-typescript
         versions:
           - '> 1.1.1'
