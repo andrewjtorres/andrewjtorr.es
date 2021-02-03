@@ -38,18 +38,18 @@ const mergeToFile = async (
   try {
     const data: Translation[] = JSON.parse((await readFile(file)) as string)
 
-    data.forEach((translation) => {
+    for (const translation of data) {
       originalTranslations[translation.id] = translation
 
       delete originalTranslations[translation.id].files
-    })
+    }
   } catch (error) {
     if (error.code !== 'ENOENT') {
       throw error
     }
   }
 
-  Object.keys(newTranslations).forEach((id) => {
+  for (const id of Object.keys(newTranslations)) {
     const { defaultMessage, description, message } =
       originalTranslations[id] ?? defaultTranslation
 
@@ -60,7 +60,7 @@ const mergeToFile = async (
       description: newTranslations[id].description || description,
       files: newTranslations[id].files,
     }
-  })
+  }
 
   const updatedTranslations = Object.keys(originalTranslations)
     .map((id) => originalTranslations[id])
@@ -96,22 +96,22 @@ const processFile = async (file: string, presets: PluginItem[]) => {
 const updateTranslations = async (toBuild = false) => {
   const newTranslations: Translations = {}
 
-  Object.keys(extractedTranslations).forEach((file) =>
-    extractedTranslations[file].forEach(
-      ({ defaultMessage, description, id }) => {
-        const { files = [], ...translation } =
-          newTranslations[id] ?? defaultTranslation
+  for (const file of Object.keys(extractedTranslations)) {
+    for (const { defaultMessage, description, id } of extractedTranslations[
+      file
+    ]) {
+      const { files = [], ...translation } =
+        newTranslations[id] ?? defaultTranslation
 
-        newTranslations[id] = {
-          id,
-          message: translation.message,
-          defaultMessage: defaultMessage || translation.defaultMessage,
-          description: description || translation.description,
-          files: [...files, file].sort((a, b) => a.localeCompare(b)),
-        }
+      newTranslations[id] = {
+        id,
+        message: translation.message,
+        defaultMessage: defaultMessage || translation.defaultMessage,
+        description: description || translation.description,
+        files: [...files, file].sort((a, b) => a.localeCompare(b)),
       }
-    )
-  )
+    }
+  }
 
   await Promise.all(
     locales.map((locale) => mergeToFile(locale, newTranslations, toBuild))

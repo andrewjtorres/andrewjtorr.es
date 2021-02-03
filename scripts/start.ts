@@ -92,7 +92,7 @@ const start = async () => {
   }
 
   entry.client = ['./scripts/lib/webpack-hot-dev-client']
-    .concat(entry.client)
+    .concat(entry.client) // eslint-disable-line unicorn/prefer-spread
     .sort(
       (a, b) => Number(b.includes('polyfill')) - Number(a.includes('polyfill'))
     )
@@ -216,9 +216,9 @@ const start = async () => {
           } else {
             console.info(`${hmrPrefix}Updated modules:`)
 
-            outdatedModules.forEach((moduleId) =>
+            for (const moduleId of outdatedModules) {
               console.info(`${hmrPrefix} - ${moduleId}`)
-            )
+            }
 
             return checkForUpdate(true)
           }

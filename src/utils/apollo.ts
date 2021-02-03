@@ -28,7 +28,7 @@ const storeQuery = gql`
 
 export const createErrorLink = () =>
   new ErrorLink(({ graphQLErrors = [], networkError }) => {
-    graphQLErrors.forEach(({ locations = [], message, path = [] }) =>
+    for (const { locations = [], message, path = [] } of graphQLErrors) {
       console.warn(
         `[GraphQL Error]: ${message}${
           locations.length > 0
@@ -38,7 +38,7 @@ export const createErrorLink = () =>
             : ''
         }${path.length > 0 ? ` Path: ${path.join(' > ')}` : ''}`
       )
-    )
+    }
 
     if (networkError) {
       console.warn(`[Network Error]: ${networkError.message}`)

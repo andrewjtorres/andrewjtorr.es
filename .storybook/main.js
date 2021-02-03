@@ -16,36 +16,37 @@ module.exports = {
   webpack: (config, { babelOptions, configType }) => {
     const isProd = /prod(uction)?/i.test(configType)
 
-    config.module.rules.push({
-      test: /\.mdx$/,
-      use: [
-        {
-          loader: require.resolve('babel-loader'),
-          options: {
-            cacheCompression: isProd,
-            cacheDirectory: babelOptions.cacheDirectory,
-            caller: { target: 'web' },
-            compact: isProd,
+    config.module.rules.push(
+      {
+        test: /\.mdx$/,
+        use: [
+          {
+            loader: require.resolve('babel-loader'),
+            options: {
+              cacheCompression: isProd,
+              cacheDirectory: babelOptions.cacheDirectory,
+              caller: { target: 'web' },
+              compact: isProd,
+            },
           },
-        },
-        {
-          loader: require.resolve('@mdx-js/loader'),
-          options: { compilers: [mdxCompiler()] },
-        },
-      ],
-    })
-
-    config.module.rules.push({
-      test: /\.ts(x)?$/,
-      include: [path.join(rootDir, '.storybook'), srcDir],
-      loader: require.resolve('babel-loader'),
-      options: {
-        cacheCompression: isProd,
-        cacheDirectory: babelOptions.cacheDirectory,
-        caller: { target: 'web' },
-        compact: isProd,
+          {
+            loader: require.resolve('@mdx-js/loader'),
+            options: { compilers: [mdxCompiler()] },
+          },
+        ],
       },
-    })
+      {
+        test: /\.ts(x)?$/,
+        include: [path.join(rootDir, '.storybook'), srcDir],
+        loader: require.resolve('babel-loader'),
+        options: {
+          cacheCompression: isProd,
+          cacheDirectory: babelOptions.cacheDirectory,
+          caller: { target: 'web' },
+          compact: isProd,
+        },
+      }
+    )
 
     config.resolve.extensions.push('.ts', '.tsx')
     config.resolve.modules.push(srcDir)
