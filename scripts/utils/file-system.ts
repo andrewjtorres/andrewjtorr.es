@@ -1,4 +1,4 @@
-import crypto, { HashOptions, HexBase64Latin1Encoding } from 'crypto'
+import crypto, { BinaryToTextEncoding, HashOptions } from 'crypto'
 import fs, { WriteFileOptions } from 'fs'
 import path from 'path'
 import { promisify } from 'util'
@@ -30,7 +30,7 @@ type ZipDirOptions = Omit<GlobOptions, 'cwd'> & ZlibOptions
 
 interface HashFileOptions extends HashOptions {
   algorithm?: string
-  digestEncoding?: HexBase64Latin1Encoding
+  digestEncoding?: BinaryToTextEncoding
 }
 
 export const checksumFile = (
