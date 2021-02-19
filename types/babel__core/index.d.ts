@@ -1,8 +1,8 @@
 import '@babel/core'
-import { ReactIntlMetadata } from 'babel-plugin-react-intl'
+import { ExtractionResult } from 'babel-plugin-formatjs'
 
 declare module '@babel/core' {
   interface BabelFileMetadata {
-    'react-intl'?: ReactIntlMetadata
+    formatjs?: ExtractionResult
   }
 }

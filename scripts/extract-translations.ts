@@ -1,6 +1,6 @@
 import path from 'path'
 import { PluginItem, loadPartialConfig, transformFileAsync } from '@babel/core'
-import { ExtractedMessageDescriptor } from 'babel-plugin-react-intl'
+import { ExtractedMessageDescriptor } from 'babel-plugin-formatjs'
 import { watch } from 'chokidar'
 
 import { Translation } from '../src/common'
@@ -80,8 +80,8 @@ const mergeToFile = async (
 
 const processFile = async (file: string, presets: PluginItem[]) => {
   const { messages = [] } =
-    (await transformFileAsync(file, { plugins: ['react-intl'], presets }))
-      ?.metadata?.['react-intl'] ?? {}
+    (await transformFileAsync(file, { plugins: ['formatjs'], presets }))
+      ?.metadata?.['formatjs'] ?? {}
   const posixFile = file.replace(/\\/g, '/')
 
   if (messages.length > 0) {
