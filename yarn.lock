@@ -10646,9 +10646,9 @@ lint-staged@^10.5.4:
     stringify-object "^3.3.0"
 
 listr2@^3.2.2:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/listr2/-/listr2-3.3.1.tgz#87b57cc0b8541fa794b814c8bcb76f1211cfbf5c"
-  integrity sha512-8Zoxe7s/8nNr4bJ8bdAduHD8uJce+exmMmUWTXlq0WuUdffnH3muisHPHPFtW2vvOfohIsq7FGCaguUxN/h3Iw==
+  version "3.3.4"
+  resolved "https://registry.yarnpkg.com/listr2/-/listr2-3.3.4.tgz#bca480e784877330b9d96d6cdc613ad243332e20"
+  integrity sha512-b0lhLAvXSr63AtPF9Dgn6tyxm8Kiz6JXpVGM0uZJdnDcZp02jt7FehgAnMfA9R7riQimOKjQgLknBTdz2nmXwQ==
   dependencies:
     chalk "^4.1.0"
     cli-truncate "^2.1.0"
@@ -10656,7 +10656,7 @@ listr2@^3.2.2:
     indent-string "^4.0.0"
     log-update "^4.0.0"
     p-map "^4.0.0"
-    rxjs "^6.6.3"
+    rxjs "^6.6.6"
     through "^2.3.8"
     wrap-ansi "^7.0.0"
 
@@ -13626,10 +13626,10 @@ rxjs@^5.5.6:
   dependencies:
     symbol-observable "1.0.1"
 
-rxjs@^6.4.0, rxjs@^6.6.0, rxjs@^6.6.3:
-  version "6.6.3"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.6.3.tgz#8ca84635c4daa900c0d3967a6ee7ac60271ee552"
-  integrity sha512-trsQc+xYYXZ3urjOiJOuCOa5N3jAZ3eiSpQB5hIT8zGlL2QfnHLJ2r7GMkBGuIausdJN1OneaI6gQlsqNHHmZQ==
+rxjs@^6.4.0, rxjs@^6.6.0, rxjs@^6.6.6:
+  version "6.6.6"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.6.6.tgz#14d8417aa5a07c5e633995b525e1e3c0dec03b70"
+  integrity sha512-/oTwee4N4iWzAMAL9xdGKjkEHmIwupR3oXbQjCKywF1BeFohswF3vZdogbmEF6pZkOsXTzWkrZszrWpQTByYVg==
   dependencies:
     tslib "^1.9.0"
 
@@ -14369,10 +14369,19 @@ string-width@^3.0.0:
     is-fullwidth-code-point "^2.0.0"
     strip-ansi "^5.1.0"
 
-string-width@^4.0.0, string-width@^4.1.0, string-width@^4.2.0:
+string-width@^4.0.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.0.tgz#952182c46cc7b2c313d1596e623992bd163b72b5"
   integrity sha512-zUz5JD+tgqtuDjMhwIg5uFVV3dtqZ9yQJlZVfq4I01/K5Paj5UHj7VyrQOJvzawSVlKpObApbfD0Ed6yJc+1eg==
+  dependencies:
+    emoji-regex "^8.0.0"
+    is-fullwidth-code-point "^3.0.0"
+    strip-ansi "^6.0.0"
+
+string-width@^4.1.0, string-width@^4.2.0:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.1.tgz#1933ce1f470973d224368009bd1316cad81d5f4f"
+  integrity sha512-LL0OLyN6AnfV9xqGQpDBwedT2Rt63737LxvsRxbcwpa2aIeynBApG2Sm//F3TaLHIR1aJBN52DWklc06b94o5Q==
   dependencies:
     emoji-regex "^8.0.0"
     is-fullwidth-code-point "^3.0.0"
