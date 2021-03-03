@@ -139,7 +139,7 @@
     "chokidar": "^3.5.1",
     "cz-conventional-changelog": "^3.3.0",
     "dotenv-safe": "^8.2.0",
-    "dotenv-webpack": "^6.0.0",
+    "dotenv-webpack": "^6.0.2",
     "eslint": "^7.21.0",
     "eslint-config-prettier": "^7.2.0",
     "eslint-import-resolver-typescript": "1.1.1",
