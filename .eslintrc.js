@@ -1,7 +1,7 @@
 'use strict'
 
 const typescriptPlugin = require('@typescript-eslint/eslint-plugin')
-const prettierTypescriptConfig = require('eslint-config-prettier/@typescript-eslint')
+const prettierConfig = require('eslint-config-prettier')
 const jestPlugin = require('eslint-plugin-jest')
 const jestDomPlugin = require('eslint-plugin-jest-dom')
 const testingLibraryPlugin = require('eslint-plugin-testing-library')
@@ -27,9 +27,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:unicorn/recommended',
-    'prettier',
-    'prettier/react',
-    'prettier/unicorn',
+    'plugin:prettier/recommended',
   ],
   ignorePatterns: ['!**/.*', '.git'],
   rules: {
@@ -82,7 +80,7 @@ module.exports = {
         '@typescript-eslint/restrict-template-expressions': 'off',
         '@typescript-eslint/unbound-method': 'off',
 
-        ...prettierTypescriptConfig.rules,
+        ...prettierConfig.rules,
       },
     },
     {
