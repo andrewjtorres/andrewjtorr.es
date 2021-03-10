@@ -21,6 +21,9 @@ updates:
       - dependency-name: '@types/webpack-dev-middleware'
         versions:
           - '> 3.7.2'
+      - dependency-name: dotenv-webpack
+        versions:
+          - '> 6.0.4'
       - dependency-name: eslint-import-resolver-typescript
         versions:
           - '> 1.1.1'
