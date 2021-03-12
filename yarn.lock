@@ -265,7 +265,7 @@
     "@babel/helper-annotate-as-pure" "^7.12.13"
     regexpu-core "^4.7.1"
 
-"@babel/helper-define-polyfill-provider@^0.1.4", "@babel/helper-define-polyfill-provider@^0.1.5":
+"@babel/helper-define-polyfill-provider@^0.1.5":
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/@babel/helper-define-polyfill-provider/-/helper-define-polyfill-provider-0.1.5.tgz#3c2f91b7971b9fc11fe779c945c014065dea340e"
   integrity sha512-nXuzCSwlJ/WKr8qxzW816gwyT6VZgiJG17zR40fou70yfAcqjoNyTLl/DQ+FExw5Hx5KNqshmN8Ldl/r2N7cTg==
@@ -4991,12 +4991,12 @@ babel-plugin-polished@^1.1.0:
     polished "^1.0.0"
 
 babel-plugin-polyfill-corejs2@^0.1.4:
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/babel-plugin-polyfill-corejs2/-/babel-plugin-polyfill-corejs2-0.1.8.tgz#54ef37b1c4b2311e515029e8f1f07bbd4d7a5321"
-  integrity sha512-kB5/xNR9GYDuRmVlL9EGfdKBSUVI/9xAU7PCahA/1hbC2Jbmks9dlBBYjHF9IHMNY2jV/G2lIG7z0tJIW27Rog==
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/babel-plugin-polyfill-corejs2/-/babel-plugin-polyfill-corejs2-0.1.10.tgz#a2c5c245f56c0cac3dbddbf0726a46b24f0f81d1"
+  integrity sha512-DO95wD4g0A8KRaHKi0D51NdGXzvpqVLnLu5BTvDlpqUEpTmeEtypgC1xqesORaWmiUOQI14UHKlzNd9iZ2G3ZA==
   dependencies:
     "@babel/compat-data" "^7.13.0"
-    "@babel/helper-define-polyfill-provider" "^0.1.4"
+    "@babel/helper-define-polyfill-provider" "^0.1.5"
     semver "^6.1.1"
 
 babel-plugin-polyfill-corejs3@^0.1.3:
@@ -5724,9 +5724,9 @@ caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001125:
   integrity sha512-CPvObjD3ovWrNBaXlAIGWmg2gQQuJ5YhuciUOjPRox6hIQttu8O+b51dx6VIpIY9ESd2d0Vac1RKpICdG4rGUg==
 
 caniuse-lite@^1.0.30001181:
-  version "1.0.30001198"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001198.tgz#ed2d9b5f060322ba2efa42afdc56dee3255473f4"
-  integrity sha512-r5GGgESqOPZzwvdLVER374FpQu2WluCF1Z2DSiFJ89KSmGjT0LVKjgv4NcAqHmGWF9ihNpqRI9KXO9Ex4sKsgA==
+  version "1.0.30001199"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001199.tgz#062afccaad21023e2e647d767bac4274b8b8fd7f"
+  integrity sha512-ifbK2eChUCFUwGhlEzIoVwzFt1+iriSjyKKFYNfv6hN34483wyWpLLavYQXhnR036LhkdUYaSDpHg1El++VgHQ==
 
 capture-exit@^2.0.0:
   version "2.0.0"
@@ -7135,9 +7135,9 @@ electron-to-chromium@^1.3.564:
   integrity sha512-zok2y37qR00U14uM6qBz/3iIjWHom2eRfC2S1StA0RslP7x34jX+j4mxv80t8OEOHLJPVG54ZPeaFxEI7gPrwg==
 
 electron-to-chromium@^1.3.649:
-  version "1.3.684"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.684.tgz#053fbb0a4b2d5c076dfa6e1d8ecd06a3075a558a"
-  integrity sha512-GV/vz2EmmtRSvfGSQ5A0Lucic//IRSDijgL15IgzbBEEnp4rfbxeUSZSlBfmsj7BQvE4sBdgfsvPzLCnp6L21w==
+  version "1.3.687"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.687.tgz#c336184b7ab70427ffe2ee79eaeaedbc1ad8c374"
+  integrity sha512-IpzksdQNl3wdgkzf7dnA7/v10w0Utf1dF2L+B4+gKrloBrxCut+au+kky3PYvle3RMdSxZP+UiCZtLbcYRxSNQ==
 
 element-resize-detector@^1.2.1:
   version "1.2.2"
