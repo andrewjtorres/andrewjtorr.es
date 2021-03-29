@@ -16,7 +16,7 @@ type Theme =
 
 interface Options<TQueries extends Queries = typeof queries>
   extends Partial<IntlConfig>,
-    RenderOptions<TQueries>,
+    Omit<RenderOptions<TQueries>, 'wrapper'>,
     Omit<Partial<RouterProps>, 'children' | 'static'> {
   isStatic?: boolean
   route?: string
