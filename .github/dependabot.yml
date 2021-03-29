@@ -18,6 +18,9 @@ updates:
     allow:
       - dependency-type: all
     ignore:
+      - dependency-name: '@types/webpack'
+        versions:
+          - '> 4.41.27'
       - dependency-name: '@types/webpack-dev-middleware'
         versions:
           - '> 3.7.2'
