@@ -3090,12 +3090,12 @@
   dependencies:
     "@types/react" "*"
 
-"@types/loadable__webpack-plugin@^5.7.1":
-  version "5.7.1"
-  resolved "https://registry.yarnpkg.com/@types/loadable__webpack-plugin/-/loadable__webpack-plugin-5.7.1.tgz#f9386aad2d4d7cf48d92b638b9e8dc021fe53816"
-  integrity sha512-odgkf3IF5Ac5YV6dsL83PB9SoEzz4D3s+t+o88OQbUzccMT7/gKTarGapKGfgTFG+vQ+A8NMm9RFHziNagCQOw==
+"@types/loadable__webpack-plugin@^5.7.2":
+  version "5.7.2"
+  resolved "https://registry.yarnpkg.com/@types/loadable__webpack-plugin/-/loadable__webpack-plugin-5.7.2.tgz#ee0e87f91e8c959b6855d80103d1812fe87afe27"
+  integrity sha512-fOL6qh2JDyP9WsHyytQ+16YJgGvILTzqvgYEJaK4HhkEIWjxlFWYWnBqMKySGwmxvnC7SdVR7hKqzwPfRetKQA==
   dependencies:
-    "@types/webpack" "*"
+    "@types/webpack" "^4"
 
 "@types/long@^4.0.0":
   version "4.0.1"
