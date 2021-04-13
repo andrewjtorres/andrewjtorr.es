@@ -90,7 +90,7 @@
     "@svgr/webpack": "^5.5.0",
     "@testing-library/dom": "^7.30.3",
     "@testing-library/jest-dom": "^5.11.10",
-    "@testing-library/react": "^11.2.5",
+    "@testing-library/react": "^11.2.6",
     "@types/archiver": "^5.1.0",
     "@types/aws-serverless-express": "^3.3.3",
     "@types/babel__core": "^7.1.14",
