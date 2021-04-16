@@ -33,7 +33,11 @@ module.exports = {
   rules: {
     'no-console': ['error', { allow: ['error', 'info', 'warn'] }],
     'no-param-reassign': ['error', { props: true }],
+    'formatjs/enforce-default-message': 'error',
     'formatjs/enforce-description': 'error',
+    'formatjs/enforce-placeholders': 'error',
+    'formatjs/enforce-plural-rules': ['error', { other: true }],
+    'formatjs/no-multiple-whitespaces': 'error',
     'import/order': [
       'error',
       {
