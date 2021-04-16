@@ -1,5 +1,5 @@
 terraform {
-  required_version = ">=0.13"
+  required_version = ">=0.15"
 
   required_providers {
     aws = {
@@ -354,7 +354,7 @@ resource "aws_lambda_function" "application_function" {
   role             = aws_iam_role.personal_application_function_execution_role_for_service_principals_role.arn
   description      = "Serverless backend for the personal website of Andrew Torres"
   memory_size      = 256
-  runtime          = "nodejs12.x"
+  runtime          = "nodejs14.x"
   source_code_hash = data.aws_s3_bucket_object.shasum256_bucket_object.body
 
   tags = {

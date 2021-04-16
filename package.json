@@ -189,7 +189,7 @@
     "webpack-node-externals": "^2.5.2"
   },
   "engines": {
-    "node": ">=12.20",
+    "node": ">=14.16",
     "yarn": ">=1.22"
   },
   "private": true,
