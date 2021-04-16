@@ -21,6 +21,9 @@ updates:
       - dependency-name: '@types/webpack'
         versions:
           - '> 4.41.27'
+      - dependency-name: '@types/webpack-bundle-analyzer'
+        versions:
+          - '> 3.9.2'
       - dependency-name: '@types/webpack-dev-middleware'
         versions:
           - '> 3.7.2'
