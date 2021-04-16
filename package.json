@@ -131,7 +131,7 @@
     "aws-sdk": "^2.888.0",
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.2",
-    "babel-plugin-formatjs": "^10.2.6",
+    "babel-plugin-formatjs": "^10.2.7",
     "babel-plugin-graphql-tag": "^3.2.0",
     "babel-plugin-polished": "^1.1.0",
     "babel-plugin-styled-components": "^1.12.0",
