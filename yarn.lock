@@ -1145,9 +1145,9 @@
     regenerator-runtime "^0.13.4"
 
 "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.13.10", "@babel/runtime@^7.3.1", "@babel/runtime@^7.4.4", "@babel/runtime@^7.5.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6", "@babel/runtime@^7.7.7", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2", "@babel/runtime@^7.9.6":
-  version "7.13.10"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.13.10.tgz#47d42a57b6095f4468da440388fdbad8bebf0d7d"
-  integrity sha512-4QPkjJq6Ns3V/RgpEahRk+AGfL0eO6RHHtTWoNNr5mO49G6B5+X6d6THgWEAvTrznU5xYpbAlVKRYcsCgh/Akw==
+  version "7.13.16"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.13.16.tgz#673e7b84c1f6287d96d483fa65cd3db792d53e22"
+  integrity sha512-7VsWJsI5USRhBLE/3of+VU2DDNWtYHQlq2IHu2iL15+Yx4qVqP8KllR6JMHQlTKWRyDk9Tw6unkqSusaHXt//A==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -6704,9 +6704,9 @@ dotenv@^8.0.0, dotenv@^8.2.0:
   integrity sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
 
 downshift@^6.0.15:
-  version "6.1.2"
-  resolved "https://registry.yarnpkg.com/downshift/-/downshift-6.1.2.tgz#99d9a03d4da4bf369df766effc3b70f7e789950e"
-  integrity sha512-WnPoQ6miic4+uEzPEfqgeen0t5YREOUabMopU/Juo/UYDMZl0ZACkO6ykWCRg48dlEUmEt6zfaJlj1x7kEy78g==
+  version "6.1.3"
+  resolved "https://registry.yarnpkg.com/downshift/-/downshift-6.1.3.tgz#e794b7805d24810968f21e81ad6bdd9f3fdc40da"
+  integrity sha512-RA1MuaNcTbt0j+sVLhSs8R2oZbBXYAtdQP/V+uHhT3DoDteZzJPjlC+LQVm9T07Wpvo84QXaZtUCePLDTDwGXg==
   dependencies:
     "@babel/runtime" "^7.13.10"
     compute-scroll-into-view "^1.0.17"
