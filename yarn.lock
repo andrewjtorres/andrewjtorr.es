@@ -1360,15 +1360,6 @@
   dependencies:
     tslib "^2.1.0"
 
-"@formatjs/icu-messageformat-parser@1.1.5":
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/@formatjs/icu-messageformat-parser/-/icu-messageformat-parser-1.1.5.tgz#0c0dae9878329a26a4df6c74d1d3a59de08d4df9"
-  integrity sha512-TZC3Ac6zTZGlkPoOstJpllo0rkI60kYSOcyhv7zXcaqzAxgdY+6WK8D91x1O9Swy5Jk1PUQM1IAMdafxZoz+Zg==
-  dependencies:
-    "@formatjs/ecma402-abstract" "1.6.5"
-    "@formatjs/icu-skeleton-parser" "1.1.2"
-    tslib "^2.1.0"
-
 "@formatjs/icu-messageformat-parser@1.1.6":
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/@formatjs/icu-messageformat-parser/-/icu-messageformat-parser-1.1.6.tgz#1f970542edc7cc49df183b397c3a1cda1d40ad63"
@@ -1414,15 +1405,6 @@
     fast-memoize "^2.5.2"
     intl-messageformat "9.6.8"
     tslib "^2.1.0"
-
-"@formatjs/ts-transformer@3.3.7":
-  version "3.3.7"
-  resolved "https://registry.yarnpkg.com/@formatjs/ts-transformer/-/ts-transformer-3.3.7.tgz#ce480366366195f71a588c863378b0e965e18f41"
-  integrity sha512-njO4HMo0zGETY5cYz2ifsEO5FnZs+NyIUSXrGrcE0l9p188P5AIsJ+9HeK3ZGP6u/srtchBytIQFrvhskaQOzQ==
-  dependencies:
-    "@formatjs/icu-messageformat-parser" "1.1.5"
-    tslib "^2.1.0"
-    typescript "^4.0"
 
 "@formatjs/ts-transformer@3.3.8":
   version "3.3.8"
@@ -4690,18 +4672,18 @@ babel-plugin-extract-import-names@1.6.22:
   dependencies:
     "@babel/helper-plugin-utils" "7.10.4"
 
-babel-plugin-formatjs@^10.2.7:
-  version "10.2.7"
-  resolved "https://registry.yarnpkg.com/babel-plugin-formatjs/-/babel-plugin-formatjs-10.2.7.tgz#6d23261aae689d545968403d991fb4fb09e556f6"
-  integrity sha512-JLRs5ZOto1kI4JOGjmRmGby8TdjqCmnnprnxPOhrHU8G8kaHDy0Gu2vJ34DnYCy6ZjKkqK0CmT9p3cmZeEfeTQ==
+babel-plugin-formatjs@^10.2.8:
+  version "10.2.8"
+  resolved "https://registry.yarnpkg.com/babel-plugin-formatjs/-/babel-plugin-formatjs-10.2.8.tgz#325258903b4e21cadf8beea40b39cc7c346e3b91"
+  integrity sha512-U2snK6Bvr5+WO2d1pIgyBw+c8bcYrBbJ6pRwzx7OKXXzB9WDMlvV7MkN0xXHOt/cB8nWdGItLpycpSE+yWfZXA==
   dependencies:
     "@babel/core" "^7.9.0"
     "@babel/helper-plugin-utils" "^7.8.3"
     "@babel/plugin-syntax-jsx" "7"
     "@babel/traverse" "7"
     "@babel/types" "^7.9.5"
-    "@formatjs/icu-messageformat-parser" "1.1.5"
-    "@formatjs/ts-transformer" "3.3.7"
+    "@formatjs/icu-messageformat-parser" "1.1.6"
+    "@formatjs/ts-transformer" "3.3.8"
     "@types/babel__core" "^7.1.7"
     "@types/babel__helper-plugin-utils" "7"
     tslib "^2.1.0"
