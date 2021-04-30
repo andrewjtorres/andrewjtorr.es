@@ -7,8 +7,8 @@ test('should render correctly', () => {
   expect(firstChild).toMatchInlineSnapshot(`
     .c0 {
       box-sizing: border-box;
-      margin: 0;
       min-width: 0;
+      margin: 0;
     }
 
     <div

@@ -12,28 +12,29 @@ const GlobalStyle = createGlobalStyle(
     }
 
     html {
+      box-sizing: border-box;
+      min-width: 300px;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      font-size: 16px;
       -moz-osx-font-smoothing: grayscale;
       -webkit-font-smoothing: antialiased;
       background-color: ${theme.colors.white};
-      box-sizing: border-box;
-      font-size: 16px;
-      margin: 0;
-      min-width: 300px;
-      overflow-x: hidden;
-      overflow-y: scroll;
-      padding: 0;
+
       text-rendering: optimizeLegibility;
       text-size-adjust: 100%;
     }
 
     body {
-      color: ${theme.colors.text};
-      font-family: ${theme.fonts.primary};
-      font-size: ${em(16)};
-      font-weight: ${theme.fontWeights.normal};
-      line-height: 1.5;
       margin: 0;
       padding: 0;
+      color: ${theme.colors.text};
+      font-weight: ${theme.fontWeights.normal};
+      font-size: ${em(16)};
+      font-family: ${theme.fonts.primary};
+      line-height: 1.5;
     }
 
     article,
@@ -48,14 +49,15 @@ const GlobalStyle = createGlobalStyle(
 
     a {
       color: ${theme.colors.link};
-      cursor: pointer;
       text-decoration: none;
+      cursor: pointer;
 
       strong & {
         color: currentColor;
       }
 
-      &:hover {
+      &:hover,
+      &:focus {
         color: ${theme.linkHoverColor};
       }
     }
@@ -86,30 +88,30 @@ const GlobalStyle = createGlobalStyle(
     input,
     select,
     textarea {
-      font-family: ${theme.fonts.primary};
       margin: 0;
+      font-family: ${theme.fonts.primary};
     }
 
     code,
     pre {
+      font-family: ${theme.fonts.code};
       -moz-osx-font-smoothing: auto;
       -webkit-font-smoothing: auto;
-      font-family: ${theme.fonts.code};
     }
 
     code {
-      background-color: ${theme.colors.codeContrast};
-      color: ${theme.colors.code};
-      font-size: ${em(14)};
-      font-weight: 400;
       padding: ${em(4)} ${em(8)};
+      color: ${theme.colors.code};
+      font-weight: 400;
+      font-size: ${em(14)};
+      background-color: ${theme.colors.codeContrast};
     }
 
     fieldset,
     iframe {
-      border: none;
       margin: 0;
       padding: 0;
+      border: none;
     }
 
     h1,
@@ -118,25 +120,25 @@ const GlobalStyle = createGlobalStyle(
     h4,
     h5,
     h6 {
-      font-size: 100%;
-      font-weight: 400;
       margin: 0;
       padding: 0;
+      font-weight: 400;
+      font-size: 100%;
     }
 
     hr {
-      background-color: ${theme.colors.background};
-      border: none;
       display: block;
       height: 2px;
       margin: ${rem(24)} 0;
       padding: 0;
+      background-color: ${theme.colors.background};
+      border: none;
     }
 
     img,
     video {
-      height: auto;
       max-width: 100%;
+      height: auto;
     }
 
     input[type='checkbox'],
@@ -146,20 +148,20 @@ const GlobalStyle = createGlobalStyle(
 
     pre {
       ${overflowTouch};
-      background-color: ${theme.colors.preContrast};
+      margin: 0;
+      padding: ${rem(20)} ${rem(24)};
+      overflow-x: auto;
       color: ${theme.colors.pre};
       font-size: ${em(14)};
-      margin: 0;
-      overflow-x: auto;
-      padding: ${rem(20)} ${rem(24)};
       white-space: pre;
       word-wrap: normal;
+      background-color: ${theme.colors.preContrast};
 
       code {
-        background-color: transparent;
+        padding: 0;
         color: currentColor;
         font-size: ${em(16)};
-        padding: 0;
+        background-color: transparent;
       }
     }
 
@@ -168,8 +170,8 @@ const GlobalStyle = createGlobalStyle(
     }
 
     span {
-      font-style: inherit;
       font-weight: inherit;
+      font-style: inherit;
     }
 
     strong {
@@ -207,24 +209,24 @@ const GlobalStyle = createGlobalStyle(
     }
 
     ul {
-      list-style: none;
       margin: 0;
       padding: 0;
+      list-style: none;
     }
 
     ::selection {
-      background-color: ${theme.colors.textSelection};
       text-shadow: none;
+      background-color: ${theme.colors.textSelection};
     }
 
     @media print {
       *,
       *::before,
       *::after {
-        background-color: transparent !important;
-        box-shadow: none !important;
         color: ${hsl(0, 0, 0)} !important;
         text-shadow: none !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
       }
 
       a,
@@ -259,8 +261,8 @@ const GlobalStyle = createGlobalStyle(
 
       pre,
       blockquote {
-        border: 1px solid ${hsl(0, 0, 0.6)};
         page-break-inside: avoid;
+        border: 1px solid ${hsl(0, 0, 0.6)};
       }
 
       pre {

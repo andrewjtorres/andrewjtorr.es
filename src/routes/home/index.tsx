@@ -39,50 +39,50 @@ const translations = defineMessages({
 
 const Root = styled.div`
   ${container()}
-  align-items: center;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   flex-shrink: 0;
+  align-items: center;
   justify-content: center;
   padding: ${rem(48)} ${rem(24)};
 `
 
 const ImageContainer = styled.div`
+  position: relative;
   display: inline-block;
   margin-bottom: ${rem(8)};
-  position: relative;
 `
 
 const TitleImage = styled.img`
-  border-radius: ${rem(125)};
   height: ${rem(250)};
   max-height: ${rem(250)};
+  border-radius: ${rem(125)};
 `
 
 const Title = styled.h1`
-  color: ${({ theme }) => theme.colors.grayDarker};
-  font-size: ${rem(32)};
-  font-weight: 600;
-  line-height: 1.125;
-  margin-bottom: ${rem(4)};
   margin-top: 0;
+  margin-bottom: ${rem(4)};
+  color: ${({ theme }) => theme.colors.grayDarker};
+  font-weight: 600;
+  font-size: ${rem(32)};
+  line-height: 1.125;
   word-break: break-word;
 `
 
 const Subtitle = styled.h2`
-  color: ${({ theme }) => theme.colors.grayDark};
-  font-size: ${rem(20)};
-  font-weight: 400;
-  line-height: 1.25;
-  margin-bottom: ${rem(24)};
   margin-top: 0;
+  margin-bottom: ${rem(24)};
+  color: ${({ theme }) => theme.colors.grayDark};
+  font-weight: 400;
+  font-size: ${rem(20)};
+  line-height: 1.25;
   word-break: break-word;
 `
 
 const Content = styled.p`
-  margin-bottom: 0;
   margin-top: 0;
+  margin-bottom: 0;
   text-align: center;
 `
 
@@ -96,20 +96,21 @@ const LinkContainer = styled.div`
 `
 
 const Link = styled.a`
-  -webkit-touch-callout: none;
+  display: inline-flex;
   align-items: center;
-  appearance: none;
+  justify-content: center;
+  width: ${em(41)};
+  height: ${em(41)};
+  padding: calc(${em(6)} - 1px) ${em(16)} calc(${em(6)} - 1px);
+  color: ${({ theme }) => theme.colors.grayDarker};
+  font-size: ${rem(16)};
   border: ${rem(1)} solid ${({ theme }) => theme.colors.grayDarker};
   border-radius: ${em(20.5)};
-  color: ${({ theme }) => theme.colors.grayDarker};
   cursor: pointer;
-  display: inline-flex;
-  font-size: ${rem(16)};
-  height: ${em(41)};
-  justify-content: center;
-  padding: calc(${em(6)} - 1px) ${em(16)} calc(${em(6)} - 1px);
+  appearance: none;
   user-select: none;
-  width: ${em(41)};
+
+  -webkit-touch-callout: none;
 
   ${LinkContainer} > a + & {
     margin-left: ${rem(12)};
@@ -117,16 +118,16 @@ const Link = styled.a`
 
   &:hover,
   &:focus {
+    color: ${({ theme }) => theme.colors.white};
     background-color: ${({ theme }) => theme.colors.grayDarker};
     border-color: ${({ theme }) => theme.colors.grayDarker};
-    color: ${({ theme }) => theme.colors.white};
     outline: none;
   }
 
   &:active {
+    color: ${({ theme }) => theme.colors.white};
     background-color: ${({ theme }) => darken(0.1, theme.colors.grayDarker)};
     border-color: ${({ theme }) => darken(0.1, theme.colors.grayDarker)};
-    color: ${({ theme }) => theme.colors.white};
     outline: none;
   }
 
@@ -137,9 +138,9 @@ const Link = styled.a`
 
 const LinkedInLink = styled(Link)`
   ${ImageContainer} > & {
-    left: ${rem(254.016)};
     position: absolute;
     top: ${rem(32.09152)};
+    left: ${rem(254.016)};
   }
 
   &:hover,
@@ -156,9 +157,9 @@ const LinkedInLink = styled(Link)`
 
 const GitHubLink = styled(Link)`
   ${ImageContainer} > & {
-    left: ${rem(269.968)};
     position: absolute;
     top: ${rem(81.18832)};
+    left: ${rem(269.968)};
   }
 
   &:hover,
@@ -175,9 +176,9 @@ const GitHubLink = styled(Link)`
 
 const GitLabLink = styled(Link)`
   ${ImageContainer} > & {
-    left: ${rem(269.968)};
     position: absolute;
     top: ${rem(132.81168)};
+    left: ${rem(269.968)};
   }
 
   &:hover,
@@ -194,9 +195,9 @@ const GitLabLink = styled(Link)`
 
 const TwitterLink = styled(Link)`
   ${ImageContainer} > & {
-    left: ${rem(254.016)};
     position: absolute;
     top: ${rem(181.9088)};
+    left: ${rem(254.016)};
   }
 
   &:hover,
@@ -212,18 +213,18 @@ const TwitterLink = styled(Link)`
 `
 
 const icon = css`
-  align-items: center;
   display: inline-flex;
-  height: ${rem(21)};
+  align-items: center;
   justify-content: center;
+  height: ${rem(21)};
   max-height: ${rem(21)};
 
   a > & {
     fill: ${({ theme }) => theme.colors.grayDarker};
 
     &:only-child {
-      margin-left: calc(${em(-6)} - 1px);
       margin-right: calc(${em(-6)} - 1px);
+      margin-left: calc(${em(-6)} - 1px);
     }
   }
 

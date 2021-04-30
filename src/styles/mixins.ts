@@ -18,20 +18,24 @@ const viewportBreakpointScale: Record<
 > = { small: 'medium', medium: 'large', large: 'extraLarge' }
 
 const from = (breakpoint: ViewportBreakpoint) => (styles: Styles) => css`
+  /* stylelint-disable-next-line media-feature-name-no-unknown */
   @media screen and (min-width: ${({ theme }) => theme[breakpoint]}px) {
     ${styles};
   }
 `
 
 const only = (breakpoint: ViewportBreakpointLower) => (styles: Styles) => css`
+  /* stylelint-disable media-feature-name-no-unknown */
   @media screen and (min-width: ${({ theme }) =>
       theme[breakpoint]}px) and (max-width: ${({ theme }) =>
       theme[viewportBreakpointScale[breakpoint]] - 1}px) {
     ${styles};
   }
+  /* stylelint-enable media-feature-name-no-unknown */
 `
 
 const until = (breakpoint: ViewportBreakpoint) => (styles: Styles) => css`
+  /* stylelint-disable-next-line media-feature-name-no-unknown */
   @media screen and (max-width: ${({ theme }) => theme[breakpoint] - 1}px) {
     ${styles};
   }
@@ -44,6 +48,7 @@ export const overflowTouch = css`
 export const untilSmall = until('small')
 
 export const small = (styles: Styles) => css`
+  /* stylelint-disable-next-line media-feature-name-no-unknown */
   @media screen and (min-width: ${({ theme }) => theme.small}px), print {
     ${styles};
   }
@@ -81,8 +86,8 @@ export const isHiddenSmall = css`
 
 export const container = (isFluid = false) => {
   const fluid = css`
-    padding-left: ${({ theme }) => theme.gap}px;
     padding-right: ${({ theme }) => theme.gap}px;
+    padding-left: ${({ theme }) => theme.gap}px;
   `
 
   const centered = (breakpoint: ViewportBreakpoint) => css`
@@ -90,10 +95,10 @@ export const container = (isFluid = false) => {
   `
 
   return css`
-    flex-grow: 1;
-    margin: 0 auto;
     position: relative;
+    flex-grow: 1;
     width: ${isFluid ? '100%' : 'auto'};
+    margin: 0 auto;
 
     ${isFluid
       ? fluid

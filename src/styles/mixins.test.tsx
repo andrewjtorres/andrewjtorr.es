@@ -260,13 +260,13 @@ describe('container', () => {
 
     expect(firstChild).toMatchInlineSnapshot(`
       .c0 {
+        position: relative;
         -webkit-box-flex: 1;
         -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
         flex-grow: 1;
-        margin: 0 auto;
-        position: relative;
         width: auto;
+        margin: 0 auto;
       }
 
       @media screen and (min-width:1408px) {
@@ -313,15 +313,15 @@ describe('container', () => {
 
     expect(firstChild).toMatchInlineSnapshot(`
       .c0 {
+        position: relative;
         -webkit-box-flex: 1;
         -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
         flex-grow: 1;
-        margin: 0 auto;
-        position: relative;
         width: 100%;
-        padding-left: 32px;
+        margin: 0 auto;
         padding-right: 32px;
+        padding-left: 32px;
       }
 
       <div

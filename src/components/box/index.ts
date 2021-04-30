@@ -27,8 +27,8 @@ export interface BoxProps
 
 export const Box = styled.div<BoxProps>`
   box-sizing: border-box;
-  margin: 0;
   min-width: 0;
+  margin: 0;
 
   ${compose(color, flexbox, layout, space, typography)};
 `

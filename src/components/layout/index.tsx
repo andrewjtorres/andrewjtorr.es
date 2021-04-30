@@ -15,22 +15,22 @@ const Root = styled.div`
 `
 
 const Navbar = styled.nav`
-  background-color: ${({ theme }) => theme.colors.schemeMain};
-  min-height: ${rem(52)};
   position: relative;
+  min-height: ${rem(52)};
+  background-color: ${({ theme }) => theme.colors.schemeMain};
 
   ${medium(css`
-    align-items: stretch;
     display: flex;
+    align-items: stretch;
   `)};
 `
 
 const Container = styled.div`
   ${container()};
-  align-items: stretch;
   display: flex;
-  min-height: ${rem(52)};
+  align-items: stretch;
   width: 100%;
+  min-height: ${rem(52)};
 
   ${untilMedium(css`
     display: block;
@@ -38,9 +38,9 @@ const Container = styled.div`
 `
 
 const Brand = styled.div`
-  align-items: stretch;
   display: flex;
   flex-shrink: 0;
+  align-items: stretch;
   min-height: ${rem(52)};
 
   ${medium(css`
@@ -49,20 +49,20 @@ const Brand = styled.div`
 `
 
 const Link = styled(BaseLink)`
-  align-items: center;
-  color: ${({ theme }) => theme.colors.text};
-  cursor: pointer;
+  position: relative;
   display: flex;
   flex-grow: 0;
   flex-shrink: 0;
-  line-height: 1.5;
+  align-items: center;
   padding: ${rem(8)} ${rem(12)};
-  position: relative;
+  color: ${({ theme }) => theme.colors.text};
+  line-height: 1.5;
+  cursor: pointer;
 `
 
 const LogoIcon = styled(BaseLogoIcon)`
-  fill: ${({ theme }) => theme.colors.primary};
   height: ${rem(32)};
+  fill: ${({ theme }) => theme.colors.primary};
 `
 
 export const Layout = forwardRef<HTMLDivElement, LayoutProps>(function Layout(

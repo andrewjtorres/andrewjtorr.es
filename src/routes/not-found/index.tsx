@@ -20,19 +20,19 @@ const translations = defineMessages({
 })
 
 const Root = styled.div`
-  align-items: center;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  align-items: center;
   justify-content: center;
+  height: 100vh;
 `
 
 const Title = styled.h1`
-  color: ${({ theme }) => theme.colors.grayDark};
-  font-size: ${rem(32)};
-  font-weight: 400;
-  line-height: 1.2;
   margin: 0;
+  color: ${({ theme }) => theme.colors.grayDark};
+  font-weight: 400;
+  font-size: ${rem(32)};
+  line-height: 1.2;
 `
 
 const Content = styled.p`
