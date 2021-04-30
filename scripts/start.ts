@@ -242,6 +242,7 @@ const start = async () => {
   }
 
   serverCompiler.watch(watchOptions, (error, stats) => {
+    // @ts-expect-error TS2774
     if (app && !error && !stats.hasErrors()) {
       return checkForUpdate().then(() => {
         appPromiseIsResolved = true
