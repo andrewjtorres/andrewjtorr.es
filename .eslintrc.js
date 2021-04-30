@@ -50,6 +50,8 @@ module.exports = {
     ],
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
+    'unicorn/prefer-module': 'off',
+    'unicorn/prefer-node-protocol': 'off',
     'unicorn/prevent-abbreviations': 'off',
     'prettier/prettier': 'error',
   },
