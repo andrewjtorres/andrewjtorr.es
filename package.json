@@ -172,7 +172,7 @@
     "react-dev-utils": "^11.0.4",
     "react-error-overlay": "^6.0.9",
     "rimraf": "^3.0.2",
-    "stylelint": "^13.13.0",
+    "stylelint": "^13.13.1",
     "stylelint-a11y": "^1.2.3",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-recommended": "^5.0.0",
