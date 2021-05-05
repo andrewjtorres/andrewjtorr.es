@@ -15478,9 +15478,9 @@ validate-npm-package-license@^3.0.1:
     spdx-expression-parse "^3.0.0"
 
 value-or-promise@~1.0.5:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/value-or-promise/-/value-or-promise-1.0.6.tgz#218aa4794aa2ee24dcf48a29aba4413ed584747f"
-  integrity sha512-9r0wQsWD8z/BxPOvnwbPf05ZvFngXyouE9EKB+5GbYix+BYnAwrIChCUyFIinfbf2FL/U71z+CPpbnmTdxrwBg==
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/value-or-promise/-/value-or-promise-1.0.7.tgz#b7de9561d77c290da71c4b3692afeff7a5fe8a22"
+  integrity sha512-khaOVsnop49ufBQHJOO5PAFWGZAaeXIR/e06uAXnXHzMqQNYT0ZnaeKqnqtVZ+ToTyOTuUldaVCE0ZiGZO5GnQ==
 
 vary@^1, vary@~1.1.2:
   version "1.1.2"
