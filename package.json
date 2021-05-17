@@ -45,7 +45,7 @@
     "@babel/runtime-corejs3": "^7.14.0",
     "@graphql-tools/schema": "^7.1.5",
     "@loadable/component": "^5.15.0",
-    "@loadable/server": "^5.14.2",
+    "@loadable/server": "^5.15.0",
     "@types/react": "^17.0.5",
     "apollo-server-express": "^2.24.0",
     "aws-serverless-express": "^3.4.0",
