@@ -14595,9 +14595,9 @@ tar@^6.0.2:
     yallist "^4.0.0"
 
 telejson@^5.1.0:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/telejson/-/telejson-5.1.1.tgz#fd83b594ebddfaeb9a5c4b9660c302fc07c9a65c"
-  integrity sha512-aU7x+nwodmODJPXhU9sC/REOcX/dx1tNbyeOFV1PCTh6e9Mj+bnyfQ7sr13zfJYya9BtpGwnUNn9Fd76Ybj2eg==
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/telejson/-/telejson-5.3.1.tgz#456418a05a8d5b0de7d5244feadcfe1d280dc088"
+  integrity sha512-je5hys3IpAWmf270iaxJgeboUgJL+pGNeZykvn58nbKhCGbTtiMZpzkCx6cKhsXaqAXS6uNOBOoaw/ttp+nuOw==
   dependencies:
     "@types/is-function" "^1.0.0"
     global "^4.4.0"
