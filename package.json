@@ -110,7 +110,7 @@
     "@types/node": "^15.3.0",
     "@types/node-fetch": "^2.5.10",
     "@types/react-dev-utils": "^9.0.6",
-    "@types/react-dom": "^17.0.3",
+    "@types/react-dom": "^17.0.5",
     "@types/rimraf": "^3.0.0",
     "@types/serialize-javascript": "^5.0.0",
     "@types/styled-components": "^5.1.9",
