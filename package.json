@@ -132,7 +132,7 @@
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.2",
     "babel-plugin-formatjs": "^10.2.12",
-    "babel-plugin-graphql-tag": "^3.2.0",
+    "babel-plugin-graphql-tag": "^3.3.0",
     "babel-plugin-polished": "^1.1.0",
     "babel-plugin-styled-components": "^1.12.0",
     "browser-sync": "^2.26.14",
