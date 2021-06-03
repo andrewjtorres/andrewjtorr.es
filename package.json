@@ -181,7 +181,7 @@
     "stylelint-prettier": "^1.2.0",
     "terser-webpack-plugin": "4.2.3",
     "ts-node": "^9.1.1",
-    "typescript": "^4.2.4",
+    "typescript": "^4.3.2",
     "url-loader": "^4.1.1",
     "webpack": "4.44.2",
     "webpack-bundle-analyzer": "^4.4.1",
