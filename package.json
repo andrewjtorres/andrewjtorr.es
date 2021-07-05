@@ -88,7 +88,7 @@
     "@storybook/react": "^6.2.9",
     "@storybook/theming": "^6.3.0",
     "@svgr/webpack": "^5.5.0",
-    "@testing-library/dom": "^7.31.0",
+    "@testing-library/dom": "^8.1.0",
     "@testing-library/jest-dom": "^5.13.0",
     "@testing-library/react": "^11.2.7",
     "@types/archiver": "^5.1.0",
