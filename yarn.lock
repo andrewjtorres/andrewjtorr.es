@@ -3370,12 +3370,14 @@
   dependencies:
     dotenv "^8.2.0"
 
-"@types/dotenv-webpack@^7.0.1":
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/@types/dotenv-webpack/-/dotenv-webpack-7.0.1.tgz#f9d5cd7a552b8338bb46f4192772ef6a9c2208ed"
-  integrity sha512-gpKrNjSWcU2NIJJ/BKFvJt80UJ7NrFxhj0nV0MKrbfsWiFKGgSPzrLJ8/aUgMXSmryEadCDjlPpDC5hGglqJnQ==
+"@types/dotenv-webpack@^7.0.2":
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/@types/dotenv-webpack/-/dotenv-webpack-7.0.2.tgz#65f0e38bfdd9471ddb14e30cddc493fcf30a457a"
+  integrity sha512-7GdkjjhUu7lFxOzvYpC9ncychx25igXBwQxM7nJSy8b6b/x8B+CQ/BknkOKkmNlx/UkIK1KEDjYezK33RhfkNA==
   dependencies:
-    "@types/webpack" "^4"
+    "@types/node" "*"
+    tapable "^2.2.0"
+    webpack "^5"
 
 "@types/emoji-regex@^8.0.0":
   version "8.0.0"
