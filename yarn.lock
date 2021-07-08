@@ -5585,9 +5585,9 @@ browser-sync-client@^2.26.14:
     rxjs "^5.5.6"
 
 browser-sync-ui@^2.26.14:
-  version "2.26.14"
-  resolved "https://registry.yarnpkg.com/browser-sync-ui/-/browser-sync-ui-2.26.14.tgz#96632c38dda72560a3be8e985716d7a735e94749"
-  integrity sha512-6oT1sboM4KVNnWCCJDMGbRIeTBw97toMFQ+srImvwQ6J5t9KMgizaIX8HcKLiemsUMSJkgGM9RVKIpq2UblgOA==
+  version "2.27.4"
+  resolved "https://registry.yarnpkg.com/browser-sync-ui/-/browser-sync-ui-2.27.4.tgz#cd1767926528c0e6cfb3abe1eeb61a9026a98953"
+  integrity sha512-E58Mb6ycz57Nm393oqVJj4jxuLJH3MhZnY8AV+zd9LsNVGZjrKRNNIw5JPYYguyb37ZjLjq2x4u+38mRv3Sb7g==
   dependencies:
     async-each-series "0.1.1"
     connect-history-api-fallback "^1"
