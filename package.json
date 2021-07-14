@@ -41,7 +41,7 @@
     }
   },
   "dependencies": {
-    "@apollo/client": "^3.3.17",
+    "@apollo/client": "^3.3.21",
     "@babel/runtime-corejs3": "^7.14.7",
     "@graphql-tools/schema": "^7.1.5",
     "@loadable/component": "^5.15.0",
