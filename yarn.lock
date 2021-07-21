@@ -4067,10 +4067,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/loadable__webpack-plugin@^5.7.2":
-  version "5.7.2"
-  resolved "https://registry.yarnpkg.com/@types/loadable__webpack-plugin/-/loadable__webpack-plugin-5.7.2.tgz#ee0e87f91e8c959b6855d80103d1812fe87afe27"
-  integrity sha512-fOL6qh2JDyP9WsHyytQ+16YJgGvILTzqvgYEJaK4HhkEIWjxlFWYWnBqMKySGwmxvnC7SdVR7hKqzwPfRetKQA==
+"@types/loadable__webpack-plugin@^5.7.3":
+  version "5.7.3"
+  resolved "https://registry.yarnpkg.com/@types/loadable__webpack-plugin/-/loadable__webpack-plugin-5.7.3.tgz#e27b42a4364d13fc34ec752d59ea1f8f75c0a881"
+  integrity sha512-jdOgIovGk9xcbU1Kyveiw9RVCBbHfv9U9AKOveop8Jk4JQQOPrafE7WHaNxotza08pH1YG6vHTV84xUL2W2F1Q==
   dependencies:
     "@types/webpack" "^4"
 
