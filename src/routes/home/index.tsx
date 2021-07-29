@@ -139,7 +139,7 @@ const Link = styled.a`
 const LinkedInLink = styled(Link)`
   ${ImageContainer} > & {
     position: absolute;
-    top: ${rem(32.09152)};
+    top: ${rem(32.091_52)}; /* stylelint-disable-line unit-no-unknown */
     left: ${rem(254.016)};
   }
 
@@ -158,7 +158,7 @@ const LinkedInLink = styled(Link)`
 const GitHubLink = styled(Link)`
   ${ImageContainer} > & {
     position: absolute;
-    top: ${rem(81.18832)};
+    top: ${rem(81.188_32)}; /* stylelint-disable-line unit-no-unknown */
     left: ${rem(269.968)};
   }
 
@@ -177,7 +177,7 @@ const GitHubLink = styled(Link)`
 const GitLabLink = styled(Link)`
   ${ImageContainer} > & {
     position: absolute;
-    top: ${rem(132.81168)};
+    top: ${rem(132.811_68)}; /* stylelint-disable-line unit-no-unknown */
     left: ${rem(269.968)};
   }
 

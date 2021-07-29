@@ -47,7 +47,7 @@ const createConfig = (target: Target, configFactory: ConfigFactory) =>
             {
               test: /\.(bmp|gif|jp(e)?g|png|webp)$/,
               loader: require.resolve('url-loader'),
-              options: { limit: 10000, name: '[name].[hash:8].[ext]' },
+              options: { limit: 10_000, name: '[name].[hash:8].[ext]' },
             },
             {
               test: /\.mjs$/,
@@ -108,6 +108,7 @@ const createConfig = (target: Target, configFactory: ConfigFactory) =>
         __IS_DEV__: !isRelease,
         ...(target === 'web' ? { 'process.env.BROWSER_ENV': `'${env}'` } : {}),
       }),
+      // @ts-ignore TS2322
       new DotenvPlugin({
         path: path.join(rootDir, envFile),
         safe: path.join(rootDir, '.env.example'),
