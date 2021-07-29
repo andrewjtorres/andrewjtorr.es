@@ -17,29 +17,32 @@ const viewportBreakpointScale: Record<
   ViewportBreakpointUpper
 > = { small: 'medium', medium: 'large', large: 'extraLarge' }
 
-const from = (breakpoint: ViewportBreakpoint) => (styles: Styles) => css`
-  /* stylelint-disable-next-line media-feature-name-no-unknown */
-  @media screen and (min-width: ${({ theme }) => theme[breakpoint]}px) {
-    ${styles};
-  }
-`
+const from = (breakpoint: ViewportBreakpoint) => (styles: Styles) =>
+  css`
+    /* stylelint-disable-next-line media-feature-name-no-unknown */
+    @media screen and (min-width: ${({ theme }) => theme[breakpoint]}px) {
+      ${styles};
+    }
+  `
 
-const only = (breakpoint: ViewportBreakpointLower) => (styles: Styles) => css`
-  /* stylelint-disable media-feature-name-no-unknown */
-  @media screen and (min-width: ${({ theme }) =>
-      theme[breakpoint]}px) and (max-width: ${({ theme }) =>
-      theme[viewportBreakpointScale[breakpoint]] - 1}px) {
-    ${styles};
-  }
-  /* stylelint-enable media-feature-name-no-unknown */
-`
+const only = (breakpoint: ViewportBreakpointLower) => (styles: Styles) =>
+  css`
+    /* stylelint-disable media-feature-name-no-unknown */
+    @media screen and (min-width: ${({ theme }) =>
+        theme[breakpoint]}px) and (max-width: ${({ theme }) =>
+        theme[viewportBreakpointScale[breakpoint]] - 1}px) {
+      ${styles};
+    }
+    /* stylelint-enable media-feature-name-no-unknown */
+  `
 
-const until = (breakpoint: ViewportBreakpoint) => (styles: Styles) => css`
-  /* stylelint-disable-next-line media-feature-name-no-unknown */
-  @media screen and (max-width: ${({ theme }) => theme[breakpoint] - 1}px) {
-    ${styles};
-  }
-`
+const until = (breakpoint: ViewportBreakpoint) => (styles: Styles) =>
+  css`
+    /* stylelint-disable-next-line media-feature-name-no-unknown */
+    @media screen and (max-width: ${({ theme }) => theme[breakpoint] - 1}px) {
+      ${styles};
+    }
+  `
 
 export const overflowTouch = css`
   -webkit-overflow-scrolling: touch;

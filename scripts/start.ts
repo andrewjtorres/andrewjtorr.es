@@ -77,8 +77,11 @@ const start = async () => {
   const serverConfig: Configuration =
     webpackConfig.find(({ name }) => name === 'server') ?? {}
 
-  const { chunkFilename = '', filename = '', publicPath = '' } =
-    clientConfig.output ?? {}
+  const {
+    chunkFilename = '',
+    filename = '',
+    publicPath = '',
+  } = clientConfig.output ?? {}
   let entry = clientConfig.entry ?? {}
   let plugins = clientConfig.plugins ?? []
   let rules = clientConfig.module?.rules ?? []

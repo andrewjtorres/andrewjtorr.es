@@ -42,18 +42,16 @@ describe('createApolloClient', () => {
 
     const client = createApolloClient({ preloadedCache: cache.extract() })
 
-    expect(
-      client.readQuery<LocalesQueryData>({ query })
-    ).toMatchObject(data)
+    expect(client.readQuery<LocalesQueryData>({ query })).toMatchObject(data)
   })
 
   test("should write the provided defaults to the apollo client's cache", () => {
     const defaults = { locales: ['en'] }
     const client = createApolloClient({ defaults })
 
-    expect(
-      client.readQuery<LocalesQueryData>({ query })
-    ).toMatchObject(defaults)
+    expect(client.readQuery<LocalesQueryData>({ query })).toMatchObject(
+      defaults
+    )
   })
 
   test("should reinitialize the apollo client's cache to the provided defaults when the store is reset", async () => {
@@ -62,15 +60,15 @@ describe('createApolloClient', () => {
 
     client.writeQuery<LocalesQueryData>({ data: { locales: ['es'] }, query })
 
-    expect(
-      client.readQuery<LocalesQueryData>({ query })
-    ).toMatchObject({ locales: ['es'] })
+    expect(client.readQuery<LocalesQueryData>({ query })).toMatchObject({
+      locales: ['es'],
+    })
 
     await client.resetStore()
 
-    expect(
-      client.readQuery<LocalesQueryData>({ query })
-    ).toMatchObject(defaults)
+    expect(client.readQuery<LocalesQueryData>({ query })).toMatchObject(
+      defaults
+    )
   })
 })
 
