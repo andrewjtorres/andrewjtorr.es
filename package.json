@@ -121,7 +121,7 @@
     "@types/webpack-bundle-analyzer": "3.9.2",
     "@types/webpack-dev-middleware": "3.7.2",
     "@types/webpack-env": "^1.16.2",
-    "@types/webpack-hot-middleware": "^2.25.4",
+    "@types/webpack-hot-middleware": "^2.25.5",
     "@types/webpack-node-externals": "^2.5.2",
     "@typescript-eslint/eslint-plugin": "^4.27.0",
     "@typescript-eslint/parser": "^4.28.0",
