@@ -158,7 +158,7 @@
     "file-loader": "^6.2.0",
     "glob": "^7.1.7",
     "graphql-tag": "^2.12.5",
-    "husky": "^6.0.0",
+    "husky": "^7.0.1",
     "jest": "^27.0.6",
     "jest-circus": "^27.0.6",
     "jest-config": "^27.0.6",
