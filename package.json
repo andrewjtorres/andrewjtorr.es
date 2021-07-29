@@ -107,7 +107,7 @@
     "@types/loadable__component": "^5.13.4",
     "@types/loadable__server": "^5.12.6",
     "@types/loadable__webpack-plugin": "^5.7.3",
-    "@types/node": "^16.3.3",
+    "@types/node": "^16.4.7",
     "@types/node-fetch": "^2.5.10",
     "@types/react-dev-utils": "^9.0.6",
     "@types/react-dom": "^17.0.6",
