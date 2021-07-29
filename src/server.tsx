@@ -3,6 +3,7 @@ import { ApolloProvider } from '@apollo/client'
 import { SchemaLink } from '@apollo/client/link/schema'
 import { renderToStringWithData } from '@apollo/client/react/ssr'
 import { ChunkExtractor, ChunkExtractorManager } from '@loadable/server'
+import { ApolloServerPluginLandingPageGraphQLPlayground } from 'apollo-server-core'
 import { ApolloServer } from 'apollo-server-express'
 import { json, urlencoded } from 'body-parser'
 import compression from 'compression'
@@ -33,7 +34,9 @@ const app: Express = express()
 const server = new ApolloServer({
   context: ({ req, res }): Context => ({ locale: req.language, res }),
   debug: __IS_DEV__,
-  playground: __IS_DEV__,
+  plugins: __IS_DEV__
+    ? [ApolloServerPluginLandingPageGraphQLPlayground()]
+    : undefined,
   schema,
 })
 
