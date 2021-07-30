@@ -170,6 +170,7 @@ const start = async () => {
         watchOptions,
       })
     )
+    // @ts-expect-error TS2345
     .use(webpackHotMiddleware(clientCompiler, { log: false }))
 
   let app: Express

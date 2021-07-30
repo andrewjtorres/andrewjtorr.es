@@ -108,7 +108,7 @@ const createConfig = (target: Target, configFactory: ConfigFactory) =>
         __IS_DEV__: !isRelease,
         ...(target === 'web' ? { 'process.env.BROWSER_ENV': `'${env}'` } : {}),
       }),
-      // @ts-ignore TS2322
+      // @ts-expect-error TS2322
       new DotenvPlugin({
         path: path.join(rootDir, envFile),
         safe: path.join(rootDir, '.env.example'),
@@ -161,6 +161,7 @@ const clientConfig = createConfig('web', ({ plugins = [], ...baseConfig }) => ({
       name: false,
     },
   },
+  // @ts-expect-error TS2322
   plugins: [
     ...plugins,
     new LoadablePlugin({
