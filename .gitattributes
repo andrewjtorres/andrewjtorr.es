@@ -13,7 +13,6 @@
 *.json         text eol=lf
 *.lock         text eol=lf
 *.md           text eol=lf
-*.mdx          text eol=lf
 *.svg          text eol=lf
 *.tf           text eol=lf
 *.ts           text eol=lf

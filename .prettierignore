@@ -1,7 +1,6 @@
 # Artifacts and Compiled Output
 .artifact
 build
-storybook-static
 
 # Dependencies
 node_modules

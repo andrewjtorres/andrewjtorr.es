@@ -5,7 +5,6 @@ const clean = () =>
     cleanDir('.artifact', { dot: true }),
     cleanDir('build'),
     cleanDir('coverage'),
-    cleanDir('storybook-static'),
     cleanDir('*.log*', { dot: true }),
   ])
 

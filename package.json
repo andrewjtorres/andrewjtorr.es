@@ -17,7 +17,6 @@
   "scripts": {
     "build": "ts-node --files --project tsconfig.node.json --require ./config/dotenv-safe scripts/run build",
     "build:stats": "yarn build --analyze --release",
-    "build:storybook": "build-storybook",
     "bundle": "ts-node --project tsconfig.node.json --require ./config/dotenv-safe scripts/run bundle",
     "clean": "ts-node --files --project tsconfig.node.json scripts/run clean",
     "copy": "ts-node --files --project tsconfig.node.json scripts/run copy",
@@ -25,13 +24,12 @@
     "extract:translations": "ts-node --files --project tsconfig.node.json --require ./config/dotenv-safe scripts/run extract-translations",
     "hook:pre-commit": "lint-staged",
     "lint": "npm-run-all --parallel \"lint:*\"",
-    "lint:files": "prettylint \"**/*.{json,md,mdx,yml}\"",
+    "lint:files": "prettylint \"**/*.{json,md,yml}\"",
     "lint:scripts": "eslint --ignore-path .gitignore \"**/*.{js,ts,tsx}\"",
     "lint:styles": "stylelint --ignore-path .gitignore \"**/*.{ts,tsx}\"",
     "lint:types": "tsc --noEmit --project tsconfig.jest.json && tsc --noEmit --project tsconfig.node.json",
     "prepare": "husky install",
     "start": "ts-node --files --project tsconfig.node.json --require ./config/dotenv-safe scripts/run start",
-    "start:storybook": "start-storybook --port 6006",
     "test": "npm-run-all --parallel \"test:*\"",
     "test:units": "jest"
   },
@@ -67,8 +65,7 @@
     "react-router-dom": "6.0.0-alpha.4",
     "serialize-javascript": "^6.0.0",
     "source-map-support": "^0.5.19",
-    "styled-components": "^5.3.0",
-    "styled-system": "^5.1.5"
+    "styled-components": "^5.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.8",
@@ -80,13 +77,6 @@
     "@babel/preset-typescript": "^7.14.5",
     "@loadable/babel-plugin": "^5.13.2",
     "@loadable/webpack-plugin": "^5.15.0",
-    "@mdx-js/loader": "^1.6.22",
-    "@storybook/addon-a11y": "^6.3.6",
-    "@storybook/addon-docs": "^6.3.6",
-    "@storybook/addon-knobs": "^6.3.0",
-    "@storybook/addons": "^6.3.6",
-    "@storybook/react": "^6.3.6",
-    "@storybook/theming": "^6.3.6",
     "@svgr/webpack": "^5.5.0",
     "@testing-library/dom": "^8.1.0",
     "@testing-library/jest-dom": "^5.14.1",
@@ -114,7 +104,6 @@
     "@types/rimraf": "^3.0.1",
     "@types/serialize-javascript": "^5.0.1",
     "@types/styled-components": "^5.1.11",
-    "@types/styled-system": "^5.1.12",
     "@types/terser-webpack-plugin": "^5.0.4",
     "@types/testing-library__jest-dom": "^5.14.1",
     "@types/webpack": "4.41.27",
@@ -205,7 +194,7 @@
       "stylelint",
       "jest --bail --find-related-tests"
     ],
-    "*.{json,md,mdx,yml}": [
+    "*.{json,md,yml}": [
       "prettylint --fix"
     ]
   }
