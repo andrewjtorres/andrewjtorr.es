@@ -112,7 +112,7 @@
     "@types/webpack-env": "^1.16.2",
     "@types/webpack-hot-middleware": "^2.25.5",
     "@types/webpack-node-externals": "^2.5.2",
-    "@typescript-eslint/eslint-plugin": "^4.28.5",
+    "@typescript-eslint/eslint-plugin": "^4.29.0",
     "@typescript-eslint/parser": "^4.28.5",
     "apollo-link-logger": "^2.0.0",
     "archiver": "^5.3.0",
