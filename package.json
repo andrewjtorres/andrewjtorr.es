@@ -45,7 +45,7 @@
     "@loadable/component": "^5.15.0",
     "@loadable/server": "^5.15.0",
     "@types/react": "^17.0.15",
-    "apollo-server-express": "^3.1.1",
+    "apollo-server-express": "^3.8.1",
     "aws-serverless-express": "^3.4.0",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
