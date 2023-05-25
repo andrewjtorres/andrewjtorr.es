@@ -178,10 +178,11 @@
     "webpack-node-externals": "^3.0.0"
   },
   "engines": {
-    "node": ">=14.16",
-    "yarn": ">=1.22"
+    "node": ">=18.16",
+    "yarn": ">=3.5"
   },
   "private": true,
+  "packageManager": "yarn@3.5.1",
   "browserslist": [
     "> 0.20%",
     "not dead",
