@@ -4686,7 +4686,7 @@ __metadata:
     apollo-link-logger: ^2.0.0
     apollo-server-express: ^3.1.1
     archiver: ^5.3.0
-    aws-sdk: ^2.957.0
+    aws-sdk: ^2.1518.0
     aws-serverless-express: ^3.4.0
     babel-jest: ^27.0.6
     babel-loader: ^8.2.2
@@ -5366,9 +5366,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"aws-sdk@npm:^2.957.0":
-  version: 2.1384.0
-  resolution: "aws-sdk@npm:2.1384.0"
+"aws-sdk@npm:^2.1518.0":
+  version: 2.1518.0
+  resolution: "aws-sdk@npm:2.1518.0"
   dependencies:
     buffer: 4.9.2
     events: 1.1.1
@@ -5380,7 +5380,7 @@ __metadata:
     util: ^0.12.4
     uuid: 8.0.0
     xml2js: 0.5.0
-  checksum: 0fa76564afa4b90ed49efd3dd4dc6c1733899611aa3c7db74040c26c988730e6406152199920e480785558c5965fe40dd9ad2c72733f89e1c55b1073b6e7ca43
+  checksum: 4a6dacb86c634b32a58728ebcd8cdfb227af748ac49938f6fa6f7df40d1b917f7ea08dd640576172ef6a7a4423ca9c3e20bc32ccef513a297ff88fc9ef04c1f3
   languageName: node
   linkType: hard
 
