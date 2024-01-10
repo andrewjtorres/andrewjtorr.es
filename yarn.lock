@@ -1623,13 +1623,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime-corejs3@npm:^7.10.2, @babel/runtime-corejs3@npm:^7.14.8":
+"@babel/runtime-corejs3@npm:^7.10.2":
   version: 7.21.5
   resolution: "@babel/runtime-corejs3@npm:7.21.5"
   dependencies:
     core-js-pure: ^3.25.1
     regenerator-runtime: ^0.13.11
   checksum: c349a15675067f45d78f4c94ba111227a43608a261feb3d770168e4c6718b25823a143af9201e946511eb290d6d319d2f893eb87b14020fadf49cebd77269139
+  languageName: node
+  linkType: hard
+
+"@babel/runtime-corejs3@npm:^7.23.8":
+  version: 7.23.8
+  resolution: "@babel/runtime-corejs3@npm:7.23.8"
+  dependencies:
+    core-js-pure: ^3.30.2
+    regenerator-runtime: ^0.14.0
+  checksum: e786b79bcb3031bd7433fb4523e43f0acbd386cd7bb5b0a6df6e627c7965706b3d5612211ea3d729ce4459ba1d1b654ccdd8aefe791c6413f70882ee1be903b9
   languageName: node
   linkType: hard
 
@@ -4639,7 +4649,7 @@ __metadata:
     "@babel/preset-env": ^7.14.8
     "@babel/preset-react": ^7.14.5
     "@babel/preset-typescript": ^7.14.5
-    "@babel/runtime-corejs3": ^7.14.8
+    "@babel/runtime-corejs3": ^7.23.8
     "@graphql-tools/schema": ^8.0.1
     "@loadable/babel-plugin": ^5.13.2
     "@loadable/component": ^5.15.0
@@ -6913,6 +6923,13 @@ __metadata:
   version: 3.30.2
   resolution: "core-js-pure@npm:3.30.2"
   checksum: e0e012fe94e38663d837410baac62efe05d0c7431e3fbaa70c65f51eb980da9c3add225eca04208d576bc0d92cefeca9a4f7671a65fd84fd7dfc92d8618dddfd
+  languageName: node
+  linkType: hard
+
+"core-js-pure@npm:^3.30.2":
+  version: 3.35.0
+  resolution: "core-js-pure@npm:3.35.0"
+  checksum: be542e17687656f4e08091f323a2aa7ee4b3368c4c964794d9475fd27ff34288390bdbe90fb3ba4c75300abf046f03e4783032f313011651a05fa1cca5ec24e0
   languageName: node
   linkType: hard
 
@@ -14497,6 +14514,13 @@ __metadata:
   version: 0.13.11
   resolution: "regenerator-runtime@npm:0.13.11"
   checksum: 27481628d22a1c4e3ff551096a683b424242a216fee44685467307f14d58020af1e19660bf2e26064de946bad7eff28950eae9f8209d55723e2d9351e632bbb4
+  languageName: node
+  linkType: hard
+
+"regenerator-runtime@npm:^0.14.0":
+  version: 0.14.1
+  resolution: "regenerator-runtime@npm:0.14.1"
+  checksum: 9f57c93277b5585d3c83b0cf76be47b473ae8c6d9142a46ce8b0291a04bb2cf902059f0f8445dcabb3fb7378e5fe4bb4ea1e008876343d42e46d3b484534ce38
   languageName: node
   linkType: hard
 
